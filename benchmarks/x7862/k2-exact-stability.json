@@ -1,0 +1,539 @@
+{
+  "K": 2,
+  "candidates": [
+    {
+      "columns": [
+        [
+          -2,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          2,
+          -2,
+          1,
+          -1
+        ],
+        [
+          2,
+          1,
+          0,
+          -2
+        ]
+      ],
+      "generic_spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "PASS",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            18,
+            12,
+            0
+          ]
+        }
+      },
+      "stability": {
+        "diagnostics": {
+          "positive_bounds": [
+            [
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "1"
+            ],
+            [
+              "1/3",
+              "2/3"
+            ],
+            [
+              "1/3",
+              "2/3"
+            ]
+          ],
+          "root_count": 1,
+          "witness": {
+            "isolating_interval": [
+              2,
+              3
+            ],
+            "polynomial_ascending": [
+              -7,
+              0,
+              1
+            ],
+            "t_coefficients_ascending": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                "-1/3",
+                "1/3"
+              ],
+              [
+                "-1/3",
+                "1/3"
+              ]
+            ]
+          }
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "rational polynomial, isolated real root, strictly positive interval bounds"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "algebraic_slope_witness",
+          "reference": "1307.4787 (4.5); polynomial quotient-ring identity and real-root isolation"
+        },
+        "outcome": "PASS",
+        "residual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "columns": [
+        [
+          -2,
+          -1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          2,
+          -2,
+          2,
+          -1
+        ]
+      ],
+      "generic_spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "PASS",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            23,
+            17,
+            0
+          ]
+        }
+      },
+      "stability": {
+        "diagnostics": {
+          "t": [
+            "4",
+            "4",
+            "4",
+            "1"
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "exact rational t>0 in ambient Kahler chamber"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "rational_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "PASS",
+        "residual": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "columns": [
+        [
+          -2,
+          -1,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0,
+          -1
+        ]
+      ],
+      "generic_spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "PASS",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            9,
+            3,
+            0
+          ]
+        }
+      },
+      "stability": {
+        "diagnostics": {
+          "t": [
+            "4",
+            "1",
+            "4",
+            "4"
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "exact rational t>0 in ambient Kahler chamber"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "rational_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "PASS",
+        "residual": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "columns": [
+        [
+          -2,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          -2,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          -1
+        ]
+      ],
+      "generic_spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "PASS",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            9,
+            3,
+            0
+          ]
+        }
+      },
+      "stability": {
+        "diagnostics": {
+          "t": [
+            "4",
+            "4",
+            "4",
+            "1"
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "exact rational t>0 in ambient Kahler chamber"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "rational_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "PASS",
+        "residual": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      }
+    },
+    {
+      "columns": [
+        [
+          -2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "generic_spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "FAIL",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            6,
+            0,
+            0
+          ]
+        }
+      },
+      "stability": {
+        "diagnostics": {
+          "positive_bounds": [
+            [
+              "1",
+              "1"
+            ],
+            [
+              "2",
+              "3"
+            ],
+            [
+              "1",
+              "1"
+            ],
+            [
+              "2",
+              "3"
+            ]
+          ],
+          "root_count": 1,
+          "witness": {
+            "isolating_interval": [
+              1,
+              2
+            ],
+            "polynomial_ascending": [
+              -3,
+              0,
+              1
+            ],
+            "t_coefficients_ascending": [
+              [
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "rational polynomial, isolated real root, strictly positive interval bounds"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "algebraic_slope_witness",
+          "reference": "1307.4787 (4.5); polynomial quotient-ring identity and real-root isolation"
+        },
+        "outcome": "PASS",
+        "residual": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "exact_stability_orbits": 5,
+  "gamma": 2,
+  "geometry": "7862",
+  "scope": "exact upstairs stability; full gauge/equivariance and symmetry-subfamily cohomology UNKNOWN"
+}

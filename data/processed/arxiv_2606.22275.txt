@@ -1,0 +1,971 @@
+Hilbert Functions and Line Bundle Cohomology on CICY Threefolds Report GitHub Issue × Title: Content selection saved. Describe the issue below: Description: Submit without GitHub Submit in GitHub arXiv is now an independent nonprofit! Learn more × Back to arXiv Why HTML? Report Issue Back to Abstract Download PDF Abstract 1 Introduction 2 From CICY Koszul maps to Hilbert functions 2.1 The Koszul spectral sequence 2.2 A concrete codimension-two example with a d_{2} map 2.3 Graded modules and rank defects 2.4 Elementary rank-defect models One equation. A scalar complete intersection. A vector-valued cokernel. 3 From Hilbert functions to line bundle cohomology 3.1 Hypersurface formulae 3.1.1 \mathbb{P}^{1}\times\mathbb{P}^{n} hypersurfaces 3.1.2 The bicubic \mathbb{P}^{2}\times\mathbb{P}^{2}[3,3] 3.1.3 Two multigraded hypersurface examples 3.2 Codimension-two examples 3.2.1 The quadratic \mathbb{P}^{1}\times\mathbb{P}^{4} family 3.2.2 The other two \mathbb{P}^{1}\times\mathbb{P}^{4} cases 3.2.3 Three \mathbb{P}^{2}\times\mathbb{P}^{3} cases 4 New structures and new formulas from Hilbert functions 4.1 New structures from Hilbert functions 4.1.1 CICY 7880 : hidden top- \mathbb{P}^{2} subwalls What is certified here. 4.1.2 CICY 7880 : the negative- \mathbb{P}^{1} kernel box 4.1.3 CICY 7862 : a certified two-negative finite box 4.2 New formulae: CICY 7707 as a case study 4.3 New formulae: a 7863 case study with codimension 3 5 Conclusions and future directions A General algebraic tools Buchsbaum–Rim exactness. A Hilbert-series calculation for two linear rows. B Endpoint arguments for the \mathbb{P}^{2}\times\mathbb{P}^{3} examples Left endpoint kernel. Right endpoint rank checks. Machine-readable verification data for 7833,7844,7883 . C CICY 7880 : hidden walls and finite-box checks The q=2 hidden wall. The finite-box maximal-rank check. D Details for the CICY 7707 formulae k=(-a,-b,m) , m=1,2 . k=(-a,-b,3) on finite-width strips. k=(0,-b,c) in the finite b -box. k=(-a,-b,c) in the finite (a,b) -box. Boundary, d_{2} , and certificate closure. E Details for the CICY 7863 formulae The mixed Koszul row. One-parameter endpoint rows. Finite-box rows. References License: arXiv.org perpetual non-exclusive license arXiv:2606.22275v1 [hep-th] 20 Jun 2026 Hilbert Functions
+and Line Bundle Cohomology on CICY Threefolds Juntao Wang Affiliation: Beijing Institute of Mathematical Sciences and Applications,
+Beijing 101408, China Email: jtwang.bimsa@gmail.com Abstract Line bundle cohomology on complete intersection Calabi–Yau
+threefolds is an important input in string phenomenology. Previous work,
+based on direct extrapolation and on machine-learning analyses of finite data
+sets, has shown that these cohomology dimensions often admit chamber-wise
+polynomial descriptions on the Picard lattice. In this paper we explain this
+structure through the Hilbert functions associated with the non-trivial maps
+in the Koszul spectral sequence. Once Bott–Borel–Weil theory determines the
+non-vanishing ambient cohomology groups, the rank defects of the relevant
+Koszul maps are governed by Hilbert functions of cokernel or kernel
+modules. This turns many empirical chamber formulae into explicit
+rank-defect statements, with proofs that are either analytic or certified on
+finite boxes. Using this approach, we recover analytically almost all of the
+piecewise formulae appearing in the existing literature. For the remaining
+cases, we prove finite-box certificate theorems for infinite families of line
+bundles in the specified regions. We also identify new wall structures on
+certain CICYs which refine the chamber decompositions suggested by
+finite-range data.
+Finally, we use the same framework to construct line bundle cohomology formula
+libraries for two CICY threefolds which had not previously been analysed in
+this way. These results suggest that Hilbert-function methods can provide
+promising faster inputs for future string model-building scans based on line
+bundle constructions. Keywords Calabi–Yau manifolds, sheaf cohomology, Hilbert functions, string model building 1 Introduction Line bundle and bundle-valued cohomology are basic inputs in string model
+building. For example, in heterotic compactifications, they determine spectra,
+vector-like matter, singlets and many other physics quantities. They are
+needed in large-scale scans of monad bundle models [ 1 , 2 , 3 , 4 , 5 , 6 ] and line bundle sum models on complete intersection Calabi–Yau threefolds in
+products of projective spaces (CICYs) [ 7 , 8 , 9 , 10 , 11 , 12 ] ,
+toric hypersurfaces [ 13 ] , elliptically fibered
+Calabi–Yau threefolds [ 14 ] , and generalized CICYs [ 15 , 16 ] .
+Line-bundle cohomology also appears in related model-building problems,
+including Yukawa and spectral questions and many other questions [ 17 , 18 , 19 , 20 , 21 ] . The practical importance of these computations has led to dedicated software
+and search strategies. Existing CICY computations for monad model-building
+and line-bundle sum model-building use Koszul-sequence methods developed in
+the early algorithmic heterotic literature cited above, while cohomCalg
+implements methods for
+line-bundle cohomology on toric Calabi–Yau manifolds [ 22 , 23 ] .
+More recent model-building searches use reinforcement learning, genetic
+algorithms, and quantum annealing to navigate large spaces of line-bundle or
+monad data [ 24 , 25 , 26 , 27 ] .
+These developments make the same bottleneck increasingly visible: one must
+evaluate many cohomology dimensions, often for large families of line
+bundles, and the expensive part is usually the rank of the induced Koszul maps. For CICYs, the standard calculation resolves \mathcal{O}_{X}(k) by the
+ambient Koszul complex, computes ambient cohomology by the
+Bott–Borel–Weil theorem and the Künneth formula, and then determines the
+ranks of the maps induced by the defining equations [ 28 , 29 ] . The ambient dimensions are explicit
+binomial expressions, but the
+induced maps are often large and their ranks vary with the line-bundle vector k . Direct rank computation is reliable, but it can become expensive in
+many cases, making systematic scans very time consuming. Several recent studies have approached this bottleneck from different
+directions, and substantial evidence has been gathered that these ranks are
+highly structured. Chamber-wise formulae were found for several CICYs in [ 30 ] , and for favourable codimension-two CICYs in [ 31 ] . It was also shown that line-bundle cohomology
+formulae can be reconstructed from finite data by machine-learning methods [ 32 , 33 ] . Line-bundle
+cohomology under flops and across extended Kahler cones was studied in [ 34 ] . In [ 35 ] ,
+line-bundle cohomology generating functions are constructed from
+Hilbert–Poincare series associated with coordinate rings and Cox rings; see also [ 36 ] for recent
+developments in line-bundle cohomology and applications to string
+phenomenology. The common outcome is that line-bundle cohomology is often
+governed by piecewise polynomial formulae. Empirically, the main phenomenon is therefore the appearance of piecewise
+chamber structures with Hilbert-function-like behaviour in the line-bundle
+variables. These chambers are polynomial in nature, but they are separated
+by walls where additional corrections appear and where naive maximal-rank
+expectations fail. Some of these walls are already forced by the
+Bott–Borel–Weil decomposition of the ambient cohomology groups, while
+others are not visible from the ambient cohomology data alone. The point of this paper is to explain this phenomenon from the perspective
+of Hilbert functions. After Bott–Borel–Weil identifies the nonzero
+ambient cohomology rows, Serre duality converts top cohomology into dual
+polynomial pieces. The relevant Koszul differential then becomes a
+homogeneous map of graded or multigraded modules over a polynomial ring in
+the remaining variables, \Phi:\bigoplus_{j}R(-\alpha_{j})\longrightarrow\bigoplus_{\ell}R(-\beta_{\ell}). (1) For a fixed line bundle, the matrix appearing in the CICY computation is the
+degree b=b(k) component \Phi_{b} . Hence, if M=\coker\Phi , then \dim\coker(\Phi_{b})=\operatorname{HF}(M,b),\qquad\rank(\Phi_{b})=\dim\!\left(\bigoplus_{\ell}R_{b-\beta_{\ell}}\right)-\operatorname{HF}(M,b). (2) The same dictionary applies to endpoint maps, where kernel Hilbert functions
+appear instead of cokernel Hilbert functions. In this way, chamber formulae
+on the Picard lattice can be interpreted as Hilbert functions of remaining
+modules evaluated along degrees depending affinely on k . This viewpoint explains several structural features of known formulae. A
+free resolution of the graded module determines a Hilbert series whose
+numerator encodes the syzygies responsible for rank defects. Extracting
+coefficients then produces the piecewise polynomial contributions and gives
+an algebraic explanation for their wall behaviour. A key advantage is that
+the kernel or cokernel is treated as a graded module, so its Hilbert series
+encodes all degrees at once and therefore controls infinitely many line
+bundles. This often reveals structures which are difficult to see from
+finite-box formula extrapolation alone; several such refinements appear
+below. Analytic minimal resolutions of the residual graded modules are still
+difficult to obtain in many cases. However, the Hilbert numerator can also be
+certified by Gröbner-basis computations or by rank certificates for
+finitely many matrices, without losing the cohomological information needed
+here. This gives theorem-level finite-box statements on specified regions,
+often leaving some coordinates free and hence covering infinitely many line
+bundles. These computations also indicate where further analytic structure
+should emerge. From a computational perspective, a certified Hilbert function replaces large
+families of Koszul rank computations. Once the graded module is
+understood, cohomology in the corresponding chamber is obtained by
+coefficient extraction or closed formulae. This provides a practical route
+toward efficient line-bundle cohomology libraries for CICYs and, potentially,
+for related toric Calabi–Yau threefolds and their freely acting quotients. The results of this paper are as follows. First, we recover analytically
+almost all of the known chamber formulae treated here by identifying the
+corresponding Hilbert functions in the remaining variables. Second, the
+Hilbert numerators reveal additional structures not visible from
+source–target dimensions or finite-range polynomial fitting, including
+hidden subwalls inside fixed ambient-cohomology regions and delayed wall
+contributions beyond naive maximal-rank expectations. Third, we obtain new
+line-bundle cohomology formulae for CICY examples not previously treated in
+this framework, combining analytic Hilbert-series methods with replayable
+finite-box certificates. The paper is organised as follows. Section 2 introduces the Koszul spectral sequence for line bundles and explains
+the Hilbert-function rank-defect dictionary. Section 3 applies this dictionary to known hypersurface and codimension-two formulae.
+Section 4 presents new wall structures and
+new formula packages. The appendices contain the technical reductions,
+exactness statements, and certificate formats used in the finite-box
+arguments. 2 From CICY Koszul maps to Hilbert functions Line bundle cohomology on a CICY is computed via the Koszul resolution on the ambient space. After the Bott–Borel–Weil theorem determines which ambient cohomology groups are nonzero, the remaining task is to compute the ranks of the maps induced by the defining equations. In each degree, these maps are graded components of homogeneous maps between graded modules over the Cox ring of the ambient space. Their rank defects in a given degree are therefore given by the value of the Hilbert function of the corresponding cokernel module in that degree. This observation links the Koszul spectral sequence to the chamber-by-chamber formulae for Hilbert functions studied below. 2.1 The Koszul spectral sequence Let A=\prod_{i=1}^{m}\mathbb{P}^{n_{i}} (3) and let X\subset A be a smooth complete intersection cut out by a
+regular sequence f_{1},\ldots,f_{c},\qquad\deg(f_{\alpha})=d_{\alpha}\in\mathbb{Z}^{m}. (4) X is a CICY threefold when \dim X=\sum_{i}n_{i}-c=3,\quad\sum_{\alpha=1}^{c}d_{\alpha i}=n_{i}+1\quad\text{for each factor }\mathbb{P}^{n_{i}}. For k=(k_{1},\ldots,k_{m})\in\mathbb{Z}^{m} , write \mathcal{O}_{X}(k)=\mathcal{O}_{A}(k)|_{X}. The ambient Koszul resolution of this line bundle is 0\to\bigwedge^{c}E^{\vee}\otimes\mathcal{O}_{A}(k)\to\cdots\to E^{\vee}\otimes\mathcal{O}_{A}(k)\to\mathcal{O}_{A}(k)\to\mathcal{O}_{X}(k)\to 0, (5) where E=\bigoplus_{\alpha=1}^{c}\mathcal{O}_{A}(d_{\alpha}). (6) Equivalently, the p -th Koszul term is K_{p}(k)=\bigoplus_{\begin{subarray}{c}I\subset\{1,\ldots,c\}\\
+|I|=p\end{subarray}}\mathcal{O}_{A}\Big(k-\sum_{\alpha\in I}d_{\alpha}\Big),\qquad 0\leq p\leq c. (7) The differential K_{p}(k)\to K_{p-1}(k) is the signed contraction with (f_{1},\ldots,f_{c}) . Taking hypercohomology gives the standard Koszul spectral sequence E_{1}^{-p,q}=H^{q}(A,K_{p}(k)),\qquad 0\leq p\leq c, (8) converging to E_{1}^{-p,q}=H^{q}(A,K_{p}(k))\quad\Longrightarrow\quad H^{q-p}(X,\mathcal{O}_{X}(k)). (9) The first differential is induced by the Koszul differential, d_{1}:E_{1}^{-p,q}\longrightarrow E_{1}^{-p+1,q}. (10) More generally, d_{r}:E_{r}^{-p,q}\longrightarrow E_{r}^{-p+r,q-r+1}, (11) and E_{r+1}^{-p,q}=\frac{\ker\!\left(d_{r}:E_{r}^{-p,q}\to E_{r}^{-p+r,q-r+1}\right)}{\operatorname{im}\!\left(d_{r}:E_{r}^{-p-r,q+r-1}\to E_{r}^{-p,q}\right)}. (12) Thus the higher differentials are not extra choices: they are the connecting
+maps forced by the same Koszul differential after the preceding kernels and
+images have been taken. The stable page gives a filtration of H^{i}(X,\mathcal{O}_{X}(k)) , with graded
+pieces E_{\infty}^{-p,i+p} . In particular, h^{i}(X,\mathcal{O}_{X}(k))=\sum_{p}\dim E_{\infty}^{-p,i+p}. (13) Consequently, computing line bundle cohomology separates into two parts:
+first determining the ambient groups H^{q}(A,K_{p}(k)) , and then determining
+the ranks of the differentials between them. The first part is explicit. On a projective factor \mathbb{P}^{n} ,
+Bott–Borel–Weil gives H^{j}(\mathbb{P}^{n},\mathcal{O}_{\mathbb{P}^{n}}(a))\neq 0 (14) only in the following cases: \begin{array}[]{c|c|c}\text{range of }a&\text{nonzero cohomology}&\text{dimension}\\
+\hline\cr a\geq 0&H^{0}&\binom{a+n}{n}\\
+-n\leq a\leq-1&\text{none}&0\\
+a\leq-n-1&H^{n}&\binom{-a-1}{n}.\end{array} (15) By the Künneth formula, the cohomology of a line bundle on A is the tensor product
+of the corresponding factorwise cohomology groups. As k varies, the
+inequalities in ( 15 ) divide the Picard lattice into corresponding ambient-cohomology regions. Inside one such region, every nonzero ambient group is a tensor product of
+polynomial spaces and dual polynomial spaces. We use H^{0}(\mathbb{P}^{n},\mathcal{O}(a))\simeq\mathbb{C}[x_{0},\ldots,x_{n}]_{a}\qquad(a\geq 0), and, by Serre duality, H^{n}(\mathbb{P}^{n},\mathcal{O}(-a-n-1))^{\vee}\simeq\mathbb{C}[x_{0},\ldots,x_{n}]_{a}\qquad(a\geq 0). After choosing monomial bases, the maps between nonzero ambient groups
+become concrete polynomial multiplication maps induced by the defining
+equations f_{\alpha} . The dimensions of kernels and cokernels of these
+maps are the nontrivial input in the cohomology calculation. 2.2 A concrete codimension-two example with a d_{2} map We next recall a simple example in which a higher differential can be written
+explicitly as a multiplication map. Consider the codimension-two CICY X=\left[\begin{array}[]{c|cc}\mathbb{P}^{1}_{x}&1&1\\
+\mathbb{P}^{4}_{y}&2&3\end{array}\right]\subset A=\mathbb{P}^{1}_{x}\times\mathbb{P}^{4}_{y}. (16) Write the two defining equations as F=x_{0}f_{0}(y)+x_{1}f_{1}(y),\qquad G=x_{0}g_{0}(y)+x_{1}g_{1}(y), (17) where f_{0},f_{1} have degree two and g_{0},g_{1} have degree three in the y -variables. We compute the cohomology of L=\mathcal{O}_{X}(0,b),\qquad b\geq 5. The Koszul terms are K_{0}=\mathcal{O}_{A}(0,b),\qquad K_{1}=\mathcal{O}_{A}(-1,b-2)\oplus\mathcal{O}_{A}(-1,b-3),\qquad K_{2}=\mathcal{O}_{A}(-2,b-5). (18) Since H^{\bullet}(\mathbb{P}^{1},\mathcal{O}(-1))=0 , the middle column has no ambient
+cohomology. The only nonzero entries of the E_{1} -page are \displaystyle E_{1}^{0,0} \displaystyle=H^{0}(A,K_{0})\simeq H^{0}(\mathbb{P}^{4},\mathcal{O}(b)), (19) \displaystyle E_{1}^{-2,1} \displaystyle=H^{1}(A,K_{2})\simeq H^{1}(\mathbb{P}^{1},\mathcal{O}(-2))\otimes H^{0}(\mathbb{P}^{4},\mathcal{O}(b-5)). (20) Let \eta denote the standard generator of H^{1}(\mathbb{P}^{1},\mathcal{O}(-2)) . On the standard affine cover of \mathbb{P}^{1} , it may
+be represented by \eta=\frac{1}{x_{0}x_{1}}. (21) Multiplication by either x_{0} or x_{1} sends this class to a
+coboundary in \mathcal{O}(-1) . This is why the d_{1} -image through the
+acyclic middle column vanishes on cohomology, while still leaving a
+nontrivial connecting map d_{2}:E_{2}^{-2,1}\longrightarrow E_{2}^{0,0}. (22) A direct Čech computation gives, up to an overall sign, d_{2}(\eta\,h)=(f_{0}g_{1}-f_{1}g_{0})\,h, (23) for h\in H^{0}(\mathbb{P}^{4},\mathcal{O}(b-5)) . Thus the higher differential is
+multiplication by the degree-five polynomial \Delta=f_{0}g_{1}-f_{1}g_{0}\in H^{0}(\mathbb{P}^{4},\mathcal{O}(5)), (24) the determinant of the 2\times 2 coefficient matrix of F and G in
+the \mathbb{P}^{1} -variables. Equivalently, if R=\mathbb{C}[y_{0},\ldots,y_{4}], then the relevant map is the degree- b part of R(-5)\stackrel{{\scriptstyle\cdot\Delta}}{{\longrightarrow}}R, (25) namely m_{\Delta}(b):H^{0}(\mathbb{P}^{4},\mathcal{O}(b-5))\longrightarrow H^{0}(\mathbb{P}^{4},\mathcal{O}(b)),\qquad h\longmapsto\Delta h. (26) Since R is a domain and \Delta\neq 0 for a general complete
+intersection, this multiplication map is injective. Hence H^{0}(X,\mathcal{O}_{X}(0,b))\simeq H^{0}(\mathbb{P}^{4},\mathcal{O}(b))/\Delta H^{0}(\mathbb{P}^{4},\mathcal{O}(b-5)),\qquad H^{i}(X,\mathcal{O}_{X}(0,b))=0\quad(i>0), (27) and h^{0}(X,\mathcal{O}_{X}(0,b))=\binom{b+4}{4}-\binom{b-1}{4}. (28) This example illustrates the general pattern. The spectral-sequence
+calculation produces a finite-dimensional map for each value of b , but
+these maps are not unrelated. They are the graded pieces of one homogeneous
+map of R -modules. If \Delta=\sum_{|\alpha|=5}c_{\alpha}y^{\alpha}, then the matrix of m_{\Delta}(b) has columns indexed by monomials y^{\mu} with |\mu|=b-5 , rows indexed by monomials y^{\nu} with |\nu|=b , and entries \big(m_{\Delta}(b)\big)_{\nu,\mu}=\begin{cases}c_{\nu-\mu},&\nu-\mu\in\mathbb{Z}_{\geq 0}^{5},\ |\nu-\mu|=5,\\
+0,&\text{otherwise}.\end{cases} (29) Thus varying b amounts to taking different graded parts of a fixed
+multiplication map. 2.3 Graded modules and rank defects We now formulate the preceding observation in the language used in the rest
+of the paper. Let R be the Cox ring of the ambient space. For a single projective space this
+is just R=\mathbb{C}[z_{0},\ldots,z_{n}],\qquad\deg z_{\mu}=1, with R_{d}\simeq H^{0}(\mathbb{P}^{n},\mathcal{O}(d)) . For a product of projective spaces it
+is multigraded: R=\mathbb{C}[z_{i,\mu}\mid 1\leq i\leq s,\ 0\leq\mu\leq n_{i}],\qquad\deg z_{i,\mu}=e_{i}\in\mathbb{Z}^{s}, and R_{(d_{1},\ldots,d_{s})}\cong H^{0}\!\left(\mathbb{P}^{n_{1}}\times\cdots\times\mathbb{P}^{n_{s}},\mathcal{O}(d_{1},\ldots,d_{s})\right) whenever all d_{i}\geq 0 . Inside a fixed ambient-cohomology region, the relevant Koszul differential is a degree
+piece of a homogeneous map \Phi:F=\bigoplus_{a}R(-\alpha_{a})\longrightarrow G=\bigoplus_{\ell}R(-\beta_{\ell}). (30) For a given line bundle k , the actual finite-dimensional matrix is the
+degree \mathbf{b}=\mathbf{b}(k) piece \Phi_{\mathbf{b}}:F_{\mathbf{b}}\longrightarrow G_{\mathbf{b}}. (31) Here \mathbf{b}(k) is an affine function of the line bundle parameters in
+the chamber. If M=\coker\Phi, then M is a graded R -module and M_{\mathbf{b}}=G_{\mathbf{b}}/\Phi_{\mathbf{b}}(F_{\mathbf{b}})=\coker(\Phi_{\mathbf{b}}). Its Hilbert function is \operatorname{HF}(M,\mathbf{b})=\dim_{\mathbb{C}}M_{\mathbf{b}}. (32) Therefore \rank\Phi_{\mathbf{b}}=\dim G_{\mathbf{b}}-\operatorname{HF}(M,\mathbf{b}). (33) This is the rank-defect principle. The failure of the matrix \Phi_{\mathbf{b}} to have full target rank is measured by the Hilbert
+function of one fixed graded module. Kernels are obtained from the same
+identity: \dim\ker\Phi_{\mathbf{b}}=\dim F_{\mathbf{b}}-\dim G_{\mathbf{b}}+\operatorname{HF}(M,\mathbf{b}). (34) Thus every kernel or cokernel contribution in the Koszul spectral sequence
+can be expressed in terms of Hilbert functions of graded modules in the remaining variables. A free resolution packages these Hilbert functions uniformly. Suppose 0\to F_{s}\to F_{s-1}\to\cdots\to F_{1}\to F_{0}\to M\to 0,\qquad F_{i}=\bigoplus_{j}R(-\gamma_{ij}). (35) Then additivity of dimensions in each degree gives \operatorname{HS}(M;\mathbf{t})=\operatorname{HS}(R;\mathbf{t})\sum_{i}(-1)^{i}\sum_{j}\mathbf{t}^{\gamma_{ij}}. (36) The polynomial N_{M}(\mathbf{t})=\sum_{i}(-1)^{i}\sum_{j}\mathbf{t}^{\gamma_{ij}} (37) is the Hilbert numerator. Once N_{M} is known, the required dimensions
+are obtained by coefficient extraction from \operatorname{HS}(M;\mathbf{t}) . In computations it is often unnecessary, and sometimes impractical, to
+display a full minimal free resolution. It is enough to certify the Hilbert
+function or Hilbert numerator. One standard route is to compute an initial
+module: after a term order has been fixed, Gröbner degeneration preserves
+Hilbert functions. If \operatorname{in}(M) denotes the monomial module
+defined by the leading terms of a Gröbner basis for the presentation of M , then \operatorname{HF}(M,\mathbf{b})=\operatorname{HF}(\operatorname{in}(M),\mathbf{b}). This is the computational commutative-algebra form of the rank-defect
+principle used in the finite-box certificates below. The example of the previous subsection corresponds to M=R/(\Delta). Indeed, M_{b}=(R/(\Delta))_{b}=R_{b}/\Delta R_{b-5}, (38) and hence h^{0}(X,\mathcal{O}_{X}(0,b))=\operatorname{HF}(R/(\Delta),b). (39) The free resolution 0\longrightarrow R(-5)\stackrel{{\scriptstyle\cdot\Delta}}{{\longrightarrow}}R\longrightarrow R/(\Delta)\longrightarrow 0 (40) gives \operatorname{HS}(R/(\Delta);t)=\frac{1-t^{5}}{(1-t)^{5}}. (41) Extracting the coefficient of t^{b} recovers \operatorname{HF}(R/(\Delta),b)=\binom{b+4}{4}-\binom{b-1}{4}, (42) with the convention that R_{b-5}=0 for b<5 . This is the simplest
+instance of a chamber formula arising from a Hilbert function. 2.4 Elementary rank-defect models We finish with three small algebraic models. They are not meant as new
+results; their role is to fix the notation and to illustrate the types of
+graded modules which occur later. One equation. Let R=\mathbb{C}[z_{0},\ldots,z_{n}], and let H\in R_{d} be a nonzero homogeneous polynomial. At degree b ,
+multiplication by H gives \mu_{b}:R_{b-d}\longrightarrow R_{b},\qquad u\longmapsto uH. (43) The rank defect is D_{H}(b):=\dim\coker\mu_{b}=\dim R_{b}-\rank\mu_{b}. (44) Since R is a domain, \mu_{b} is injective whenever R_{b-d}\neq 0 .
+Thus D_{H}(b)=\binom{b+n}{n}-\binom{b-d+n}{n}, (45) where the second term is omitted when b<d . Equivalently, \coker\mu_{b}=(R/(H))_{b}, and 0\longrightarrow R(-d)\stackrel{{\scriptstyle\cdot H}}{{\longrightarrow}}R\longrightarrow R/(H)\longrightarrow 0 (46) gives \operatorname{HS}(R/(H);t)=\frac{1-t^{d}}{(1-t)^{n+1}},\qquad\operatorname{HF}(R/(H),b)=\binom{b+n}{n}-\binom{b-d+n}{n}. (47) A scalar complete intersection. Let R=\mathbb{C}[x_{0},x_{1},x_{2}], and let A,B\in R_{2} be two generic quadrics. Consider \Phi_{b}:R_{b-2}^{\oplus 2}\longrightarrow R_{b},\qquad(u,v)\longmapsto uA+vB. (48) The image is the degree- b part of the ideal (A,B) , so \coker\Phi_{b}=(R/(A,B))_{b}. Since A,B form a regular sequence, the Koszul resolution is 0\longrightarrow R(-4)\longrightarrow R(-2)^{2}\stackrel{{\scriptstyle(A\ B)}}{{\longrightarrow}}R\longrightarrow R/(A,B)\longrightarrow 0. (49) Hence \operatorname{HS}(R/(A,B);t)=\frac{(1-t^{2})^{2}}{(1-t)^{3}}, (50) and \operatorname{HF}(R/(A,B),b)=\binom{b+2}{2}-2\binom{b}{2}+\binom{b-2}{2}. (51) Thus \rank\Phi_{b}=\binom{b+2}{2}-\operatorname{HF}(R/(A,B),b). For b\geq 4 , the Hilbert function is the constant 4 , the length of
+the complete intersection of two quadrics in \mathbb{P}^{2} . The appearance of
+the final term in ( 51 ) is already a simple
+example of a chamber wall in degree. A vector-valued cokernel. Finally, active maps need not have scalar targets. Let R=\mathbb{C}[x,y,z], and consider \Phi:R(-1)^{3}\longrightarrow R^{2},\qquad(u,v,w)\longmapsto(xu+yv,\;xv+yw). (52) Equivalently, \Phi=\begin{pmatrix}x&y&0\\
+0&x&y\end{pmatrix}. At degree b this gives \Phi_{b}:R_{b-1}^{\oplus 3}\longrightarrow R_{b}^{\oplus 2}. The cokernel is a genuine module M=\coker\Phi , not a quotient ring R/I . The kernel of \Phi is generated by (y^{2},-xy,x^{2}), and hence 0\longrightarrow R(-3)\stackrel{{\scriptstyle(y^{2},-xy,x^{2})}}{{\longrightarrow}}R(-1)^{3}\stackrel{{\scriptstyle\Phi}}{{\longrightarrow}}R^{2}\longrightarrow M\longrightarrow 0. (53) Therefore \operatorname{HS}(M;t)=\frac{2-3t+t^{3}}{(1-t)^{3}}, (54) so \operatorname{HF}(M,b)=2\binom{b+2}{2}-3\binom{b+1}{2}+\binom{b-1}{2}. (55) Consequently, \rank\Phi_{b}=\dim R_{b}^{\oplus 2}-\operatorname{HF}(M,b). This is the prototype for the vector-valued active maps appearing later:
+the rank defect is still a Hilbert function, but the relevant object is a
+cokernel module rather than a scalar quotient ring. 3 From Hilbert functions to line bundle cohomology In this section, we apply the mechanism explained in the last section to examples studied in the literature. We will recover most of their formula analytically and put those where new structure pops up in the next section. We will first discuss the hypersurface CICYs and then the codimension two cases. 3.1 Hypersurface formulae The hypersurface examples are the cleanest testing ground for the method in this paper,
+because the Koszul resolution has at most one nontrivial multiplication map.
+Nevertheless, they already display non-trivial relationships between rank phenomena and Hilbert funcitons.
+We first treat the \mathbb{P}^{1}\times\mathbb{P}^{n} family as the model calculation;
+then we discuss the bicubic and two multigraded hypersurface examples. 3.1.1 \mathbb{P}^{1}\times\mathbb{P}^{n} hypersurfaces Let X=\{f=0\}\subset\mathbb{P}^{1}_{x}\times\mathbb{P}^{n}_{y} be a smooth hypersurface of bidegree (d,e) , and write f=\sum_{i=0}^{d}x_{0}^{d-i}x_{1}^{i}f_{i}(y),\qquad f_{i}\in S_{e},\qquad S=\mathbb{C}[y_{0},\ldots,y_{n}]. This hypersurface family is one of the examples treated by [ 35 ] . We consider the line bundle sector \mathcal{O}_{X}(-r,b) , with r\geq 2 , where the Koszul map is nontrivial. The
+ambient sequence is 0\longrightarrow\mathcal{O}_{\mathbb{P}^{1}\times\mathbb{P}^{n}}(-r-d,b-e)\xrightarrow{\ f\ }\mathcal{O}_{\mathbb{P}^{1}\times\mathbb{P}^{n}}(-r,b)\longrightarrow\mathcal{O}_{X}(-r,b)\longrightarrow 0 On this cohomology row, the map induced by multiplication by f , after
+Serre duality on the \mathbb{P}^{1} -factor, becomes a graded map over S . Choose the monomial bases H^{1}(\mathbb{P}^{1},\mathcal{O}(-r-d))\simeq H^{0}(\mathbb{P}^{1},\mathcal{O}(r+d-2))^{\vee},\qquad H^{1}(\mathbb{P}^{1},\mathcal{O}(-r))\simeq H^{0}(\mathbb{P}^{1},\mathcal{O}(r-2))^{\vee}. Contraction by \sum x_{0}^{d-i}x_{1}^{i}f_{i} gives the map \Phi_{r}:S(-e)^{r+d-1}\longrightarrow S^{r-1}. With respect to the ordered monomial bases, this map is represented by the matrix \operatorname{Syl}_{r,d}(f_{0},\ldots,f_{d})=\begin{pmatrix}f_{0}&f_{1}&\cdots&f_{d}&0&\cdots&0\\
+0&f_{0}&f_{1}&\cdots&f_{d}&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&&\ddots&0\\
+0&\cdots&0&f_{0}&f_{1}&\cdots&f_{d}\end{pmatrix}, (56) with r-1 rows and r+d-1 columns. By analogy with the Sylvester
+coefficient matrices used in resultant theory [ 37 ] , we
+call ( 56 ) the banded Sylvester matrix associated
+to f_{0}+\cdots+f_{d}z^{d} . We define M_{r}=\coker\Phi_{r}. When 1\leq d\leq n and f_{0},\ldots,f_{d} form a regular sequence in S , the matrix \Phi_{r} , represented by the banded Sylvester matrix
+( 56 ), satisfies the hypotheses of the
+Buchsbaum–Rim complex recalled in Appendix A . The
+resulting resolution is 0\longrightarrow B_{d+1}\longrightarrow\cdots\longrightarrow B_{2}\longrightarrow S(-e)^{r+d-1}\xrightarrow{\Phi_{r}}S^{r-1}\longrightarrow M_{r}\longrightarrow 0. (57) The resulting Hilbert series is \operatorname{HS}(M_{r};t)=\frac{(1-t^{e})^{d+1}}{(1-t)^{n+1}}\sum_{j=0}^{r-2}(r-1-j)\binom{d+j-1}{d-1}t^{ej}. (58) Write P_{n}(m)=\begin{cases}\binom{m+n}{n},&m\geq 0,\\
+0,&m<0.\end{cases} Under this regular-sequence hypothesis, for the remaining line bundles L=\mathcal{O}_{X}(-r,b),\qquad r\geq 2,\quad b\geq 0, the hypersurface long exact sequence gives h^{1}(X,L)=\operatorname{HF}(M_{r},b), (59) and the neighbouring H^{0} contribution is h^{0}(X,L)_{\mathrm{res}}=(r+d-1)P_{n}(b-e)-(r-1)P_{n}(b)+\operatorname{HF}(M_{r},b). (60) The Serre-dual range is obtained from K_{X}\simeq\mathcal{O}_{X}(d-2,e-n-1), and the remaining finite \mathbb{P}^{1} -boundary line bundles are computed
+directly from the same ambient long exact sequence. The formula above agrees
+with the generating-function formula for \mathbb{P}^{1}\times\mathbb{P}^{n} hypersurfaces
+in [ 35 ] . The Calabi–Yau threefold X=\left[\begin{array}[]{c|c}\mathbb{P}^{1}&2\\
+\mathbb{P}^{3}&4\end{array}\right], is a special case of the preceding calculation. Write a line bundle as \mathcal{O}_{X}(k_{1},k_{2}) , and set \operatorname{ind}(k_{1},k_{2})=\chi(X,\mathcal{O}_{X}(k_{1},k_{2}))=\frac{1}{3}\bigl(6k_{1}k_{2}^{2}+k_{2}^{3}+6k_{1}+11k_{2}\bigr). Write the defining polynomial as f=x_{0}^{2}A+x_{0}x_{1}B+x_{1}^{2}C,\quad A,B,C\in R_{4},\quad R=\mathbb{C}[y_{0},y_{1},y_{2},y_{3}]. (61) The only nontrivial wall in this example appears in the negative \mathbb{P}^{1} -branch. Put k_{1}=-r,\qquad k_{2}=b,\qquad r\geq 1,\quad b>0. Our method gives F_{r}(b):=[t^{b}]\frac{(1-t^{4})^{3}}{(1-t)^{4}}\sum_{j=0}^{r-2}(r-1-j)(j+1)t^{4j},\qquad h^{1}(X,\mathcal{O}_{X}(-r,b))=F_{r}(b), (62) where the sum is empty for r=1 , hence F_{1}(b)=0 . This agrees with
+the direct long-exact-sequence computation for \mathcal{O}_{X}(-1,b) .
+The same sequence gives h^{0}(X,\mathcal{O}_{X}(-r,b))=\operatorname{ind}(-r,b)+F_{r}(b). This identity is used only in the displayed range b>0 . On the boundary b=0 , there is no bottom- \mathbb{P}^{3} source row, and the sequence instead
+gives h^{0}=0 and h^{1}=r-1 , matching the k_{2}=0 line of [ 30 ] .
+Coefficient extraction gives F_{r}(b)=\begin{cases}-\operatorname{ind}(-r,b),&0<b<4r,\\
+r+1-\operatorname{ind}(-r,4r),&b=4r,\\
+\dfrac{32}{3}r(r^{2}-1),&b>4r.\end{cases} (63) After substituting r=-k_{1} and b=k_{2} , this is exactly the wall term
+in [ 30 ] . The remaining chambers either involve no
+actual map or are obtained from this one by Serre duality, so we do not
+repeat them here. 3.1.2 The bicubic \mathbb{P}^{2}\times\mathbb{P}^{2}[3,3] Let X\subset\mathbb{P}^{2}_{x}\times\mathbb{P}^{2}_{y},\qquad[X]=(3,3), and write f(x,y)=\sum_{|\alpha|=3}x^{\alpha}F_{\alpha}(y),\qquad F_{\alpha}\in S_{3},\qquad S=\mathbb{C}[y_{0},y_{1},y_{2}]. (64) Consider the chamber L=\mathcal{O}_{X}(-r,b),\qquad r\geq 3,\quad b\geq 0. The hypersurface sequence is 0\to\mathcal{O}_{A}(-r-3,b-3)\stackrel{{\scriptstyle f}}{{\longrightarrow}}\mathcal{O}_{A}(-r,b)\to L\to 0. Both \mathbb{P}^{2}_{x} -degrees, -r-3 and -r , are in top cohomology.
+On the \mathbb{P}^{2}_{y} -factor, only bottom cohomology contributes in the target;
+the shifted source lies in the bottom row for b\geq 3 . With the convention S_{b-3}=0 for b<3 , the
+bottom- \mathbb{P}^{2}_{y} part of the long exact sequence is 0\to H^{1}(X,L)\to H^{2}(\mathbb{P}^{2}_{x},\mathcal{O}(-r-3))\otimes S_{b-3}\stackrel{{\scriptstyle\mu_{r,b}}}{{\longrightarrow}}H^{2}(\mathbb{P}^{2}_{x},\mathcal{O}(-r))\otimes S_{b}\to H^{2}(X,L)\to 0. (65) Thus h^{1}(X,L)=\dim\ker\mu_{r,b},\qquad h^{2}(X,L)=\dim\coker\mu_{r,b}. After Serre duality on the first \mathbb{P}^{2} , the map \mu_{r,b} is the
+degree- b part of \Phi_{r}:S(-3)^{\binom{r+2}{2}}\longrightarrow S^{\binom{r-1}{2}}. (66) Rows are indexed by monomials x^{\beta} with |\beta|=r-3 , columns by
+monomials x^{\gamma} with |\gamma|=r , and (\Phi_{r})_{\beta,\gamma}=\begin{cases}F_{\gamma-\beta},&\gamma_{i}\geq\beta_{i}\ \text{for all }i,\\
+0,&\text{otherwise}.\end{cases} (67) For example, when r=4 , the rows are x_{0},x_{1},x_{2} , the columns are
+the degree-four monomials in x , and \begin{pmatrix}F_{300}&F_{210}&F_{201}&F_{120}&F_{111}&F_{102}&F_{030}&F_{021}&F_{012}&F_{003}&0&0&0&0&0\\
+0&F_{300}&0&F_{210}&F_{201}&0&F_{120}&F_{111}&F_{102}&0&F_{030}&F_{021}&F_{012}&F_{003}&0\\
+0&0&F_{300}&0&F_{210}&F_{201}&0&F_{120}&F_{111}&F_{102}&0&F_{030}&F_{021}&F_{012}&F_{003}\end{pmatrix}. This finite graded convolution matrix controls the chamber formula: its
+degree- b kernel gives h^{1} , and its degree- b cokernel gives h^{2} . Set M_{r}=\coker\Phi_{r} . We compute the Hilbert function of M_{r} by
+showing that one critical degree map is an isomorphism. For each fixed r , let \Delta_{r}(f) be the determinant of (\Phi_{r})_{r}:S_{r-3}^{\binom{r+2}{2}}\longrightarrow S_{r}^{\binom{r-1}{2}}. The source and target have the same dimension. To prove that \Delta_{r} is not the zero polynomial in the bicubic coefficients, it is
+enough to evaluate it at one convenient coefficient point. We choose the
+special, singular bicubic f_{0}=(x_{0}y_{0}+x_{1}y_{1}+x_{2}y_{2})^{3}=\sum_{|\alpha|=3}\binom{3}{\alpha}x^{\alpha}y^{\alpha}, so F_{\alpha}(y)=\binom{3}{\alpha}y^{\alpha} . The singularity of this
+special member is irrelevant here: it is used only as a nonvanishing
+certificate for the determinant polynomial. On the polynomial ring in the x - and y -variables define e=\sum_{i=0}^{2}x_{i}\frac{\partial}{\partial y_{i}},\qquad\mathsf{f}=\sum_{i=0}^{2}y_{i}\frac{\partial}{\partial x_{i}},\qquad h=\sum_{i}x_{i}\frac{\partial}{\partial x_{i}}-\sum_{i}y_{i}\frac{\partial}{\partial y_{i}}. These operators satisfy the \mathfrak{sl}_{2} relations [h,e]=2e,\qquad[h,\mathsf{f}]=-2\mathsf{f},\qquad[e,\mathsf{f}]=h. Using divided powers X^{\gamma}=x^{\gamma}/\gamma! in the x -variables, \mathsf{f}^{3}(X^{\gamma}y^{\delta})=\sum_{\begin{subarray}{c}\alpha\leq\gamma\\
+|\alpha|=3\end{subarray}}\binom{3}{\alpha}X^{\gamma-\alpha}y^{\delta+\alpha}. This is exactly the degree- r matrix (\Phi_{r})_{r} for f_{0} , up to
+diagonal rescaling of bases. Indeed |\gamma|=r , |\delta|=r-3 , \beta=\gamma-\alpha , and the target monomial has degrees |\beta|=r-3 , |\delta+\alpha|=r . Inside the total-degree 2r-3 subspace, the source \operatorname{Sym}^{r}_{x}\otimes\operatorname{Sym}^{r-3}_{y} is the h -weight 3 subspace, and the target \operatorname{Sym}^{r-3}_{x}\otimes\operatorname{Sym}^{r}_{y} is the h -weight -3 subspace. Over \mathbb{C} , in any finite-dimensional \mathfrak{sl}_{2} -representation, \mathsf{f}^{3} is an isomorphism between
+the weight- 3 and weight- -3 spaces in each irreducible summand: every
+irreducible summand which contains weight 3 also contains weight -3 ,
+and the three lowering steps between them have nonzero coefficients.
+Therefore \Delta_{r}(f_{0})\neq 0. It follows that \Delta_{r} is not identically zero. For each fixed r , the condition \Delta_{r}(f)\neq 0 defines a nonempty Zariski open
+subset of the bicubic coefficient space. Intersecting with the smooth
+locus, for this fixed r , a general smooth bicubic has (\Phi_{r})_{r} an isomorphism. For a statement uniform in all r\geq 3 , the correct
+statement is that it holds for a very general smooth bicubic. Assume now that (\Phi_{r})_{r} is an isomorphism. If b<r and v\in\ker(\Phi_{r})_{b} , choose a nonzero u\in S_{r-b} . Since \Phi_{r} is an S -module map, (\Phi_{r})_{r}(uv)=u(\Phi_{r})_{b}(v)=0. The degree- r map is injective and the source is free, so uv=0 ;
+hence v=0 . Thus (\Phi_{r})_{b} is injective for b<r . Since M_{r} is generated by the degree-zero generators coming from the target and (M_{r})_{r}=0 , all higher pieces vanish: (M_{r})_{b}=S_{b-r}(M_{r})_{r}=0,\qquad b\geq r. Thus (\Phi_{r})_{b} is surjective for b\geq r . Consequently M_{r} is a finite-length graded S -module, generated in
+degree 0 , and its last possible nonzero degree is r-1 . Its Hilbert
+function is read directly from the injective/surjective dichotomy above.
+Throughout the coefficient formulae below, terms of the form \binom{m+2}{2} coming from S_{m} are interpreted as 0 for m<0 ;
+equivalently, \binom{b-1}{2}=0 for b<3 , and similarly for the shifted
+binomials below.
+For b<r , the map (\Phi_{r})_{b} is injective, so \operatorname{HF}(M_{r},b)=\binom{r-1}{2}\binom{b+2}{2}-\binom{r+2}{2}\binom{b-1}{2}. For b\geq r , the map is surjective, so \operatorname{HF}(M_{r},b)=0 . Equivalently, \sum_{b\geq 0}\operatorname{HF}(M_{r},b)t^{b}=\sum_{b=0}^{r-1}\left[\binom{r-1}{2}\binom{b+2}{2}-\binom{r+2}{2}\binom{b-1}{2}\right]t^{b}. Summing this finite Hilbert function gives \operatorname{HS}(M_{r};t)=\frac{\binom{r-1}{2}-\binom{r+2}{2}t^{3}+\frac{3}{2}(r+2)(r-1)t^{r+1}-\frac{3}{2}(r+1)(r-2)t^{r+2}}{(1-t)^{3}}. (68) Extracting coefficients from ( 68 ), using \frac{1}{(1-t)^{3}}=\sum_{m\geq 0}\binom{m+2}{2}t^{m}, gives \displaystyle D_{r}(b):=\operatorname{HF}(M_{r},b) \displaystyle=\binom{r-1}{2}\binom{b+2}{2}-\binom{r+2}{2}\binom{b-1}{2} \displaystyle\quad+\frac{3}{2}(r+2)(r-1)\binom{b-r+1}{2}-\frac{3}{2}(r+1)(r-2)\binom{b-r}{2}, (69) where the same zero convention applies to each shifted binomial. The long
+exact sequence
+( 65 ) gives \displaystyle h^{2}(X,\mathcal{O}_{X}(-r,b)) \displaystyle=D_{r}(b), (70) \displaystyle h^{1}(X,\mathcal{O}_{X}(-r,b)) \displaystyle=\binom{r+2}{2}\binom{b-1}{2}-\binom{r-1}{2}\binom{b+2}{2}+D_{r}(b). (71) Equivalently, in the interior range, 3\leq b<r:\quad h^{1}=0,\qquad h^{2}=\frac{3}{2}(r-b)(rb-2), while for b\geq r , h^{2}=0,\qquad h^{1}=\frac{3}{2}(b-r)(rb-2). The values b=1,2 are already included by the convention S_{b-3}=0 . At b=0 , the same formula gives D_{r}(0)=\binom{r-1}{2} in h^{2} , while the omitted top \mathbb{P}^{2}_{y} -row contributes h^{3}(X,\mathcal{O}_{X}(-r,0))=\binom{r+2}{2}. Together with the effective chamber, the finite r=1,2 boundary cases,
+computed directly from the same hypersurface sequence, the x/y -symmetric
+chamber, and Serre duality, this recovers the bicubic formula of [ 30 ] for a very general bicubic. 3.1.3 Two multigraded hypersurface examples For the next two hypersurfaces we analyze only the chambers which have clean
+analytic descriptions. The chambers with new structure will be discussed in
+the next section. The Picard-number-three hypersurface \mathbb{P}^{1}\times\mathbb{P}^{1}\times\mathbb{P}^{2}[2,2,3] . Write the defining equation of the hypersurface X\subset\mathbb{P}^{1}_{x}\times\mathbb{P}^{1}_{y}\times\mathbb{P}^{2}_{z},\qquad[X]=(2,2,3), as a quadratic in the
+first \mathbb{P}^{1} : f=x_{0}^{2}A+x_{0}x_{1}B+x_{1}^{2}C,\qquad A,B,C\in H^{0}(\mathbb{P}^{1}_{y}\times\mathbb{P}^{2}_{z},\mathcal{O}(2,3)). For L=\mathcal{O}_{X}(-a,b,c),\qquad a\geq 2, the row contributing to H^{0}(X,L) , after Serre duality on \mathbb{P}^{1}_{x} , is the bidegree (b,c) part of the map \Phi_{a}:R(-(2,3))^{a+1}\longrightarrow R^{a-1},\qquad R=\mathbb{C}[y_{0},y_{1},z_{0},z_{1},z_{2}], whose rows are shifted copies of (A,B,C) . This finite matrix is the
+degree- (b,c) part of a single map on the factor B=\mathbb{P}^{1}_{y}\times\mathbb{P}^{2}_{z} namely \mathcal{O}_{B}(-2,-3)^{a+1}\longrightarrow\mathcal{O}_{B}^{a-1},\qquad(s_{0},\ldots,s_{a})\longmapsto(As_{i}+Bs_{i+1}+Cs_{i+2})_{i=0}^{a-2}. Let K_{a} be the kernel of this map: 0\to K_{a}\to\mathcal{O}_{B}(-2,-3)^{a+1}\to\mathcal{O}_{B}^{a-1}. After twisting by \mathcal{O}_{B}(b,c) and taking H^{0}(B,-) , this gives exactly
+the kernel of the finite degree- (b,c) Toeplitz matrix above. Assume
+that the common zero locus of a general triple (A,B,C) has codimension 3 in B . Under this generality assumption, K_{a} is resolved by
+the Buchsbaum–Rim complex of this band matrix. Indeed, after evaluating at
+a point of B , the rows are shifted copies of the scalar triple (A(p),B(p),C(p)) . They are linearly independent unless A(p)=B(p)=C(p)=0 , and codimension 3 is the Buchsbaum–Rim exactness
+condition for an (a-1)\times(a+1) matrix; see
+Appendix A . Hence 0\to\mathcal{O}_{B}(-2a-2,-3a-3)^{a-1}\to\mathcal{O}_{B}(-2a,-3a)^{a+1}\to K_{a}\to 0. Thus h^{0}(X,L) in the negative- \mathbb{P}^{1}_{x} chamber is h^{0}(X,\mathcal{O}_{X}(-a,b,c))=h^{0}(B,K_{a}(b,c)). Twist the displayed resolution by \mathcal{O}_{B}(b,c) . With u=b-2a,\qquad v=c-3a, we get 0\to\mathcal{O}_{B}(u-2,v-3)^{a-1}\to\mathcal{O}_{B}(u,v)^{a+1}\to K_{a}(b,c)\to 0. For this branch, set E_{a}(u,v)=\ker\!\left[H^{1}\!\left(B,\mathcal{O}_{B}(u-2,v-3)^{a-1}\right)\longrightarrow H^{1}\!\left(B,\mathcal{O}_{B}(u,v)^{a+1}\right)\right], where the map is induced by the first arrow of the displayed sequence. The
+consequences are: \begin{array}[]{c|c|c}\text{range}&h^{0}(X,\mathcal{O}_{X}(-a,b,c))&\text{source of the value}\\
+\hline\cr c<3a&0&H^{0}(B,\mathcal{O}_{B}(u,v))=0\\[5.69054pt]
+c=3a&(a+1)\max\{b-2a+1,0\}&H^{0}(B,\mathcal{O}_{B}(u,0))^{a+1}\\[5.69054pt]
+c>3a,\ b\geq 2a-1&\chi(\mathcal{O}_{X}(-a,b,c))+9a(a^{2}-1)&\text{Euler characteristic}\\[5.69054pt]
+c>3a,\ b<2a-1&\dim E_{a}(b-2a,c-3a)&\text{remaining }H^{1}\text{-kernel}\end{array} Thus the first three lines are read directly from the displayed sequence,
+while the last line is the kernel branch. We return to that branch
+in Subsection 4.1.2 , where structured
+initial-module certificates give a finite-box formula for fixed (a,b) -ranges and arbitrary c .
+In the notation k_{1}=-a , k_{2}=b , k_{3}=c , the wall line c=3a and the stable line c>3a,\ b\geq 2a-1 are exactly the
+negative- k_{1} wall and stable pieces of the k_{3}>0 formula in [ 30 ] . The final E_{a} -line is the complementary remaining
+kernel range; here we keep the reduction rather than replacing it by a
+closed chamber polynomial. The tetraquadric outside the two-negative chamber. The tetraquadric X\subset(\mathbb{P}^{1})^{4},\qquad[X]=(2,2,2,2), has defining equation f\in H^{0}((\mathbb{P}^{1})^{4},\mathcal{O}(2,2,2,2)) . For L_{k}=\mathcal{O}_{X}(k_{1},k_{2},k_{3},k_{4}) , the hypersurface sequence is 0\to\mathcal{O}_{A}(k_{1}-2,k_{2}-2,k_{3}-2,k_{4}-2)\xrightarrow{\cdot f}\mathcal{O}_{A}(k_{1},k_{2},k_{3},k_{4})\to L_{k}\to 0. Here we discuss the one-negative case with k_{1}\leq-2 and k_{2},k_{3},k_{4}\geq 2 . The stable two-negative chamber is treated in
+Section 4.1.3 . The other stable one-negative chambers are
+obtained by permuting the four \mathbb{P}^{1} -factors, while the map-free
+boundary cases are handled separately. Take k_{1}=-r , r\geq 2 , and write f=x_{10}^{2}A+x_{10}x_{11}B+x_{11}^{2}C,\qquad A,B,C\in R_{(2,2,2)} for the coordinate ring R of the remaining three \mathbb{P}^{1} ’s. The
+active map is \Phi_{r}:R(-(2,2,2))^{r+1}\longrightarrow R^{r-1}. Explicitly, \Phi_{r}(u_{0},\ldots,u_{r})=(Au_{0}+Bu_{1}+Cu_{2},\ldots,Au_{r-2}+Bu_{r-1}+Cu_{r}). Let \delta=(2,2,2) , and let M_{r}=\operatorname{coker}\big(R(-\delta)^{r+1}\to R^{r-1}\big) be the graded cokernel, and let \mathcal{M}_{r} be the corresponding
+cokernel sheaf on \mathcal{B}=(\mathbb{P}^{1})^{3} . In degree (k_{2},k_{3},k_{4}) , the source
+and target of the active
+long-exact-sequence map have dimensions (r+1)\prod_{j=2}^{4}(k_{j}-1),\qquad(r-1)\prod_{j=2}^{4}(k_{j}+1), so the degreewise cokernel of \Phi_{r} is exactly the correction term added
+to the Euler difference. Write \chi_{r}(k_{2},k_{3},k_{4})=(r+1)\prod_{j=2}^{4}(k_{j}-1)-(r-1)\prod_{j=2}^{4}(k_{j}+1). It remains to compute the degreewise cokernel. For a general triple A,B,C , the common zero set \{A=B=C=0\}\subset\mathcal{B} has codimension 3 . Away from this set the band matrix has full row rank,
+so the Buchsbaum–Rim criterion applies. Hence \mathcal{M}_{r} has the
+exact Buchsbaum–Rim complex 0\to\mathcal{O}_{\mathcal{B}}(-(r+1)\delta)^{r-1}\to\mathcal{O}_{\mathcal{B}}(-r\delta)^{r+1}\to\mathcal{O}_{\mathcal{B}}(-\delta)^{r+1}\to\mathcal{O}_{\mathcal{B}}^{r-1}\to\mathcal{M}_{r}\to 0. Taking the alternating sum of the Hilbert series of the vector-bundle terms
+in this complex gives \mathcal{H}_{r}(t_{2},t_{3},t_{4})=\frac{(r-1)-(r+1)t^{\delta}+(r+1)t^{r\delta}-(r-1)t^{(r+1)\delta}}{(1-t_{2})^{2}(1-t_{3})^{2}(1-t_{4})^{2}},\qquad t^{\delta}=t_{2}^{2}t_{3}^{2}t_{4}^{2}. For a fixed degree (k_{2},k_{3},k_{4}) , we shift the four terms above by (k_{2},k_{3},k_{4}) and evaluate each \mathbb{P}^{1} -factor by Bott’s formula.
+This gives the following function.
+After permuting the last three factors, assume 2\leq k_{2}\leq k_{3}\leq k_{4} .
+The degreewise cokernel is F_{r}(k_{2},k_{3},k_{4})=\begin{cases}(r-1)(8r^{2}+6r+k_{4}-1),&k_{2}=k_{3}=2r,\ k_{4}\geq 2r,\\
+8r(r^{2}-1),&k_{2}\geq 2r-1,\ k_{3}>2r,\\
+\max\{0,-\chi_{r}(k_{2},k_{3},k_{4})\},&\text{otherwise}.\end{cases} Thus \displaystyle h^{1}(X,\mathcal{O}_{X}(-r,k_{2},k_{3},k_{4})) \displaystyle=F_{r}(k_{2},k_{3},k_{4}), \displaystyle h^{0}(X,\mathcal{O}_{X}(-r,k_{2},k_{3},k_{4})) \displaystyle=(r+1)\prod_{j=2}^{4}(k_{j}-1)-(r-1)\prod_{j=2}^{4}(k_{j}+1)+F_{r}(k_{2},k_{3},k_{4}). Moreover h^{2}=h^{3}=0 in this stable one-negative range.
+This is exactly the stable one-negative tetraquadric formula of [ 30 ] , after permuting the four \mathbb{P}^{1} -factors if
+necessary: their h^{1} is the same F_{r} , and their h^{0} is the same
+ambient Euler difference plus F_{r} . The positive-part wall formula in
+Ref. [ 30 ] belongs to the two-negative chamber, not to
+this one-negative range. The boundary k_{1}=0 is also completely explicit. For b,c,d\geq 0 , h^{0}(X,\mathcal{O}_{X}(0,b,c,d))=(b+1)(c+1)(d+1)+u(b-2)u(c-2)u(d-2),\qquad u(m)=\max\{m+1,0\}. This is the h^{0} part of the boundary formulae. The boundary
+higher-cohomology terms come from the same ambient cohomology check; for example h^{1}(X,\mathcal{O}_{X}(0,0,c,d))=(c-1)(d-1)\qquad(c,d>0). Permuting the four factors gives the other one-negative and boundary
+pieces. Thus, up to permutations and Serre duality, the stable two-negative
+chamber is the only remaining tetraquadric chamber with a nontrivial
+active map. 3.2 Codimension-two examples In this section, we study the examples in [ 31 ] and we can see our method can recover all of their formulae analytically. 3.2.1 The quadratic \mathbb{P}^{1}\times\mathbb{P}^{4} family The first several codimension-two cases include the following three configurations X_{\alpha,\beta}=\left[\begin{array}[]{c|cc}\mathbb{P}^{1}&0&2\\
+\mathbb{P}^{4}&\alpha&\beta\end{array}\right],\qquad(\alpha,\beta)=(3,2),(2,3),(4,1), which are CICYs 7806,7882,7888 . Write g\in S_{\alpha},\qquad f=x_{0}^{2}A+x_{0}x_{1}B+x_{1}^{2}C,\qquad A,B,C\in S_{\beta},\qquad S=\mathbb{C}[y_{0},\ldots,y_{4}]. We first consider the one-negative chamber, L=\mathcal{O}_{X}(-r,m) , r\geq 1 , m>0 . Here the active
+map is the degree- m part of \Phi_{r}:S(-\alpha)^{r-1}\oplus S(-\beta)^{r+1}\longrightarrow S^{r-1}, with components (\Phi_{r}(u,v))_{i}=g\,u_{i}+A\,v_{i}+B\,v_{i+1}+C\,v_{i+2},\qquad 0\leq i\leq r-2. Let M_{r}^{(\alpha,\beta)}=\coker\Phi_{r} . The cohomology in this
+chamber is h^{1}(X_{\alpha,\beta},\mathcal{O}(-r,m))=\operatorname{HF}(M_{r}^{(\alpha,\beta)},m),\qquad h^{0}=\chi+\operatorname{HF}(M_{r}^{(\alpha,\beta)},m), and h^{q}=0 for q\geq 2 . The proof is the same row-homology argument
+as for hypersurfaces; the leftmost Koszul homology has the wrong total
+degree and does not contribute to sheaf cohomology.
+When r=1 , the target S^{r-1} is zero; we use the convention M_{1}^{(\alpha,\beta)}=0 , so h^{1}=0 in this m>0 chamber. The Hilbert series is analytic on the open locus where g,A,B,C form a regular sequence. Removing the g -block first gives the
+binary-quadratic Buchsbaum–Rim module T_{r}:S(-\beta)^{r+1}\to S^{r-1}. Since A,B,C are a regular sequence, its cokernel has Hilbert series
+given by the (d,e,n)=(2,\beta,4) case of the hypersurface model. The
+extra equation g is then a nonzerodivisor on that
+module, so \operatorname{HS}(M_{r}^{(\alpha,\beta)};t)=\frac{(1-t^{\alpha})(1-t^{\beta})^{3}}{(1-t)^{5}}\sum_{j=0}^{r-2}(j+1)(r-1-j)t^{\beta j}. One can use this Hilbert function for the remaining variables to explain all three chamber
+formulae: \begin{array}[]{c|c|c|c}\text{CICY}&(\alpha,\beta)&\text{wall}&\text{stable }h^{1}\\
+\hline\cr 7806&(3,2)&m=2r&4r(r^{2}-1)\\
+7882&(2,3)&m=3r&9r(r^{2}-1)\\
+7888&(4,1)&m=r&\dfrac{2}{3}r(r^{2}-1).\end{array} The stable entry is the length contribution \alpha\beta^{3}\sum_{j=0}^{r-2}(j+1)(r-1-j)=\frac{\alpha\beta^{3}}{6}r(r^{2}-1), which gives the three values in the table.
+For 0<m<\beta r , the Hilbert function for the remaining variables cancels the Euler
+characteristic: h^{0}=0,\qquad h^{1}=-\chi. At the wall m=\beta r , the value of h^{1} is the stable value in the
+table reduced by r-1 . For m\geq\beta r+1 , the correction Hilbert
+function has stabilized to the length contribution displayed in the table.
+The horizontal boundary m=0 is not part of the m>0 chamber above and direct calculation gives h^{0}=0,\qquad h^{1}=r-1,\qquad h^{2}=0,\qquad h^{3}=r+1. The half-plane m<0 follows by Serre duality. 3.2.2 The other two \mathbb{P}^{1}\times\mathbb{P}^{4} cases The two remaining \mathbb{P}^{1}\times\mathbb{P}^{4} cases of [ 31 ] are \begin{array}[]{c@{\qquad\qquad}c}7858:\ \left[\begin{array}[]{c|cc}\mathbb{P}^{1}&1&1\\
+\mathbb{P}^{4}&3&2\end{array}\right]&7885:\ \left[\begin{array}[]{c|cc}\mathbb{P}^{1}&1&1\\
+\mathbb{P}^{4}&4&1\end{array}\right].\end{array} We write them uniformly as (\alpha,\beta)=(3,2) and (\alpha,\beta)=(4,1) , respectively. Let R=\mathbb{C}[y_{0},\ldots,y_{4}], and write the two defining equations as: p=x_{0}A_{0}+x_{1}A_{1},\qquad q=x_{0}B_{0}+x_{1}B_{1},\qquad A_{i}\in R_{\alpha},\quad B_{i}\in R_{\beta}. We work on the open locus where X is smooth and A_{0},A_{1},B_{0},B_{1} form a homogeneous regular sequence in R . Consider the one-negative line bundle L=\mathcal{O}_{X}(-r,m),\qquad r\geq 2,\qquad m>0. The case r=1 is a low-rank boundary case: the target R^{r-1} in
+the band module below vanishes, so it is not included in this uniform
+one-negative calculation.
+The Koszul sequence on A=\mathbb{P}^{1}\times\mathbb{P}^{4} is 0\to\mathcal{O}_{A}(-r-2,m-\alpha-\beta)\to\mathcal{O}_{A}(-r-1,m-\alpha)\oplus\mathcal{O}_{A}(-r-1,m-\beta)\to\mathcal{O}_{A}(-r,m)\to L\to 0. Taking the active \mathbb{P}^{1} top-cohomology row turns multiplication by p and q into the degree- m part of \Phi_{r;\alpha,\beta}:R(-\alpha)^{r}\oplus R(-\beta)^{r}\longrightarrow R^{r-1}. For example, for r=4 , \Phi_{4;\alpha,\beta}=\begin{pmatrix}A_{0}&A_{1}&0&0&B_{0}&B_{1}&0&0\\
+0&A_{0}&A_{1}&0&0&B_{0}&B_{1}&0\\
+0&0&A_{0}&A_{1}&0&0&B_{0}&B_{1}\end{pmatrix}. Thus the correction term is the Hilbert function of the cokernel N_{r}^{(\alpha,\beta)}=\coker\Phi_{r;\alpha,\beta}. The resolution input is the following filtered form, proved in
+Appendix A . The associated graded module is
+a direct sum of shifted copies of the complete-intersection quotient: \operatorname{gr}N_{r}^{(\alpha,\beta)}\simeq\bigoplus_{\begin{subarray}{c}i,j\geq 0\\
+i+j\leq r-2\end{subarray}}\left(R/(A_{0},A_{1},B_{0},B_{1})\right)(-\alpha i-\beta j)^{\oplus(r-1-i-j)}. Since A_{0},A_{1},B_{0},B_{1} is a regular sequence, \operatorname{HS}(R/(A_{0},A_{1},B_{0},B_{1});t)=\frac{(1-t^{\alpha})^{2}(1-t^{\beta})^{2}}{(1-t)^{5}}. Therefore \operatorname{HS}(N_{r}^{(\alpha,\beta)};t)=\frac{(1-t^{\alpha})^{2}(1-t^{\beta})^{2}}{(1-t)^{5}}\sum_{\begin{subarray}{c}i,j\geq 0\\
+i+j\leq r-2\end{subarray}}(r-1-i-j)t^{\alpha i+\beta j}. (72) Equivalently, if q_{\alpha,\beta}(s)=[t^{s}]\frac{(1-t^{\alpha})^{2}(1-t^{\beta})^{2}}{(1-t)^{5}},\qquad q_{\alpha,\beta}(s)=0\quad(s<0), then \operatorname{HF}(N_{r}^{(\alpha,\beta)},m)=\sum_{\begin{subarray}{c}i,j\geq 0\\
+i+j\leq r-2\end{subarray}}(r-1-i-j)\,q_{\alpha,\beta}(m-\alpha i-\beta j). The cohomology in this chamber is h^{1}(X,\mathcal{O}_{X}(-r,m))=\operatorname{HF}(N_{r}^{(\alpha,\beta)},m),\qquad h^{0}=\chi(X,\mathcal{O}_{X}(-r,m))+\operatorname{HF}(N_{r}^{(\alpha,\beta)},m), and h^{q}=0 for q\geq 2 . Let us compare this directly with the formulae of [ 31 ] . For 7858 , put \chi_{3,2}(-r,m)=-3rm^{2}-2r+\frac{5}{6}m^{3}+\frac{25}{6}m. The corresponding one-negative formula in [ 31 ] for h^{1} is h^{1}(X,\mathcal{O}_{X}(-r,m))=\begin{cases}0,&m<0,\\
+r-1,&m=0,\\
+-\chi_{3,2}(-r,m),&0<m<2r,\\
+-\chi_{3,2}(-r,m)+1,&m=2r,\\
+-\chi_{3,2}(-r,m)+\dfrac{3}{2}(m-2r)\bigl(3+(m-2r)^{2}\bigr),&2r<m<3r,\\
+6r(r^{2}-1),&m\geq 3r.\end{cases} (73) Our expression gives the same function because \operatorname{HF}(N_{r}^{(3,2)},m)=\sum_{\begin{subarray}{c}i,j\geq 0\\
+i+j\leq r-2\end{subarray}}(r-1-i-j)\,q_{3,2}(m-3i-2j). For 0<m<2r , this coefficient sum equals -\chi_{3,2}(-r,m) . At m=2r one shifted degree in the remaining variables hits the
+first extra complete-intersection value, giving the +1 . For 2r<m<3r , the remaining non-stable shifted degrees give the displayed
+cubic correction. For m\geq 3r , every shifted degree in the sum has
+stabilized to \deg(A_{0},A_{1},B_{0},B_{1})=3^{2}\,2^{2}=36, and the triangular multiplicity \sum_{i+j\leq r-2}(r-1-i-j)=\binom{r+1}{3} gives 36\binom{r+1}{3}=6r(r^{2}-1). For 7885 , put \chi_{4,1}(-r,m)=-2rm^{2}-2r+\frac{5}{6}m^{3}+\frac{25}{6}m, and C(n)=[t^{n}]\frac{(1-t^{4})^{2}}{(1-t)^{5}(1-t^{3})},\qquad C(n)=0\quad(n<0). The corresponding formula in [ 31 ] is h^{1}(X,\mathcal{O}_{X}(-r,m))=\begin{cases}0,&m<0,\\
+r-1,&m=0,\\
+-\chi_{4,1}(-r,m),&0<m<r,\\
+-\chi_{4,1}(-r,m)+C(m-r),&r\leq m<4r-2,\\
+\frac{8}{3}r(r^{2}-1),&m\geq 4r-2.\end{cases} (74) Our expression gives the same function because \operatorname{HF}(N_{r}^{(4,1)},m)=\sum_{\begin{subarray}{c}i,j\geq 0\\
+i+j\leq r-2\end{subarray}}(r-1-i-j)\,q_{4,1}(m-4i-j). For 0<m<r , this is just the index contribution -\chi_{4,1}(-r,m) . In the intermediate region r\leq m<4r-2 , the non-stable shifted complete-intersection values are
+packaged by the coefficient C(m-r) . For m\geq 4r-2 , every shifted
+degree has stabilized to \deg(A_{0},A_{1},B_{0},B_{1})=4^{2}\,1^{2}=16, so the correction contribution is 16\binom{r+1}{3}=\frac{8}{3}r(r^{2}-1). Thus the displays ( 73 ) and
+( 74 ) are not separate ansatz formulae: they
+are the coefficient expansions of the Hilbert series
+( 72 ). For r\geq 2 and m>0 , the full cohomology is
+obtained from the same correction term by h^{\bullet}(X,\mathcal{O}_{X}(-r,m))=\bigl(\chi_{\alpha,\beta}(-r,m)+\operatorname{HF}(N_{r}^{(\alpha,\beta)},m),\operatorname{HF}(N_{r}^{(\alpha,\beta)},m),0,0\bigr). The m=0 line in the displayed formulae is a separate boundary case; the
+full cohomology vector is not obtained by substituting m=0 into the m>0 formula above. In particular, h^{3}(X,\mathcal{O}_{X}(-r,0))=h^{0}(X,\mathcal{O}_{X}(r,0))=r+1. The m<0 side is obtained from the corresponding positive chamber by
+Serre duality. There is also an isolated d_{2} -type boundary in the two-pencil cases,
+separate from the one-negative chamber above. On the ray k_{1}=0 , the
+middle Koszul terms lie in the \mathbb{P}^{1} acyclic range, and the second-page map is
+multiplication by \Delta=A_{0}B_{1}-A_{1}B_{0},\qquad\deg\Delta=\alpha+\beta=5. In the positive boundary row this is the map R_{m-5}\xrightarrow{\cdot\Delta}R_{m}, with the convention R_{n}=0 for n<0 . Hence the boundary contribution
+is the Hilbert function of R/(\Delta) ; the opposite boundary follows by
+Serre duality. This is again an ordinary cokernel of a concrete map, not a
+separate chamber ansatz. 3.2.3 Three \mathbb{P}^{2}\times\mathbb{P}^{3} cases The three remaining codimension-two examples in [ 31 ] share a single mechanism. Their
+main wall structure, for k=1,2,3 , is governed by the same left-endpoint
+kernel. The examples 7833 and 7883 also contain finer structures inside the
+chamber which are detected
+by the right-endpoint cokernel Hilbert numerator. We write the three configurations uniformly as X_{k}=\left[\begin{array}[]{c|cc}\mathbb{P}^{2}_{x}&2&1\\
+\mathbb{P}^{3}_{y}&k&4-k\end{array}\right],\qquad k=1,2,3, corresponding to CICYs 7833,7844,7883 . Let T=\mathbb{C}[x_{0},x_{1},x_{2}],\qquad S=\mathbb{C}[y_{0},\ldots,y_{3}], and write the two equations as F\in T_{2}\otimes S_{k},\qquad G\in T_{1}\otimes S_{4-k}. Thus G is linear in the \mathbb{P}^{2}_{x} -variables, G=x_{0}g_{0}+x_{1}g_{1}+x_{2}g_{2},\qquad g_{i}\in S_{4-k}. Consider L=\mathcal{O}_{X_{k}}(-r,b) , with r\geq 3 and b>0 . The relevant chamber has one top \mathbb{P}^{2}_{x} -row; the one-top \mathbb{P}^{3}_{y} -rows are Serre dual to it. After
+Serre duality on \mathbb{P}^{2}_{x} , we obtain the S -free complex 0\to T_{r-3}\otimes S(-4)\to T_{r-2}\otimes S(-k)\oplus T_{r-1}\otimes S(-(4-k))\to T_{r}\otimes S\to M_{r}^{(k)}\to 0, where T_{j}=H^{0}(\mathbb{P}^{2}_{x},\mathcal{O}(j)),\qquad S_{m}=H^{0}(\mathbb{P}^{3}_{y},\mathcal{O}(m)), and T_{j}=S_{m}=0 for negative degrees. Set C_{2}=T_{r-3}\otimes S(-4),\qquad C_{1}=T_{r-2}\otimes S(-k)\oplus T_{r-1}\otimes S(-(4-k)),\qquad C_{0}=T_{r}\otimes S. Thus M_{r}^{(k)}=\coker(C_{1}\to C_{0}) . We apply the graded dual D(-)=\operatorname{Hom}_{S}(-,S(-4)) to C_{2}\to C_{1}\to C_{0} , and then take degree b . This
+reverses the arrows: \displaystyle 0\to \displaystyle T_{r}^{\vee}\otimes S_{b-4} \displaystyle\to \displaystyle T_{r-2}^{\vee}\otimes S_{b+k-4}\oplus T_{r-1}^{\vee}\otimes S_{b-k} \displaystyle\to \displaystyle T_{r-3}^{\vee}\otimes S_{b}\to 0. The M_{r}^{(k)} -term is therefore retained as the left endpoint: applying D to C_{1}\to C_{0}\to M_{r}^{(k)}\to 0 identifies D(M_{r}^{(k)})_{b} with the left kernel of the dual row. We
+write K_{r,k}(b)=\dim\ker\!\left(D(C_{0})_{b}\to D(C_{1})_{b}\right) for the left-endpoint dimension, and R_{r,k}(b)=\dim\coker\!\left(D(C_{1})_{b}\to D(C_{2})_{b}\right) for the right-endpoint dimension. The middle term is then locked by the row
+Euler characteristic: h^{0}_{\rm row}=K_{r,k}(b),\qquad h^{1}_{\rm row}=K_{r,k}(b)+R_{r,k}(b)-\chi(\mathcal{O}_{X_{k}}(-r,b)),\qquad h^{2}_{\rm row}=R_{r,k}(b). The clean model is 7844 , corresponding to k=2 . In this case the
+left endpoint has the free resolution 0\to S(-6r-4)^{\binom{r-1}{2}}\to S(-6r-2)^{r^{2}}\to S(-6r)^{\binom{r+2}{2}}\to K_{r}^{(2)}\to 0. (75) Consequently K_{r,2}(b)=0 for 0<b<6r , the wall value is K_{r,2}(6r)=\binom{r+2}{2}, and the chamber b>6r is read from the shifted numerator \binom{r+2}{2}-r^{2}t^{2}+\binom{r-1}{2}t^{4}. Thus the main wall structure in [ 31 ] , m_{1}=-6m_{0} , is the first nonzero degree of the left endpoint.
+The same determinant computation in
+Appendix B , shifts the first possible left
+endpoint degree to (8-k)r for X_{k} . Thus the corresponding walls are b=7r,6r,5r for CICYs 7833,7844,7883 , respectively. For 7844 , the finite diagonal strip comes from the right endpoint. Let P(n)=\begin{cases}\binom{n+3}{3},&n\geq 0,\\
+0,&n<0,\end{cases}\qquad G_{r}(b)=\binom{r-1}{2}P(b)-r^{2}P(b-2)+\binom{r+2}{2}P(b-4). The endpoint calculation gives the Hilbert-series numerator of the
+right-endpoint cokernel E_{r} in the form \operatorname{HS}(E_{r};t)=\sum_{b=0}^{B_{r}}\max\{G_{r}(b)-K_{r,2}(b),0\}t^{b},\qquad N(E_{r};t)=(1-t)^{4}\operatorname{HS}(E_{r};t). (76) For 3\leq r\leq 15 the relevant right-end ranks are calculated exactly in
+the finite range where the positive part can occur. Thus the finite strip
+in 7844 is the right endpoint R_{r,2}(b) , while the wall and the
+stable chamber above b=6r are controlled by the left endpoint and the row
+Euler characteristic. The neighbouring endpoint families 7833 and 7883 use the same row,
+but they do have more structure along lines shown in the following table: \begin{array}[]{c|c|c}\text{CICY}&\text{black-line relation}&\text{verified range}\\
+\hline\cr 7833&r=2b-1&2\leq b\leq 25\\
+7833&r=2b+1&4\leq b\leq 25\\
+7883&(r,b)=(3q,2q)&1\leq q\leq 23.\end{array} On the two 7833 lines the shifted left endpoint has not yet appeared:
+its first possible degree is 7r , while b<7r on both listed
+diagonals. The right-endpoint calculations in the package give R_{r,1}(b)=0 on the same finite ranges. Hence both endpoint defects
+vanish, and the row Euler characteristic gives h^{\bullet}\bigl(X_{7833},\mathcal{O}(-2b+1,b)\bigr)=\left(0,\frac{(b+2)(4b^{2}+7b-9)}{6},0,0\right) for 2\leq b\leq 25 , and h^{\bullet}\bigl(X_{7833},\mathcal{O}(-2b-1,b)\bigr)=\left(0,\frac{(b-2)(4b^{2}-7b-9)}{6},0,0\right) for 4\leq b\leq 25 . For 7883 , the shifted left endpoint starts in
+degree 5r=15q , so it vanishes along (r,b)=(3q,2q) . The
+right-endpoint calculations give value 1 at q=1 and vanishing for 2\leq q\leq 23 . Thus h^{\bullet}\bigl(X_{7883},\mathcal{O}(-3,2)\bigr)=(0,3,1,0), and h^{\bullet}\bigl(X_{7883},\mathcal{O}(-3q,2q)\bigr)=\left(0,\frac{q(q^{2}+5)}{3},0,0\right)\qquad(2\leq q\leq 23). The proof of the left-endpoint resolution and determinant shift is given in
+the appendix. The same appendix also explains the finite right-endpoint
+checks used above: after quotienting D(C_{1})_{b} by the image of D(C_{0})_{b} , the induced map to D(C_{2})_{b} is verified to have maximal
+rank in the listed finite ranges. The accompanying archive keeps the
+specialization data and pivot/minor data needed to replay these checks.
+These black-line pieces already appear in the formulae of [ 31 ] ; the point here is to identify them with the same
+left–right endpoint mechanism. 4 New structures and new formulas from Hilbert functions In this section we use Hilbert functions in two ways. First, we
+show that they can detect new structures in line bundle cohomology which are
+invisible to polynomial extrapolation or machine-learning fits on bounded
+data. Second, we show that the same Hilbert-function viewpoint can produce
+analytic cohomology formulae on regions of the Picard lattice, and can reduce
+the remaining cases to explicit finite-rank or finite-box verification. In either case,
+we can get cohomology formula for infinitely many line bundles. 4.1 New structures from Hilbert functions We give three examples in which the ambient cohomology and the source–target
+dimensions suggest a clean maximal-rank answer, but the Hilbert
+numerator contains extra terms. These terms produce additional walls inside
+a fixed ambient-cohomology region. The first two examples come from CICY 7880 : a one-sided top- \mathbb{P}^{2} wall and a finite kernel
+calculation on the negative- \mathbb{P}^{1} branch. The third example is a
+bigraded boundary wall in the two-negative region of the tetraquadric 7862 . 4.1.1 CICY 7880 : hidden top- \mathbb{P}^{2} subwalls We now return to the hypersurface X_{7880}\subset\mathbb{P}^{1}_{x}\times\mathbb{P}^{1}_{y}\times\mathbb{P}^{2}_{z},\qquad[X_{7880}]=(2,2,3). Subsection 3.1.3 has covered some chambers of this CICY. Here
+we focus on the top- \mathbb{P}^{2}_{z} case, and we will see that there is a new
+internal wall which is not visible from ambient cohomology signs
+or from source–target dimensions. Write the defining equation as f=\sum_{\alpha,\beta=0}^{2}x_{0}^{2-\alpha}x_{1}^{\alpha}y_{0}^{2-\beta}y_{1}^{\beta}F_{\alpha\beta}(z_{0},z_{1},z_{2}),\qquad F_{\alpha\beta}\in H^{0}(\mathbb{P}^{2},\mathcal{O}_{\mathbb{P}^{2}}(3)). For L=\mathcal{O}_{X}(p,q,-c),\qquad p,q>0,\quad c\geq 3, Serre duality on the \mathbb{P}^{2}_{z} -factor turns the top- \mathbb{P}^{2}_{z} row into
+the degree- c part of \Theta_{p,q}:S(-3)^{(p+1)(q+1)}\longrightarrow S^{(p-1)(q-1)},\qquad S=\mathbb{C}[z_{0},z_{1},z_{2}], where an element of the source is written as an array u=(u_{IJ})_{0\leq I\leq p,\;0\leq J\leq q},\qquad u_{IJ}\in S_{c-3} in degree c , and u_{IJ} is understood to be zero if an index lies
+outside this range. The target is indexed by 0\leq i\leq p-2,\qquad 0\leq j\leq q-2, and the map is (\Theta u)_{ij}=\sum_{\alpha,\beta=0}^{2}F_{\alpha\beta}\,u_{i+\alpha,j+\beta}. The plus sign in the subscripts is a consequence of the Serre-dual
+transpose convention. Before dualizing, multiplication by f sends a
+source monomial indexed by (i,j) to target monomials indexed by (i+\alpha,j+\beta) . After passing to the dual map, the target component (i,j) pairs with the source components u_{i+\alpha,j+\beta} .
+Let M_{p,q}=\coker\Theta_{p,q}. Then the top- \mathbb{P}^{2}_{z} contribution is h^{1}(X,\mathcal{O}_{X}(p,q,-c))=\operatorname{HF}(M_{p,q},c), h^{2}(X,\mathcal{O}_{X}(p,q,-c))=(p+1)(q+1)\binom{c-1}{2}-(p-1)(q-1)\binom{c+2}{2}+\operatorname{HF}(M_{p,q},c), with h^{0}=h^{3}=0 in this chamber. The source and target dimensions suggest a maximal-rank prediction, but the
+graded module contains additional graded pieces that are not visible from
+these dimensions alone. In this example we prove two generic one-sided wall
+theorems: \begin{array}[]{c|c|c|c}q&c&\operatorname{HF}(M_{p,q},c)&\text{first nonzero value}\\
+\hline\cr 2&6&\max\{p-49,0\}&p=50\\
+3&9&2\max\{p-101,0\}&p=102.\end{array} These two cases suggest an infinite one-sided series of hidden walls. They
+are internal to a single ambient-cohomology region and come from
+free summands in the B=\mathbb{C}[s,t] -linear module controlling the p -direction. In the following B -Hilbert functions, the grading is
+the p-2 grading: B(-48)\quad\text{for }q=2,\qquad B(-100)^{\oplus 2}\quad\text{for }q=3. Thus the numerator detects the delayed wall as a graded object, before one
+performs any individual rank computation at the first nonzero degree. This
+provides a useful example of how Hilbert functions can track walls in line
+bundle cohomology calculations. We now treat the two cases in turn. Theorem 1 (A hidden q=2 top- \mathbb{P}^{2} subwall) . For coefficients F_{\alpha\beta} in a nonempty Zariski-open subset of
+the full coefficient space, and hence for a general smooth X_{7880} , one
+has \operatorname{HF}(M_{p,2},6)=\max\{p-49,0\}. Equivalently, h^{1}(X_{7880},\mathcal{O}_{X}(p,2,-6))=\max\{p-49,0\}, and h^{2}(X_{7880},\mathcal{O}_{X}(p,2,-6))=2p+58+\max\{p-49,0\}. Thus for p\geq 50 the active map is not of maximal rank, even though
+the source of \Theta_{p,2}(6) has dimension larger than its target. The proof is given in Appendix C . For comparison, a direct matrix calculation at one integer specialization,
+reduced modulo 32003 and checked again modulo 32009 , gives the
+following ranks, where h^{1}=\dim\operatorname{tgt}-\operatorname{rank}\Theta_{p,2}(6) and h^{2}=\dim\operatorname{src}-\operatorname{rank}\Theta_{p,2}(6) : \begin{array}[]{c|c|c|c|c}p&\dim\operatorname{src}&\dim\operatorname{tgt}&\operatorname{rank}\Theta_{p,2}(6)&(h^{0},h^{1},h^{2},h^{3})\\
+\hline\cr 48&1470&1316&1316&(0,0,154,0)\\
+49&1500&1344&1344&(0,0,156,0)\\
+50&1530&1372&1371&(0,1,159,0)\\
+51&1560&1400&1398&(0,2,162,0)\\
+52&1590&1428&1425&(0,3,165,0)\\
+60&1830&1652&1641&(0,11,189,0).\end{array} Theorem 2 (The q=3 hidden wall) . For coefficients F_{\alpha\beta} in a nonempty Zariski-open subset of
+the full coefficient space, and hence for a general smooth X_{7880} , one
+has \operatorname{HF}(M_{p,3},9)=2\max\{p-101,0\}. Equivalently, h^{1}(X_{7880},\mathcal{O}_{X}(p,3,-9))=2\max\{p-101,0\}, and h^{2}(X_{7880},\mathcal{O}_{X}(p,3,-9))=2p+222+2\max\{p-101,0\}. Proof. Write \operatorname{HS}(M_{p,3};t)=\frac{N_{p,3}(t)}{(1-t)^{3}}. The clean maximal-rank numerator in degree q=3 is N^{\rm clean}_{p,3}(t)=(2p-2)-4(p+1)t^{3}+(2p+222)t^{9}+(6p-390)t^{10}+(174-6p)t^{11}. The characteristic-zero certificate for the associated two-row B=\mathbb{C}[s,t] -linear presentation gives N_{p,3}(t)=N^{\rm clean}_{p,3}(t)+2\max\{p-101,0\}\,t^{9}(1-t)^{3}. (77) Equivalently, the hidden B -module contribution in the p-2 grading is B(-100)^{\oplus 2} . Here K_{99} denotes the degree- 99 kernel
+piece in this B -linear presentation; the required exactness condition is K_{99}=0 . We verify this open rank condition by a nonzero integer minor
+in the corresponding degree- 99 presentation matrix, detected modulo 32003 . The B(-100)^{\oplus 2} module structure supplies the forced
+upper bound, while the minor excludes further kernel contribution in the
+relevant degree. Hence the identity holds on a nonempty open set of cubic
+coefficients. Now take the coefficient of t^{9} . The clean numerator contributes zero: [t^{9}]\frac{N^{\rm clean}_{p,3}(t)}{(1-t)^{3}}=0, while the correction contributes [t^{9}]\frac{2\max\{p-101,0\}t^{9}(1-t)^{3}}{(1-t)^{3}}=2\max\{p-101,0\}. Therefore \operatorname{HF}(M_{p,3},9)=2\max\{p-101,0\}. The displayed formula for h^{2} follows from the top- \mathbb{P}^{2} row
+identity above, since (p+1)4\binom{8}{2}-(p-1)2\binom{11}{2}=2p+222. ∎ In the B -degree variable \tau , the hidden q=3 contribution is \operatorname{HS}_{\mathrm{hidden},3}(\tau)=\frac{2\tau^{100}}{(1-\tau)^{2}}. Finite-field scans suggest the following general Hilbert-numerator pattern. Conjecture 1 (Hidden wall structure in top- \mathbb{P}^{2} numerator series for 7880 ) . For a general CICY X_{7880} , the graded module M_{p,q} has, in
+degree c=3q , a hidden B=\mathbb{C}[s,t] -free contribution B(-(52q-56))^{\oplus(q-1)} in the p-2 grading.
+Equivalently, \operatorname{HS}_{\mathrm{hidden},q}(\tau)=\frac{(q-1)\tau^{52q-56}}{(1-\tau)^{2}}, and hence \operatorname{HF}(M_{p,q},3q)=(q-1)\max\{p-(52q-55),0\}. The corresponding hidden wall begins at p=52q-54. The conjecture should be read as a Hilbert-numerator statement, not as a
+rank-fitting rule. For q=2 it is exactly
+Theorem 1 ; for q=3 it is
+Theorem 2 . For q=5 , finite-field rank
+computations at the predicted
+wall give q=5,\qquad c=15,\qquad\operatorname{HF}(M_{p,5},15)=4\max\{p-205,0\}. They agree for the tested values p=200,202,204,205,206,207,208,210,215,220 over the two primes 32003 and 32009 . This is evidence for the same
+Hilbert-numerator pattern, not a characteristic-zero proof.
+The proof problem is now sharply formulated: identify, inside the B -linear dual graded module at z -degree 3q , the free summand B(-(52q-56))^{\oplus(q-1)} . Once this summand is proved, the wall
+position follows immediately from the Hilbert function of B . What is certified here. Apart from the two one-sided hidden walls above, the completed finite box has
+the expected maximal-rank Hilbert function: for every pair 2\leq p,q\leq 14 the two critical-rank checks described in
+Appendix C certify the maximal-rank,
+positive-part answer for all c\geq 0 . Thus the box gives 13^{2}=169 infinite c -rays, while Theorems 1 and 2 account for the hidden walls outside this small
+square. The machine-readable evidence for the 7880 computations in this
+subsection is included in the companion repository https://github.com/jtwangbimsa-dragon/cicylinecoh_alpha . 4.1.2 CICY 7880 : the negative- \mathbb{P}^{1} kernel box We now return to the branch left open in
+Subsection 3.1.3 . There the line bundle is L=\mathcal{O}_{X}(-a,b,c),\qquad a\geq 2, and the only unresolved range was c>3a,\qquad b<2a-1. The structured Hilbert-numerator certificates and the direct finite-field
+cohomology checks for this 7880 one-negative box are included in the same
+companion repository as above.
+For fixed a and b , the degree- (b,c) Toeplitz map can be viewed as
+one graded map over S=\mathbb{C}[z_{0},z_{1},z_{2}]: \Phi_{a,b}:S(-3)^{(a+1)(b-1)}\longrightarrow S^{(a-1)(b+1)}. (78) Here the factor b-1 is \dim H^{0}(\mathbb{P}^{1}_{y},\mathcal{O}(b-2)) , the factor b+1 is \dim H^{0}(\mathbb{P}^{1}_{y},\mathcal{O}(b)) , and the shift S(-3) accounts for the
+degree 3 in the z -variables. Thus the degree- c kernel of
+( 78 ) is exactly the kernel term
+from the table in Subsection 3.1.3 . Let E_{a,b}=\ker\Phi_{a,b},\qquad\operatorname{HS}(E_{a,b};t)=\frac{N_{a,b}(t)}{(1-t)^{3}}. Then, in this branch, h^{0}(X,\mathcal{O}_{X}(-a,b,c))=[t^{c}]\frac{N_{a,b}(t)}{(1-t)^{3}},\qquad h^{1}=h^{0}-\chi_{a}(b,c), (79) and h^{2}=h^{3}=0 , where \chi_{a}(b,c)=(-3ab-ac+bc)c+2(-a+b)+3c. In the finite box 2\leq a,b\leq 10,\qquad b<2a-1. we computed the Hilbert numerator N_{a,b}(t) of the kernel module E_{a,b} . This is a finite statement in the variables a,b , but for each
+fixed pair it determines all degrees c . Put H_{a,b}(c):=[t^{c}]\frac{N_{a,b}(t)}{(1-t)^{3}}. Let r=b-a and let \epsilon_{a}=1 if a is even and \epsilon_{a}=0 if a is odd.
+The numerator is zero unless 1\leq r\leq 4,\qquad r+2\leq a\leq 10-r. In the nonzero cases it is \displaystyle N_{a,a+1}(t) \displaystyle=2t^{3\binom{a+1}{2}}, \displaystyle 3\leq a\leq 9, \displaystyle N_{a,a+2}(t) \displaystyle=(4-\epsilon_{a})t^{3\lfloor(a+1)^{2}/4\rfloor}+\epsilon_{a}t^{3\lfloor(a+1)^{2}/4\rfloor+3}, \displaystyle 4\leq a\leq 8, \displaystyle N_{a,a+3}(t) \displaystyle=(6-2\epsilon_{a})t^{3\lfloor(a+1)^{2}/5\rfloor}+2\epsilon_{a}t^{3\lfloor(a+1)^{2}/5\rfloor+3}, \displaystyle 5\leq a\leq 7, \displaystyle N_{6,10}(t) \displaystyle=9t^{24}-t^{27}. Thus, for 2\leq a,b\leq 10,\qquad b<2a-1,\qquad c>3a, the one-negative branch is given by the simplified formula h^{\bullet}(X,\mathcal{O}_{X}(-a,b,c))=\bigl(H_{a,b}(c),\,H_{a,b}(c)-\chi_{a}(b,c),\,0,\,0\bigr). The numerator computation covers all 61 pairs in this finite box: 45 have zero numerator and the 16 listed above have nonzero numerator. 4.1.3 CICY 7862 : a certified two-negative finite box The CICY 7862 has the following configuration X_{7862}\subset(\mathbb{P}^{1})^{4},\qquad[X]=(2,2,2,2). All chambers except the genuinely two-negative ones are handled by the
+hypersurface mechanisms discussed before. The remaining chamber has the form L=\mathcal{O}_{X}(-r,-s,a,b),\qquad r,s,a,b\geq 2. The hypersurface long exact sequence reduces the computation to the active
+bigraded map \Phi_{r,s}(a,b):R_{a-2,b-2}^{(r+1)(s+1)}\longrightarrow R_{a,b}^{(r-1)(s-1)},\qquad R=\mathbb{C}[u_{0},u_{1},v_{0},v_{1}]. Let M_{r,s}=\coker\left(R(-2,-2)^{(r+1)(s+1)}\longrightarrow R^{(r-1)(s-1)}\right), and set F_{r,s}(a,b)=\operatorname{HF}(M_{r,s},(a,b)) . Then \displaystyle h^{2}(X,\mathcal{O}_{X}(-r,-s,a,b)) \displaystyle=F_{r,s}(a,b), \displaystyle h^{1}(X,\mathcal{O}_{X}(-r,-s,a,b)) \displaystyle=(r+1)(s+1)(a-1)(b-1)-(r-1)(s-1)(a+1)(b+1) \displaystyle\quad+F_{r,s}(a,b), (80) and h^{0}=h^{3}=0 . Thus the entire question is the Hilbert function of
+the vector-valued cokernel module M_{r,s} . For the tetraquadric this Hilbert function is genuinely bigraded. For a
+fixed pair (r,s) , computing an initial module of \operatorname{im}\Phi_{r,s} gives the monomial standard basis, hence the
+whole bigraded Hilbert series of M_{r,s} . Equivalently, it gives one
+bigraded Hilbert numerator N_{r,s}(u,v)=(1-u)^{2}(1-v)^{2}\operatorname{HS}(M_{r,s};u,v), whose coefficients determine all F_{r,s}(a,b) , and hence all line bundles \mathcal{O}_{X}(-r,-s,a,b) with a,b\geq 2 , through
+( 80 ). Thus a finite box in the
+negative directions still covers infinitely many line bundles. The useful
+question is therefore not whether a few sampled maps have the expected rank,
+but whether N_{r,s}(u,v) contains extra boundary terms beyond the clean
+positive-part expression. The clean maximal-rank guess would give F_{r,s}^{\rm clean}(a,b)=\max\{(r-1)(s-1)(a+1)(b+1)-(r+1)(s+1)(a-1)(b-1),0\}. Exact \mathbb{Q} -initial-module computations give a clean finite range where the
+positive-part expression is correct. The rank-certificate package then
+extends this to the finite box 2\leq r,s\leq 9,\qquad a,b\geq 2. In this box the only certified departures from the clean expression occur on
+the diagonal pairs (r,s)=(4,4),(6,6),(8,8). Theorem 3 (Certified finite box for the tetraquadric two-negative chamber) . Let X be a general smooth tetraquadric. For L=\mathcal{O}_{X}(-r,-s,a,b),\qquad 2\leq r,s\leq 9,\qquad a,b\geq 2, the cohomology is given by ( 80 ), with F_{r,s}(a,b)=F_{r,s}^{\rm clean}(a,b)+\Delta_{r,s}(a,b), where \Delta_{r,s}=0 unless (r,s)=(2m,2m) for m=2,3,4 . For these three diagonal cases, \Delta_{2m,2m}(a,b)=(m-1){\bf 1}_{a=m}\max\{b-(46m-49),0\}+(m-1){\bf 1}_{b=m}\max\{a-(46m-49),0\}. Proof sketch. The finite-box certificate reduces the claim to 2310 finite rank checks,
+all of which are closed in characteristic zero by the accompanying
+rank-certificate package. The maximal-rank rows are certified by minors or
+fixed- a structural covers, while the eight non-maximal high-wall rows are
+certified by exact rational fixed- a kernel replay; substituting the
+resulting Hilbert function into ( 80 )
+gives the formula.
+∎ The certificate package, including the rank data and replay artifacts used in
+this proof, can be found here . For (r,s)=(4,4) , writing \operatorname{HS}^{\rm clean}_{4,4}(u,v)=\sum_{a,b\geq 2}F^{\rm clean}_{4,4}(a,b)u^{a}v^{b}, the computation gives \operatorname{HS}(M_{4,4};u,v)=\operatorname{HS}^{\rm clean}_{4,4}(u,v)+\frac{u^{2}v^{44}}{(1-v)^{2}}+\frac{u^{44}v^{2}}{(1-u)^{2}}. Equivalently, for a general smooth tetraquadric, F_{4,4}(a,b)=\max\{2[17(a+b)-8(ab+1)],0\}+{\bf 1}_{a=2}\max(b-43,0)+{\bf 1}_{b=2}\max(a-43,0). (81) Thus the two new subwalls are the boundary rays a=2,\ b\geq 44 and b=2,\ a\geq 44 . For instance, at (a,b)=(2,44) the clean formula
+predicts (h^{1},h^{2})=(0,140) , while ( 81 ) gives (h^{1},h^{2})=(1,141) . The same certified finite-box theorem gives the diagonal pattern for m=2,3,4 : \operatorname{HS}(M_{2m,2m};u,v)=\operatorname{HS}^{\rm clean}_{2m,2m}(u,v)+(m-1)\left(\frac{u^{m}v^{46m-48}}{(1-v)^{2}}+\frac{u^{46m-48}v^{m}}{(1-u)^{2}}\right). For m>4 the displayed expression remains a natural extrapolation from the
+finite-field scans, but it is not part of the certified finite box above. 4.2 New formulae: CICY 7707 as a case study This subsection gives a complete worked example of the method on CICY 7707 . The goal is to show how Hilbert-function calculations can be used to
+derive new line-bundle cohomology formulae for a CICY that was not
+previously covered by a closed formula package. In practice the output has
+two complementary parts. Some chambers admit uniform analytic Hilbert-series
+arguments, while other chambers are controlled by finite-box theorems proved
+by exact computational commutative algebra. The latter can still cover
+a large and useful class of line bundles.
+Let X_{7707}=\left[\begin{array}[]{c|cc}\mathbb{P}^{1}_{x}&1&1\\
+\mathbb{P}^{1}_{y}&0&2\\
+\mathbb{P}^{3}_{z}&3&1\end{array}\right], and put D_{1}=(1,0,3),\qquad D_{2}=(1,2,1). Write F=x_{0}A_{0}(z)+x_{1}A_{1}(z),\qquad G=x_{0}B_{0}(y,z)+x_{1}B_{1}(y,z), (82) where A_{i}\in H^{0}(\mathbb{P}^{3}_{z},\mathcal{O}(3)),\qquad B_{i}\in H^{0}(\mathbb{P}^{1}_{y}\times\mathbb{P}^{3}_{z},\mathcal{O}(2,1)). Eliminating the \mathbb{P}^{1}_{x} -coordinate gives \Delta=A_{0}B_{1}-A_{1}B_{0}\in H^{0}(\mathbb{P}^{1}_{y}\times\mathbb{P}^{3}_{z},\mathcal{O}(2,4)). (83) The four Koszul shifts are 0,\qquad D_{1}=(1,0,3),\qquad D_{2}=(1,2,1),\qquad D_{1}+D_{2}=(2,2,4). The Koszul spectral sequence has E_{1}^{-p,q}(k)=\bigoplus_{|I|=p}H^{q}\!\left(A,\mathcal{O}_{A}(k-D_{I})\right),\qquad A=\mathbb{P}^{1}_{x}\times\mathbb{P}^{1}_{y}\times\mathbb{P}^{3}_{z}, with D_{I}=\sum_{i\in I}D_{i} , first differential induced by F,G , and d_{r}:E_{r}^{-p,q}\longrightarrow E_{r}^{-p+r,q-r+1}. Since the Koszul complex has length two, only d_{1} and d_{2} can occur.
+For CICY 7707 we use the partition k_{1},k_{2}\in\{\leq-2,\ -1,\ 0,\ 1,\ \geq 2\},\qquad k_{3}\in\{\leq-4,\ -3,\ -2,\ -1,\ 0,\ 1,\ 2,\ 3,\ \geq 4\}, which gives 5\cdot 5\cdot 9=225 coarse regions. Most of these
+regions contain no active rank problem. We therefore list
+only the ranges with active maps below.
+Throughout the range statements, set \chi_{7707}(r,s,t)=3rst+3rt^{2}+2st^{2}+2r+2s+\frac{t^{3}+11t}{3}. (84) k=(-\ell,b,c) and k=(\ell,-b,-c) In the range k=(-\ell,b,c),\qquad\ell,b\geq 2,\qquad c\geq 4, and its Serre-dual range k=(\ell,-b,-c) , the active rank defect is the
+Hilbert function of the module M_{\ell,3} in
+Lemma 3 . Put \rho^{x}_{\ell}(b,c)=\operatorname{HF}(M_{\ell,3};b,c), equivalently, \rho^{x}_{\ell}(b,c) is the coefficient of u^{b}v^{c} in the
+Hilbert series displayed in ( 102 ).
+The corresponding cohomology vectors are \displaystyle h^{\bullet}\bigl(X,\mathcal{O}_{X}(-\ell,b,c)\bigr) \displaystyle=\bigl(\chi_{7707}(-\ell,b,c)+\rho^{x}_{\ell}(b,c),\rho^{x}_{\ell}(b,c),0,0\bigr), (85) \displaystyle h^{\bullet}\bigl(X,\mathcal{O}_{X}(\ell,-b,-c)\bigr) \displaystyle=\bigl(0,0,\rho^{x}_{\ell}(b,c),\chi_{7707}(-\ell,b,c)+\rho^{x}_{\ell}(b,c)\bigr). (86) k=(a,-\ell,c) and k=(-a,\ell,-c) In the range k=(a,-\ell,c),\qquad a,\ell\geq 2,\qquad c\geq 4, and its Serre-dual range k=(-a,\ell,-c) , the active rank defect is the
+Hilbert function of the Buchsbaum–Rim module \mathcal{T}_{\ell,F} in
+Lemma 4 . We write \rho^{y}_{\ell}(a,c)=\operatorname{HF}(\mathcal{T}_{\ell,F};a,c), where the right-hand side is computed from the resolution
+( 103 ). The cohomology vectors are \displaystyle h^{\bullet}\bigl(X,\mathcal{O}_{X}(a,-\ell,c)\bigr) \displaystyle=\bigl(\chi_{7707}(a,-\ell,c)+\rho^{y}_{\ell}(a,c),\rho^{y}_{\ell}(a,c),0,0\bigr) (87) \displaystyle h^{\bullet}\bigl(X,\mathcal{O}_{X}(-a,\ell,-c)\bigr) \displaystyle=\bigl(0,0,\rho^{y}_{\ell}(a,c),\chi_{7707}(a,-\ell,c)+\rho^{y}_{\ell}(a,c)\bigr). (88) k=(-a,-b,m) and k=(a,b,-m) , m=1,2 This is the simplest new \mathbb{P}^{3}_{z} -top range. In low positive z -degree the equation of degree 3 in z is absent from the active
+map, so the calculation is governed by the z -linear part of G .
+Write S=\mathbb{P}^{1}_{x}\times\mathbb{P}^{1}_{y},\qquad L=\mathcal{O}_{S}(1,2), and expand G=\sum_{i=0}^{3}z_{i}G_{i}(x,y),\qquad G_{i}\in H^{0}(S,L). For a general member the four sections define a kernel bundle 0\longrightarrow M\longrightarrow\mathcal{O}_{S}^{4}\xrightarrow{\Gamma_{G}=(G_{0},\ldots,G_{3})}L\longrightarrow 0. Here “four” refers to the four z -coefficients; each G_{i} is itself
+a general element of the six-dimensional space H^{0}(S,L) .
+The m=1 row is the ordinary multiplication map by the four coefficients (G_{0},\ldots,G_{3}) . The m=2 row is only one step larger: its source is
+a symmetric 4\times 4 matrix of coefficients, and the map contracts this
+matrix with the column vector (G_{0},\ldots,G_{3}) , producing four sections
+of L . Equivalently, fibrewise a symmetric tensor uv is sent to u\otimes\Gamma_{G}(v)+v\otimes\Gamma_{G}(u). The kernel is \mathcal{F}=\operatorname{Sym}^{2}M . Theorem 4 (CICY 7707 , k=(-a,-b,m) with m=1,2 ) . Let X=X_{7707} be a general smooth member of CICY 7707 . For k_{m}=(-a,-b,m),\qquad a,b\geq 2,\qquad m\in\{1,2\}, define q_{m}(a,b) by the generating series \sum_{a,b\geq 2}q_{m}(a,b)u^{a-2}v^{b-2}=\mathcal{H}_{m}(u,v). Then \mathcal{H}_{1}(u,v)=2+u. For m=2 one has \mathcal{H}_{2}(u,v)=\frac{N_{2}(u,v)}{(1-u)^{2}(1-v)^{2}}, with \displaystyle N_{2}(u,v)= \displaystyle(14-16v+3v^{4})(1-u)^{2}+(16u-14u^{2}+u^{6})(1-v)^{2} \displaystyle+(8uv+4u^{2}v)(1-u)^{2}(1-v)^{2}. Equivalently, the first defect is supported at only two lattice points, q_{1}(a,b)=\begin{cases}2,&(a,b)=(2,2),\\
+1,&(a,b)=(3,2),\\
+0,&\text{otherwise},\end{cases} while, with [r]_{+}=\max\{r,0\} , q_{2}(a,b)=\begin{cases}2a+10+[a-7]_{+},&b=2,\ a\geq 2,\\
+18-2b,&a=2,\ 3\leq b\leq 5,\\
+b+3,&a=2,\ b\geq 6,\\
+8,&(a,b)=(3,3),\\
+4,&(a,b)=(4,3),\\
+0,&\text{otherwise}.\end{cases} Put \chi_{m}(a,b)=\binom{m+3}{3}(a-1)(b-1)-\binom{m+2}{3}a(b+1). The cohomology of \mathcal{O}_{X}(k_{m}) is concentrated in the two middle degrees
+and is given by h^{\bullet}(X,\mathcal{O}_{X}(-a,-b,m))=(0,q_{m}(a,b),q_{m}(a,b)+\chi_{m}(a,b),0), and Serre duality gives the companion formula h^{\bullet}(X,\mathcal{O}_{X}(a,b,-m))=(0,q_{m}(a,b)+\chi_{m}(a,b),q_{m}(a,b),0). Proof. Put D=(a-2,b-2) . After Serre duality in the two negative \mathbb{P}^{1} -directions, the m=1 active map is the global-section map \phi_{1}(D):H^{0}(S,\mathcal{O}_{S}(D)^{4})\longrightarrow H^{0}(S,L(D)),\qquad(f_{i})\longmapsto\sum_{i}f_{i}G_{i}. This is just the D -twist of the evaluation sequence 0\longrightarrow M(D)\longrightarrow\mathcal{O}_{S}(D)^{4}\xrightarrow{\Gamma_{G}(D)}L(D)\longrightarrow 0. Since D and L(D) have nonnegative bidegrees on \mathbb{P}^{1}\times\mathbb{P}^{1} , the groups H^{1}(S,\mathcal{O}_{S}(D)^{4}) and H^{1}(S,L(D)) vanish. The long exact sequence therefore gives \coker\phi_{1}(D)\simeq H^{1}(S,M(D)). Thus the first defect term is q_{1}(a,b)=h^{1}(S,M(a-2,b-2)). For m=2 , set E=\mathbb{C}^{4} . The active map is obtained by
+contracting a symmetric 4\times 4 coefficient matrix against the column
+vector (G_{0},\ldots,G_{3}) . Fibrewise it is the map \operatorname{Sym}^{2}E\otimes\mathcal{O}_{S}\longrightarrow E\otimes L,\qquad uv\longmapsto u\otimes\Gamma_{G}(v)+v\otimes\Gamma_{G}(u). Its kernel is exactly \operatorname{Sym}^{2}M . Indeed, at a point of S the surjection E\to L_{s} has kernel M_{s} , and after choosing a
+splitting E\simeq M_{s}\oplus L_{s} , the displayed contraction kills
+precisely the summand \operatorname{Sym}^{2}M_{s} and maps the remaining
+summands onto E\otimes L_{s} . Hence there is an exact sequence 0\longrightarrow\operatorname{Sym}^{2}M\longrightarrow\operatorname{Sym}^{2}E\otimes\mathcal{O}_{S}\longrightarrow E\otimes L\longrightarrow 0. Twisting by \mathcal{O}_{S}(D) and taking global sections gives the map \phi_{2}(D):H^{0}(S,\operatorname{Sym}^{2}E\otimes\mathcal{O}_{S}(D))\longrightarrow H^{0}(S,E\otimes L(D)). Again, for a,b\geq 2 , the source and target line bundles have no H^{1} ,
+so the long exact sequence gives \coker\phi_{2}(D)\simeq H^{1}(S,\operatorname{Sym}^{2}M(D)). Thus q_{2}(a,b)=h^{1}(S,\operatorname{Sym}^{2}M(a-2,b-2)). The remaining calculation is now ordinary cohomology on \mathbb{P}^{1}_{x}\times\mathbb{P}^{1}_{y} . The pushforward splittings of M and \operatorname{Sym}^{2}M are given in
+Appendix D ; applying them gives exactly the two
+generating functions \mathcal{H}_{1} and \mathcal{H}_{2} displayed above.
+The finite-field minors in the certificate serve only to certify that the
+required splitting type occurs on a nonempty characteristic-zero open set.
+The Euler characteristic then determines the second middle entry, and the
+formula for k=(a,b,-m) is the Serre-dual one.
+∎ k=(-a,-b,3) and k=(a,b,-3) The next z -degree is the first place where the cubic z -part of
+the (1,0,3) -equation also enters the active map. The resulting
+module is no longer governed by the small kernel bundle above. What we
+use here is a finite-width theorem: it gives an infinite formula along the
+first ten vertical strips and the first ten horizontal strips in the (a,b) -plane. This is the part of the calculation where the paper uses
+exact finite-field commutative algebra as the proof device rather than a
+uniform hand-derived splitting argument. Theorem 5 (CICY 7707 , k=(-a,-b,3) on finite-width strips) . Let X=X_{7707} be a general smooth member of CICY 7707 , and set k_{3}=(-a,-b,3),\qquad a,b\geq 2. The formula below holds on the finite-width region \mathcal{S}_{3}=\{(a,b):2\leq a\leq 10,b\geq 2\}\cup\{(a,b):a\geq 2,2\leq b\leq 10\}. For 2\leq a\leq 10 , define q_{3}(a,b) along the vertical strip by \sum_{b\geq 2}q_{3}(a,b)s^{b-2}=\frac{N^{\mathrm{v}}_{a}(s)}{(1-s)^{2}}. For 2\leq b\leq 10 , define it along the horizontal strip by \sum_{a\geq 2}q_{3}(a,b)s^{a-2}=\frac{N^{\mathrm{h}}_{b}(s)}{(1-s)^{2}}. On the overlap 2\leq a,b\leq 10 , the vertical and horizontal
+certificates give the same values.
+The normalized numerators are \begin{array}[]{c|l@{\qquad}c|l}a&N^{\mathrm{v}}_{a}(s)&b&N^{\mathrm{h}}_{b}(s)\\
+\hline\cr 2&42-40s+2s^{12}&2&42-31s\\
+3&53-60s+2s^{6}+6s^{7}&3&44-42s+2s^{15}\\
+4&64-80s+16s^{5}&4&46-53s+3s^{7}+4s^{8}\\
+5&75-100s+25s^{4}&5&48-64s+16s^{4}\\
+6&86-120s+16s^{3}+18s^{4}&6&50-75s+25s^{3}\\
+7&97-140s+32s^{3}+11s^{4}&7&52-86s+16s^{2}+18s^{3}\\
+8&108-160s+48s^{3}+4s^{4}&8&54-95s+28s^{2}+13s^{3}\\
+9&119-180s+3s^{2}+58s^{3}&9&56-98s+28s^{2}+14s^{3}\\
+10&130-200s+10s^{2}+60s^{3}&10&58-101s+28s^{2}+15s^{3}.\end{array} Equivalently, for (a,b)\in\mathcal{S}_{3} , q_{3}(a,b)=\begin{cases}4b+12,&a=2,\ b\geq 14,\\
+b+5,&a=3,\ b\geq 8,\\
+4a+8,&b=3,\ a\geq 17,\\
+[-\chi_{3}(a,b)]_{+},&\text{otherwise},\end{cases} where \chi_{3}(a,b)=20(a-1)(b-1)-a(11b+9). On \mathcal{S}_{3} , the cohomology of \mathcal{O}_{X}(k_{3}) is h^{\bullet}(X,\mathcal{O}_{X}(-a,-b,3))=(0,q_{3}(a,b),q_{3}(a,b)+\chi_{3}(a,b),0), and Serre duality gives, for the companion range k=(a,b,-3) , h^{\bullet}(X,\mathcal{O}_{X}(a,b,-3))=(0,q_{3}(a,b)+\chi_{3}(a,b),q_{3}(a,b),0). The proof constructs the
+bigraded active map in the m=3 ambient cohomology row, computes the relevant
+finite-field Hilbert numerators on the boundary strips, and provides the
+rank certificates which lift the statement to a nonempty characteristic-zero
+open set; for details please see Appendix D . k=(0,-b,c) and k=(0,b,-c) We next turn on the z -degree while keeping the first entry of k equal to zero. In this boundary range the spectral sequence has only one
+active rank problem: a moving-resultant map in the z -variables. Thus
+the formula is controlled by a one-variable Hilbert series in c , with b restricted to the finite certified box 2\leq b\leq 10 . Theorem 6 (CICY 7707 , k=(0,-b,c) in the finite b -box) . Let X=X_{7707} be a general smooth member of CICY 7707 . Consider k=(0,-b,c),\qquad 2\leq b\leq 10,\qquad c\geq 4. For a numerator N(t) , write \operatorname{HF}_{N}(c)=[t^{c}]\frac{N(t)}{(1-t)^{4}}, and let P_{3}(n)=\binom{n+3}{3} for n\geq 0 , and P_{3}(n)=0 for n<0 . The cokernel Hilbert series of the moving-resultant map is
+generated by R_{2}=t^{6}+3t^{8}-2t^{9},\qquad R_{3}=2t^{10}+4t^{12}-4t^{13}, R_{b}=t^{6}R_{b-2}+t^{4b}\bigl((b+1)-(2b-2)t+(b-3)t^{2}\bigr)\qquad(4\leq b\leq 10), N_{b}(t)=(b-1)-(b+1)t^{4}+R_{b}(t). Set \gamma_{b}(c)=\operatorname{HF}_{N_{b}}(c),\qquad\kappa_{b}(c)=\gamma_{b}(c)+(b+1)P_{3}(c-4)-(b-1)P_{3}(c). Then h^{\bullet}(X,\mathcal{O}_{X}(0,-b,c))=(\kappa_{b}(c),\gamma_{b}(c),0,0), and Serre duality gives the companion formula h^{\bullet}(X,\mathcal{O}_{X}(0,b,-c))=(0,0,\gamma_{b}(c),\kappa_{b}(c)). Here \gamma_{b}(c) is the cokernel dimension of the moving-resultant map,
+and \kappa_{b}(c) is the corresponding kernel dimension, obtained from
+Euler characteristic. The finite-field certificate proves the Hilbert
+series for 2\leq b\leq 10 uniformly in all c\geq 4 ; for details please see
+Appendix D . k=(-a,-b,c) and k=(a,b,-c) Finally we allow both \mathbb{P}^{1} -entries to be negative. The active row now
+has two endpoints. The right endpoint is still governed by the same
+resultant tail as in the b -box, shifted by the x -degree. The left
+endpoint is a separate finite-field Hilbert-series computation, certified
+for the 81 pairs 2\leq a,b\leq 10 . Theorem 7 (CICY 7707 , k=(-a,-b,c) in the finite (a,b) -box) . Let X=X_{7707} be a general smooth member of CICY 7707 . Consider k=(-a,-b,c),\qquad 2\leq a,b\leq 10,\qquad c\geq 4. For a numerator N(t) , write \operatorname{HF}_{N}(c)=[t^{c}]\frac{N(t)}{(1-t)^{4}}, and let P_{3}(n)=\binom{n+3}{3} for n\geq 0 , and P_{3}(n)=0 for n<0 . Let R_{b}(t) be the resultant tail from the finite b -box above. The right endpoint contributes N^{(0)}_{a,b}(t)=t^{3a}R_{b}(t). We write q_{\mathrm{R}}(a,b,c)=\operatorname{HF}_{N^{(0)}_{a,b}}(c) for the corresponding right-endpoint dimension. The finite-field
+certificate contains a left-endpoint numerator Q_{a,b}(t) . In the
+theorem we use only its Hilbert function; for c\geq 4 this is q_{\mathrm{L}}(a,b,c)=\begin{cases}\bigl[(12a-34)b-50a+36\bigr]_{+},&c=4,\\
+\bigl[(15a-52)b-77a+60\bigr]_{+},&c=5,\\
+54,&c=6,\ (a,b)=(10,10),\\
+0,&\text{otherwise},\end{cases} where [r]_{+}=\max\{r,0\} . Put \chi_{a,b}(c)=(a-1)(b-1)P_{3}(c)-a(b-1)P_{3}(c-3)-a(b+1)P_{3}(c-1)+(a+1)(b+1)P_{3}(c-4). Then h^{\bullet}\!\left(X,\mathcal{O}_{X}(-a,-b,c)\right)=\left(q_{\mathrm{R}}(a,b,c),q_{\mathrm{R}}(a,b,c)+q_{\mathrm{L}}(a,b,c)-\chi_{a,b}(c),q_{\mathrm{L}}(a,b,c),0\right), and Serre duality gives, for k=(a,b,-c) , h^{\bullet}\!\left(X,\mathcal{O}_{X}(a,b,-c)\right)=\left(0,q_{\mathrm{L}}(a,b,c),q_{\mathrm{R}}(a,b,c)+q_{\mathrm{L}}(a,b,c)-\chi_{a,b}(c),q_{\mathrm{R}}(a,b,c)\right). Thus q_{\mathrm{R}} gives the right-endpoint cokernel, q_{\mathrm{L}} gives the left-endpoint kernel after dualizing, and
+the middle entry is forced by Euler characteristic. The finite-field
+standard-basis certificates prove the two endpoint Hilbert series on the
+stated finite box; see
+Appendix D . The formulae above cover the ranges with nontrivial active maps. The remaining
+boundary cases, the possible d_{2} -maps, and the compatibility of the
+finite-field verifications on a common open set introduce no new formula
+mechanism; we collect them in Appendix D . 4.3 New formulae: a 7863 case study with codimension 3 We next give a codimension-three example. Let X_{7863}=\left[\begin{array}[]{c|ccc}\mathbb{P}^{3}_{x}&2&1&1\\
+\mathbb{P}^{3}_{y}&2&1&1\end{array}\right], and write the three defining equations as Q\in H^{0}(\mathbb{P}^{3}_{x}\times\mathbb{P}^{3}_{y},\mathcal{O}(2,2)),\qquad L_{1},L_{2}\in H^{0}(\mathbb{P}^{3}_{x}\times\mathbb{P}^{3}_{y},\mathcal{O}(1,1)). Let A=\mathbb{C}[x_{0},\ldots,x_{3}],\qquad S=\mathbb{C}[y_{0},\ldots,y_{3}], and let A_{r},S_{r} denote the homogeneous degree- r pieces.
+For a general member Q,L_{1},L_{2} form a regular sequence. The Koszul
+shifts are 0;\qquad(2,2),(1,1),(1,1);\qquad(3,3),(3,3),(2,2);\qquad(4,4). Set P(n)=\begin{cases}\binom{n+3}{3},&n\geq 0,\\
+0,&n<0,\end{cases}\qquad T(n)=\begin{cases}\binom{-n-1}{3},&n\leq-4,\\
+0,&n>-4.\end{cases} The pure bottom Hilbert function is the coefficient function B(a,b)=\sum_{p=0}^{3}(-1)^{p}\sum_{s\in\Sigma_{p}}P(a-s)P(b-s),\qquad\Sigma_{0}=\{0\},\quad\Sigma_{1}=\{2,1,1\},\quad\Sigma_{2}=\{3,3,2\},\quad\Sigma_{3}=\{4\}. (89) Here \Sigma_{p} is a multiset: the repeated entries represent the two independent (1,1) -equations L_{1},L_{2} .
+Equivalently, \sum_{a,b}B(a,b)u^{a}v^{b}=\frac{(1-u^{2}v^{2})(1-uv)^{2}}{(1-u)^{4}(1-v)^{4}}. We use the following intervals to get regions which we study individually \begin{array}[]{lll}\mathcal{I}_{1}=\{\leq-4\},&\mathcal{I}_{2}=\{-3\},&\mathcal{I}_{3}=\{-2\},\\
+\mathcal{I}_{4}=\{-1\},&\mathcal{I}_{5}=\{0\},&\mathcal{I}_{6}=\{1\},\\
+\mathcal{I}_{7}=\{2\},&\mathcal{I}_{8}=\{3\},&\mathcal{I}_{9}=\{\geq 4\}.\end{array} Cell C_{ij} means a\in\mathcal{I}_{i} and b\in\mathcal{I}_{j} , and we number cells by N(C_{ij})=9(i-1)+j. The resulting 9\times 9 regions can be summarized in the following table: \begin{array}[]{c|ccccccccc}a\backslash b&\leq-4&-3&-2&-1&0&1&2&3&\geq 4\\
+\hline\cr\leq-4&{\rm PT}&{\rm PT}&{\rm PT}&{\rm PT}&{\rm D}&{\rm B}&{\rm M}_{7}&{\rm M}_{8}&{\rm M}_{9}\\
+-3&{\rm PT}&{\rm PT}&{\rm PT}&{\rm PT}&{\rm D}&{\rm D}&{\rm S}_{16}&{\rm M}_{17}&{\rm M}_{18}\\
+-2&{\rm PT}&{\rm PT}&{\rm PT}&{\rm PT}&{\rm D}&{\rm D}&{\rm D}&{\rm S}_{26}&{\rm M}_{27}\\
+-1&{\rm PT}&{\rm PT}&{\rm PT}&{\rm PT}&{\rm D}&{\rm D}&{\rm D}&{\rm D}&{\rm B}^{\vee}\\
+0&{\rm D}&{\rm D}&{\rm D}&{\rm D}&{\rm D}&{\rm D}&{\rm D}&{\rm D}&{\rm D}\\
+1&{\rm B}&{\rm D}&{\rm D}&{\rm D}&{\rm D}&{\rm PB}&{\rm PB}&{\rm PB}&{\rm PB}\\
+2&{\rm M}_{55}&{\rm S}_{56}&{\rm S}_{57}&{\rm D}&{\rm D}&{\rm PB}&{\rm PB}&{\rm PB}&{\rm PB}\\
+3&{\rm M}_{64}&{\rm M}_{65}&{\rm M}_{66}&{\rm D}&{\rm D}&{\rm PB}&{\rm PB}&{\rm PB}&{\rm PB}\\
+\geq 4&{\rm M}_{73}&{\rm M}_{74}&{\rm M}_{75}&{\rm B}^{\vee}&{\rm D}&{\rm PB}&{\rm PB}&{\rm PB}&{\rm PB}.\end{array} Here PB and PT denote the pure bottom and pure top regular-sequence rows,
+D denotes a direct ambient-cohomology case with no active rank problem, B and {\rm B}^{\vee} are the two-linear boundary cells, S_{N} are small
+finite-dimensional cells with closed vectors, and M_{N} are mixed cells
+given as explicit rank complexes. We now discuss these mechanisms in the
+same range-by-range style as in the 7707 case study; the proof-level
+reductions behind the labels are collected in
+Appendix E . Direct and finite cells The PB, PT, and D entries contain no active rank problem. On the PB
+entries the Koszul row is the ordinary degree piece of the regular sequence (Q,L_{1},L_{2}) , so h^{\bullet}(X,\mathcal{O}_{X}(a,b))=(B(a,b),0,0,0). The PT entries are their Calabi–Yau Serre duals, h^{\bullet}(X,\mathcal{O}_{X}(a,b))=(0,0,0,B(-a,-b)). The D entries are direct Koszul bookkeeping: after the acyclic
+summands are removed, each surviving ambient term E_{1}^{-p,q} contributes
+in total degree q-p . The isolated finite-dimensional cells closed in
+the data are \begin{array}[]{c|c|c}\text{cell}&\text{line bundle}&h^{\bullet}\\
+\hline\cr 16&(-3,2)&(0,0,8,0)\\
+26&(-2,3)&(0,8,0,0)\\
+56&(2,-3)&(0,0,8,0)\\
+57&(2,-2)&(0,1,1,0).\end{array} Cell 66 is kept as a finite rank entry in the mixed rank-complex list
+below. Two-linear boundary cells The four B-type cells are controlled by the same two-linear remaining
+calculation. Let Y=\mathbb{P}^{3}_{x}\times\mathbb{P}^{3}_{y} . For k=(a,b) , the
+twisted Koszul sequence is \displaystyle 0\to \displaystyle\mathcal{O}_{Y}(a-4,b-4) \displaystyle\to \displaystyle\mathcal{O}_{Y}(a-3,b-3)^{\oplus 2}\oplus\mathcal{O}_{Y}(a-2,b-2) \displaystyle\to \displaystyle\mathcal{O}_{Y}(a-2,b-2)\oplus\mathcal{O}_{Y}(a-1,b-1)^{\oplus 2} \displaystyle\to \displaystyle\mathcal{O}_{Y}(a,b)\to\mathcal{O}_{X}(a,b)\to 0. In Cell 6 , where a\leq-4 and b=1 , Bott’s formula shows that all Q -summands
+and all higher Koszul summands vanish. The only surviving differential is the L_{1},L_{2} -row H^{3}(\mathbb{P}^{3}_{x},\mathcal{O}(a-1))^{\oplus 2}\longrightarrow H^{3}(\mathbb{P}^{3}_{x},\mathcal{O}(a))\otimes S_{1}. It is induced by multiplication with L_{1},L_{2} . Putting k=-a-4 ,
+Serre duality gives H^{3}(\mathbb{P}^{3}_{x},\mathcal{O}(a))^{\vee}\simeq A_{k},\qquad H^{3}(\mathbb{P}^{3}_{x},\mathcal{O}(a-1))^{\vee}\simeq A_{k+1}. If L_{j}=\sum_{i=0}^{3}\ell_{ji}(x)y_{i},\qquad j=1,2, then the dual endpoint map is \mu_{k}:S_{1}^{\vee}\otimes A_{k}\longrightarrow\mathbb{C}^{2}\otimes A_{k+1},\qquad k\geq 0, given explicitly by \eta\otimes f\longmapsto\left(\sum_{i}\eta(y_{i})\ell_{1i}f,\,\sum_{i}\eta(y_{i})\ell_{2i}f\right). Equivalently, \mu_{k} is the global-section map of S_{1}^{\vee}\otimes\mathcal{O}_{\mathbb{P}^{3}_{x}}(k)\longrightarrow\mathbb{C}^{2}\otimes\mathcal{O}_{\mathbb{P}^{3}_{x}}(k+1). For a general pair L_{1},L_{2} , the maximal minors of this 2\times 4 linear matrix have codimension 3 , so the Buchsbaum–Rim complex is exact: 0\to\mathcal{O}(-4)^{2}\to\mathcal{O}(-3)^{4}\to\mathcal{O}(-1)^{4}\to\mathcal{O}^{2}\to\operatorname{coker}\to 0. Therefore the cokernel has Hilbert series \frac{2-4t+4t^{3}-2t^{4}}{(1-t)^{4}},\qquad h^{0}(\operatorname{coker}(n))=4\quad(n\geq 1). Taking n=k+1 , we get \dim\coker\mu_{k}=4 for every k\geq 0 .
+In Cell 6 this gives h^{2}=\dim\ker(d_{1})=\dim\coker\mu_{k}=4 and Euler bookkeeping gives h^{3}=4T(a)-2T(a-1)+4. For example, after exchanging the two factors and dualizing, Cell 36 has a=-1 , b\geq 4 , and the same calculation appears with k=b-4 . Hence h^{1}=\dim\coker\mu_{b-4}=4,\qquad h^{0}=\dim\ker\mu_{b-4}=4P(b-4)-2P(b-3)+4. The other B-type cells are obtained by the same calculation after exchanging
+the two \mathbb{P}^{3} -factors and applying Serre duality. With P,T as above,
+the cohomology vectors are \begin{array}[]{c|c|c}\text{cell}&\text{range}&h^{\bullet}(X,\mathcal{O}_{X}(a,b))\\
+\hline\cr 6&a\leq-4,\ b=1&(0,0,4,\,4T(a)-2T(a-1)+4)\\
+36&a=-1,\ b\geq 4&(4P(b-4)-2P(b-3)+4,\,4,0,0)\\
+46&a=1,\ b\leq-4&(0,0,4,\,4T(b)-2T(b-1)+4)\\
+76&a\geq 4,\ b=-1&(4P(a-4)-2P(a-3)+4,\,4,0,0).\end{array} Mixed rank-complex cells Several mixed cells are still one-parameter. The following entries reduce
+to endpoint Hilbert functions: cell(s) range parameter cohomology vector 7,55 a\leq-4,\ b=2;\ a=2,\ b\leq-4 r=-a-4 or r=-b-4 (0,0,N_{2}(r)+\Delta_{2}(r),N_{2}(r)) 27,75 a=-2,\ b\geq 4;\ a\geq 4,\ b=-2 r=b-4 or r=a-4 (N_{2}(r),N_{2}(r)+\Delta_{2}(r),0,0) 8,64 a\leq-4,\ b=3;\ a=3,\ b\leq-4 r=-a-4 or r=-b-4 (0,0,N_{3}(r)+\Delta_{3}(r),N_{3}(r)) 18,74 a=-3,\ b\geq 4;\ a\geq 4,\ b=-3 r=b-4 or r=a-4 (N_{3}(r),N_{3}(r)+\Delta_{3}(r),0,0) . Here N_{2} and N_{3} are the endpoint Hilbert functions: \sum_{r\geq 0}N_{2}(r)t^{r}=\frac{10t^{8}-8t^{9}}{(1-t)^{4}},\qquad\sum_{r\geq 0}N_{3}(r)t^{r}=\frac{20t^{14}-20t^{15}+2t^{17}}{(1-t)^{4}}. With the convention for P fixed above, the symbols \Delta_{2} and \Delta_{3} in the table mean \Delta_{2}(r)=8P(r+1)-10P(r),\qquad\Delta_{3}(r)=20P(r+1)-20P(r)-2P(r+3). The letter r is only the local degree parameter along the displayed
+one-dimensional boundary ray. On the rays a\leq-4 it agrees with the
+earlier Cell 9 notation m=-a-4 ; on the other rays it is the analogous
+distance from the cohomology boundary, such as b-4 , a-4 , or -b-4 .
+The endpoint maps and Hilbert-series computations are given in
+Appendix E . Both N_{2} and N_{3} have
+characteristic-zero replays; for N_{3} we use a small-integer rational
+specialization whose standard basis has the same initial module as the
+finite-field search witness. The remaining mixed entries are either isolated finite-dimensional cells or
+the finite-box Cell 9 /Cell 73 rows: \begin{array}[]{c|c|c}\text{cell}&\text{range}&h^{\bullet}(X,\mathcal{O}_{X}(a,b))\\
+\hline\cr 9&a\leq-4,\ b\geq 4&\text{four-term mixed complex; finite-box theorem for }4\leq b\leq 10\\
+17&(-3,3)&(0,0,0,0)\\
+65&(3,-3)&(0,0,0,0)\\
+66&(3,-2)&(0,8,0,0)\\
+73&a\geq 4,\ b\leq-4&\text{Serre dual of Cell }9.\end{array} For Cell 9 , write a=-m-4 with m\geq 0 . The mixed ambient cohomology row is the
+four-term complex C_{3}(m,b)\xrightarrow{d_{3}}C_{2}(m,b)\xrightarrow{d_{2}}C_{1}(m,b)\xrightarrow{d_{1}}C_{0}(m,b), (90) where \displaystyle C_{3}(m,b) \displaystyle=A_{m+4}\otimes S_{b-4}, \displaystyle C_{2}(m,b) \displaystyle=(A_{m+3}\otimes S_{b-3})^{\oplus 2}\oplus A_{m+2}\otimes S_{b-2}, \displaystyle C_{1}(m,b) \displaystyle=A_{m+2}\otimes S_{b-2}\oplus(A_{m+1}\otimes S_{b-1})^{\oplus 2}, \displaystyle C_{0}(m,b) \displaystyle=A_{m}\otimes S_{b}. The differential is induced by the Koszul action of Q,L_{1},L_{2} , with Q acting by bidegree (-2,+2) and each L_{i} by bidegree (-1,+1) in this dualized row. The finite-box theorem is as follows. Theorem 8 (Finite-box Cell 9 for 7863 ) . For a general member of X_{7863} , the following statement holds. For each
+integer b with 4\leq b\leq 10 , and for every m\geq 0 , the leftmost map d_{3} in ( 90 ) is injective, the middle homology
+has no extra correction beyond the endpoint and Euler characteristic, and
+the right-endpoint cokernel N_{b}(m):=\dim\coker\bigl(d_{1}(m,b)\bigr) has Hilbert numerator b (1-t)^{4}\sum_{m\geq 0}N_{b}(m)t^{m} 4 36t^{20}-44t^{21}+6t^{22}+4t^{23} 5 60t^{26}-86t^{27}+24t^{28}+4t^{29} 6 94t^{32}-152t^{33}+60t^{34} 7 140t^{38}-248t^{39}+120t^{40}-10t^{41} 8 200t^{44}-380t^{45}+210t^{46}-28t^{47} 9 276t^{50}-554t^{51}+336t^{52}-56t^{53} 10 370t^{56}-776t^{57}+504t^{58}-96t^{59} . Let E(m,b)=P(m+4)P(b-4)-2P(m+3)P(b-3)+2P(m+1)P(b-1)-P(m)P(b), (91) and put D(m,b)=E(m,b)+N_{b}(m) . Then \mathcal{H}_{3}(m,b)=0,\qquad\mathcal{H}_{0}(m,b)=N_{b}(m), \mathcal{H}_{1}(m,b)=[D(m,b)]_{+},\qquad\mathcal{H}_{2}(m,b)=[-D(m,b)]_{+}, where \mathcal{H}_{i}(m,b) denotes the homology of
+( 90 ). Since this is the dualized Koszul row, h^{\bullet}(X,\mathcal{O}_{X}(-m-4,b))=\left(0,\ [-D(m,b)]_{+},\ [D(m,b)]_{+},\ N_{b}(m)\right). (92) The proof of Theorem 8 is given in
+Appendix E . The numerator table has a compact uniform form on this finite box: \displaystyle(1-t)^{4}\sum_{m\geq 0}N_{b}(m)t^{m}= \displaystyle\frac{b(b^{2}+11)}{3}\,t^{6b-4}+(-b^{3}+3b^{2}-8b+4)t^{6b-3} (93) \displaystyle+(b-1)(b-2)(b-3)t^{6b-2}-\frac{(b-1)(b-2)(b-6)}{3}\,t^{6b-1}. Thus the endpoint contribution first appears at m=6b-4,\qquad\text{equivalently}\qquad a=-6b. This is the delayed endpoint wall in the finite box. The middle
+Euler-switch wall is different. Factoring ( 91 ) gives E(m,b)=\frac{(b-m-4)(b^{2}-8bm-32b+m^{2}+8m+27)}{3}. (94) For 4\leq b\leq 10 and m\geq 0 , the only zero of D(m,b) is m=b-4,\qquad\text{equivalently}\qquad a=-b. It is negative for 0\leq m<b-4 and positive for m>b-4 ; for b=4 the negative side is empty and the zero lies on the boundary of the ray.
+More explicitly, the finite-box formula can be read as h^{\bullet}(X,\mathcal{O}_{X}(-m-4,b))=\begin{cases}(0,-E(m,b),0,0),&0\leq m<b-4,\\
+(0,0,0,0),&m=b-4,\\
+(0,0,E(m,b),0),&b-4<m<6b-4,\\
+\left(0,0,\dfrac{4b(14b^{2}-11)}{3},N_{b}(m)\right),&m\geq 6b-4.\end{cases} In the last line we used the identity E(m,b)+N_{b}(m)=\frac{4b(14b^{2}-11)}{3},\qquad m\geq 6b-4, which follows by substituting the numerator
+( 93 ).
+Hence the finite box contains two structural walls: the Euler wall a=-b , where the middle cohomology switches from h^{1} to h^{2} , and
+the hidden endpoint wall a=-6b , where h^{3}=N_{b}(m) turns on. Cell 73 is obtained from
+Theorem 8 by Serre duality. 5 Conclusions and future directions The main point of this paper is that chamber formulae for CICY line-bundle cohomology have a concrete algebraic source. Once the Koszul spectral sequence is written in explicit bases, the non-trivial maps become multiplication maps between ambient cohomology groups, and their rank defects are measured by Hilbert functions of cokernel or kernel modules. This turns many previously empirical chamber formulae into explicit rank-defect statements: in some chambers the relevant graded modules admit analytic Hilbert-series computations, while in others the ranks are fixed by finite-box certificates. We have developed this viewpoint through a range of examples. In the cases where formulae were already available in the literature, the Hilbert-function description recovers many of them from a uniform algebraic mechanism. In other examples, the same method reveals refined wall and subwall structures which are not visible from ambient cohomology regions or from polynomial fitting on finite data. These structures are not introduced as additional ansatzes; they arise from the same endpoint modules, cokernel modules, and kernel modules that control the Koszul ranks. The method also produces new line-bundle cohomology formulae for CICY examples which had not previously been treated by closed-form formula libraries. Some of these formulae follow from analytic Hilbert-series arguments, while others are obtained as finite-box formulae in regions where a uniform analytic resolution is not yet available. In both situations, the essential object is the Hilbert function attached to the non-trivial Koszul map, rather than the individual finite-dimensional rank computation for each line bundle. The computational consequence is direct. A certified formula replaces large Koszul matrix construction and rank computation by coefficient extraction from a Hilbert series, by a closed expression, or by a replayable finite certificate. Thus even a partial formula library is useful for scans: every certified chamber removes an infinite family, or a specified finite region, of matrix-rank computations from future line-bundle calculations. The results of this paper therefore suggest that Hilbert functions are natural objects to study in the construction of line-bundle cohomology formula libraries for CICYs and related Calabi–Yau geometries. Several natural directions follow from the method of this paper. First, it
+would be useful to build machine-readable CICY line-bundle cohomology
+libraries along these lines, even if many entries are finite-box theorems
+rather than global chamber formulae. Second, one should adapt the method to
+toric Calabi–Yau threefolds, where Cox rings are intrinsic and line-bundle
+cohomology is again governed by graded pieces of Koszul-type maps, but where
+the chamber structure, irrelevant ideals, and saturation issues are richer.
+Third, it would be interesting to incorporate freely acting quotients:
+equivariant Koszul maps should lead to representation-valued versions of the
+same Hilbert-function calculation, allowing invariant cohomology downstairs
+to be computed from equivariant data upstairs. Such CICY and toric
+Calabi–Yau cohomology libraries, together with their quotient versions,
+would provide faster and more transparent input for string model-building
+searches based on line-bundle constructions. Finally, it remains an
+interesting question whether each CICY admits line-bundle cohomology
+generating functions in the sense of [ 35 ] . This direction
+has its own mathematical interest, independently of the finite-box formulae
+emphasized here. Appendix A General algebraic tools Buchsbaum–Rim exactness. All polynomial rings in this appendix are over \mathbb{C} . Whenever a sequence
+of forms is assumed to be regular, the corresponding statement applies to a
+sufficiently general choice of the defining equations used in the main text. Let \phi:F\longrightarrow G be a homogeneous map of free modules over a polynomial ring R , with \operatorname{rank}F=f,\qquad\operatorname{rank}G=g,\qquad f\geq g, and put M=\operatorname{coker}\phi . Let I_{g}(\phi)\subset R be
+the ideal generated by the maximal minors of a matrix for \phi .
+The closed subscheme defined by I_{g}(\phi) is the maximal-rank
+degeneracy locus of \phi ; set-theoretically, it is the locus where \phi fails to have rank g . Its expected codimension is f-g+1 . Write p=f-g . The Buchsbaum–Rim complex resolving M , when it is
+exact, has the form 0\to C_{p+1}\to C_{p}\to\cdots\to C_{2}\to F\stackrel{{\scriptstyle\phi}}{{\longrightarrow}}G\to M\to 0, (95) with C_{i+1}=\bigwedge^{g+i}F\otimes\operatorname{Sym}^{i-1}(G^{\vee})\otimes\bigwedge^{g}G^{\vee},\qquad 1\leq i\leq p. (96) We do not need explicit formulas for the differentials; for Hilbert-series
+computations the free modules in ( 96 ) suffice. The Buchsbaum–Rim exactness criterion [ 38 , 39 ] states: If \operatorname{grade}I_{g}(\phi)\geq f-g+1 , then the
+Buchsbaum–Rim complex is exact and gives a free resolution of \operatorname{coker}\phi . Since R is a polynomial ring, this is equivalent in our applications to
+showing that I_{g}(\phi) has height f-g+1 . By the determinantal height
+bound, this is the expected and maximal possible height. In the applications
+below we verify this height condition by identifying the degeneracy locus, up
+to radical, with the zero locus of an explicit regular sequence.
+Once this condition is verified, the Hilbert numerator of \operatorname{coker}\phi is obtained directly from the alternating
+sum of the free modules in the Buchsbaum–Rim resolution. We now apply this criterion to the Toeplitz-type maps that arise in our
+Koszul computations. Assume r\geq 2 and d\geq 1 . Let S=\mathbb{C}[y_{0},\dots,y_{n}] and consider the map \Phi_{r}:S(-e)^{r+d-1}\longrightarrow S^{r-1}, where the matrix has the Toeplitz form determined by coefficients f_{0},\dots,f_{d}\in S_{e} . The target rank is g=r-1 , the source rank is f=r+d-1 ; hence f-g+1=d+1. We must therefore check that the locus where \Phi_{r} fails to have rank r-1 has codimension d+1 . Evaluate the coefficients f_{0},\dots,f_{d} at a point, obtaining
+numbers a_{0},\dots,a_{d} . The rows of the resulting numerical matrix
+are the coefficient vectors of F(z),\ zF(z),\ \dots,\ z^{r-2}F(z),\qquad F(z)=a_{0}+a_{1}z+\cdots+a_{d}z^{d}. If these rows had a linear relation, then for some scalars c_{0},\dots,c_{r-2} we would have \bigl(c_{0}+c_{1}z+\cdots+c_{r-2}z^{r-2}\bigr)F(z)=0. When F\neq 0 , this forces c_{0}+\cdots+c_{r-2}z^{r-2}=0 , hence all c_{i}=0 . Thus the rows are
+linearly independent whenever F\neq 0 . Equivalently, the rank drops at
+a point if and only if f_{0}=f_{1}=\cdots=f_{d}=0. Hence \sqrt{I_{r-1}(\Phi_{r})}=\sqrt{(f_{0},\ldots,f_{d})}. If f_{0},\dots,f_{d} form a regular sequence, this ideal has height d+1=f-g+1 . Therefore the Buchsbaum–Rim criterion applies. In the Toeplitz case, the exact complex is 0\to B_{d+1}\to B_{d}\to\cdots\to B_{2}\to S(-e)^{r+d-1}\stackrel{{\scriptstyle\Phi_{r}}}{{\longrightarrow}}S^{r-1}\to M_{r}\to 0, (97) where, for 1\leq i\leq d , B_{i+1}=\bigwedge^{r-1+i}S(-e)^{r+d-1}\otimes\operatorname{Sym}^{i-1}(S^{r-1})^{\vee}\otimes\bigwedge^{r-1}(S^{r-1})^{\vee}. (98) Equivalently, B_{i+1}\cong S\!\left(-e(r-1+i)\right)^{\binom{r+d-1}{r-1+i}\binom{r+i-3}{i-1}}. The alternating sum of these free modules is the Hilbert numerator used in
+the formulae above. A Hilbert-series calculation for two linear rows. We now prove the Hilbert-series formula used for the two
+linear-in- \mathbb{P}^{1} active rows in
+( 72 ). Let R be a polynomial ring and let A_{0},A_{1}\in R_{a},\qquad B_{0},B_{1}\in R_{b} be a homogeneous regular sequence. For \ell\geq 1 , define \psi_{\ell}:R(-a)^{\ell}\oplus R(-b)^{\ell}\longrightarrow R^{\ell-1} by the matrix \psi_{\ell}=\begin{pmatrix}A_{0}&A_{1}&0&\cdots&0&B_{0}&B_{1}&0&\cdots&0\\
+0&A_{0}&A_{1}&\cdots&0&0&B_{0}&B_{1}&\cdots&0\\
+\vdots&&\ddots&\ddots&\vdots&\vdots&&\ddots&\ddots&\vdots\\
+0&\cdots&0&A_{0}&A_{1}&0&\cdots&0&B_{0}&B_{1}\end{pmatrix}, with \ell-1 rows. Put M_{\ell}(a,b)=\coker\psi_{\ell}. For \ell=1 , the target is zero and M_{1}(a,b)=0 ; the formula below
+has an empty sum and gives the same result. Lemma 1 . With the notation above, \operatorname{HS}(M_{\ell}(a,b);t)=\frac{(1-t^{a})^{2}(1-t^{b})^{2}}{(1-t)^{\dim R}}\sum_{\begin{subarray}{c}i,j\geq 0\\
+i+j\leq\ell-2\end{subarray}}(\ell-1-i-j)t^{ai+bj}. For the cases in the main text, \dim R=5 . Proof. It is useful first to prove a universal statement. Let U=\mathbb{C}[\alpha_{0},\alpha_{1},\beta_{0},\beta_{1}] with \deg\alpha_{i}=a,\qquad\deg\beta_{i}=b. Let N_{\ell} be the cokernel of the same two-band matrix, with \alpha_{0},\alpha_{1},\beta_{0},\beta_{1} in place of A_{0},A_{1},B_{0},B_{1} . Write the target generators as e_{0},\ldots,e_{\ell-2}. Thus N_{\ell} is generated by the e_{s} , subject to the relations \alpha_{0}e_{s}+\alpha_{1}e_{s-1}=0,\qquad\beta_{0}e_{s}+\beta_{1}e_{s-1}=0, for s=0,\ldots,\ell-1 , where e_{-1}=e_{\ell-1}=0 . We now give an explicit normal form. Let V_{\ell} be the graded
+vector space with basis v_{i,j,s},\qquad i,j,s\geq 0,\qquad i+j+s\leq\ell-2, where \deg v_{i,j,s}=ai+bj. Define a U -module structure on V_{\ell} by \alpha_{1}v_{i,j,s}=\begin{cases}v_{i+1,j,s},&i+j+s\leq\ell-3,\\
+0,&i+j+s=\ell-2,\end{cases} \beta_{1}v_{i,j,s}=\begin{cases}v_{i,j+1,s},&i+j+s\leq\ell-3,\\
+0,&i+j+s=\ell-2,\end{cases} and \alpha_{0}v_{i,j,s}=\begin{cases}-v_{i+1,j,s-1},&s>0,\\
+0,&s=0,\end{cases}\qquad\beta_{0}v_{i,j,s}=\begin{cases}-v_{i,j+1,s-1},&s>0,\\
+0,&s=0.\end{cases} These formulae commute with each other, so they indeed define an action
+of the polynomial ring U . The assignment e_{s}\longmapsto v_{0,0,s} respects the relations ( A ). For
+example, if 1\leq s\leq\ell-2 , then \alpha_{0}v_{0,0,s}+\alpha_{1}v_{0,0,s-1}=-v_{1,0,s-1}+v_{1,0,s-1}=0, while for s=0 and s=\ell-1 the same relation is exactly one of
+the two boundary rules. The \beta -relations are identical. Hence
+there is a well-defined surjection N_{\ell}\longrightarrow V_{\ell}. Conversely, the relations ( A ) reduce any
+monomial multiple of any e_{s} to the form \alpha_{1}^{i}\beta_{1}^{j}e_{s},\qquad i+j+s\leq\ell-2, and kill it if i+j+s>\ell-2 . Indeed, each occurrence of \alpha_{0}e_{s} or \beta_{0}e_{s} can be replaced by -\alpha_{1}e_{s-1} or -\beta_{1}e_{s-1} ; repeating this lowers the
+target index until only \alpha_{1},\beta_{1} remain, and the boundary
+relations \alpha_{1}e_{\ell-2}=\beta_{1}e_{\ell-2}=0 then kill all
+classes beyond the triangular range. Thus the corresponding classes span N_{\ell} . Their images are the basis vectors v_{i,j,s} , so they
+are linearly independent. Therefore N_{\ell}\simeq V_{\ell} as graded U -modules. Finally filter V_{\ell} by the decreasing lexicographic order of the pair (s,\ell-2-i-j-s) . Multiplication by each of \alpha_{0},\alpha_{1},\beta_{0},\beta_{1} lowers this filtration or gives
+zero. Hence every basis vector gives, in the associated graded module,
+one copy of U/(\alpha_{0},\alpha_{1},\beta_{0},\beta_{1}) shifted by ai+bj . Therefore \operatorname{gr}N_{\ell}\simeq\bigoplus_{\begin{subarray}{c}i,j\geq 0\\
+i+j\leq\ell-2\end{subarray}}\left(U/(\alpha_{0},\alpha_{1},\beta_{0},\beta_{1})\right)(-ai-bj)^{\oplus(\ell-1-i-j)}. Since a filtered module and its associated graded module have the same
+Hilbert series, this proves the universal Hilbert series. Now specialize \alpha_{i}\mapsto A_{i},\qquad\beta_{i}\mapsto B_{i}. In other words, make R a graded U -algebra by this assignment. The
+only point to check is that specialization does not change the Hilbert
+series. The graded pieces in
+( A ) are copies of U/(\alpha_{0},\alpha_{1},\beta_{0},\beta_{1}). After tensoring with R , these become R/(A_{0},A_{1},B_{0},B_{1}). Since A_{0},A_{1},B_{0},B_{1} is an R -regular sequence, the Koszul complex
+on \alpha_{0},\alpha_{1},\beta_{0},\beta_{1} , after tensoring with R , is the
+exact Koszul complex on A_{0},A_{1},B_{0},B_{1} . Hence \operatorname{Tor}_{q}^{U}\left(R,U/(\alpha_{0},\alpha_{1},\beta_{0},\beta_{1})\right)=0\qquad(q>0). Therefore the filtration specializes without additional Tor correction
+terms. Thus \operatorname{gr}M_{\ell}(a,b)\simeq\bigoplus_{\begin{subarray}{c}i,j\geq 0\\
+i+j\leq\ell-2\end{subarray}}\left(R/(A_{0},A_{1},B_{0},B_{1})\right)(-ai-bj)^{\oplus(\ell-1-i-j)}. Finally, \operatorname{HS}(R/(A_{0},A_{1},B_{0},B_{1});t)=\frac{(1-t^{a})^{2}(1-t^{b})^{2}}{(1-t)^{\dim R}}, again because the four forms are a regular sequence. Multiplying by the
+triangular shift sum gives the claimed formula.
+∎ Appendix B Endpoint arguments for the \mathbb{P}^{2}\times\mathbb{P}^{3} examples Left endpoint kernel. We first justify the free resolution used in
+( 75 ). In the notation of
+Section 3.2.3 , we specialize to k=2 , so F\in T_{2}\otimes S_{2},\qquad G\in T_{1}\otimes S_{2}. For r\geq 3 , put M_{r}=\bigl((T\otimes S)/(G,F)\bigr)_{x\text{-degree }r}. The fixed x -degree piece of the Koszul resolution is 0\to T_{r-3}\otimes S(-4)\to T_{r-2}\otimes S(-2)\oplus T_{r-1}\otimes S(-2)\to T_{r}\otimes S\to M_{r}\to 0. (99) For a general pair (G,F) , the above complex is exact and its cokernel is
+a rank-two S -module. The generic rank is \binom{r+2}{2}-r^{2}+\binom{r-1}{2}=2. We next verify reflexivity. Let U=T_{1} and W=T_{2} , and consider the incidence locus \Sigma=\bigl(\{0\}\times W\bigr)\cup\{(\ell,q)\in U\times W:\ell\neq 0,\ q\in\ell U\}. Since \dim U=3 and \dim W=6 , both components of \Sigma have
+dimension 6 , hence \operatorname{codim}_{U\oplus W}\Sigma=3 .
+For each fixed y\neq 0 , the evaluation map (G,F)\longmapsto(G_{y},F_{y})\in U\oplus W is surjective on the coefficient space. A standard incidence-dimension
+argument therefore shows that, for a general pair (G,F) , the inverse
+image of \Sigma in \operatorname{Spec}S=\mathbb{A}^{4} has dimension at
+most 1 . Outside this inverse image, G_{y}\neq 0 and F_{y}\notin G_{y}T_{1} , so (G_{y},F_{y}) is a complete intersection of degrees (1,2) in T , and \dim_{\mathbb{C}}(T/(G_{y},F_{y}))_{r}=2\qquad(r\geq 1). Thus M_{r} is locally free away from a subset of codimension at least 3 ;
+equivalently, it is locally free in codimension 2 . Serre’s S_{2} condition follows from a similar incidence argument applied
+to the origin in U\oplus W : for a general pair, G_{y}=F_{y}=0 only at y=0 . Hence the left map in ( 99 ) can fail to
+be fiberwise injective only at the origin. Dualizing the two-step free
+resolution shows that \operatorname{Ext}^{2}_{S}(M_{r},S) is supported in
+codimension 4 . After localization, Auslander–Buchsbaum over the
+regular local ring S_{\mathfrak{p}} gives depth at least 2 at primes
+of height 3 and 4 , while local freeness covers primes of height at
+most 2 . Since S is regular, M_{r} is reflexive. Its determinant is read from the free resolution: \det M_{r}\simeq S\!\left(2r^{2}-4\binom{r-1}{2}\right)=S(6r-4). For a rank-two reflexive module, M_{r}^{\vee}\simeq M_{r}\otimes(\det M_{r})^{\vee}, and hence M_{r}^{\vee}\simeq M_{r}(-(6r-4)). Apply \operatorname{Hom}_{S}(-,S(-4)) to
+( 99 ). The beginning of the dual complex is 0\to\operatorname{Hom}_{S}(M_{r},S(-4))\to T_{r}^{\vee}\otimes S(-4)\to T_{r-2}^{\vee}\otimes S(-2)\oplus T_{r-1}^{\vee}\otimes S(-2). Thus the graded left-endpoint module K_{r}^{(2)}=\ker\!\left(T_{r}^{\vee}\otimes S(-4)\to T_{r-2}^{\vee}\otimes S(-2)\oplus T_{r-1}^{\vee}\otimes S(-2)\right) is \operatorname{Hom}_{S}(M_{r},S(-4))=M_{r}^{\vee}(-4)\simeq M_{r}(-6r). Twisting ( 99 ) by -6r therefore gives 0\to S(-6r-4)^{\binom{r-1}{2}}\to S(-6r-2)^{r^{2}}\to S(-6r)^{\binom{r+2}{2}}\to K_{r}^{(2)}\to 0, which is ( 75 ). The same reflexivity argument and determinant computation for the general
+configuration X_{k} give \det M_{r}^{(k)}\simeq S\bigl((8-k)r-4\bigr). Consequently the corresponding left-endpoint module is shifted by (8-k)r . This is the source of the main wall m_{1}=-(8-k)m_{0} for k=1,2,3 . Right endpoint rank checks. We explain the finite rank statement used in
+( 76 ). In this paragraph C_{2}\to C_{1}\to C_{0} denotes the dual row from the main text; equivalently,
+with the shorter notation of Section 3.2.3 , it is D(C_{0})_{b}\longrightarrow D(C_{1})_{b}\longrightarrow D(C_{2})_{b}. Since the right-endpoint map annihilates the image of the previous arrow, it
+factors through \bar{\delta}_{b}:Q_{b}:=C_{1}(b)/\operatorname{im}\!\left(C_{2}(b)\to C_{1}(b)\right)\longrightarrow C_{0}(b). Since \dim Q_{b}=\dim C_{1}(b)-\dim C_{2}(b)+K_{r,2}(b),\qquad\dim C_{0}(b)-\dim Q_{b}=G_{r}(b)-K_{r,2}(b), maximal rank of \bar{\delta}_{b} gives \dim\coker\bar{\delta}_{b}=\max\{G_{r}(b)-K_{r,2}(b),0\}. For 3\leq r\leq 15 , the verification data exhibits nonzero minors proving
+this maximal-rank statement in every degree 0\leq b\leq B_{r} , where B_{r}=\max\{b\geq 0:G_{r}(b)-K_{r,2}(b)>0\}. It also gives a surjectivity, or full-row-rank, check in degree B_{r}+1 .
+Since the right-endpoint module E_{r} is generated in degree zero, this proves (E_{r})_{b}=0 for all b\geq B_{r}+1 . Machine-readable verification data for 7833,7844,7883 . The finite black-line statements for 7833 and 7883 use the same
+nonzero-minor principle. The companion repository https://github.com/jtwangbimsa-dragon/cicylinecoh_alpha stores replay data organized by CICY number. Each entry contains a
+deterministic specialization, a prime field, and pivot/minor data for a
+specific full-rank minor. The verifier rebuilds the corresponding integer
+matrix, reduces it modulo the specified prime, and replays the pivot/minor
+check. A successful replay proves that the same integer minor is nonzero, so
+the rank condition holds over \mathbb{Q} and on a nonempty Zariski-open subset
+of the complex coefficient space. For 7844 , the archive contains the right-endpoint checks for 3\leq r\leq 15 and 0\leq b\leq B_{r}+1 described above. For 7833 , it
+contains 46 right-endpoint checks on r=2b-1,\quad 2\leq b\leq 25,\qquad\text{and}\qquad r=2b+1,\quad 4\leq b\leq 25. For 7883 , it contains the boundary check at q=1 and 66 quotient-pivot checks for (r,b)=(3q,2q),\qquad 2\leq q\leq 23, three bottom layers for each q . For 7833 and 7883 , the verifier exploits the special structure of the
+endpoint matrices to reduce the amount of stored pivot data. After the endpoint ranks are replayed, they are used exactly as in the main
+text. For 7833 , the verified right endpoint vanishes on the two listed
+black lines, while the left endpoint vanishes there by the shifted endpoint
+numerator. For 7883 , the left endpoint vanishes on (r,b)=(3q,2q) , the right endpoint has dimension 1 at q=1 , and
+vanishes for 2\leq q\leq 23 . In every case, the remaining middle
+cohomology entry is then determined by the row Euler characteristic. Appendix C CICY 7880 : hidden walls and finite-box checks The q=2 hidden wall. We prove Theorem 1 . Let B=\mathbb{C}[s,t],\qquad S=\mathbb{C}[z_{0},z_{1},z_{2}],\qquad R=B\otimes_{\mathbb{C}}S. Write the 7880 defining polynomial as F=\sum_{\alpha,\beta=0}^{2}x_{\alpha}y_{\beta}F_{\alpha\beta}(z),\qquad F_{\alpha\beta}\in S_{3}, and set G_{\beta}=s^{2}F_{0\beta}+stF_{1\beta}+t^{2}F_{2\beta}\in B_{2}\otimes S_{3},\qquad\beta=0,1,2. For q=2 , the transpose of the active map in S -degree 6 is the B -degree p-2 part of contraction by the three forms G_{\beta} . Thus, if Q=R/(G_{0},G_{1},G_{2}), then \ker\Theta_{p,2}(6)^{T}=\operatorname{Hom}_{B}(Q_{6},B)_{p-2}. Since \operatorname{HF}(M_{p,2},6)=\dim\ker\Theta_{p,2}(6)^{T} , it remains to compute
+the graded B -module \operatorname{Hom}_{B}(Q_{6},B) . For coefficients F_{\alpha\beta} in a nonempty Zariski-open subset of the
+full coefficient space, the three forms G_{0},G_{1},G_{2} form a regular
+sequence after localization at every height-one prime of B . Taking the S -degree 6 part of the Koszul complex gives, after these
+localizations, 0\longrightarrow B(-4)^{3}\longrightarrow S_{3}^{\oplus 3}\otimes B(-2)\longrightarrow S_{6}\otimes B\longrightarrow Q_{6}\longrightarrow 0. Hence Q_{6} has rank \dim S_{6}-3\dim S_{3}+3=28-30+3=1 over B , and its determinant is \det Q_{6}=B(60-12)=B(48). Thus Q_{6} is locally free of rank one in codimension one and \det Q_{6}=B(48) . Hence its dual is a graded rank-one reflexive B -module with determinant B(-48) . Since B=\mathbb{C}[s,t] is a UFD,
+every graded rank-one reflexive B -module is free up to shift, and hence \operatorname{Hom}_{B}(Q_{6},B)\simeq B(-48). Consequently \operatorname{HF}(M_{p,2},6)=\dim B(-48)_{p-2}=\dim B_{p-50}=\max\{p-49,0\}. This is the Hilbert-function statement in
+Theorem 1 ; the displayed cohomology formulae
+then follow from the spectral-sequence row used in the main text. The finite-box maximal-rank check. We spell out the finite-box certificate used for the top- \mathbb{P}^{2} chamber of CICY 7880 . The key observation is that, for each fixed pair (p,q) , two rank checks at the critical degrees imply the positive-part
+Hilbert function in all S -degrees. Throughout this section we assume p,q\geq 2 . Let S=\mathbb{C}[z_{0},z_{1},z_{2}],\qquad a=(p+1)(q+1),\qquad b=(p-1)(q-1), and consider the graded map \Theta_{p,q}:S(-3)^{a}\longrightarrow S^{b}. (100) In the 7880 application this is the convolution matrix built from the
+nine cubic coefficients F_{\alpha\beta} . Put M_{p,q}=\coker\Theta_{p,q}. In degree c , \Theta_{p,q}(c):S_{c-3}^{a}\longrightarrow S_{c}^{b}, where S_{m}=0 for m<0 . Thus \dim S_{c-3}^{a}=a\binom{c-1}{2},\qquad\dim S_{c}^{b}=b\binom{c+2}{2}. The ratio \frac{\dim S_{c-3}}{\dim S_{c}}=\frac{(c-1)(c-2)}{(c+1)(c+2)} is increasing for c\geq 3 . Since p,q\geq 2 , \frac{a}{b}=\frac{(p+1)(q+1)}{(p-1)(q-1)}\leq 9<10=\frac{\dim S_{3}}{\dim S_{0}}. Thus the source is no larger than the target at c=3 ; since a/b>1 ,
+there is a unique crossing. Define R=R(p,q)=\max\left\{c\geq 3:a\dim S_{c-3}\leq b\dim S_{c}\right\}. (101) Then the source is no larger than the target for c\leq R , and no smaller
+for c\geq R+1 . Lemma 2 . Assume that \Theta_{p,q}(R):S_{R-3}^{a}\to S_{R}^{b} is injective and that \Theta_{p,q}(R+1):S_{R-2}^{a}\to S_{R+1}^{b} is surjective. Then \Theta_{p,q}(c) has maximal rank for every c\geq 0 . Equivalently, \operatorname{HF}(M_{p,q},c)=\max\left\{b\binom{c+2}{2}-a\binom{c-1}{2},0\right\} for all c , with the convention \binom{c-1}{2}=0 for c<3 . Proof. If c<R , any nonzero kernel vector in degree c can be multiplied by a
+nonzero form of degree R-c . Since S is a domain and the source is
+free, this gives a nonzero kernel vector in degree R , contradicting the
+assumed injectivity there. Hence all maps in degrees c\leq R are
+injective. For c\geq R+1 , surjectivity in degree R+1 is the statement (M_{p,q})_{R+1}=0 . Since M_{p,q} is a quotient of S^{b} , it is
+generated in degree 0 , and each higher graded piece is obtained by
+multiplying the previous ones by linear forms. Therefore (M_{p,q})_{c}=0 for every c\geq R+1 , so all maps in these degrees are
+surjective. This gives maximal rank in every degree, and the displayed
+Hilbert function is the target dimension minus the rank.
+∎ The pivot certificates are characteristic-zero certificates, not merely
+finite-field evidence. After deterministic integer coefficients are chosen
+for the cubics F_{\alpha\beta} , the two critical maps become integer
+matrices. If sparse elimination modulo a prime \ell finds a minor of
+the required size which is nonzero in \mathbb{F}_{\ell} , then that minor is
+a nonzero integer, so the same rank statement holds over \mathbb{Q} .
+Equivalently, this minor is a nonzero polynomial condition on the
+coefficients of the F_{\alpha\beta} , and hence holds on a nonempty
+Zariski-open subset. Intersecting the finitely many certified open
+conditions with the smoothness open gives the claimed generic statement. Therefore, for every fixed (p,q) with certificates at R and R+1 ,
+Lemma 2 proves the positive-part
+Hilbert function for all c . The certificates for 2\leq p,q\leq 14 cover 169 infinite c -rays in the top- \mathbb{P}^{2} chamber of CICY 7880 , not merely 169 isolated line bundles.
+This statement has two important limits. First, it is a generic statement:
+special complex structures may have lower ranks and hence larger
+cohomology. Second, it is a statement in the full coefficient space of the
+hypersurface. If one restricts to an invariant or symmetric subfamily of
+defining polynomials, the same minor-nonvanishing argument must be repeated
+inside that smaller coefficient space. Appendix D Details for the CICY 7707 formulae This appendix contains the proof-level material supporting
+Section 4.2 . The companion repository containing the
+computational evidence for the finite-field, standard-basis, and direct-rank
+computations used in this paper is available at https://github.com/jtwangbimsa-dragon/cicylinecoh_alpha . We use the notation X_{7707}=\left[\begin{array}[]{c|cc}\mathbb{P}^{1}_{x}&1&1\\
+\mathbb{P}^{1}_{y}&0&2\\
+\mathbb{P}^{3}_{z}&3&1\end{array}\right], and F=x_{0}A_{0}(z)+x_{1}A_{1}(z),\qquad G=x_{0}B_{0}(y,z)+x_{1}B_{1}(y,z). Lemma 3 (The one-top \mathbb{P}^{1}_{x} row for 7707 ) . Let k_{x}=-\ell\leq-2 . After Serre duality on \mathbb{P}^{1}_{x} , the
+right-endpoint cokernel of the one-top \mathbb{P}^{1}_{x} row is the (u,v) -graded piece of M_{\ell,3}=\coker\left(R(0,-3)^{\ell}\oplus R(-2,-1)^{\ell}\longrightarrow R^{\ell-1}\right),\qquad R=\mathbb{C}[y_{0},y_{1},z_{0},\ldots,z_{3}], where u is the \mathbb{P}^{1}_{y} -degree and v is the \mathbb{P}^{3}_{z} -degree.
+For a general member, \operatorname{HS}(M_{\ell,3};u,v)=\frac{(1-v^{3})^{2}(1-u^{2}v)^{2}}{(1-u)^{2}(1-v)^{4}}\sum_{\begin{subarray}{c}i,j\geq 0\\
+i+j\leq\ell-2\end{subarray}}(\ell-1-i-j)u^{2j}v^{3i+j}. (102) Proof. The two columns of F,G have degrees in the remaining variables (0,3) and (2,1) on \mathbb{P}^{1}_{y}\times\mathbb{P}^{3}_{z} . After taking top cohomology on \mathbb{P}^{1}_{x} , the right-endpoint cokernel is the adjacent two-band module of
+Appendix A . Applying
+Lemma 1 with \alpha=(0,3) and \beta=(2,1) gives
+( 102 ).
+∎ Lemma 4 (The one-top \mathbb{P}^{1}_{y} row) . Let B=\{x_{0}A_{0}(z)+x_{1}A_{1}(z)=0\}\subset\mathbb{P}^{1}_{x}\times\mathbb{P}^{3}_{z}. Write G=C_{0}(x,z)y_{0}^{2}+C_{1}(x,z)y_{0}y_{1}+C_{2}(x,z)y_{1}^{2} on B\times\mathbb{P}^{1}_{y} , where each C_{i} is a section of \mathcal{O}_{B}(1,1) . For k_{y}=-\ell\leq-2 , the one-top \mathbb{P}^{1}_{y} row is the corresponding binary-quadratic band module on B : \mathcal{T}_{\ell,F}=\coker\!\left(\mathcal{O}_{B}(-1,-1)^{\ell+1}\longrightarrow\mathcal{O}_{B}^{\ell-1}\right). For a general member, this sheaf is resolved by \displaystyle 0\to{} \displaystyle\mathcal{O}_{B}(-\ell-1,-\ell-1)^{\ell-1}\to\mathcal{O}_{B}(-\ell,-\ell)^{\ell+1} (103) \displaystyle\to{} \displaystyle\mathcal{O}_{B}(-1,-1)^{\ell+1}\to\mathcal{O}_{B}^{\ell-1}\to\mathcal{T}_{\ell,F}\to 0. Thus every one-top \mathbb{P}^{1}_{y} rank defect is the Hilbert function of \mathcal{T}_{\ell,F} , twisted by the remaining (x,z) -degree dictated
+by the range. Proof. On B , the row is multiplication by a binary quadratic C_{0}+C_{1}w+C_{2}w^{2} . Assume B is smooth and that the restrictions C_{0},C_{1},C_{2}\in H^{0}(B,\mathcal{O}_{B}(1,1)) are general. Since \mathcal{O}_{B}(1,1) is base-point free, the common zero locus Z=(C_{0}=C_{1}=C_{2})\subset B has the expected codimension 3 . The Toeplitz map \mathcal{O}_{B}(-1,-1)^{\ell+1}\longrightarrow\mathcal{O}_{B}^{\ell-1} has maximal rank away from Z , and its rank-drop locus is precisely Z . Since B is Cohen–Macaulay, the Buchsbaum–Rim exactness
+criterion recalled in Appendix A gives
+( 103 ). Taking the required (x,z) -graded pieces
+gives the one-top \mathbb{P}^{1}_{y} rank defects.
+∎ Theorem 9 (The one-top \mathbb{P}^{3}_{z} row for 7707 ) . Let W=\mathbb{C}[z_{0},\ldots,z_{3}] and U=\mathbb{C}[x_{0},x_{1},y_{0},y_{1}] , with U bigraded by (x,y) -degree.
+Put P_{3}(m)=\begin{cases}\binom{m+3}{3},&m\geq 0,\\
+0,&m<0.\end{cases} For m\in\mathbb{Z} , define N_{m}=\left((W\otimes U)/(F,G)\right)_{z\text{-degree}=m}. Then N_{m}=0 for m<0 , while for m\geq 0 it has the U -free
+resolution 0\to W_{m-4}\otimes U(-2,-2)\to W_{m-3}\otimes U(-1,0)\oplus W_{m-1}\otimes U(-1,-2)\to W_{m}\otimes U\to N_{m}\to 0, (104) where W_{j}=0 for j<0 . Hence \operatorname{HS}_{U}(N_{m};u,v)=\frac{P_{3}(m)-P_{3}(m-3)u-P_{3}(m-1)uv^{2}+P_{3}(m-4)u^{2}v^{2}}{(1-u)^{2}(1-v)^{2}}. (105) For the top- \mathbb{P}^{3}_{z} ambient cohomology rows used in the 7707 audit,
+write the original z -degree as k_{z}=-m . For a Koszul summand with z -shift d , Serre duality gives H^{3}(\mathbb{P}^{3},\mathcal{O}_{\mathbb{P}^{3}}(-m-d))\simeq W_{m+d-4}^{\vee}, with W_{j}=0 for j<0 . Thus Serre duality replaces the fixed-degree
+piece by the graded complex \displaystyle 0\to \displaystyle W_{m}^{\vee}\otimes U(-2,-2) (106) \displaystyle\to \displaystyle W_{m-3}^{\vee}\otimes U(-1,-2)\oplus W_{m-1}^{\vee}\otimes U(-1,0) \displaystyle\to \displaystyle W_{m-4}^{\vee}\otimes U\to 0. Thus the row contribution is the corresponding remaining (x,y) -graded
+cohomology of ( 106 ). If P_{1}(n)=\max\{n+1,0\}, then the bidegree in the remaining variables (a,b) piece is \displaystyle 0\to \displaystyle W_{m}^{\vee}\otimes U_{a-2,b-2} \displaystyle\to \displaystyle W_{m-3}^{\vee}\otimes U_{a-1,b-2}\oplus W_{m-1}^{\vee}\otimes U_{a-1,b} \displaystyle\to \displaystyle W_{m-4}^{\vee}\otimes U_{a,b}\to 0, where \dim U_{p,q}=P_{1}(p)P_{1}(q) and W_{j}=0 for j<0 . These finite
+complexes are the formula rules for the one-top \mathbb{P}^{3}_{z} entries;
+closed numerical formulae require the separate finite-rank certificates. Proof. For a general member, F,G form a regular sequence, so their two-step
+Koszul resolution remains exact after taking fixed z -degree m , giving
+( 104 ) and the Hilbert series above. When the \mathbb{P}^{3}_{z} -factor is in top cohomology, Serre duality identifies the
+row with the dual fixed-degree piece, namely
+( 106 ). Taking the required remaining (x,y) -graded piece gives the displayed finite complex.
+∎ k=(-a,-b,m) , m=1,2 . Put S=\mathbb{P}^{1}_{x}\times\mathbb{P}^{1}_{y} and L=\mathcal{O}_{S}(1,2) . The z -linear
+equation can be written as G=\sum_{i=0}^{3}z_{i}G_{i}(x,y),\qquad G_{i}\in H^{0}(S,L), and gives, on a nonempty open locus, the map \Gamma_{G}:\mathcal{O}_{S}^{4}\longrightarrow L,\qquad\Gamma_{G}(f_{0},\ldots,f_{3})=\sum_{i=0}^{3}f_{i}G_{i}, with kernel sequence 0\to M\to\mathcal{O}_{S}^{4}\xrightarrow{\Gamma_{G}}L\to 0. On this open locus the four G_{i} have no common zero on S , so \Gamma_{G} is surjective.
+For D=(a-2,b-2) , the m=1 map is the induced map on global sections
+after twisting by \mathcal{O}_{S}(D) . For m=2 , put \mathcal{F}=\operatorname{Sym}^{2}M . The active map is induced by the polarized
+contraction uv\longmapsto u\otimes\Gamma_{G}(v)+v\otimes\Gamma_{G}(u), equivalently by 0\to\mathcal{F}\to\operatorname{Sym}^{2}\mathbb{C}^{4}\otimes\mathcal{O}_{S}\to\mathbb{C}^{4}\otimes L\to 0. Indeed, on each fibre one may choose a lift of the one-dimensional quotient
+of the surjection E=\mathbb{C}^{4}\to L_{s} , so that E\simeq\ker(\Gamma_{G})_{s}\oplus\widetilde{L}_{s} . In this splitting the
+displayed contraction kills exactly the \operatorname{Sym}^{2}(\ker(\Gamma_{G})_{s}) summand and is surjective onto E\otimes L_{s} .
+If \phi_{m}(D) denotes the resulting global-section map after twisting by \mathcal{O}_{S}(D) , then the rank defect appearing in the Koszul row is q_{m}(a,b)=\dim\coker\phi_{m}(D). For the range used in Theorem 4 , namely a,b\geq 2 , the ambient bundles occurring in the two displayed sequences
+have no H^{1} . Hence the cokernels of the global-section maps are
+identified with \coker\phi_{1}(D)\simeq H^{1}(S,M(D)),\qquad\coker\phi_{2}(D)\simeq H^{1}(S,\mathcal{F}(D)). The required dimensions reduce to line-bundle cohomology on \mathbb{P}^{1} from
+the pushforward splittings below; here p_{x} and p_{y} denote the
+projections to \mathbb{P}^{1}_{x} and \mathbb{P}^{1}_{y} , respectively: p_{y*}M\simeq\mathcal{O}_{y}(-2)^{2},\qquad p_{x*}M\simeq\mathcal{O}_{x}(-3), p_{y*}\mathcal{F}\simeq\mathcal{O}_{y}(-4)^{3},\qquad R^{1}p_{y*}\mathcal{F}\simeq\mathcal{O}_{y}(4), p_{x*}\mathcal{F}\simeq\mathcal{O}_{x}(-6),\qquad R^{1}p_{x*}\mathcal{F}\simeq\mathcal{O}_{x}(2)^{3}, and p_{x*}(\mathcal{F}(0,1))\simeq\mathcal{O}_{x}(-4)^{4},\qquad R^{1}p_{x*}(\mathcal{F}(0,1))=0. These splittings give the Hilbert numerators displayed in
+Theorem 4 . Nonemptiness of the splitting
+locus is certified at the deterministic seed modulo 1000003 : the
+certificate contains enough full-rank fibre and global-section minors to fix
+the dimensions of the pushforwards and their low twists. On \mathbb{P}^{1} those
+dimensions determine the displayed splitting types. The same minors are
+nonzero integer polynomials in the coefficients, so the splittings hold on a
+nonempty characteristic-zero open set. k=(-a,-b,3) on finite-width strips. The active one-top \mathbb{P}^{3}_{z} row is \phi_{3}:W_{3}^{\vee}\otimes U(-2,-2)\longrightarrow W_{0}^{\vee}\otimes U(-1,-2)\oplus W_{2}^{\vee}\otimes U(-1,0), where the two components are induced by the (1,0,3) and (1,2,1) equations. Thus q_{3}(a,b)=\dim\coker(\phi_{3})_{a,b}, and Euler characteristic gives h^{\bullet}(X,\mathcal{O}_{X}(-a,-b,3))=(0,q_{3},q_{3}+\chi_{3},0). For fixed a , the map becomes a one-variable graded presentation over R_{y}=\mathbb{F}_{p}[y_{0},y_{1}] , R_{y}(-2)^{20(a-1)}\longrightarrow R_{y}(-2)^{a}\oplus R_{y}^{10a}, and for fixed b , it becomes a presentation over R_{x}=\mathbb{F}_{p}[x_{0},x_{1}] , R_{x}(-2)^{20(b-1)}\longrightarrow R_{x}(-1)^{11b+9}. The strip certificate constructs these presentations for 2\leq a\leq 10 and 2\leq b\leq 10 at the seed- 7707 specialization
+modulo 1000003 . Singular computes standard bases and Hilbert numerators
+for the 18 cokernel modules; the checker compares the resulting Hilbert
+functions with the stated strip formula in every chamber degree of the free
+variable. The certificates record the leading terms, reduction identities,
+and pivot minors used in these standard-basis computations; their leading
+coefficients are nonzero at the seed, so the same Hilbert functions hold on a
+nonempty characteristic-zero open set. k=(0,-b,c) in the finite b -box. The only nonzero second-page map is the moving-resultant map \Phi_{b,c}:R_{c-4}^{b+1}\longrightarrow R_{c}^{b-1},\qquad R=\mathbb{C}[z_{0},\ldots,z_{3}], represented by the Toeplitz matrix \begin{pmatrix}f_{0}&f_{1}&f_{2}&0&\cdots&0\\
+0&f_{0}&f_{1}&f_{2}&\cdots&0\\
+\vdots&&\ddots&\ddots&\ddots&\vdots\\
+0&\cdots&0&f_{0}&f_{1}&f_{2}\end{pmatrix}, where \Delta=f_{0}y_{0}^{2}+f_{1}y_{0}y_{1}+f_{2}y_{1}^{2},\qquad f_{i}\in R_{4}, is the x -resultant.
+In this range, h^{0}=\dim\ker\Phi_{b,c},\qquad h^{1}=\dim\coker\Phi_{b,c},\qquad h^{2}=h^{3}=0. The source has dimension (b+1)P_{3}(c-4) and the target has dimension (b-1)P_{3}(c) , so Euler characteristic determines h^{0} once h^{1} is known. The finite b -box verifier constructs M_{b}=\coker\Phi_{b} for every 2\leq b\leq 10 over the seed modulo 1000003 , computes \operatorname{HS}(M_{b};t)=\frac{N_{b}(t)}{(1-t)^{4}}, and checks the recurrence for N_{b} against direct finite-field ranks in
+the initial chamber degrees. The recorded leading terms, reductions, and
+pivot minors define nonempty open conditions, so the Hilbert series and the
+displayed cohomology formula hold on a nonempty characteristic-zero open set. k=(-a,-b,c) in the finite (a,b) -box. After Serre duality on the two \mathbb{P}^{1} factors, the active row is 0\to W_{c}^{\vee}\otimes U_{a-2,b-2}\xrightarrow{d_{0}}W_{c-3}^{\vee}\otimes U_{a-1,b-2}\oplus W_{c-1}^{\vee}\otimes U_{a-1,b}\xrightarrow{d_{1}}W_{c-4}^{\vee}\otimes U_{a,b}\to 0. Here W=\mathbb{C}[z_{0},\ldots,z_{3}] and U_{p,q}=H^{0}(\mathbb{P}^{1}_{x}\times\mathbb{P}^{1}_{y},\mathcal{O}(p,q)) . The endpoint terms control
+the cohomology: h^{0}=\dim\coker(d_{1}),\qquad h^{2}=\dim\ker(d_{0}), and h^{1} is determined by the Euler characteristic. For the right
+endpoint, using the notation F=x_{0}A_{0}+x_{1}A_{1} and G=x_{0}B_{0}+x_{1}B_{1} from the main text, the Sylvester
+identities B_{1}F-A_{1}G=x_{0}\Delta,\qquad-B_{0}F+A_{0}G=x_{1}\Delta identify \coker(d_{1}) in x -degree a with the remaining determinant
+module of the finite b -box, shifted by z -degree 3a . Hence \sum_{c\geq 4}\dim\coker(d_{1})_{c}\,t^{c}=\frac{t^{3a}R_{b}(t)}{(1-t)^{4}}. For the left endpoint, dualizing d_{0} gives \dim\ker(d_{0})_{c}=\dim\coker(d_{0}^{\vee})_{c}. For all 81 pairs 2\leq a,b\leq 10 , the endpoint certificate constructs
+the graded image of d_{0}^{\vee} , computes a Singular standard basis, and
+obtains \operatorname{HS}(\coker(d_{0}^{\vee});t)=\frac{Q_{a,b}(t)}{(1-t)^{4}}. The checker compares these endpoint Hilbert functions with the stated
+piecewise formula for q_{\mathrm{L}}(a,b,c) on the finite chamber and checks
+additional direct finite-field rank matches, including Serre-dual samples.
+As before, the recorded leading terms, reductions, and modular pivot minors
+give a generic characteristic-zero certificate. Boundary, d_{2} , and certificate closure. Boundary rows not covered by the one-top modules introduce no new rank model:
+they are either Serre-dual to ranges already treated, saturated
+zero-dimensional complete intersections in the remaining variables of length 10 , or
+irrelevant-span rows whose positive-degree
+quotients vanish. The only possible second-page maps are the entries
+listed in the ancillary data: the source-zero, target-zero, and
+split-boundary entries vanish, while the determinant entries are
+multiplication by \Delta=A_{0}B_{1}-A_{1}B_{0}. Thus their rank defect in remaining (y,z) -degree (b,c) is \dim(R_{yz}/(\Delta))_{(b,c)},\qquad\operatorname{HS}(R_{yz}/(\Delta);u,v)=\frac{1-u^{2}v^{4}}{(1-u)^{2}(1-v)^{4}}. Since the Koszul complex has length two, there are no higher differentials
+after d_{2} . All rank, saturation, and nonvanishing conditions used in the 7707 audit are finitely many minor, leading-coefficient, or
+standard-basis reduction conditions, so the certificate data place them on a
+common nonempty Zariski open subset of smooth members. For one-top \mathbb{P}^{3}_{z} ranges outside the displayed 7707 formula ranges, the rule remains the finite complex
+( 106 ); closed numerical formulae in any
+finite region require the corresponding finite-rank certificate. Appendix E Details for the CICY 7863 formulae This appendix contains the proof-level material behind
+Section 4.3 . Write A=\mathbb{C}[x_{0},\ldots,x_{3}],\qquad S=\mathbb{C}[y_{0},\ldots,y_{3}],\qquad R=A\otimes S, and let Q,L_{1},L_{2} have bidegrees (2,2),(1,1),(1,1) . The mixed Koszul row. The Koszul shifts are (0,0),\qquad(2,2),\qquad(1,1),\qquad(1,1), so the relevant mixed row is obtained by taking ambient cohomology of the
+twisted Koszul complex 0\to\mathcal{O}(a-4,b-4)\to\mathcal{O}(a-3,b-3)^{\oplus 2}\oplus\mathcal{O}(a-2,b-2) \to\mathcal{O}(a-2,b-2)\oplus\mathcal{O}(a-1,b-1)^{\oplus 2}\to\mathcal{O}(a,b)\to\mathcal{O}_{X}(a,b)\to 0. When the x -factor is in top cohomology, put m=-a-4 and dualize by
+Serre duality. The full Cell 9 row is then \displaystyle A_{m+4}\otimes S_{b-4} \displaystyle\longrightarrow(A_{m+3}\otimes S_{b-3})^{\oplus 2}\oplus A_{m+2}\otimes S_{b-2} (107) \displaystyle\longrightarrow A_{m+2}\otimes S_{b-2}\oplus(A_{m+1}\otimes S_{b-1})^{\oplus 2}\longrightarrow A_{m}\otimes S_{b}. The maps are induced by contraction with Q,L_{1},L_{2} in the x -variables
+and multiplication in the y -variables. The homology of this row is
+denoted by \mathcal{H}_{i}(m,b) in the main text. One-parameter endpoint rows. We now specialize ( 107 ) to the one-parameter
+boundary rows used in the main table. The variable r below is the local
+endpoint degree on that boundary ray. Thus r=m=-a-4 on the a\leq-4 rays, while after exchanging the two \mathbb{P}^{3} -factors or applying
+Serre duality it becomes the corresponding shifted coordinate listed in the
+main table. Put V_{y}=H^{0}(\mathbb{P}^{3}_{y},\mathcal{O}(1)). For j=2,3 , and with the convention \operatorname{Sym}^{d}V_{y}^{\vee}=0 for d<0 , the active row has the form C^{(j)}_{2}(r)\longrightarrow C^{(j)}_{1}(r)\longrightarrow C^{(j)}_{0}(r), where \displaystyle C^{(j)}_{2}(r) \displaystyle=\left(A_{r+3}\otimes\operatorname{Sym}^{j-3}V_{y}^{\vee}\right)^{\oplus 2}\oplus A_{r+2}\otimes\operatorname{Sym}^{j-2}V_{y}^{\vee}, \displaystyle C^{(j)}_{1}(r) \displaystyle=A_{r+2}\otimes\operatorname{Sym}^{j-2}V_{y}^{\vee}\oplus\left(A_{r+1}\otimes\operatorname{Sym}^{j-1}V_{y}^{\vee}\right)^{\oplus 2}, \displaystyle C^{(j)}_{0}(r) \displaystyle=A_{r}\otimes\operatorname{Sym}^{j}V_{y}^{\vee}. For Cell 7 one has j=2 and r=-a-4 ; for Cell 8 one has j=3 and r=-a-4 . The x/y -swapped cells and the Serre-dual cells
+use the same endpoint calculation with r as stated in the main table. The endpoint contribution is the cokernel of the rightmost map \beta^{(j)}_{r}:C^{(j)}_{1}(r)\longrightarrow C^{(j)}_{0}(r). All vector spaces here are finite-dimensional, so \dim\coker\beta^{(j)}_{r}=\dim\ker\left(\beta^{(j)}_{r}\right)^{\vee}. Thus we compute the cokernel by dualizing the map and computing the kernel
+of the dual map. Write L_{\nu}=\sum_{i=0}^{3}y_{i}\ell_{\nu i}(x)\quad(\nu=1,2),\qquad Q=\sum_{0\leq i\leq h\leq 3}y_{i}y_{h}q_{ih}(x), with \ell_{\nu i}\in A_{1} and q_{ih}\in A_{2} . If \iota_{i} denotes contraction by y_{i} , the dual endpoint map \alpha^{(j)}_{r}=(\beta^{(j)}_{r})^{\vee} is \alpha^{(j)}_{r}:A_{r}\otimes\operatorname{Sym}^{j}V_{y}^{\vee}\longrightarrow\left(A_{r+1}\otimes\operatorname{Sym}^{j-1}V_{y}^{\vee}\right)^{\oplus 2}\oplus A_{r+2}\otimes\operatorname{Sym}^{j-2}V_{y}^{\vee}, f\otimes\eta\longmapsto\left(\sum_{i}\ell_{1i}f\otimes\iota_{i}\eta,\,\sum_{i}\ell_{2i}f\otimes\iota_{i}\eta,\,\sum_{i\leq h}q_{ih}f\otimes\iota_{i}\iota_{h}\eta\right), with the evident symmetric convention in the last summand. We use the
+divided-power normalization on symmetric powers; equivalently, in ordinary
+monomial bases the same formula holds up to the standard nonzero scalar
+factors, which are included in the matrices used in the certificates. This
+is just the transpose rule: multiplication by y_{i} on symmetric powers
+dualizes to contraction \iota_{i} , and multiplication by a quadratic
+monomial dualizes to the corresponding double contraction. Thus the
+endpoint cokernel has dimension N_{j}(r)=\dim\ker\alpha^{(j)}_{r}. The other endpoint of this three-term row is not determined by Euler
+characteristic alone; the needed input is left-endpoint injectivity. In the j=2 row the source is just A_{r+2} , coming from the Koszul summand L_{1}\wedge L_{2} . The left map sends v\in A_{r+2} to the two products (L_{2}v,\,-L_{1}v)\in\left(A_{r+1}\otimes V_{y}^{\vee}\right)^{\oplus 2}. Here multiplication by L_{\nu}=\sum_{i}y_{i}\ell_{\nu i}(x) means the four
+components \ell_{\nu i}v . Since A is an integral domain and a
+general L_{\nu} is nonzero, L_{\nu}v=0 forces v=0 . Thus the j=2 left endpoint is injective. In the j=3 row the source has three
+parts. Write an element as (u_{1},u_{2},v) , where u_{1},u_{2} come from the
+two Q\wedge L_{\nu} summands and v comes from L_{1}\wedge L_{2} . The
+kernel equations are, up to the Koszul signs, L_{1}u_{1}+L_{2}u_{2}=0,\qquad Qu_{1}+L_{2}v=0,\qquad Qu_{2}-L_{1}v=0. For a fixed value of r , these equations are an ordinary finite matrix
+after monomial bases are chosen. Injectivity means exactly that this matrix
+has full column rank. The endpoint package checks this full-column-rank
+condition on an explicit specialization; equivalently, one maximal minor is
+nonzero there, so the same injectivity holds on a nonempty Zariski-open set
+of triples (Q,L_{1},L_{2}) . Thus, for a general member, the leftmost map C^{(j)}_{2}(r)\longrightarrow C^{(j)}_{1}(r) is injective, so H_{2}(C^{(j)}_{\bullet}(r))=0 . Therefore, once the right
+endpoint N_{j}(r)=\dim H_{0}(C^{(j)}_{\bullet}(r)) is known, the middle
+homology is forced by the Euler characteristic of the three-term complex: \dim H_{1}(C^{(j)}_{\bullet}(r))=N_{j}(r)-\bigl(\dim C^{(j)}_{0}(r)-\dim C^{(j)}_{1}(r)+\dim C^{(j)}_{2}(r)\bigr). With P(n)=\dim A_{n} , this gives \dim H_{1}(C^{(2)}_{\bullet}(r))=N_{2}(r)+8P(r+1)-10P(r), and \dim H_{1}(C^{(3)}_{\bullet}(r))=N_{3}(r)+20P(r+1)-20P(r)-2P(r+3). For the Hilbert-series computation we regard the maps \alpha^{(j)}_{r} , for
+all r\geq 0 , as the degree pieces of one graded module map over A=\mathbb{C}[x_{0},\ldots,x_{3}] . For j=2 , after choosing monomial bases
+of \operatorname{Sym}^{2}V_{y}^{\vee} , V_{y}^{\vee} , and A_{r} , the two L_{\nu} -blocks have entries \ell_{\nu i}(x) and the Q -block has
+entries q_{ih}(x) . We compute K_{2}=\ker\alpha^{(2)} as the syzygy module of this graded matrix. For the rational specialization
+recorded in the repository, Singular gives the minimal free resolution 0\longrightarrow A(-9)^{\oplus 8}\longrightarrow A(-8)^{\oplus 10}\longrightarrow K_{2}\longrightarrow 0, and the certificate records the corresponding leading terms and reduction
+identities. Their leading coefficients are nonzero at the specialization;
+hence the same initial module, and therefore the same Hilbert series, holds
+on a nonempty Zariski-open subset of the parameter space. Thus, for a
+general member, \operatorname{HS}(K_{2};t)=\frac{10t^{8}-8t^{9}}{(1-t)^{4}}. Thus N_{2}(r)=\dim(K_{2})_{r} . For K_{3}=\ker\alpha^{(3)} , we use the same
+split-linear construction. A small-integer rational specialization gives a
+standard-basis replay over \mathbb{Q} , again with recorded leading terms
+and reduction identities. Singular gives the minimal free resolution 0\longrightarrow A(-16)^{\oplus 4}\oplus A(-17)^{\oplus 2}\longrightarrow A(-15)^{\oplus 20}\oplus A(-16)^{\oplus 4}\longrightarrow A(-14)^{\oplus 20}\longrightarrow K_{3}\longrightarrow 0. The same open-condition argument gives, for a general member, \operatorname{HS}(K_{3};t)=\frac{20t^{14}-20t^{15}+2t^{17}}{(1-t)^{4}}. These are the N_{2} and N_{3} series used in the table. The other
+nonzero entry of the cohomology vector is then fixed by the Euler
+characteristic of the three-term row, giving the displayed additions by \Delta_{2} and \Delta_{3} . Finite-box rows. We now prove the finite-box theorem for Cell 9 . Write a=-m-4 , m\geq 0 . The reduced object is the
+four-term complex \displaystyle C_{3} \displaystyle=A_{m+4}\otimes S_{b-4}, \displaystyle C_{2} \displaystyle=(A_{m+3}\otimes S_{b-3})^{\oplus 2}\oplus A_{m+2}\otimes S_{b-2}, \displaystyle C_{1} \displaystyle=A_{m+2}\otimes S_{b-2}\oplus(A_{m+1}\otimes S_{b-1})^{\oplus 2}, \displaystyle C_{0} \displaystyle=A_{m}\otimes S_{b}. The differentials are those of ( 107 ), induced
+by L_{1},L_{2},Q . Its Euler characteristic is E(m,b)=P(m+4)P(b-4)-2P(m+3)P(b-3)+2P(m+1)P(b-1)-P(m)P(b). (108) The right endpoint is the map C_{1}\to C_{0} . After dualizing, its cokernel
+dimension is the kernel dimension of A_{m}\otimes\operatorname{Sym}^{b}(\mathbb{C}^{4}_{y})^{\vee}\longrightarrow(A_{m+1}\otimes\operatorname{Sym}^{b-1}(\mathbb{C}^{4}_{y})^{\vee})^{\oplus 2}\oplus A_{m+2}\otimes\operatorname{Sym}^{b-2}(\mathbb{C}^{4}_{y})^{\vee}. We denote this right-endpoint Hilbert function by N_{b}(m) . For fixed b , the maps above are the
+degree- m pieces of one graded A=\mathbb{C}[x_{0},\ldots,x_{3}] -linear map \alpha_{b}:A\otimes\operatorname{Sym}^{b}(\mathbb{C}^{4}_{y})^{\vee}\longrightarrow\bigl(A(1)\otimes\operatorname{Sym}^{b-1}(\mathbb{C}^{4}_{y})^{\vee}\bigr)^{\oplus 2}\oplus A(2)\otimes\operatorname{Sym}^{b-2}(\mathbb{C}^{4}_{y})^{\vee}, with A(r)_{m}=A_{m+r} . Hence N_{b}(m)=\dim(\ker\alpha_{b})_{m}, and the required data are exactly the Hilbert numerator of the graded module \ker\alpha_{b} . This numerator is not obtained by extrapolating from finitely many values of m . Let M=R/(L_{1},L_{2}) , and write M_{s,b} for its bidegree (s,b) part. The same reduction gives N_{b}(m)=0\qquad\text{for }m<6b-4. For m=6b-4+s , s\geq 0 , it gives N_{b}(6b-4+s)=\delta_{s,0}P(b-4)+\dim\coker\left(M_{s-2,b-2}\xrightarrow{\;Q\;}M_{s,b}\right),\qquad s\geq 0, with the convention that negative bidegrees contribute zero. On the open
+locus where (L_{1},L_{2}):Q=(L_{1},L_{2}), the quadratic row is a nonzerodivisor on M , so the displayed map is
+injective in every degree. Since L_{1},L_{2} form a regular sequence of
+bidegree (1,1) , \operatorname{HS}_{M}(u,v)=\frac{(1-uv)^{2}}{(1-u)^{4}(1-v)^{4}}. Taking the coefficient of v^{b} gives \operatorname{HS}(M_{*,b};t)=\frac{P(b)-2P(b-1)t+P(b-2)t^{2}}{(1-t)^{4}}. Therefore \displaystyle\sum_{s\geq 0}N_{b}(6b-4+s)t^{s} \displaystyle=P(b-4)+\operatorname{HS}(M_{*,b};t)-t^{2}\operatorname{HS}(M_{*,b-2};t) \displaystyle=\frac{n_{b,0}+n_{b,1}t+n_{b,2}t^{2}+n_{b,3}t^{3}}{(1-t)^{4}}, where \displaystyle n_{b,0} \displaystyle=P(b)+P(b-4), \displaystyle n_{b,1} \displaystyle=-2P(b-1)-4P(b-4), \displaystyle n_{b,2} \displaystyle=6P(b-4), \displaystyle n_{b,3} \displaystyle=2P(b-3)-4P(b-4). Equivalently, for b=4,\ldots,10 , \sum_{m\geq 0}N_{b}(m)t^{m}=\frac{t^{6b-4}\left(n_{b,0}+n_{b,1}t+n_{b,2}t^{2}+n_{b,3}t^{3}\right)}{(1-t)^{4}}, (109) with coefficients \begin{array}[]{c|rrrr}b&n_{b,0}&n_{b,1}&n_{b,2}&n_{b,3}\\
+\hline\cr 4&36&-44&6&4\\
+5&60&-86&24&4\\
+6&94&-152&60&0\\
+7&140&-248&120&-10\\
+8&200&-380&210&-28\\
+9&276&-554&336&-56\\
+10&370&-776&504&-96.\end{array} The accompanying endpoint certificates replay this quotient-rank calculation:
+for each b=4,\ldots,10 , they rebuild the relevant matrices over \mathbb{F}_{1000003} , check the stored hashes, leading terms, reduction
+identities, and pivot minors, and recover the numerator in
+( 109 ). The next input is the left end of the reduced Koszul complex. For every b=4,\ldots,10 , the reduced leftmost map corresponding to d_{3}:C_{3}\longrightarrow C_{2} has a full-column-rank certificate. The
+certificate lists pivot rows for a square minor using all columns and
+checks that its determinant is nonzero modulo 1000003 . Hence the
+leftmost map is injective on the certified open set. For each b=4,\ldots,10 , we rebuild all relevant matrix blocks in the
+reduced Koszul complex, compute their exact ranks, verify that adjacent
+compositions vanish, and then compute the middle homology directly from \dim H=\dim\ker-\dim\operatorname{im} . The result is that no
+simultaneous middle correction remains, and \mathcal{H}_{3}=0,\qquad\mathcal{H}_{0}=N_{b},\qquad\mathcal{H}_{1}=[E+N_{b}]_{+},\qquad\mathcal{H}_{2}=[-E-N_{b}]_{+}. All matrices above have entries in the integer polynomial ring generated by
+the coefficients of Q,L_{1},L_{2} . A pivot minor or standard-basis leading
+coefficient which is nonzero modulo 1000003 is the reduction of a
+nonzero integer polynomial in those coefficients. Thus each recorded rank
+or initial-module condition defines a nonempty Zariski-open condition in
+characteristic zero. Intersecting the finitely many opens from the endpoint
+numerator, left injectivity, and middle-rank certificates with the smoothness
+open for the complete intersection gives the general smooth member claimed in
+Theorem 8 . Cell 73 follows by
+Calabi–Yau Serre duality. References [1] Lara B. Anderson, Yang-Hui He, and Andre Lukas. Heterotic compactification, an algorithmic approach. JHEP , 07:049, 2007. doi:10.1088/1126-6708/2007/07/049, arXiv:hep-th/0702210. [2] Lara B. Anderson, Yang-Hui He, and Andre Lukas. Monad bundles in Heterotic string compactifications. JHEP , 07:104, 2008. doi:10.1088/1126-6708/2008/07/104, arXiv:0805.2875. [3] Lara B. Anderson, James Gray, Yang-Hui He, and Andre Lukas. Exploring positive Monad bundles and a new Heterotic Standard
+Model. JHEP , 02:054, 2010. doi:10.1007/JHEP02(2010)054, arXiv:0911.1569. [4] Yang-Hui He, Seung-Joo Lee, and Andre Lukas. Heterotic models from vector bundles on toric Calabi-Yau
+manifolds. JHEP , 05:071, 2010. doi:10.1007/JHEP05(2010)071, arXiv:0911.0865. [5] Yang-Hui He, Maximilian Kreuzer, Seung-Joo Lee, and Andre Lukas. Heterotic bundles on Calabi-Yau manifolds with small picard
+number. JHEP , 12:039, 2011. doi:10.1007/JHEP12(2011)039, arXiv:1108.1031. [6] Evgeny I. Buchbinder, Andrei Constantin, and Andre Lukas. A Heterotic Standard Model with B-L symmetry and a stable
+proton. JHEP , 06:100, 2014. doi:10.1007/JHEP06(2014)100, arXiv:1404.2767. [7] P. Candelas, A. M. Dale, C. A. Lutken, and R. Schimmrigk. Complete intersection calabi-yau manifolds. Nucl. Phys. B , 298:493, 1988. doi:10.1016/0550-3213(88)90352-5. [8] P. S. Green and T. Hubsch. Polynomial deformations and cohomology of calabi-yau manifolds. Commun. Math. Phys. , 113:505, 1987. doi:10.1007/BF01221257. [9] Lara B. Anderson, James Gray, Andre Lukas, and Eran Palti. Two hundred Heterotic Standard Models on smooth Calabi-Yau
+threefolds. Phys. Rev. D , 84:106005, 2011. doi:10.1103/PhysRevD.84.106005, arXiv:1106.4804. [10] Lara B. Anderson, James Gray, Andre Lukas, and Eran Palti. Heterotic line bundle Standard Models. JHEP , 06:113, 2012. doi:10.1007/JHEP06(2012)113, arXiv:1202.1757. [11] Lara B. Anderson, Andrei Constantin, James Gray, Andre Lukas, and Eran Palti. A comprehensive scan for Heterotic SU(5) GUT models. JHEP , 01:047, 2014. doi:10.1007/JHEP01(2014)047, arXiv:1307.4787. [12] Stefan Groot Nibbelink, Orestis Loukas, and Fabian Ruehle. (MS)SM-like Models on Smooth Calabi-Yau Manifolds from All Three
+Heterotic String Theories. Fortsch. Phys. , 63:609, 2015. doi:10.1002/prop.201500041, arXiv:1507.07559. [13] Yang-Hui He, Seung-Joo Lee, Andre Lukas, and Chuang Sun. Heterotic model building: 16 special manifolds. JHEP , 06:077, 2014. doi:10.1007/JHEP06(2014)077, arXiv:1309.0223. [14] Andreas P. Braun, Callum R. Brodie, and Andre Lukas. Heterotic line bundle models on elliptically fibered Calabi-Yau
+three-folds. JHEP , 04:087, 2018. doi:10.1007/JHEP04(2018)087, arXiv:1706.07688. [15] Lara B. Anderson, Fabio Apruzzi, Xin Gao, James Gray, and Seung-Joo Lee. A new construction of Calabi-Yau manifolds: Generalized CICYs. Nucl. Phys. B , 906:441–496, 2016. doi:10.1016/j.nuclphysb.2016.03.016, arXiv:1507.03235. [16] Magdalena Larfors, Davide Passaro, and Robin Schneider. Heterotic line bundle models on generalized complete intersection
+Calabi-Yau manifolds. JHEP , 05:105, 2021. doi:10.1007/JHEP05(2021)105, arXiv:2010.09763. [17] Volker Braun, Yang-Hui He, and Burt A. Ovrut. Supersymmetric hidden sectors for Heterotic Standard Models. JHEP , 09:008, 2013. doi:10.1007/JHEP09(2013)008, arXiv:1301.6767. [18] James Gray and Juntao Wang. Jumping spectra and vanishing couplings in Heterotic line bundle
+Standard Models. JHEP , 11:073, 2019. doi:10.1007/JHEP11(2019)073, arXiv:1906.09373. [19] Andrei Constantin, Lucas T.-Y. Leung, Andre Lukas, and Luca A. Nutricati. Reproducing Standard Model fermion masses and mixing in string
+theory: A Heterotic line bundle study. Phys. Rev. D , 113:046005, 2026. doi:10.1103/fbdz-t73z, arXiv:2507.03076. [20] Muyang Liu. F-Theory Realizations of Exact MSSM Matter Spectra . PhD thesis, University of Pennsylvania, 2022. https://repository.upenn.edu/edissertations/4544 . [21] Mirjam Cvetic, Inaki Garcia-Etxebarria, and James Halverson. On the computation of non-perturbative effective potentials in the
+string theory landscape: IIB/F-theory perspective. Fortsch. Phys. , 59:243, 2011. doi:10.1002/prop.201000093, arXiv:1009.5386. [22] Ralph Blumenhagen, Benjamin Jurke, Thorsten Rahn, and Helmut Roschy. Cohomology of line bundles: a computational algorithm. J. Math. Phys. , 51:103525, 2010. doi:10.1063/1.3501132, arXiv:1003.5217. [23] Ralph Blumenhagen, Benjamin Jurke, Thorsten Rahn, and Helmut Roschy. Cohomology of line bundles: applications. J. Math. Phys. , 53:012302, 2012. doi:10.1063/1.3677646, arXiv:1010.3717. [24] Magdalena Larfors and Robin Schneider. Explore and exploit with heterotic line bundle models. Fortsch. Phys. , 68:2000034, 2020. doi:10.1002/prop.202000034, arXiv:2003.04817. [25] Andrei Constantin, Thomas R. Harvey, and Andre Lukas. Heterotic string model building with monad bundles and reinforcement
+learning. Fortsch. Phys. , 70:2100186, 2022. doi:10.1002/prop.202100186, arXiv:2108.07316. [26] Steve Abel, Andrei Constantin, Thomas R. Harvey, and Andre Lukas. Evolving heterotic gauge backgrounds: genetic algorithms versus
+reinforcement learning. Fortsch. Phys. , 70:2200034, 2022. doi:10.1002/prop.202200034, arXiv:2110.14029. [27] Steve A. Abel, Andrei Constantin, Thomas R. Harvey, Andre Lukas, and Luca A.
+Nutricati. Decoding nature with nature’s tools: heterotic line bundle models of
+particle physics with genetic algorithms and quantum annealing. Fortsch. Phys. , 72:2300260, 2024. doi:10.1002/prop.202300260, arXiv:2306.03147. [28] Raoul Bott. Homogeneous vector bundles. Ann. of Math. , 66:203–248, 1957. doi:10.2307/1969996. [29] Lara B. Anderson. Heterotic and M-theory Compactifications for String
+Phenomenology . D.Phil. thesis, University of Oxford, 2008. arXiv:0808.3621. [30] Andrei Constantin and Andre Lukas. Formulae for line bundle cohomology on calabi-yau threefolds. Fortsch. Phys. , 67:1900084, 2019. doi:10.1002/prop.201900084, arXiv:1808.09992. [31] Magdalena Larfors and Robin Schneider. Line bundle cohomologies on CICYs with picard number two. Fortsch. Phys. , 67:1900083, 2019. doi:10.1002/prop.201900083, arXiv:1906.00392. [32] Daniel Klaewer and Lorenz Schlechter. Machine learning line bundle cohomologies of hypersurfaces in toric
+varieties. Phys. Lett. B , 789:438, 2019. doi:10.1016/j.physletb.2019.01.002, arXiv:1809.02547. [33] Callum R. Brodie, Andrei Constantin, Rhys Deen, and Andre Lukas. Machine learning line bundle cohomology. Fortsch. Phys. , 68:1900087, 2020. doi:10.1002/prop.201900087, arXiv:1906.08730. [34] Callum R. Brodie, Andrei Constantin, and Andre Lukas. Flops, Gromov-Witten invariants and symmetries of line bundle
+cohomology on Calabi-Yau three-folds. J. Geom. Phys. , 171:104398, 2022. doi:10.1016/j.geomphys.2021.104398, arXiv:2010.06597. [35] Andrei Constantin. Generating functions for line bundle cohomology dimensions on complex
+projective varieties. Experimental Mathematics , 34:459–487, 2025. doi:10.1080/10586458.2024.2380794, arXiv:2401.14463. [36] Callum Brodie, Andrei Constantin, James Gray, Andre Lukas, and Fabian Ruehle. Recent developments in line bundle cohomology and applications to
+string phenomenology, 2021. arXiv:2112.12107. [37] David A. Cox, John Little, and Donal O’Shea. Using Algebraic Geometry , volume 185 of Graduate Texts in
+Mathematics . Springer, 1998. doi:10.1007/978-1-4757-6911-1. [38] David A. Buchsbaum and Dock S. Rim. A generalized Koszul complex. II. Depth and multiplicity. Trans. Amer. Math. Soc. , 111:197–224, 1964. doi:10.1090/S0002-9947-1964-0159860-7. [39] David Eisenbud. Commutative Algebra with a View Toward Algebraic Geometry ,
+volume 150 of Graduate Texts in Mathematics . Springer, 1995. doi:10.1007/978-1-4612-5350-1. Experimental support, please view the build logs for errors. Generated by L A T E xml . Instructions for reporting errors We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+      support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+      methods listed below: Click the "Report Issue" ( ) button, located in the page header. Tip: You can select the relevant text first, to include it in your report. Our team has already identified the following issues . We appreciate your time reviewing and reporting rendering errors we
+      may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+      should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+      all. Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a list of packages that need conversion , and welcome developer contributions . We gratefully acknowledge support from
+        our major funders , member institutions , ,
+        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from

@@ -1,0 +1,286 @@
+{
+  "additional_massless_U1": "UNKNOWN",
+  "c1": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "c2": [
+    24,
+    24,
+    24,
+    24,
+    24
+  ],
+  "checks": [
+    {
+      "diagnostics": null,
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "rank five integral bundle"
+        ],
+        "mathematical_status": "EXACT",
+        "name": "c1_zero",
+        "reference": "1307.4787 (4.2)"
+      },
+      "outcome": "PASS",
+      "residual": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "diagnostics": "Published subset criterion only; repeated summands and exact holonomy need separate interpretation.",
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "nonempty proper subsets; torsion-free Picard group; criterion only, not full holonomy classification"
+        ],
+        "mathematical_status": "EXACT",
+        "name": "no_proper_zero_subset",
+        "reference": "1307.4787 (2.2), Appendix A"
+      },
+      "outcome": "PASS",
+      "residual": null
+    },
+    {
+      "diagnostics": {
+        "effectivity": "EXACT_ZERO_CLASS",
+        "note": "nonnegative nef pairings are necessary; an integral effective representative is not constructed"
+      },
+      "metadata": {
+        "can_certify_acceptance": false,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "trivial hidden bundle; ambient hyperplanes nef"
+        ],
+        "mathematical_status": "NECESSARY",
+        "name": "anomaly_nef_pairings",
+        "reference": "1311.1941 (2.3),(2.6); 1307.4787 (4.4)"
+      },
+      "outcome": "PASS",
+      "residual": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "diagnostics": null,
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "chi=sum (-1)^q h^q; target -3*Gamma"
+        ],
+        "mathematical_status": "EXACT",
+        "name": "chiral_indices",
+        "reference": "1307.4787 (4.7)"
+      },
+      "outcome": "PASS",
+      "residual": [
+        -12,
+        -12
+      ]
+    },
+    {
+      "diagnostics": {
+        "coefficient_bound": 1,
+        "stability": "UNKNOWN_STABILITY"
+      },
+      "metadata": {
+        "can_certify_acceptance": false,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "search restricted to positive ambient Kahler chamber; zero matrices allowed"
+        ],
+        "mathematical_status": "NECESSARY",
+        "name": "signed_slope_matrices",
+        "reference": "1307.4787 Section 5"
+      },
+      "outcome": "PASS",
+      "residual": null
+    },
+    {
+      "diagnostics": {
+        "V": null,
+        "wedge2": null
+      },
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "all cohomologies computed by certified backend"
+        ],
+        "mathematical_status": "EXACT",
+        "name": "full_spectrum",
+        "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+      },
+      "outcome": "UNKNOWN",
+      "residual": null
+    },
+    {
+      "diagnostics": {
+        "t": [
+          "5",
+          "29",
+          "15",
+          "11",
+          "5"
+        ]
+      },
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": false,
+        "input_assumptions": [
+          "exact rational t>0 in ambient Kahler chamber"
+        ],
+        "mathematical_status": "SUFFICIENT",
+        "name": "rational_slope_witness",
+        "reference": "1307.4787 (4.5)"
+      },
+      "outcome": "PASS",
+      "residual": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "classification": "UNKNOWN",
+  "equivariance": "UNKNOWN",
+  "full_structure_group": "UNKNOWN",
+  "gamma_order": 4,
+  "generic_spectrum": {
+    "diagnostics": null,
+    "metadata": {
+      "can_certify_acceptance": false,
+      "can_safely_prune": false,
+      "input_assumptions": [
+        "Zariski-generic smooth family; not a specified invariant subfamily"
+      ],
+      "mathematical_status": "EXACT",
+      "name": "generic_full_spectrum",
+      "reference": "1307.4787 (4.8)-(4.9); Koszul rank certificates"
+    },
+    "outcome": "PASS",
+    "residual": {
+      "V": [
+        0,
+        12,
+        0,
+        0
+      ],
+      "wedge2": [
+        0,
+        15,
+        3,
+        0
+      ]
+    }
+  },
+  "geometry": {
+    "ambient": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "basis": "ordered restrictions of ambient integral hyperplane classes",
+    "cone": "POSITIVE_ORTHANT",
+    "configuration": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "h11": 5,
+    "h21": 45,
+    "identifier": "7447",
+    "symmetry_orders": [
+      2,
+      4,
+      10
+    ]
+  },
+  "geometry_sha256": "de10c18b0a1706327185161881280b4741cee5600d46479f8b739cb610e07cdc",
+  "index_V": -12,
+  "index_wedge2": -12,
+  "kind": "candidate",
+  "matrix_columns": [
+    [
+      -2,
+      -2,
+      2,
+      2,
+      0
+    ],
+    [
+      -1,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      0,
+      -2
+    ],
+    [
+      1,
+      2,
+      -2,
+      -2,
+      1
+    ]
+  ],
+  "rational_witness": [
+    "5",
+    "29",
+    "15",
+    "11",
+    "5"
+  ],
+  "schema": 1,
+  "software_source_sha256": "6bb77fe103b1220986b51bd8c35feaadb794bebd42650c3948792e1ba2d75ef8",
+  "wilson_line": "UNKNOWN"
+}

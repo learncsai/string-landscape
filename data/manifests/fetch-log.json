@@ -1,0 +1,150 @@
+[
+  {
+    "path": "data/raw/arxiv_1106.4804.html",
+    "source": "https://arxiv.org/html/1106.4804",
+    "associated_paper": "1106.4804",
+    "description": "Primary paper HTML",
+    "retrieval_date": "2026-09-10T16:43:38.626712+00:00",
+    "sha256": "09482f7944b0f44e4466920f276d38818cf3e1975cfd30d396744b4d5e41fe28",
+    "bytes": 430848,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/arxiv_1202.1757.html",
+    "source": "https://arxiv.org/html/1202.1757",
+    "associated_paper": "1202.1757",
+    "description": "Primary paper HTML",
+    "retrieval_date": "2026-09-10T16:43:37.781473+00:00",
+    "sha256": "a433dbea2976f238507298bdd296adb360ccb505a9431f643e183565bbf9e094",
+    "bytes": 1020543,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/arxiv_1307.4787.html",
+    "source": "https://arxiv.org/html/1307.4787",
+    "associated_paper": "1307.4787",
+    "description": "Primary paper HTML",
+    "retrieval_date": "2026-09-10T16:43:37.763011+00:00",
+    "sha256": "f63d2254fb857c31ca426a617284963e8b69d09a26da6fa49160c5457dff8e09",
+    "bytes": 656113,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/arxiv_2306.03147.html",
+    "source": "https://arxiv.org/html/2306.03147",
+    "associated_paper": "2306.03147",
+    "description": "Primary paper HTML",
+    "retrieval_date": "2026-09-10T16:43:37.685885+00:00",
+    "sha256": "7e2d36eecc4dd2cafcf5362c127c5ae464eb7c5c92ab1796348e301cd3cf357a",
+    "bytes": 290694,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/arxiv_2606.22275.html",
+    "source": "https://arxiv.org/html/2606.22275",
+    "associated_paper": "2606.22275",
+    "description": "Primary paper HTML",
+    "retrieval_date": "2026-09-10T16:43:39.991193+00:00",
+    "sha256": "fb874e074166f2247f563d077123f6f315cf96c58cd3fe5773892abe50bc03c2",
+    "bytes": 1553297,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/arxiv_1311.1941.html",
+    "source": "https://arxiv.org/html/1311.1941",
+    "associated_paper": "1311.1941",
+    "description": "Primary paper HTML",
+    "retrieval_date": "2026-09-10T16:43:39.141819+00:00",
+    "sha256": "84341396b2180ab4155a66acd2d11f12256260c6ee22303b87d702ae5a974912",
+    "bytes": 1032293,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/arxiv_1808.09992.html",
+    "source": "https://arxiv.org/html/1808.09992",
+    "associated_paper": "1808.09992",
+    "description": "Primary paper HTML",
+    "retrieval_date": "2026-09-10T16:43:37.902073+00:00",
+    "sha256": "b8ffbf6806cb9c7f4b0d3c6cd15109fb732bdfead86755f3e73a400dbf61858f",
+    "bytes": 354631,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/cicylist.txt",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/cicylist/cicylist.txt",
+    "associated_paper": "Candelas et al. 1988",
+    "description": "Oxford original CICY list",
+    "retrieval_date": "2026-09-10T16:43:39.275546+00:00",
+    "sha256": "c443a8b431d842c9b2e1cf4af19c12dce0aaeb6f11f99a29f70260b559085cd8",
+    "bytes": 2310828,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/cicy_index.html",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/cicylist/index.html",
+    "associated_paper": "1307.4787",
+    "description": "Oxford index",
+    "retrieval_date": "2026-09-10T16:43:38.985264+00:00",
+    "sha256": "48135d51de3e99fd6377bd83eb1c92676427a161bffab0e2633e3fc723500e4a",
+    "bytes": 1942,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/models_index.html",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/linebundlemodels/index.html",
+    "associated_paper": "1307.4787",
+    "description": "Oxford model database index",
+    "retrieval_date": "2026-09-10T16:43:39.363698+00:00",
+    "sha256": "ba01fdf11356deb8689874b0a0fa302bbb14e0f5bf3db1de403e7f7a16751654",
+    "bytes": 6773,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/symmetries.html",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/CICY_Symmetries/index.html",
+    "associated_paper": "1003.3235",
+    "description": "Oxford symmetry index",
+    "status": "UNAVAILABLE",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "path": "data/raw/symmetries_resolved.html",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/discretesymmetries/discretesymmetries/CICY_symmetries.html",
+    "associated_paper": "1708.08943; 1003.3235",
+    "description": "Oxford resolved symmetry data index",
+    "retrieval_date": "2026-09-10T16:46:28.395694+00:00",
+    "sha256": "d67889dadca10fad1b6552f2fba103b0051081601b1c4e1c8ba8d1a5cb0513df",
+    "bytes": 6637,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/quotients.html",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/CicyQuotients/Cicy_Quotients/Cicy_Quotients.html",
+    "associated_paper": "1606.04032; 1003.3235",
+    "description": "Oxford quotient data index",
+    "retrieval_date": "2026-09-10T16:46:28.392399+00:00",
+    "sha256": "b7b55ff454129b0073f335fbf98fbdf9c071700b0ae319de30e7512a92e7647b",
+    "bytes": 8662,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/cicylist.m",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/cicylist/cicylist.m",
+    "associated_paper": "1003.3235",
+    "description": "Oxford topology with symmetry metadata",
+    "retrieval_date": "2026-09-10T16:46:29.624742+00:00",
+    "sha256": "8453b0f7eb23f49672794a8f740a86867d19b8e56e167f167d748e41c7076a79",
+    "bytes": 6110789,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/importGUT.nb",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/linebundlemodels/importGUT.nb",
+    "associated_paper": "1307.4787",
+    "description": "Model database field definitions",
+    "retrieval_date": "2026-09-10T16:46:28.766870+00:00",
+    "sha256": "586bf6f658e6f6ebb9b72185a0a52592799c59721e0dfcd008710ed3e98a046c",
+    "bytes": 1418,
+    "status": "ACQUIRED"
+  }
+]

@@ -1,0 +1,54 @@
+linebundle models Heterotic
+Line Bundle Models This
+website holds results for phenomenologically interesting heterotic
+line bundle models on Calabi-Yau manifolds obtained as complete
+intersections in products of projective spaces. The
+underlying data for the complete intersection Calabi-Yau manifolds
+(Cicys) is due to P. Candelas, A.M. Dale, C.A. Lutken and R.
+Schimmrigk, Nucl.Phys.B298 (1988) 493 and can be found here .
+The freely-acting discrete
+symmetries on Cicys used in our computation have been found by V. Braun
+in arXiv:1003.3235 . Heterotic line bundle standard
+models on Cicys, a partial scan Lara
+Anderson, James Gray, Andre Lukas, Eran Palti We present a database of several hundred heterotic standard
+models from line bundle models resulting from a partial scan on
+complete intersection Calabi-Yau
+manifolds with h11<6. Details of the string construction, the
+computations
+and the interpretation of the data can be found in arXiv:1106.4804 and arXiv:1202.1757 .
+Any
+use of this data should be acknowledged by referencing the
+aforementioned paper. Underlying Calabi-Yau
+data as a Mathematica
+notebook printout or
+as a pdf
+printout. Line bundle
+standard models as a gziped
+Mathematica .m file (save to
+disk, gunzip, and load .m file into Mathematica with
+Get["filename"]) or as a .m file (save to disk and load into Mathematica with Get["filename"]).
+Alternatively, download this simple
+notebook or open it in the Mathematica browser plug-in and directly import
+the .m file. Line bundle
+standard models as a
+Mathematica
+notebook printout Line
+bundle standard models as a pdf
+printout All heterotic line bundle SU(5) GUT
+models on favourable Cicys Lara
+Anderson, Andrei Constantin, James Gray, Andre Lukas, Eran Palti We present a database of all
+phenomenologically viable SU(5) GUT line bundle models obtained by
+scanning over all favourable Cicys with freely-acting symmetries. The
+database contains 63325 line bundle models on the 68 favourable Cicys,
+which have h11<7. Details of the string construction, the
+computations
+and the interpretation of the data can be found in arXiv:1307.4787 .
+Any
+use of this data should be acknowledged by referencing the
+aforementioned paper. Line bundle
+standard models as a gziped Mathematica .m file (save to
+disk, gunzip, and load .m file into Mathematica with
+Get["filename"] or simply view as text file) or as a .m file (7 MB, save to disk and load into Mathematica with
+Get["filename"] or simply view as text file). Alternatively, download this simple
+notebook or open it in the Mathematica browser plug-in and directly import
+the .m file.

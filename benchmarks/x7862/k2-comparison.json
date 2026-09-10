@@ -1,0 +1,603 @@
+{
+  "K": 2,
+  "ambient_row_orbit_count": 5,
+  "candidates": [
+    {
+      "columns": [
+        [
+          -2,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        [
+          2,
+          -2,
+          1,
+          -1
+        ],
+        [
+          2,
+          1,
+          0,
+          -2
+        ]
+      ],
+      "spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "PASS",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            18,
+            12,
+            0
+          ]
+        }
+      },
+      "stability_equal_t": {
+        "diagnostics": {
+          "t": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "exact rational t>0 in ambient Kahler chamber"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "rational_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "UNKNOWN",
+        "residual": [
+          "-12",
+          "0",
+          "0",
+          "0",
+          "12"
+        ]
+      },
+      "stability_numerical": {
+        "diagnostics": {
+          "distance_from_boundary": 0.17712434446768335,
+          "maximum_slope_residual": 8.559661304371258e-14,
+          "message": "`gtol` termination condition is satisfied.",
+          "nfev": 6,
+          "seed": 0,
+          "solver_status": 1,
+          "t": [
+            0.3228756555323269,
+            0.32287565553226094,
+            0.17712434446768335,
+            0.17712434446772887
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "floating point root; no existence certificate"
+          ],
+          "mathematical_status": "NUMERIC_WITNESS",
+          "name": "numerical_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "PASS",
+        "residual": 8.559661304371258e-14
+      }
+    },
+    {
+      "columns": [
+        [
+          -2,
+          -1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          2,
+          -2,
+          2,
+          -1
+        ]
+      ],
+      "spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "PASS",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            23,
+            17,
+            0
+          ]
+        }
+      },
+      "stability_equal_t": {
+        "diagnostics": {
+          "t": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "exact rational t>0 in ambient Kahler chamber"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "rational_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "UNKNOWN",
+        "residual": [
+          "-12",
+          "0",
+          "0",
+          "0",
+          "12"
+        ]
+      },
+      "stability_numerical": {
+        "diagnostics": {
+          "distance_from_boundary": 0.180393650024955,
+          "maximum_slope_residual": 1.2557422982474944e-16,
+          "message": "`gtol` termination condition is satisfied.",
+          "nfev": 7,
+          "seed": 0,
+          "solver_status": 1,
+          "t": [
+            0.45255111003493703,
+            0.18352761997005407,
+            0.18352761997005404,
+            0.180393650024955
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "floating point root; no existence certificate"
+          ],
+          "mathematical_status": "NUMERIC_WITNESS",
+          "name": "numerical_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "PASS",
+        "residual": 1.2557422982474944e-16
+      }
+    },
+    {
+      "columns": [
+        [
+          -2,
+          -1,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          -1,
+          1
+        ],
+        [
+          0,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0,
+          -1
+        ]
+      ],
+      "spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "PASS",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            9,
+            3,
+            0
+          ]
+        }
+      },
+      "stability_equal_t": {
+        "diagnostics": {
+          "t": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "exact rational t>0 in ambient Kahler chamber"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "rational_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "UNKNOWN",
+        "residual": [
+          "12",
+          "0",
+          "-12",
+          "0",
+          "0"
+        ]
+      },
+      "stability_numerical": {
+        "diagnostics": {
+          "distance_from_boundary": 0.07692307692307694,
+          "maximum_slope_residual": 5.781042968462354e-17,
+          "message": "`gtol` termination condition is satisfied.",
+          "nfev": 8,
+          "seed": 0,
+          "solver_status": 1,
+          "t": [
+            0.3076923076923077,
+            0.07692307692307694,
+            0.3076923076923077,
+            0.3076923076923077
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "floating point root; no existence certificate"
+          ],
+          "mathematical_status": "NUMERIC_WITNESS",
+          "name": "numerical_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "PASS",
+        "residual": 5.781042968462354e-17
+      }
+    },
+    {
+      "columns": [
+        [
+          -2,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          -2,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          -1
+        ]
+      ],
+      "spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "PASS",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            9,
+            3,
+            0
+          ]
+        }
+      },
+      "stability_equal_t": {
+        "diagnostics": {
+          "t": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "exact rational t>0 in ambient Kahler chamber"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "rational_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "UNKNOWN",
+        "residual": [
+          "-12",
+          "0",
+          "0",
+          "0",
+          "12"
+        ]
+      },
+      "stability_numerical": {
+        "diagnostics": {
+          "distance_from_boundary": 0.07692307692307693,
+          "maximum_slope_residual": 8.761893249075755e-17,
+          "message": "`gtol` termination condition is satisfied.",
+          "nfev": 8,
+          "seed": 0,
+          "solver_status": 1,
+          "t": [
+            0.3076923076923077,
+            0.30769230769230765,
+            0.30769230769230765,
+            0.07692307692307693
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "floating point root; no existence certificate"
+          ],
+          "mathematical_status": "NUMERIC_WITNESS",
+          "name": "numerical_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "PASS",
+        "residual": 8.761893249075755e-17
+      }
+    },
+    {
+      "columns": [
+        [
+          -2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          -1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1
+        ],
+        [
+          1,
+          1,
+          -1,
+          -1
+        ]
+      ],
+      "spectrum": {
+        "diagnostics": null,
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": true,
+          "input_assumptions": [
+            "all cohomologies computed by certified backend"
+          ],
+          "mathematical_status": "EXACT",
+          "name": "full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+        },
+        "outcome": "FAIL",
+        "residual": {
+          "V": [
+            0,
+            6,
+            0,
+            0
+          ],
+          "wedge2": [
+            0,
+            6,
+            0,
+            0
+          ]
+        }
+      },
+      "stability_equal_t": {
+        "diagnostics": {
+          "t": [
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": true,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "exact rational t>0 in ambient Kahler chamber"
+          ],
+          "mathematical_status": "SUFFICIENT",
+          "name": "rational_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "UNKNOWN",
+        "residual": [
+          "12",
+          "0",
+          "-12",
+          "0",
+          "0"
+        ]
+      },
+      "stability_numerical": {
+        "diagnostics": {
+          "distance_from_boundary": 0.13397459621556135,
+          "maximum_slope_residual": 6.577959584807679e-17,
+          "message": "`gtol` termination condition is satisfied.",
+          "nfev": 7,
+          "seed": 0,
+          "solver_status": 1,
+          "t": [
+            0.13397459621556138,
+            0.36602540378443865,
+            0.13397459621556135,
+            0.3660254037844387
+          ]
+        },
+        "metadata": {
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
+          "input_assumptions": [
+            "floating point root; no existence certificate"
+          ],
+          "mathematical_status": "NUMERIC_WITNESS",
+          "name": "numerical_slope_witness",
+          "reference": "1307.4787 (4.5)"
+        },
+        "outcome": "PASS",
+        "residual": 6.577959584807679e-17
+      }
+    }
+  ],
+  "cohomology_scope": "Zariski-generic smooth family; invariant symmetry subfamily not certified",
+  "comparison_scope": "candidate-count comparison only: published Table 4 has explicit slope solutions before cohomology; our split run uses necessary slopes, GUT_FULL single-index range, no equivariance test. Numerical witnesses are not exact certification.",
+  "gamma": 2,
+  "geometry": "7862",
+  "input_complete": true,
+  "published_table4_count": 5,
+  "summand_canonical_count": 120
+}

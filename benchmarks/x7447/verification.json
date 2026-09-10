@@ -1,0 +1,150 @@
+{
+  "checks": [
+    {
+      "diagnostics": null,
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "rank five integral bundle"
+        ],
+        "mathematical_status": "EXACT",
+        "name": "c1_zero",
+        "reference": "1307.4787 (4.2)"
+      },
+      "outcome": "PASS",
+      "residual": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "diagnostics": "Published subset criterion only; repeated summands and exact holonomy need separate interpretation.",
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "nonempty proper subsets; torsion-free Picard group; criterion only, not full holonomy classification"
+        ],
+        "mathematical_status": "EXACT",
+        "name": "no_proper_zero_subset",
+        "reference": "1307.4787 (2.2), Appendix A"
+      },
+      "outcome": "PASS",
+      "residual": null
+    },
+    {
+      "diagnostics": {
+        "effectivity": "EXACT_ZERO_CLASS",
+        "note": "nonnegative nef pairings are necessary; an integral effective representative is not constructed"
+      },
+      "metadata": {
+        "can_certify_acceptance": false,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "trivial hidden bundle; ambient hyperplanes nef"
+        ],
+        "mathematical_status": "NECESSARY",
+        "name": "anomaly_nef_pairings",
+        "reference": "1311.1941 (2.3),(2.6); 1307.4787 (4.4)"
+      },
+      "outcome": "PASS",
+      "residual": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "diagnostics": null,
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "chi=sum (-1)^q h^q; target -3*Gamma"
+        ],
+        "mathematical_status": "EXACT",
+        "name": "chiral_indices",
+        "reference": "1307.4787 (4.7)"
+      },
+      "outcome": "PASS",
+      "residual": [
+        -12,
+        -12
+      ]
+    },
+    {
+      "diagnostics": {
+        "coefficient_bound": 1,
+        "stability": "UNKNOWN_STABILITY"
+      },
+      "metadata": {
+        "can_certify_acceptance": false,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "search restricted to positive ambient Kahler chamber; zero matrices allowed"
+        ],
+        "mathematical_status": "NECESSARY",
+        "name": "signed_slope_matrices",
+        "reference": "1307.4787 Section 5"
+      },
+      "outcome": "PASS",
+      "residual": null
+    },
+    {
+      "diagnostics": {
+        "V": null,
+        "wedge2": null
+      },
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": true,
+        "input_assumptions": [
+          "all cohomologies computed by certified backend"
+        ],
+        "mathematical_status": "EXACT",
+        "name": "full_spectrum",
+        "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+      },
+      "outcome": "UNKNOWN",
+      "residual": null
+    },
+    {
+      "diagnostics": {
+        "t": [
+          "5",
+          "29",
+          "15",
+          "11",
+          "5"
+        ]
+      },
+      "metadata": {
+        "can_certify_acceptance": true,
+        "can_safely_prune": false,
+        "input_assumptions": [
+          "exact rational t>0 in ambient Kahler chamber"
+        ],
+        "mathematical_status": "SUFFICIENT",
+        "name": "rational_slope_witness",
+        "reference": "1307.4787 (4.5)"
+      },
+      "outcome": "PASS",
+      "residual": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "claim": "exact recorded quantities verified; no MSSM or full-model certificate",
+  "classification": "UNKNOWN",
+  "verified": true
+}

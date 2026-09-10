@@ -1,0 +1,93 @@
+{
+  "outcome": "UNKNOWN_BOUNDED",
+  "domain": {
+    "geometry": {
+      "identifier": "7862",
+      "ambient": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "configuration": [
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ],
+      "h11": 4,
+      "h21": 68,
+      "symmetry_orders": [
+        2,
+        4,
+        8,
+        16
+      ],
+      "cone": "POSITIVE_ORTHANT",
+      "basis": "ordered restrictions of ambient integral hyperplane classes"
+    },
+    "K": 2,
+    "gamma": 2,
+    "target": "GUT_FULL",
+    "pair_nonpositive": true,
+    "slope_coefficients": 1,
+    "canonicalization": "summand permutations only; repeated columns retained",
+    "kahler_domain": "positive ambient chamber",
+    "hidden_bundle": "trivial",
+    "structure_requirement": "1307.4787 (2.2); exact holonomy not certified",
+    "raw_four_column_states": 152587890625,
+    "raw_five_column_states": 95367431640625,
+    "gamma_scope": "order sets chiral target; no equivariance asserted"
+  },
+  "counts": {
+    "complete_bundles_checked": 38161,
+    "depth_2_attempted": 27730,
+    "depth_2_reject_pair": 14808,
+    "depth_2_retained": 10573,
+    "depth_3_attempted": 845722,
+    "depth_3_reject_completion": 89368,
+    "depth_3_reject_index": 90112,
+    "depth_3_reject_pair": 522397,
+    "depth_3_reject_pair_budget": 20216,
+    "depth_3_retained": 123629,
+    "depth_4_attempted": 7875639,
+    "depth_4_reject_completion": 5114419,
+    "depth_4_reject_index": 359084,
+    "depth_4_reject_pair": 2019340,
+    "depth_4_reject_pair_budget": 130642,
+    "depth_4_retained": 252154,
+    "four_prefixes": 252154,
+    "individual_considered": 625,
+    "individual_reject_index": 304,
+    "individual_reject_slope": 86,
+    "individual_retained": 235,
+    "pass_anomaly_nef_pairings": 1260,
+    "pass_c1_zero": 38161,
+    "pass_chiral_indices": 6261,
+    "pass_no_proper_zero_subset": 24043,
+    "pass_pair_index_range": 1356,
+    "pass_single_index_range": 6261,
+    "reject_chiral_indices": 17782,
+    "reject_derived_fifth": 213993,
+    "reject_no_proper_zero_subset": 14118,
+    "reject_pair_index_range": 4905,
+    "reject_signed_slope_matrices": 1140,
+    "reject_anomaly_nef_pairings": 96,
+    "pass_signed_slope_matrices": 120,
+    "depth_2_reject_index": 2349,
+    "necessary_condition_survivors": 120
+  },
+  "complete": true,
+  "elapsed_seconds": 17.341434498899616,
+  "peak_rss_bytes": 33161216,
+  "unknown_count": 120,
+  "certificate": "benchmarks/x7862/k2-gamma2.json"
+}

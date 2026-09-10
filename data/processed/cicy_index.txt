@@ -1,0 +1,11 @@
+index1 The List of Complete Intersection
+Calabi-Yau Three-Folds This website holds the list of 7890 Calabi-Yau manifolds defined as
+complete intersections in products of projective spaces, which was
+first compiled in P. Candelas,
+A.M. Dale, C.A. Lutken and R.
+Schimmrigk, Nucl.Phys.B298 (1988) 493 . Our data contains the
+Hodge numbers which were calculated in P.S. Green, T. Hubsch
+and C. A. Lutken, Class.Quant.Grav. 6 (1989) 105 . The Mathematica file of the data
+also holds the freely-acting discrete
+symmetries which have been found by V. Braun
+in arXiv:1003.3235 . Cicy three-fold data as a plain text file (2.3MB). Cicy three-fold data as a Mathematica file (6.1MB).

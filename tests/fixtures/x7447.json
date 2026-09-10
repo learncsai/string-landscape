@@ -1,0 +1,1 @@
+{"geometry":"7447","gamma_order":4,"matrix_rows":[[-1,-2,1,1,1],[0,-2,-1,1,2],[0,2,-1,1,-2],[0,2,0,0,-2],[1,0,0,-2,1]],"published_c2":[24,24,24,24,24],"published_V_cohomology":[0,12,0,0],"published_wedge2_cohomology":[0,15,3,0],"reference":"arXiv:1307.4787 Section 7","cohomology_evidence":"PUBLISHED_FIXTURE; not independently computed"}

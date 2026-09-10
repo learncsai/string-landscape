@@ -1,0 +1,22 @@
+{
+  "architecture": "arm64",
+  "system": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "ram_bytes": 17179869184,
+  "tools": {
+    "clang": "/usr/bin/clang",
+    "cc": "/usr/bin/cc",
+    "wolframscript": null,
+    "math": null,
+    "cohomCalg": null
+  },
+  "packages": {
+    "numpy": true,
+    "scipy": true,
+    "sympy": true,
+    "pytest": true,
+    "psutil": true
+  },
+  "exact_core": "Python integers/Fraction; no numerical dependency required",
+  "external_cohomology": "NOT_CONFIGURED"
+}

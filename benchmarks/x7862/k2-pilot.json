@@ -1,0 +1,275 @@
+{
+  "assurance": "software exhaustive enumeration with exact necessary pruning; not a formal proof assistant certificate",
+  "constraints": [
+    {
+      "can_certify_acceptance": true,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "rank five integral bundle"
+      ],
+      "mathematical_status": "EXACT",
+      "name": "c1_zero",
+      "reference": "1307.4787 (4.2)"
+    },
+    {
+      "can_certify_acceptance": true,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "nonempty proper subsets; torsion-free Picard group; criterion only, not full holonomy classification"
+      ],
+      "mathematical_status": "EXACT",
+      "name": "no_proper_zero_subset",
+      "reference": "1307.4787 (2.2), Appendix A"
+    },
+    {
+      "can_certify_acceptance": false,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "trivial hidden bundle; ambient hyperplanes nef"
+      ],
+      "mathematical_status": "NECESSARY",
+      "name": "anomaly_nef_pairings",
+      "reference": "1311.1941 (2.3),(2.6); 1307.4787 (4.4)"
+    },
+    {
+      "can_certify_acceptance": true,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "chi=sum (-1)^q h^q; target -3*Gamma"
+      ],
+      "mathematical_status": "EXACT",
+      "name": "chiral_indices",
+      "reference": "1307.4787 (4.7)"
+    },
+    {
+      "can_certify_acceptance": false,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "GUT_FULL; no anti-families; nontrivial common zero-slope summands"
+      ],
+      "mathematical_status": "NECESSARY",
+      "name": "single_index_range",
+      "reference": "1307.4787 Section 5 step 1"
+    },
+    {
+      "can_certify_acceptance": false,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "restricted historical domain: all pair indices nonpositive; wedge index fixed"
+      ],
+      "mathematical_status": "NECESSARY",
+      "name": "pair_index_range",
+      "reference": "1307.4787 (4.10), Section 5 steps 3-6"
+    },
+    {
+      "can_certify_acceptance": false,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "nonpositive individual/pair indices; total fixed"
+      ],
+      "mathematical_status": "NECESSARY",
+      "name": "partial_index_budget",
+      "reference": "1307.4787 Section 5 steps 3-4"
+    },
+    {
+      "can_certify_acceptance": false,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "every remaining component lies in [-K,K]"
+      ],
+      "mathematical_status": "NECESSARY",
+      "name": "component_completion_bound",
+      "reference": "1307.4787 Section 5 step 4(i); triangle inequality"
+    },
+    {
+      "can_certify_acceptance": false,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "search restricted to positive ambient Kahler chamber; zero matrices allowed"
+      ],
+      "mathematical_status": "NECESSARY",
+      "name": "signed_slope_matrices",
+      "reference": "1307.4787 Section 5"
+    },
+    {
+      "can_certify_acceptance": true,
+      "can_safely_prune": false,
+      "input_assumptions": [
+        "exact rational t>0 in ambient Kahler chamber"
+      ],
+      "mathematical_status": "SUFFICIENT",
+      "name": "rational_slope_witness",
+      "reference": "1307.4787 (4.5)"
+    },
+    {
+      "can_certify_acceptance": false,
+      "can_safely_prune": false,
+      "input_assumptions": [
+        "floating point root; no existence certificate"
+      ],
+      "mathematical_status": "NUMERIC_WITNESS",
+      "name": "numerical_slope_witness",
+      "reference": "1307.4787 (4.5)"
+    },
+    {
+      "can_certify_acceptance": true,
+      "can_safely_prune": true,
+      "input_assumptions": [
+        "all cohomologies computed by certified backend"
+      ],
+      "mathematical_status": "EXACT",
+      "name": "full_spectrum",
+      "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+    }
+  ],
+  "domain": {
+    "K": 2,
+    "canonicalization": "summand permutations only; repeated columns retained",
+    "gamma": 2,
+    "gamma_scope": "order sets chiral target; no equivariance asserted",
+    "geometry": {
+      "ambient": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "basis": "ordered restrictions of ambient integral hyperplane classes",
+      "cone": "POSITIVE_ORTHANT",
+      "configuration": [
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ],
+      "h11": 4,
+      "h21": 68,
+      "identifier": "7862",
+      "symmetry_orders": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    "hidden_bundle": "trivial",
+    "kahler_domain": "positive ambient chamber",
+    "pair_nonpositive": true,
+    "raw_five_column_states": 95367431640625,
+    "raw_four_column_states": 152587890625,
+    "slope_coefficients": 1,
+    "structure_requirement": "1307.4787 (2.2); exact holonomy not certified",
+    "target": "GUT_FULL"
+  },
+  "domain_sha256": "7765d3a9e80db062ac620c663ba84dac164f0bea4cde452ad89a92e8808daa22",
+  "enumeration": {
+    "algorithm": "hierarchical_section5_conservative_v1",
+    "complete": false,
+    "counts": {
+      "complete_bundles_checked": 2223,
+      "depth_2_attempted": 702,
+      "depth_2_reject_pair": 401,
+      "depth_2_retained": 301,
+      "depth_3_attempted": 31077,
+      "depth_3_reject_completion": 5418,
+      "depth_3_reject_index": 1586,
+      "depth_3_reject_pair": 18335,
+      "depth_3_reject_pair_budget": 746,
+      "depth_3_retained": 4992,
+      "depth_4_attempted": 312643,
+      "depth_4_reject_completion": 191271,
+      "depth_4_reject_index": 10663,
+      "depth_4_reject_pair": 94903,
+      "depth_4_reject_pair_budget": 4825,
+      "depth_4_retained": 10981,
+      "four_prefixes": 10981,
+      "individual_considered": 625,
+      "individual_reject_index": 304,
+      "individual_reject_slope": 86,
+      "individual_retained": 235,
+      "necessary_condition_survivors": 0,
+      "pass_anomaly_nef_pairings": 14,
+      "pass_c1_zero": 2223,
+      "pass_chiral_indices": 392,
+      "pass_no_proper_zero_subset": 1373,
+      "pass_pair_index_range": 14,
+      "pass_single_index_range": 392,
+      "reject_chiral_indices": 981,
+      "reject_derived_fifth": 8758,
+      "reject_no_proper_zero_subset": 850,
+      "reject_pair_index_range": 378,
+      "reject_signed_slope_matrices": 14
+    },
+    "domain": {
+      "K": 2,
+      "canonicalization": "summand permutations only; repeated columns retained",
+      "gamma": 2,
+      "gamma_scope": "order sets chiral target; no equivariance asserted",
+      "geometry": {
+        "ambient": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "basis": "ordered restrictions of ambient integral hyperplane classes",
+        "cone": "POSITIVE_ORTHANT",
+        "configuration": [
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ]
+        ],
+        "h11": 4,
+        "h21": 68,
+        "identifier": "7862",
+        "symmetry_orders": [
+          2,
+          4,
+          8,
+          16
+        ]
+      },
+      "hidden_bundle": "trivial",
+      "kahler_domain": "positive ambient chamber",
+      "pair_nonpositive": true,
+      "raw_five_column_states": 95367431640625,
+      "raw_four_column_states": 152587890625,
+      "slope_coefficients": 1,
+      "structure_requirement": "1307.4787 (2.2); exact holonomy not certified",
+      "target": "GUT_FULL"
+    },
+    "elapsed_seconds": 0.718980124918744,
+    "identity": "4c34b4eefa4d792ee062050d5708963c1b048a5ff361cb16dfb1b5ae74636d55",
+    "next_root": 3,
+    "peak_rss_bytes": 29949952,
+    "roots": 235,
+    "survivors": []
+  },
+  "fully_certified_count": 0,
+  "kind": "bounded_search",
+  "late_rejections": [],
+  "literature_comparison": "1307.4787 Table 4 precedes full cohomology filtering and quotients ambient row symmetries; our necessary survivors are not that count",
+  "outcome": "UNKNOWN_BOUNDED",
+  "schema": 1,
+  "software_source_sha256": "47146e78837bce5f7221b6396b7f773011e04ba158d2b15d2bab43ce171747f5",
+  "survivor_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "survivors": [],
+  "unknown_count": 0
+}
