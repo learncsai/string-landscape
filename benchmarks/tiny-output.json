@@ -1,0 +1,63 @@
+{
+  "outcome": "UNSAT_BOUNDED",
+  "domain": {
+    "geometry": {
+      "identifier": "bicubic",
+      "ambient": [
+        2,
+        2
+      ],
+      "configuration": [
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "h11": 2,
+      "h21": 83,
+      "symmetry_orders": [],
+      "cone": "POSITIVE_ORTHANT",
+      "basis": "ordered restrictions of ambient integral hyperplane classes"
+    },
+    "K": 1,
+    "gamma": 1,
+    "target": "GUT_FULL",
+    "pair_nonpositive": true,
+    "slope_coefficients": 1,
+    "allowed_columns": null,
+    "canonicalization": "summand permutations only; repeated columns retained",
+    "kahler_domain": "positive ambient chamber",
+    "hidden_bundle": "trivial",
+    "structure_requirement": "1307.4787 (2.2); exact holonomy not certified",
+    "raw_four_column_states": 6561,
+    "raw_five_column_states": 59049,
+    "gamma_scope": "order sets chiral target; no equivariance asserted"
+  },
+  "counts": {
+    "individual_considered": 9,
+    "individual_reject_index": 4,
+    "individual_reject_slope": 2,
+    "individual_retained": 3,
+    "depth_2_attempted": 6,
+    "depth_2_retained": 6,
+    "depth_3_attempted": 10,
+    "depth_3_reject_completion": 2,
+    "depth_3_retained": 8,
+    "depth_4_attempted": 11,
+    "depth_4_reject_completion": 4,
+    "depth_4_retained": 7,
+    "four_prefixes": 7,
+    "complete_bundles_checked": 3,
+    "pass_c1_zero": 3,
+    "reject_no_proper_zero_subset": 3,
+    "reject_derived_fifth": 4,
+    "necessary_condition_survivors": 0
+  },
+  "complete": true,
+  "elapsed_seconds": 0.0019533330341801047,
+  "peak_rss_bytes": 26247168,
+  "unknown_count": 0,
+  "certificate": "benchmarks/tiny-search.json"
+}

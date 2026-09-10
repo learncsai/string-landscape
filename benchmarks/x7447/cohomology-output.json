@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "kind": "cohomology",
+  "geometry": "7447",
+  "geometry_sha256": "de10c18b0a1706327185161881280b4741cee5600d46479f8b739cb610e07cdc",
+  "line_bundle": [
+    -2,
+    -2,
+    2,
+    2,
+    0
+  ],
+  "generic": true,
+  "result": {
+    "dimensions": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "status": "EXACT_ANALYTIC",
+    "method": "generic isolated Koszul map; relative_P1_resultant_d2",
+    "reference": "1202.1757 Section 5.2; 2606.22275 Section 2; docs/cohomology_certificates.md"
+  },
+  "koszul_E1": [
+    [
+      0,
+      2,
+      9
+    ],
+    [
+      2,
+      3,
+      9
+    ]
+  ],
+  "rank_witness": {
+    "schema": 1,
+    "geometry": "7447",
+    "line_bundle": [
+      -2,
+      -2,
+      2,
+      2,
+      0
+    ],
+    "method": "relative_P1_resultant_d2",
+    "prime": 1000003,
+    "seed": 0,
+    "coefficient_generator": "sha256-x7447-v1",
+    "matrix_sha256": "d5711fd339389ada57127f038a6b726fe6536d18a2436c35e0c7210c2d558011",
+    "source_bidegree": [
+      2,
+      3
+    ],
+    "target_bidegree": [
+      0,
+      2
+    ],
+    "source_dimension": 9,
+    "target_dimension": 9,
+    "rank": 9,
+    "complex_structure_scope": "generic smooth two-equation family; chosen free-action locus not certified"
+  },
+  "scope": "Zariski-generic smooth family; invariant subfamily UNKNOWN"
+}

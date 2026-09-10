@@ -79,3 +79,38 @@ V=(0,12,0,0), wedge2=(0,15,3,0), agreeing with the published Section-7 numbers.
 Source family with specified free action is not certified. Reproduction command:
 `.venv/bin/python scripts/reproduce_known_model.py`. All nontrivial rank witness
 records are saved under benchmarks/x7447/. No novel theorem is claimed.
+
+## 2026-09-10 — committed-source refresh and independent tiny replay
+
+Git commit: e9525cca0baa09819547da037e67db5f1ae61ce4 (core implementation).
+Inputs and core source SHA-256 are embedded in the current search artifacts.
+Algorithm: hierarchical_section5_conservative_v1; no heuristic pruning;
+positive ambient chamber, trivial hidden bundle, GUT_FULL necessary domain,
+nonpositive pair indices, coefficient bound 1 for combined slope matrices.
+
+X7862,Gamma=2,K=1: complete in 0.6323 s with checkpoint writes enabled;
+peak RSS 26,755,072 bytes. Zero survivors; UNSAT_BOUNDED for that declared
+domain. Independent full brute replay of this 43-million-state box is not run.
+
+X7862,Gamma=2,K=2: complete in 18.7447 s; peak RSS 33,308,672 bytes
+(31.77 MiB). All stage counts match the initial K=2 run exactly: 625 singles,
+235 retained, 10,573 pair prefixes, 123,629 triple prefixes, 252,154 four
+prefixes, 38,161 completed bundles and 120 necessary survivors. The outcome is
+UNKNOWN_BOUNDED. Survivor set and counts were preserved across source refresh.
+Artifacts: benchmarks/x7862/k2-gamma2-current.json and associated checkpoint.
+
+The ratio of raw four-column assignments to materialized complete canonical
+bundles is about 4.0 million. This includes C1 completion and canonicalization,
+so it must not be called a pure physics pruning factor. At the fourth-extension
+stage, 7,875,639 attempts reduce to 252,154 retained prefixes (factor 31.23).
+Anomaly survivors 1,260 reduce to 120 under the signed combinations (factor 10.5).
+No expensive cohomology was used to prune this scan.
+
+The independent reference replay on the bicubic K=1,Gamma=1 domain verifies
+UNSAT_BOUNDED over all 6,561 ordered four-column states. Nonempty physics-subset
+replays, resumptions and thread equality remain part of the unit suite.
+Full suite: 71 tests pass, about two seconds; exact timing in benchmarks/tests.txt.
+
+The generic golden model, generic rank certificates, and five exact tetraquadric
+slope witnesses were regenerated successfully. No complete gauge group,
+symmetry-invariant cohomology, equivariance or downstairs claim was added.

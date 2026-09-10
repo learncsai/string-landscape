@@ -1,0 +1,47 @@
+{
+  "verified": true,
+  "outcome": "UNSAT_BOUNDED",
+  "independent_reference_counts": {
+    "raw_states": 6561,
+    "valid_k5": 2601,
+    "canonical_states": 39,
+    "pass_c1_zero": 39,
+    "reject_no_proper_zero_subset": 39,
+    "necessary_condition_survivors": 0
+  },
+  "domain": {
+    "geometry": {
+      "identifier": "bicubic",
+      "ambient": [
+        2,
+        2
+      ],
+      "configuration": [
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "h11": 2,
+      "h21": 83,
+      "symmetry_orders": [],
+      "cone": "POSITIVE_ORTHANT",
+      "basis": "ordered restrictions of ambient integral hyperplane classes"
+    },
+    "K": 1,
+    "gamma": 1,
+    "target": "GUT_FULL",
+    "pair_nonpositive": true,
+    "slope_coefficients": 1,
+    "allowed_columns": null,
+    "canonicalization": "summand permutations only; repeated columns retained",
+    "kahler_domain": "positive ambient chamber",
+    "hidden_bundle": "trivial",
+    "structure_requirement": "1307.4787 (2.2); exact holonomy not certified",
+    "raw_four_column_states": 6561,
+    "raw_five_column_states": 59049,
+    "gamma_scope": "order sets chiral target; no equivariance asserted"
+  }
+}

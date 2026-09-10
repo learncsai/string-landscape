@@ -51,3 +51,11 @@ Scientific blockers: actual holonomy/commutant classification, nonzero integral
 anomaly effectivity, invariant-family cohomology, equivariance and Wilson-line
 representations; generic rank-deficient cases remain UNKNOWN. Large independent
 exhaustion proofs require branch-level certificates not yet implemented.
+
+Final refresh: core commit e9525cca0baa09819547da037e67db5f1ae61ce4.
+K=2 wall time 18.7447 s, peak RSS 33,308,672 bytes (31.77 MiB); counts unchanged.
+K=1 checkpointed run 0.6323 s, peak RSS 26,755,072 bytes. Independent tiny
+bicubic replay verified all 6,561 ordered states. Final suite: 71 passing tests.
+Single most important scientific bottleneck: certified cohomology/equivariance
+on an explicitly specified free-action subfamily. General formula coverage and
+large-domain branch proofs remain partial.

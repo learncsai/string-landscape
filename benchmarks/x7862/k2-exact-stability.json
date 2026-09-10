@@ -37,14 +37,14 @@
       "generic_spectrum": {
         "diagnostics": null,
         "metadata": {
-          "can_certify_acceptance": true,
-          "can_safely_prune": true,
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
           "input_assumptions": [
-            "all cohomologies computed by certified backend"
+            "Zariski-generic smooth family; not a specified invariant subfamily"
           ],
           "mathematical_status": "EXACT",
-          "name": "full_spectrum",
-          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+          "name": "generic_full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); Koszul rank certificates"
         },
         "outcome": "PASS",
         "residual": {
@@ -167,14 +167,14 @@
       "generic_spectrum": {
         "diagnostics": null,
         "metadata": {
-          "can_certify_acceptance": true,
-          "can_safely_prune": true,
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
           "input_assumptions": [
-            "all cohomologies computed by certified backend"
+            "Zariski-generic smooth family; not a specified invariant subfamily"
           ],
           "mathematical_status": "EXACT",
-          "name": "full_spectrum",
-          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+          "name": "generic_full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); Koszul rank certificates"
         },
         "outcome": "PASS",
         "residual": {
@@ -257,14 +257,14 @@
       "generic_spectrum": {
         "diagnostics": null,
         "metadata": {
-          "can_certify_acceptance": true,
-          "can_safely_prune": true,
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
           "input_assumptions": [
-            "all cohomologies computed by certified backend"
+            "Zariski-generic smooth family; not a specified invariant subfamily"
           ],
           "mathematical_status": "EXACT",
-          "name": "full_spectrum",
-          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+          "name": "generic_full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); Koszul rank certificates"
         },
         "outcome": "PASS",
         "residual": {
@@ -347,14 +347,14 @@
       "generic_spectrum": {
         "diagnostics": null,
         "metadata": {
-          "can_certify_acceptance": true,
-          "can_safely_prune": true,
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
           "input_assumptions": [
-            "all cohomologies computed by certified backend"
+            "Zariski-generic smooth family; not a specified invariant subfamily"
           ],
           "mathematical_status": "EXACT",
-          "name": "full_spectrum",
-          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+          "name": "generic_full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); Koszul rank certificates"
         },
         "outcome": "PASS",
         "residual": {
@@ -437,14 +437,14 @@
       "generic_spectrum": {
         "diagnostics": null,
         "metadata": {
-          "can_certify_acceptance": true,
-          "can_safely_prune": true,
+          "can_certify_acceptance": false,
+          "can_safely_prune": false,
           "input_assumptions": [
-            "all cohomologies computed by certified backend"
+            "Zariski-generic smooth family; not a specified invariant subfamily"
           ],
           "mathematical_status": "EXACT",
-          "name": "full_spectrum",
-          "reference": "1307.4787 (4.8)-(4.9); 2306.03147 C4"
+          "name": "generic_full_spectrum",
+          "reference": "1307.4787 (4.8)-(4.9); Koszul rank certificates"
         },
         "outcome": "FAIL",
         "residual": {

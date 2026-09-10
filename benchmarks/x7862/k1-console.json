@@ -1,0 +1,84 @@
+{
+  "outcome": "UNSAT_BOUNDED",
+  "domain": {
+    "geometry": {
+      "identifier": "7862",
+      "ambient": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "configuration": [
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ],
+      "h11": 4,
+      "h21": 68,
+      "symmetry_orders": [
+        2,
+        4,
+        8,
+        16
+      ],
+      "cone": "POSITIVE_ORTHANT",
+      "basis": "ordered restrictions of ambient integral hyperplane classes"
+    },
+    "K": 1,
+    "gamma": 2,
+    "target": "GUT_FULL",
+    "pair_nonpositive": true,
+    "slope_coefficients": 1,
+    "allowed_columns": null,
+    "canonicalization": "summand permutations only; repeated columns retained",
+    "kahler_domain": "positive ambient chamber",
+    "hidden_bundle": "trivial",
+    "structure_requirement": "1307.4787 (2.2); exact holonomy not certified",
+    "raw_four_column_states": 43046721,
+    "raw_five_column_states": 3486784401,
+    "gamma_scope": "order sets chiral target; no equivariance asserted"
+  },
+  "counts": {
+    "individual_considered": 81,
+    "individual_reject_index": 20,
+    "individual_reject_slope": 18,
+    "individual_retained": 43,
+    "depth_2_attempted": 946,
+    "depth_2_reject_pair": 294,
+    "depth_2_retained": 652,
+    "depth_3_attempted": 9782,
+    "depth_3_reject_completion": 2450,
+    "depth_3_reject_pair": 3608,
+    "depth_3_retained": 3354,
+    "depth_4_attempted": 37761,
+    "depth_4_reject_completion": 26509,
+    "depth_4_reject_pair_budget": 841,
+    "depth_4_retained": 3795,
+    "four_prefixes": 3795,
+    "reject_derived_fifth": 3082,
+    "depth_4_reject_pair": 6616,
+    "complete_bundles_checked": 713,
+    "pass_c1_zero": 713,
+    "reject_no_proper_zero_subset": 537,
+    "depth_3_reject_pair_budget": 370,
+    "pass_no_proper_zero_subset": 176,
+    "reject_chiral_indices": 176,
+    "necessary_condition_survivors": 0
+  },
+  "complete": true,
+  "elapsed_seconds": 0.6322638338897377,
+  "peak_rss_bytes": 26755072,
+  "unknown_count": 0,
+  "certificate": "/Users/messi/Desktop/string landscape/string_sm_sat/benchmarks/x7862/k1-gamma2-current.json"
+}
+
