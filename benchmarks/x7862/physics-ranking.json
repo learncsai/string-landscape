@@ -1,0 +1,887 @@
+{
+ "definitions": "Step 5: a logical physics ranking of the downstairs models on X7862 / (Z2 x Z2).\n\nNo score, no weights, no learned model. Each category is a logical condition on\nexact or explicitly necessary facts, evaluated for every accepted configuration\nand every choice of physical Higgs pair, then aggregated per upstairs orbit. The\nsame rules are applied to the 11 additional candidates and to the 10 published\norbits, so the published models are the baseline, not an assumption.\n\nPer configuration and Higgs choice:\n\n  top_leading      Y_u has nonzero rank at the Abelian locus (exact triple product)\n  Yu_cap, Yd_cap   largest rank the U(1)^4 selection rule allows at ANY singlet\n                   order (exact: structural rank of the allowed pattern)\n  Yu_cap_Dflat     the same, using only singlets that can take a vacuum value in\n                   a D-flat direction at vanishing FI terms, i.e. singlets on a\n                   directed cycle of the singlet charge graph (exact)\n  QQQL_forbidden   dimension-five proton decay forbidden to all orders (exact)\n  RPV4_forbidden   dimension-four R-parity violation forbidden to all orders (exact)\n  RPV4_leading     dimension-four RPV computed NONZERO at singlet order zero\n  RPV2_order1      bilinear RPV S L H_u computed NONZERO at singlet order one\n\nCategories (per choice):\n\n  STRONG_CANDIDATE   top_leading and Yu_cap = Yd_cap = 3 and QQQL_forbidden and\n                     RPV4_forbidden and bilinear RPV forbidden to all orders\n  PHENOMENOLOGICALLY_PROBLEMATIC\n                     an unconditional exact obstruction: Yu_cap = 0 (no up-type\n                     mass at any perturbative order, so a massless top quark), or\n                     Yd_cap = 0 (no down-type quark or charged-lepton mass at any\n                     perturbative order), or RPV4_leading (dimension-four RPV\n                     present at the Abelian locus)\n  UNKNOWN            anything else\n\nPer orbit: STRONG if some choice is STRONG; PROBLEMATIC if every choice is;\notherwise UNKNOWN.\n\nScope: holomorphic superpotential, perturbative in the singlets, generic member\nof the invariant family, all 5bar states counted (vector-like ones included,\nwhich makes \"forbidden\" statements stronger and \"allowed\" statements weaker).\n",
+ "orbits": [
+  {
+   "id": "X7862-G4-A01",
+   "class": "additional",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    3
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    2
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    2
+   ],
+   "QQQL_forbidden": 192,
+   "RPV4_forbidden": 192,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 192,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 192
+  },
+  {
+   "id": "X7862-G4-A02",
+   "class": "additional",
+   "choices": 720,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 720
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 720,
+    "dimension-four RPV at the Abelian locus": 288
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    1,
+    3
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    1
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    1
+   ],
+   "QQQL_forbidden": 720,
+   "RPV4_forbidden": 432,
+   "RPV4_leading": 288,
+   "RPV2_forbidden": 720,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 720
+   },
+   "mu_forbidden": 288,
+   "weinberg_forbidden": 720
+  },
+  {
+   "id": "X7862-G4-A03",
+   "class": "additional",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    1
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    1
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    1
+   ],
+   "QQQL_forbidden": 192,
+   "RPV4_forbidden": 192,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 192,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 192
+  },
+  {
+   "id": "X7862-G4-A04",
+   "class": "additional",
+   "choices": 720,
+   "verdict": "UNKNOWN",
+   "categories": {
+    "UNKNOWN": 432,
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 288
+   },
+   "reasons": {
+    "dimension-four RPV at the Abelian locus": 288
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    3
+   ],
+   "Yd_cap": [
+    3
+   ],
+   "Yu_cap_Dflat": [
+    3
+   ],
+   "Yd_cap_Dflat": [
+    3
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    1
+   ],
+   "QQQL_forbidden": 0,
+   "RPV4_forbidden": 0,
+   "RPV4_leading": 288,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "NONZERO": 720
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 0
+  },
+  {
+   "id": "X7862-G4-A05",
+   "class": "additional",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192,
+    "no down-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    0
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 192,
+   "RPV4_forbidden": 192,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 192,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 192
+  },
+  {
+   "id": "X7862-G4-A06",
+   "class": "additional",
+   "choices": 720,
+   "verdict": "UNKNOWN",
+   "categories": {
+    "UNKNOWN": 720
+   },
+   "reasons": {},
+   "top_leading": 0,
+   "Yu_cap": [
+    3
+   ],
+   "Yd_cap": [
+    3
+   ],
+   "Yu_cap_Dflat": [
+    3
+   ],
+   "Yd_cap_Dflat": [
+    3
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 0,
+   "RPV4_forbidden": 0,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 720
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 0
+  },
+  {
+   "id": "X7862-G4-A07",
+   "class": "additional",
+   "choices": 720,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 720
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 720,
+    "dimension-four RPV at the Abelian locus": 288
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    1
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    1
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    1
+   ],
+   "QQQL_forbidden": 720,
+   "RPV4_forbidden": 0,
+   "RPV4_leading": 288,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "NONZERO": 720
+   },
+   "mu_forbidden": 288,
+   "weinberg_forbidden": 0
+  },
+  {
+   "id": "X7862-G4-A08",
+   "class": "additional",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192,
+    "no down-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    0
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 192,
+   "RPV4_forbidden": 192,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "VANISHES": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 0
+  },
+  {
+   "id": "X7862-G4-A09",
+   "class": "additional",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192,
+    "no down-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    0
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 192,
+   "RPV4_forbidden": 192,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 192,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 192
+  },
+  {
+   "id": "X7862-G4-A10",
+   "class": "additional",
+   "choices": 720,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 720
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 720,
+    "no down-type Yukawa at any order": 720
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    0
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 720,
+   "RPV4_forbidden": 720,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 720,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 720
+   },
+   "mu_forbidden": 288,
+   "weinberg_forbidden": 720
+  },
+  {
+   "id": "X7862-G4-A11",
+   "class": "additional",
+   "choices": 720,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 720
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 720,
+    "no down-type Yukawa at any order": 720
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    0
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 720,
+   "RPV4_forbidden": 720,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 720,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 720
+   },
+   "mu_forbidden": 288,
+   "weinberg_forbidden": 720
+  },
+  {
+   "id": "X7862-G4-P01",
+   "class": "published",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192,
+    "no down-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    0
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 192,
+   "RPV4_forbidden": 192,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 192,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 192
+  },
+  {
+   "id": "X7862-G4-P02",
+   "class": "published",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no down-type Yukawa at any order": 192
+   },
+   "top_leading": 192,
+   "Yu_cap": [
+    2
+   ],
+   "Yd_cap": [
+    0
+   ],
+   "Yu_cap_Dflat": [
+    2
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    2
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 192,
+   "RPV4_forbidden": 192,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "UNKNOWN": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 0
+  },
+  {
+   "id": "X7862-G4-P03",
+   "class": "published",
+   "choices": 384,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 384
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 384,
+    "no down-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    0,
+    1
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0,
+    1
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 384,
+   "RPV4_forbidden": 384,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 384,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 384
+   },
+   "mu_forbidden": 96,
+   "weinberg_forbidden": 384
+  },
+  {
+   "id": "X7862-G4-P04",
+   "class": "published",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192,
+    "no down-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    0
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 192,
+   "RPV4_forbidden": 192,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 192,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 192
+  },
+  {
+   "id": "X7862-G4-P05",
+   "class": "published",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192,
+    "no down-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    0
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 192,
+   "RPV4_forbidden": 192,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "UNKNOWN": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 0
+  },
+  {
+   "id": "X7862-G4-P06",
+   "class": "published",
+   "choices": 384,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 384
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192,
+    "dimension-four RPV at the Abelian locus": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0,
+    2
+   ],
+   "Yd_cap": [
+    2,
+    3
+   ],
+   "Yu_cap_Dflat": [
+    0,
+    2
+   ],
+   "Yd_cap_Dflat": [
+    1,
+    3
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    1
+   ],
+   "QQQL_forbidden": 0,
+   "RPV4_forbidden": 0,
+   "RPV4_leading": 192,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "NONZERO": 384
+   },
+   "mu_forbidden": 96,
+   "weinberg_forbidden": 0
+  },
+  {
+   "id": "X7862-G4-P07",
+   "class": "published",
+   "choices": 192,
+   "verdict": "PHENOMENOLOGICALLY_PROBLEMATIC",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 192
+   },
+   "reasons": {
+    "no up-type Yukawa at any order": 192
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0
+   ],
+   "Yd_cap": [
+    1
+   ],
+   "Yu_cap_Dflat": [
+    0
+   ],
+   "Yd_cap_Dflat": [
+    0
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 0,
+   "RPV4_forbidden": 0,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "VANISHES": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 0
+  },
+  {
+   "id": "X7862-G4-P08",
+   "class": "published",
+   "choices": 192,
+   "verdict": "UNKNOWN",
+   "categories": {
+    "UNKNOWN": 192
+   },
+   "reasons": {},
+   "top_leading": 0,
+   "Yu_cap": [
+    3
+   ],
+   "Yd_cap": [
+    3
+   ],
+   "Yu_cap_Dflat": [
+    3
+   ],
+   "Yd_cap_Dflat": [
+    3
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0
+   ],
+   "QQQL_forbidden": 0,
+   "RPV4_forbidden": 0,
+   "RPV4_leading": 0,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "NO_TERM_AT_THIS_ORDER": 192
+   },
+   "mu_forbidden": 0,
+   "weinberg_forbidden": 0
+  },
+  {
+   "id": "X7862-G4-P09",
+   "class": "published",
+   "choices": 384,
+   "verdict": "UNKNOWN",
+   "categories": {
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 336,
+    "UNKNOWN": 48
+   },
+   "reasons": {
+    "no down-type Yukawa at any order": 96,
+    "no up-type Yukawa at any order": 192,
+    "dimension-four RPV at the Abelian locus": 96
+   },
+   "top_leading": 0,
+   "Yu_cap": [
+    0,
+    3
+   ],
+   "Yd_cap": [
+    0,
+    1,
+    3
+   ],
+   "Yu_cap_Dflat": [
+    0,
+    3
+   ],
+   "Yd_cap_Dflat": [
+    0,
+    1,
+    3
+   ],
+   "Yu_leading_rank": [
+    0
+   ],
+   "Yd_leading_rank": [
+    0,
+    2
+   ],
+   "QQQL_forbidden": 288,
+   "RPV4_forbidden": 288,
+   "RPV4_leading": 96,
+   "RPV2_forbidden": 192,
+   "RPV2_order1": {
+    "UNKNOWN": 192,
+    "NO_TERM_AT_THIS_ORDER": 192
+   },
+   "mu_forbidden": 48,
+   "weinberg_forbidden": 192
+  },
+  {
+   "id": "X7862-G4-P10",
+   "class": "published",
+   "choices": 384,
+   "verdict": "UNKNOWN",
+   "categories": {
+    "UNKNOWN": 288,
+    "PHENOMENOLOGICALLY_PROBLEMATIC": 96
+   },
+   "reasons": {
+    "dimension-four RPV at the Abelian locus": 96
+   },
+   "top_leading": 192,
+   "Yu_cap": [
+    1,
+    2
+   ],
+   "Yd_cap": [
+    1,
+    2
+   ],
+   "Yu_cap_Dflat": [
+    0,
+    2
+   ],
+   "Yd_cap_Dflat": [
+    1,
+    2
+   ],
+   "Yu_leading_rank": [
+    0,
+    2
+   ],
+   "Yd_leading_rank": [
+    0,
+    1
+   ],
+   "QQQL_forbidden": 0,
+   "RPV4_forbidden": 0,
+   "RPV4_leading": 96,
+   "RPV2_forbidden": 0,
+   "RPV2_order1": {
+    "VANISHES": 192,
+    "NO_TERM_AT_THIS_ORDER": 96,
+    "UNKNOWN": 96
+   },
+   "mu_forbidden": 48,
+   "weinberg_forbidden": 0
+  }
+ ],
+ "verdicts": {
+  "additional:PHENOMENOLOGICALLY_PROBLEMATIC": 9,
+  "additional:UNKNOWN": 2,
+  "published:PHENOMENOLOGICALLY_PROBLEMATIC": 7,
+  "published:UNKNOWN": 3
+ }
+}

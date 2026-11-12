@@ -1,0 +1,454 @@
+\section{The search tree and how it is pruned}
+\label{sec:search}
+
+\subsection{Canonical enumeration}
+
+Summand permutations act on $\mathcal D_K$, so we fix a total order on $\Z^h$
+(lexicographic) and represent each class by its sorted column tuple
+$k_1\preceq k_2\preceq\cdots\preceq k_5$, repetitions allowed. Because
+$\sum_ak_a=0$, the first four columns determine the fifth. The search is a
+depth-first traversal of the tree whose depth-$m$ nodes are sorted prefixes
+$(k_1,\dots,k_m)$, $m\le4$; the children of a node append a column
+$k_{m+1}\succeq k_m$ from a precomputed pool, and a depth-4 node produces the
+single leaf $k_5=-\sum_{a\le4}k_a$, kept only if it lies in the box and satisfies
+$k_5\succeq k_4$. Every class of $\mathcal D_K$ is reached exactly once, which
+gives a direct completeness argument; ambient-factor permutations are
+\emph{not} quotiented during the search but only afterwards, when orbits are
+compared (\cref{sec:validation}).
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  node distance=0.55cm and 0.4cm,
+  box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=#1},
+  box/.default=white,
+  rule/.style={font=\scriptsize, align=left, text width=6.6cm},
+  arr/.style={-{Stealth[length=2.2mm]}, thick}]
+\node[box=blue!6] (pool) {\textbf{Pool} $P_1\subset[-K,K]^h$\\ single-column rules};
+\node[box=blue!6, below=of pool] (d1) {depth 1: $(k_1)$};
+\node[box=blue!6, below=of d1] (d2) {depth 2: $(k_1,k_2)$};
+\node[box=blue!6, below=of d2] (d3) {depth 3: $(k_1,k_2,k_3)$};
+\node[box=blue!6, below=of d3] (d4) {depth 4: $(k_1,\dots,k_4)$};
+\node[box=green!8, below=of d4] (leaf) {leaf: $k_5=-\sum_{a\le4}k_a$};
+\node[box=orange!10, below=of leaf] (surv) {necessary-condition survivors};
+\foreach \a/\b in {pool/d1,d1/d2,d2/d3,d3/d4,d4/leaf,leaf/surv} \draw[arr] (\a) -- (\b);
+\node[rule, right=0.6cm of pool] {R1 individual slope feasibility (\cref{prop:percoef})\\
+  R2 single-index range $-3|\Gam|\le\ind L\le0$\\ R3 pair-index domain (bitset)};
+\node[rule, right=0.6cm of d2] {R4 component completion bound\\
+  R5 partial single/pair index budgets\\
+  R6 span slope obstruction (\cref{prop:monotone})};
+\node[rule, right=0.6cm of d3] {R7 partial anomaly budget (\cref{prop:anomalybudget})\\ + R4--R6};
+\node[rule, right=0.6cm of leaf] {R8 structure group \ref{c:structure}; R9 indices \ref{c:index}\\
+  R10 anomaly \ref{c:anomaly}; R11 Bogomolov \ref{c:bogomolov}\\
+  R6 complete slope test on the full span};
+\node[rule, left=0.5cm of pool, text width=3.0cm, align=right] {before search:\\ divisibility $d_X\mid3|\Gam|$\\ (\cref{prop:divisibility})};
+\end{tikzpicture}
+\caption{The search tree. Each rule is a necessary condition (\cref{lem:soundness});
+rules R4, R5 and R6 are monotone and prune entire subtrees. Rules R3 and R4 are
+enforced by construction through bitset-indexed candidate lists rather than
+tested inside the loop.}
+\label{fig:tree}
+\end{figure}
+
+\subsection{The rules}
+
+\Cref{tab:rules} lists every rule, its status and where it acts. We give the
+proofs of those that are not immediate.
+
+\begin{table}[t]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}lXll@{}}
+\toprule
+& Rule & Status & Acts at \\
+\midrule
+R1 & $\mu_k$ has a zero in $T_+$ (signed-matrix test; exact per \cref{prop:percoef}) & exact (bench.) & pool \\
+R2 & $-3|\Gam|\le\ind\Oc_X(k)\le0$ (\st{GUT\_FULL}) & necessary & pool \\
+R3 & declared domain: $\ind(L_a\otimes L_b)\le0$ for all pairs & domain restriction & pool, prefix \\
+R4 & $|\sum_{a\le m}k_a^i|\le(5-m)K$ & necessary & prefix \\
+R5 & partial sums of single and pair indices lie in $[-3|\Gam|,0]$ & necessary & prefix \\
+R6 & $\spn_\R\{k_a\}\cap P=\{0\}$ (complete slope obstruction) & necessary & prefix, leaf \\
+R7 & partial anomaly budget & necessary & prefix \\
+R8 & no proper zero-sum subset \ref{c:structure} & exact & leaf \\
+R9 & $\ind V=-3|\Gam|$ ($\ind\wedge^2V$ then automatic, \cref{prop:indexidentity}) & exact & leaf \\
+R10 & $c_{2,r}-c_2(V)_r\ge0$ & necessary & leaf \\
+R11 & Bogomolov pairing & necessary & leaf \\
+R12 & $d_X\mid 3|\Gam|$ & exact, unbounded & before search \\
+\bottomrule
+\end{tabularx}
+\caption{Pruning rules. R3 restricts the declared domain to the historical
+domain of \cite{ACGLP2013}; it is not claimed necessary, and the independent
+replays (\cref{sec:validation}) also run with it removed. R1 is exact on
+geometries with $d_{ijj}=0$, which includes both benchmarks.}
+\label{tab:rules}
+\end{table}
+
+\paragraph{R2 (single-index range).} At a common zero of the slopes, a
+nontrivial line bundle $L_a$ has $h^0=h^3=0$, since a line bundle of slope zero
+with a nonzero section is trivial, and \ref{c:structure} excludes trivial
+summands. No anti-families means $h^2(X,V)=0$, hence $h^2(L_a)=0$ and
+$\ind L_a=-h^1(L_a)\le0$. The five indices sum to $-3|\Gam|$, so each lies in
+$[-3|\Gam|,0]$, and so does every partial sum (R5).
+
+\paragraph{R4 (component completion).} With $m$ columns fixed, the remaining
+$5-m$ columns have entries in $[-K,K]$ and must cancel the partial sum, so
+$|\sum_{a\le m}k_a^i|\le(5-m)K$ by the triangle inequality.
+
+\subsection{The slope obstruction}
+\label{sec:slope}
+
+Poly-stability of a sum of line bundles with $c_1(V)=0$ means a common zero of
+the five slopes:
+\begin{equation}\tag{SZ}\label{eq:SZ}
+\exists\,t\in T_+:\qquad \mu_{k_a}(t)=t^\top M(k_a)\,t=0\qquad(a=1,\dots,5).
+\end{equation}
+
+\begin{lemma}[Sign obstruction]\label{lem:sign}
+If $M\in\Sym_h(\Z)$ is nonzero and entrywise nonnegative (or nonpositive), then
+$t^\top Mt\neq0$ for every $t\in T_+$.
+\end{lemma}
+\begin{proof}
+Each term $M_{jl}t^jt^l$ has the same weak sign and at least one is strictly
+nonzero, because $t^jt^l>0$.
+\end{proof}
+
+\begin{proposition}[Combined test]\label{prop:combined}
+If \eqref{eq:SZ} holds then for every $c\in\R^5$ the matrix
+$M(\sum_ac_ak_a)=\sum_ac_aM(k_a)$ is zero or has entries of both signs.
+Contrapositively, a single $c\in\Z^5$ for which $M(\sum_ac_ak_a)$ is nonzero and
+one-signed proves that $V$ is not poly-stable anywhere in $T_+$.
+\end{proposition}
+\begin{proof}
+At the witness $t_*$, $t_*^\top M(\sum_ac_ak_a)t_*=\sum_ac_a\mu_{k_a}(t_*)=0$;
+apply \cref{lem:sign}.
+\end{proof}
+
+The scan of \cite{ACGLP2013} applies \cref{prop:combined} with
+$c\in\{-1,0,1\}^5$. This is \emph{sound} but not \emph{complete}: passing the
+test for all $c$ in a finite box does not imply \eqref{eq:SZ}. (Since
+$\sum_ak_a=0$, $M(\sum_ac_ak_a)$ depends only on the class of $c$ modulo
+$\Z(1,\dots,1)$; the 121 vectors of the box with first nonzero entry positive
+fall into 106 classes, and the box is exactly the set of classes of spread
+$\max c-\min c\le2$.) The quantified statement, however, is decidable exactly.
+
+\begin{proposition}[Exact obstruction cone]\label{prop:cone}
+Let $S=\spn_\R\{k_1,\dots,k_5\}\subseteq\R^h$ and
+$P=\{k\in\R^h: M(k)_{jl}\ge0\ \forall j,l\}$, a rational polyhedral cone. Some
+$c\in\Z^5$ yields a one-signed nonzero combined matrix if and only if $S\cap P$
+contains a point $k$ with $M(k)\neq0$.
+\end{proposition}
+\begin{proof}
+$M$ is linear, so $\{M(\sum_ac_ak_a):c\in\R^5\}=M(S)$, and $P$ is the preimage of
+the entrywise-nonnegative matrices; $-c$ handles the nonpositive case. A
+rational point of the rational cone $S\cap P$ can be scaled to an integer point
+$k$, and $c$ is recovered by solving the consistent rational system
+$\sum_ac_ak_a=k$, then clearing denominators.
+\end{proof}
+
+On geometries with $d_{ijj}=0$ for all $i,j$---both benchmarks---$M(k)$ has zero
+diagonal, and nothing is lost per coefficient vector:
+
+\begin{proposition}[Per-coefficient optimality]\label{prop:percoef}
+If $d_{ijj}=0$ for all $i,j$, then for any $k\in\Z^h$, the form $\mu_k$ has a
+zero in $T_+$ if and only if $M(k)$ is zero or has entries of both signs.
+\end{proposition}
+\begin{proof}
+($\Rightarrow$) is \cref{lem:sign}. ($\Leftarrow$): the diagonal vanishes, so
+suppose $M_{jl}>0$ and $M_{j'l'}<0$ at off-diagonal positions. Let $t(T)$ equal
+$T$ at positions $j,l$ and $1$ elsewhere; then
+$\mu_k(t(T))=2M_{jl}T^2+O(T)\to+\infty$. The analogous path at $(j',l')$ gives
+$-\infty$. $T_+$ is connected and $\mu_k$ continuous, so $\mu_k$ vanishes in $T_+$.
+\end{proof}
+
+In particular the single-bundle condition ``$\mu(L)=0$ somewhere in the
+interior of the Kähler cone'' is decided exactly on these geometries by the
+signed-matrix test (R1), and the only incompleteness of the finite test is the
+truncation of the $c$-search, which \cref{prop:cone} removes.
+
+\begin{proposition}[Monotonicity]\label{prop:monotone}
+If $S'\subseteq S$ and $S'\cap P$ contains a point with $M\ne0$, so does $S\cap P$.
+Hence the test applied to the span of any prefix $(k_1,\dots,k_m)$ prunes every
+completion of that prefix.
+\end{proposition}
+\begin{proof}
+Immediate from $S'\cap P\subseteq S\cap P$.
+\end{proof}
+
+To decide $S\cap P\neq\{0\}$ exactly we need $P$ to be pointed and its extreme
+rays.
+
+\begin{lemma}[The tetraquadric cone]\label{lem:rays}
+On $\Xa$, $M(k)_{jl}=2(k^m+k^n)$ for $j\ne l$, where $\{m,n\}$ is the
+complement of $\{j,l\}$ in $\{1,2,3,4\}$, and $M(k)_{jj}=0$. Hence
+$P=\{k\in\R^4:k^m+k^n\ge0\ \forall m<n\}$, $M(k)=0$ only for $k=0$, and $P$ is
+pointed with exactly eight extreme rays: the coordinate vectors $e_i$ and the
+four vectors with one entry $-1$ and the others $+1$.
+\end{lemma}
+\begin{proof}
+The formula follows from $d_{ijl}=2$ for distinct indices. If all pairwise
+sums vanish then $k^1+k^2=k^1+k^3=k^2+k^3=0$ forces $k^1=k^2=k^3=0$ and then
+$k^4=0$, so $P\cap(-P)=\{0\}$. A ray of $P$ is extreme iff the constraints tight
+on it have rank three. For $e_1$ the tight constraints are the three pairs not
+containing $1$; for $(-1,1,1,1)$ the three pairs containing $1$; each set has
+rank three. Enumerating the $\binom63=20$ triples of constraints shows there are
+no others.
+\end{proof}
+
+For $\Xb$ the analogous computation (exact, by enumeration) gives $2h=10$
+extreme rays: the $e_i$ and the vectors with one entry $-2=-(h-3)$ and the
+others $+1$. In general the implementation enumerates extreme rays of $S\cap P$
+exactly in integer arithmetic and declines to prune if the pointedness check
+fails.
+
+The primal enumeration costs a number of kernel computations that grows with
+the dimension of $S$ and dominated the running time on $\Xb$ (90\% of a profiled
+scan). The dual form is much cheaper exactly where the search spends its time.
+
+\begin{proposition}[Dual decision]\label{prop:dual}
+Let $P$ be pointed with extreme rays $r_1,\dots,r_s$, let $A$ be a matrix whose
+rows span $S^\perp$, and $d=\dim S^\perp=h-\rk S$. Then
+\[
+S\cap P=\{0\}\iff\exists\,\varphi\in S^\perp:\ \langle\varphi,r_i\rangle>0\ \forall i
+\iff 0\notin\conv\{Ar_1,\dots,Ar_s\}\subset\R^d .
+\]
+\end{proposition}
+\begin{proof}
+As $P$ is pointed its base $B=\conv\{r_i\}$ is compact with $0\notin B$. If
+$S\cap P=\{0\}$ then $S\cap B=\emptyset$, and the compact convex set $B$ is
+strictly separated from the closed subspace $S$ by a functional that must vanish
+on $S$, i.e.\ lies in $S^\perp$, and is positive on $B$. Conversely such a
+$\varphi$ vanishes on $S$ and is positive on $P\setminus\{0\}$. The last
+equivalence is Gordan's alternative~\cite{Schrijver1986} for the projected
+points $Ar_i$.
+\end{proof}
+
+The dimension $d$ \emph{shrinks} as the prefix grows. At the deepest and most
+numerous nodes $d\in\{1,2\}$: for $d=1$ the test is whether the projected
+scalars take both signs ($O(s)$), for $d=2$ an angular-gap test
+($O(s\log s)$). The primal enumeration remains the reference implementation,
+the fallback for $d>2$, and the producer of the explicit integer witness $k_c$
+recorded in every rejection certificate. The two were differentially tested on
+12,000 random column sets across every span rank with no disagreement.
+
+\begin{example}[A spurious survivor of the finite test]\label{ex:spurious}
+On $\Xa$ with $\Gam=\Z_2$ at $K=3$, the charge matrix with columns
+\[
+(-3,-1,1,2),\ (0,1,-1,0),\ (0,1,-1,0),\ (1,1,-1,-1),\ (2,-2,2,-1)
+\]
+satisfies every other declared condition and passes the test for all
+$c\in\{-1,0,1\}^5$; a numerical optimiser stalls at slope residual
+$3.6\times10^{-7}$. The complete test rejects it with the integer witness
+$k_c=(1,0,0,0)\in S$, for which $M(k_c)$ is entrywise nonnegative and nonzero.
+It is absent from the published catalog. Its orbit is the only difference
+between the finite and the complete test at $K=3$ (8 versus 7 orbits) and at
+$K=4$ (11 versus 10), and removing it is what gives exact catalog agreement
+(\cref{sec:validation}).
+\end{example}
+
+Soundness was tested by a counterexample search: 12,000 randomly generated
+bundles carrying an exact common slope zero on $\Xa$ and $\Xb$ were never
+rejected; an independently written Fourier--Motzkin implementation agreed with
+the extreme-ray implementation on 3,000 random column sets; and every published
+model and every survivor with an exact slope witness is retained.
+
+\subsection{Beyond sign tests: a Pólya hierarchy and an exact decision}
+\label{sec:polya}
+
+The sign test is exact per combination only when $d_{ijj}=0$
+(\cref{prop:percoef}), and even then a bundle can pass every sign test while its
+five slopes have no \emph{simultaneous} zero. Two further exact tools address
+this; both produce certificates checked in exact arithmetic.
+
+\begin{proposition}[Pólya certificates]\label{prop:polya}
+If for some $c$ and some $N\ge0$ the form
+$(t_1+\dots+t_h)^N\sum_ac_a\mu_{k_a}(t)$ has all coefficients nonnegative and not
+all zero, then \eqref{eq:SZ} has no solution. Every form strictly positive on the
+closed simplex admits such an $N$; $N=0$ is the sign test.
+\end{proposition}
+\begin{proof}
+A nonzero polynomial with nonnegative coefficients is positive on the open
+orthant, and $(\sum_it_i)^N>0$ there; at a common zero the combination would
+vanish. The converse direction is Pólya's theorem.
+\end{proof}
+
+The coefficients are linear in $k_c=\sum_ac_ak_a$, so each level of the hierarchy
+is again a polyhedral cone and a certificate is found by linear programming and
+verified exactly. On geometries with $d_{ijj}=0$ the hierarchy provably adds
+nothing beyond $N=0$ (by \cref{prop:percoef}); on the other catalog geometries we
+tested it added no certificate for charges in $[-2,2]$ up to $N=4$. The
+obstruction for the bundles below, where it exists, is therefore \emph{joint}.
+
+\begin{proposition}[Exact decision in rank $h-1$]\label{prop:decision}
+Suppose $\rk K=h-1$. Set $t_h=1$, which loses no interior point, and compute a
+lexicographic Gröbner basis of $h-1$ independent slopes. If it is in shape
+position, $t_i=g_i(x)$ and $p(x)=0$; isolate every real root of every irreducible
+factor of $p$ in an exact rational interval and enclose the other coordinates by
+rigorous interval arithmetic. A root at which all coordinates are positive, and
+modulo whose minimal polynomial every slope vanishes identically, is an exact
+real-algebraic witness of poly-stability. If no real root is interior, \eqref{eq:SZ}
+has no solution.
+\end{proposition}
+\begin{proof}
+In rank $h-1$ the common zeros with $t_h=1$ are the solutions of the $h-1$
+independent equations, which in shape position are finitely many and given
+exactly by the roots of $p$; interval enclosures that exclude zero decide each
+coordinate's sign rigorously.
+\end{proof}
+
+When the basis is not in shape position the decision proceeds factor by factor:
+factors of $p$ without a positive real root are discarded (an interior point has
+$t_{h-1}>0$); a rational root is substituted and the smaller system decided
+recursively; over an irrational factor $f$ the remaining coordinates are solved
+linearly in $\Q[x]/(f)$ when possible. Anything else, including positive-dimensional
+zero sets (rank below $h-1$), is reported as \st{UNDECIDED}. On the tetraquadric the procedure certifies the published model
+with witness $t=(1,1,1,1)$, and the spurious candidate of \cref{ex:spurious}, whose
+zero set is positive-dimensional, is excluded by the sign test instead: the tools
+are complementary.
+
+\subsection{Index identity and divisibility}
+
+\begin{proposition}[Index identity]\label{prop:indexidentity}
+On any Calabi--Yau threefold, if $V=\bigoplus_{a=1}^5L_a$ has $c_1(V)=0$ then
+$\ind\wedge^2V=\ind V$.
+\end{proposition}
+\begin{proof}
+The linear terms vanish: $\sum_ac_2\cdot k_a=0$ and each $a$ occurs in four
+pairs. For the cubic terms,
+$\sum_{a<b}D(k_a+k_b)^3=4\sum_aD(k_a)^3+3\sum_{a\ne b}D(k_a,k_a,k_b)$ and
+$\sum_{b\ne a}k_b=-k_a$, so the sum is $4\sum_aD(k_a)^3-3\sum_aD(k_a)^3$.
+\end{proof}
+This is stated in \cite{ACGLP2013} after their equation~(4.7); we use it to
+drop a redundant filter and keep it as a free consistency check. (For rank $n$
+the coefficient is $n-4$.)
+
+\begin{proposition}[Divisibility obstruction]\label{prop:divisibility}
+Let $d_X=\gcd\{\ind\Oc_X(k):k\in\Z^h\}$. If $d_X\nmid3|\Gam|$, no sum of line
+bundles on $X$ has $\ind V=-3|\Gam|$, for any charges. Moreover
+$d_X=\gcd\{\ind\Oc_X(k):k\in\{0,1,2,3\}^h\}$.
+\end{proposition}
+\begin{proof}
+$\ind V=\sum_a\ind L_a\in d_X\Z$. For the second claim, $\ind$ is an
+integer-valued polynomial of degree three, hence a $\Z$-combination of
+$\prod_i\binom{k_i}{\alpha_i}$ with $|\alpha|\le3$; its values generate the same
+subgroup as the coefficients, which are integer combinations of finite
+differences at points of $\{0,1,2,3\}^h$.
+\end{proof}
+
+Over the 68 favourable CICYs, $d_X\in\{1,2,3,5\}$ occurs $19,44,4,1$ times.
+Combined with the symmetry orders recorded for each geometry, the obstruction
+predicts \emph{zero} models for exactly two pairs, $(7761,|\Gam|=2)$ with $d_X=5$
+and $(7447,|\Gam|=5)$ with $d_X=2$; the published catalog has zero models for
+both, and no catalog entry with models contradicts it. The prediction is not
+vacuous: geometries with odd $|\Gam|$ and $d_X\mid3|\Gam|$ do carry models.
+The rule is elementary; we have not found it stated in the sources we examined.
+It is the only rule here whose conclusion carries no bound on the charges.
+
+\subsection{The partial anomaly budget}
+
+\begin{proposition}\label{prop:anomalybudget}
+Assume \ref{c:c1}, a trivial hidden bundle and nef $J_r$. Then \ref{c:anomaly}
+implies the separable inequality
+\begin{equation}\label{eq:anomaly-separable}
+\textstyle\sum_{a=1}^5q_r(k_a)\ \ge\ -2c_{2,r}\qquad\text{for all }r .
+\end{equation}
+Let $P_1$ be a pool containing every column any valid completion can use, and
+$Q_r=\max_{k\in P_1}q_r(k)$. If for a prefix $(k_1,\dots,k_m)$ and some $r$
+\[
+\textstyle\sum_{a\le m}q_r(k_a)+(5-m)Q_r<-2c_{2,r},
+\]
+no completion satisfies \eqref{eq:anomaly-separable} and the branch is pruned.
+\end{proposition}
+\begin{proof}
+With $\sum_ak_a=0$ the Whitney formula gives
+$c_2(V)_r=-\tfrac12\sum_aq_r(k_a)$, so $c_{2,r}-c_2(V)_r\ge0$ is
+\eqref{eq:anomaly-separable}. Each remaining column contributes at most $Q_r$.
+\end{proof}
+
+The pool in the implementation is the retained single-column list, itself
+defined by necessary conditions, and the derived fifth column is required to
+lie in it. The bound is inactive for $K\le2$, since small charges cannot reach
+it, and first bites at $K=3$ (\cref{tab:ablation}).
+
+\subsection{Implementation}
+
+Two features matter for the complexity. First, the retained pool is indexed by
+bitsets: for each component $i$ and threshold, the set of columns whose
+component lies above or below it, and for each column the set of compatible
+partners under R3. Rules R3 and R4 are then enforced \emph{by construction}---a
+node iterates only over the intersection of the relevant bitsets---rather than
+tested inside the loop. This cut fourth-column attempts by factors of 19--28
+and wall time by $3$--$7.5\times$ at identical survivor sets, which was
+verified by re-running every recorded domain and requiring exact set equality.
+Second, the span of the prefix is maintained incrementally in a fraction-free
+integer row-reduced form, which is also the memoisation key for the slope
+decision, so repeated spans are decided once. Every run is checkpointed; a
+checkpoint embeds the SHA-256 of the source and inputs and refuses to resume
+under changed code.
+
+\subsection{Measured effect of the pruning}
+
+\Cref{tab:funnel} shows the funnel at $K=2$ and \cref{tab:ablation} the effect
+of each rule and of $K$.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+stage ($\Xa$, $\Gam=\Z_2$, $K=2$, finite slope test, pre-indexing engine) & count \\
+\midrule
+ordered four-column assignments (nominal) & 152,587,890,625 \\
+individual columns in the box & 625 \\
+retained single columns (R1, R2) & 235 \\
+retained depth-2 prefixes & 10,573 \\
+retained depth-3 prefixes & 123,629 \\
+fourth-column attempts & 7,875,639 \\
+retained depth-4 prefixes & 252,154 \\
+complete canonical bundles & 38,161 \\
+\quad no proper zero-sum subset (R8) & 24,043 \\
+\quad $\ind V=-6$ (R9) & 6,261 \\
+\quad all pair indices in range (R3) & 1,356 \\
+\quad anomaly (R10) & 1,260 \\
+\quad slope (R6) & \textbf{120} \\
+\bottomrule
+\end{tabular}
+\caption{Funnel of the search. Prefix counters count prefixes, not full states,
+and must not be added as if they partitioned the nominal domain. The ratio of
+nominal assignments to materialised bundles, about $4\times10^6$, includes
+canonicalisation and is not a pure physics pruning factor; at the last level the
+slope obstruction alone removes a factor $10.5$.}
+\label{tab:funnel}
+\end{table}
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}rlrrrrrr@{}}
+\toprule
+$K$ & slope rule & wall (s) & RSS (MiB) & 4th-col.\ attempts & bundles built & survivors & orbits \\
+\midrule
+1 & finite & 0.05 & 25.4 & 4,636 & 713 & 0 & 0 \\
+1 & complete & 0.09 & 25.3 & 2,535 & 334 & 0 & 0 \\
+2 & finite & 4.00 & 33.2 & 420,266 & 38,161 & 120 & 5 \\
+2 & complete & 3.99 & 37.2 & 170,121 & 10,097 & 120 & 5 \\
+3 & finite & 15.88 & 50.5 & 2,304,135 & 146,425 & 192 & \textbf{8} \\
+3 & complete & 18.42 & 68.3 & 963,549 & 52,800 & 168 & 7 \\
+4 & finite & 36.65 & 65.6 & 7,147,830 & 294,130 & 264 & \textbf{11} \\
+4 & complete & 43.62 & 105.6 & 3,236,246 & 118,577 & 240 & 10 \\
+5 & complete & 85.44 & 141.0 & 6,537,468 & 162,761 & 240 & 10 \\
+6 & complete & 118.88 & 193.8 & 10,199,673 & 206,847 & 240 & 10 \\
+7 & complete & 179.15 & 188.9 & 14,516,351 & 231,946 & 240 & 10 \\
+\bottomrule
+\end{tabular}
+\caption{$\Xa$, $\Gam=\Z_2$, target \st{GUT\_FULL}, bitset-indexed engine.
+Orbits are ambient-row orbits of the column-canonical survivors. The finite test
+retains one spurious orbit at $K=3$ and $K=4$ (\cref{ex:spurious}). With the dual
+decision of \cref{prop:dual} the complete rule at $K=4$ takes 28.8\,s, faster
+than the finite test. The partial anomaly budget (\cref{prop:anomalybudget})
+first acts at $K=3$, pruning 3,734 depth-3 and 166,040 depth-4 branches under the
+complete rule and reducing built bundles from 75,534 to 52,800.}
+\label{tab:ablation}
+\end{table}
+
+Two observations. The complete slope rule, applied at every depth, removes
+2,730 of the 10,573 depth-2 prefixes already at $K=2$, and cuts the bundles
+built by factors of $2.8$ at $K=3$ and $2.5$ at $K=4$. And the pruning improves
+with $K$ rather than degrading: from $K=1$ to $3$ the nominal domain grows by
+factors $3,544$ and $218$ while the bundles built grow by $30$ and $5.2$.

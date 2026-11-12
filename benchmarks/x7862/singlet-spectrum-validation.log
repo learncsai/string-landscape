@@ -1,0 +1,23 @@
+model   1  match
+model   2  differs_only_where_published_is_unevaluated  ours [(2, 3), (2, 5), (4, 1), (4, 3), (4, 5)]  published [(2, 3), (2, 4), (2, 5), (4, 1), (4, 2), (4, 3), (4, 5)]  published-unevaluated [(2, 4), (4, 2)]
+model   3  match
+model   4  match
+model   5  match
+model   6  match
+model   7  match
+model   8  match
+model   9  match
+model  10  match
+model  11  match
+model  12  match
+model  13  match
+model  14  match
+model  15  match
+model  16  match
+model  17  match
+model  18  match
+model  19  match
+model  20  match
+model  21  match
+model  22  match
+singlet spectra: 21/22 match exactly; 1 differ only on singlets the published data leaves unevaluated; 0 genuine differences

@@ -1,0 +1,82 @@
+5273 |G|=2 K=1  NUMERIC_UNSTABLE     numerical, not a proof
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=4 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+5256 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=4 K=2  STABLE_CERTIFIED     exact solve
+5256 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=4 K=2  STABLE_CERTIFIED     exact solve
+5256 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=4 K=2  STABLE_CERTIFIED     exact solve
+5256 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=4 K=2  STABLE_CERTIFIED     exact solve
+5256 |G|=4 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+5256 |G|=4 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+5256 |G|=4 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+5256 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5256 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5301 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5301 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5301 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5301 |G|=4 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+5301 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5301 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5301 |G|=4 K=2  STABLE_CERTIFIED     exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=4 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+5452 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=4 K=2  STABLE_CERTIFIED     exact solve
+5452 |G|=4 K=2  STABLE_CERTIFIED     exact solve
+5452 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=4 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+5452 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=4 K=2  STABLE_CERTIFIED     exact solve
+5452 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=4 K=2  UNSTABLE_CERTIFIED   exact solve
+5452 |G|=4 K=2  STABLE_CERTIFIED     exact solve
+5452 |G|=4 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+5452 |G|=4 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+6024 |G|=3 K=2  UNSTABLE_CERTIFIED   exact solve
+6024 |G|=3 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+6024 |G|=3 K=2  UNSTABLE_CERTIFIED   exact solve
+6024 |G|=3 K=2  UNSTABLE_CERTIFIED   exact solve
+6225 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+6770 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+6804 |G|=2 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+6804 |G|=2 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+6804 |G|=2 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+6804 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+6804 |G|=2 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+6804 |G|=2 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+6804 |G|=2 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+6804 |G|=2 K=2  NUMERIC_UNSTABLE     numerical, not a proof
+6804 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+6804 |G|=2 K=2  UNSTABLE_CERTIFIED   exact solve
+
+ {'NUMERIC_UNSTABLE': 18, 'UNSTABLE_CERTIFIED': 53, 'STABLE_CERTIFIED': 9}

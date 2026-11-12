@@ -1,0 +1,40 @@
+\section{Reproducibility}
+\label{app:reproducibility}
+
+Everything in this paper is produced by the accompanying repository, which needs
+only Python and uses exact integer and rational arithmetic throughout; no
+computer-algebra system or external cohomology package is required. Raw inputs
+(the published catalogs \texttt{GUTall.m} and \texttt{sms202.m} and the symmetry
+data) are stored with SHA-256 checksums. Every search run writes a checkpointed
+JSON artifact embedding the hash of the source and inputs, and refuses to resume
+under changed code. The test suite (255 tests: unit, differential, certificate
+replay and regression tests pinning every number reported here) runs in about
+30 seconds.
+
+\begin{center}\small
+\begin{tabular}{@{}p{0.47\textwidth}p{0.47\textwidth}@{}}
+\toprule
+result & command (from the repository root) \\
+\midrule
+bounded search, e.g.\ $\Xa$, $K=3$ &
+\texttt{python -m string\_sm\_sat.cli search -{}-geometry 7862 -{}-K 3 -{}-gamma 2 -{}-slope-rule span} \\
+independent replay (\cref{tab:replay}) & \texttt{scripts/independent\_replay.py} \\
+catalog comparison (\cref{tab:catalog}) & \texttt{scripts/compare\_catalog.py} \\
+charge-unbounded slices (\cref{sec:slices}) & \texttt{scripts/slice\_certificate.py} \\
+equivariant cohomology (\cref{sec:equivariant}) & \texttt{scripts/compute\_equivariant\_cohomology.py} \\
+downstairs search (\cref{sec:downstairs}) & \texttt{scripts/search\_standard\_models.py} \\
+candidate audit and absence resolution & \texttt{scripts/audit\_candidates.py}, \texttt{scripts/absence\_resolution.py} \\
+Yukawa and operator tables (\cref{tab:operators}) & \texttt{scripts/yukawa\_selection\_benchmark.py}, \texttt{operator\_benchmark.py}, \texttt{kahler\_benchmark.py} \\
+internal consistency of published tables & \texttt{scripts/published\_table\_consistency.py} \\
+leading-order ranks & \texttt{scripts/leading\_order\_yukawa.py} \\
+singlet-spectrum validation & \texttt{scripts/validate\_singlet\_spectrum.py} \\
+candidate Yukawa sector and ranking (\cref{tab:ranking}) & \texttt{scripts/candidate\_yukawa.py}, \texttt{scripts/rank\_candidates.py} \\
+68-geometry survey (\cref{tab:survey}) & \texttt{scripts/phase8\_suite.py}, \texttt{phase8\_extras.py} \\
+the new GUT model & \texttt{scripts/new\_gut\_model\_certificate.py} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The append-only research notebook \texttt{RESULTS.md} records every run with its
+statistics, including corrections to earlier entries; the mathematical notes in
+\texttt{docs/} give the full proofs summarised here.

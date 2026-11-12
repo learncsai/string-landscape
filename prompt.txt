@@ -1,0 +1,2297 @@
+You are acting as an autonomous research software engineer, computational algebraic geometer, and string phenomenologist.
+
+Your task is to build a scientifically rigorous search system for Standard-Model-like heterotic string compactifications.
+
+This is a research codebase, not a demo.
+
+The central objective is:
+
+> Construct a reproducible and eventually proof-producing search algorithm for \(E_8\times E_8\) heterotic compactifications on Calabi–Yau threefolds with sums of five line bundles. The algorithm must find phenomenologically viable models and, for explicitly bounded search domains, be capable of certifying that no omitted model exists.
+
+Do not train a neural network.
+
+Do not start with flux compactifications.
+
+Do not start with all Calabi–Yau manifolds.
+
+Do not attempt the Kreuzer–Skarke landscape.
+
+Do not make claims about all of string theory.
+
+Work from EASY/CHEAP computations to progressively HARDER computations.
+
+The machine is a Mac mini M4 with 16 GB unified memory. Design everything accordingly.
+
+The first goal is correctness and reproducibility. Performance comes second.
+
+---
+
+# 0. SCIENTIFIC SCOPE
+
+We consider the \(E_8\times E_8\) heterotic string compactified on a smooth Calabi–Yau threefold \(X\).
+
+The observable gauge bundle is initially restricted to
+
+$$
+V=\bigoplus_{a=1}^{5} L_a
+$$
+
+with
+
+$$
+c_1(L_a)=k_a^iJ_i,
+\qquad
+k_a^i\in\mathbb Z,
+$$
+
+where
+
+$$
+i=1,\ldots,h^{1,1}(X).
+$$
+
+We require
+
+$$
+c_1(V)=\sum_{a=1}^{5}c_1(L_a)=0.
+$$
+
+The intended structure group is
+
+$$
+S(U(1)^5)\subset SU(5)\subset E_8,
+$$
+
+whose commutant produces an \(SU(5)\) GUT sector, together with Green–Schwarz massive \(U(1)\) factors.
+
+A freely acting discrete symmetry
+
+$$
+\Gamma
+$$
+
+can subsequently be used to form
+
+$$
+\hat X=X/\Gamma
+$$
+
+and introduce Wilson lines breaking
+
+$$
+SU(5)\rightarrow
+SU(3)\times SU(2)\times U(1)_Y.
+$$
+
+IMPORTANT TERMINOLOGY:
+
+Do not call an upstairs \(SU(5)\) model an exact Standard Model.
+
+Maintain the following explicit target hierarchy in the code:
+
+1. `GUT_CHIRAL`
+
+   * consistent heterotic line-bundle \(SU(5)\) compactification;
+   * correct chiral asymmetry;
+   * anomaly conditions;
+   * appropriate stability requirement.
+
+2. `GUT_FULL`
+
+   * all `GUT_CHIRAL` conditions;
+   * no \(\overline{\mathbf{10}}\) anti-families;
+   * at least one vector-like \(\mathbf 5-\overline{\mathbf 5}\) Higgs pair;
+   * appropriate spectrum conditions.
+
+3. `DOWNSTAIRS_MSSM`
+
+   * equivariant bundle under \(\Gamma\);
+   * appropriate Wilson-line embedding;
+   * Standard Model gauge group;
+   * three chiral families;
+   * Higgs doublet sector;
+   * no charged chiral exotics;
+   * correct Wilson-line projection.
+
+4. `STRICT_NON_SUSY_SM`
+
+   * RESERVED FOR FUTURE WORK.
+   * Do not claim this has been constructed.
+   * Calabi–Yau heterotic compactifications considered here produce an \(\mathcal N=1\) supersymmetric effective theory prior to SUSY breaking.
+
+Our current scientific target is primarily `GUT_FULL`, followed later by `DOWNSTAIRS_MSSM`.
+
+---
+
+# 1. NON-NEGOTIABLE SCIENTIFIC RULES
+
+These rules override convenience.
+
+## Rule 1: exact arithmetic whenever possible
+
+Quantities that are mathematically integral or rational must not silently be evaluated with floating-point arithmetic.
+
+Use Python integers, rational arithmetic, SymPy rationals, or equivalent exact types.
+
+Examples include:
+
+* Chern classes;
+* intersection numbers;
+* Euler characteristics;
+* line-bundle indices;
+* discrete symmetry orders;
+* candidate bundle matrices;
+* anomaly inequalities when represented in an integral basis.
+
+Floating-point calculations may be used for Kähler-moduli feasibility searches, but their status must be explicitly labeled.
+
+---
+
+## Rule 2: separate NECESSARY, SUFFICIENT, HEURISTIC and EXACT tests
+
+Every constraint implementation must contain metadata:
+
+```text
+name
+mathematical_status
+reference
+input_assumptions
+can_safely_prune
+can_certify_acceptance
+```
+
+Allowed statuses:
+
+```text
+EXACT
+NECESSARY
+SUFFICIENT
+HEURISTIC
+NUMERIC_WITNESS
+UNKNOWN
+```
+
+A candidate may be permanently eliminated during an exhaustive search only if the failed condition is proven necessary under the assumptions of that search.
+
+A heuristic may order candidates but MUST NEVER eliminate them from a supposedly exhaustive search.
+
+---
+
+## Rule 3: never confuse bounded exhaustion with an unbounded theorem
+
+If we exhaust
+
+$$
+|k_a^i|\le K
+$$
+
+and find no model, report
+
+```text
+UNSAT_BOUNDED(K)
+```
+
+and not
+
+```text
+UNSAT
+```
+
+for the unrestricted problem.
+
+If models stop appearing as \(K\) increases, report
+
+```text
+EMPIRICAL_SATURATION
+```
+
+unless an independent theorem has established that no solution can exist beyond that \(K\).
+
+Never convert empirical saturation into a no-go theorem.
+
+---
+
+## Rule 4: a numerical failure is not a proof
+
+For example, if an optimizer fails to find Kähler moduli satisfying the slope-zero equations, that is not by itself grounds for exact rejection.
+
+Return
+
+```text
+UNKNOWN_STABILITY
+```
+
+unless a mathematically sound necessary condition is violated.
+
+Likewise, a numerical root constitutes a candidate witness, not an exact certificate unless validated with certified methods.
+
+---
+
+## Rule 5: every important result must be independently testable
+
+Implement a slow reference method for tiny search spaces.
+
+Implement the optimized method separately.
+
+On every domain for which brute force is affordable:
+
+$$
+\text{solutions}_{\rm brute}
+=
+\text{solutions}_{\rm optimized}
+$$
+
+must hold exactly as sets after canonicalization.
+
+No optimized enumerator may be trusted before passing differential tests against the reference enumerator.
+
+---
+
+# 2. PRIMARY REFERENCES
+
+Before implementing the physics, study at minimum:
+
+* arXiv:1106.4804
+  “Two Hundred Heterotic Standard Models on Smooth Calabi-Yau Threefolds”
+
+* arXiv:1202.1757
+  “Heterotic Line Bundle Standard Models”
+
+* arXiv:1307.4787
+  “A Comprehensive Scan for Heterotic SU(5) GUT models”
+
+* arXiv:2306.03147
+  “Decoding Nature with Nature's Tools: Heterotic Line Bundle Models of Particle Physics with Genetic Algorithms and Quantum Annealing”
+
+Also inspect:
+
+* the Oxford CICY database;
+* the Oxford heterotic line-bundle model database;
+* freely acting CICY symmetry data.
+
+For modern cohomology acceleration, inspect but do not blindly trust:
+
+* arXiv:2606.22275
+  “Hilbert Functions and Line Bundle Cohomology on CICY Threefolds”
+
+and the line-bundle cohomology literature cited by arXiv:2306.03147.
+
+Create:
+
+```text
+docs/literature_notes.md
+```
+
+For every implemented equation record:
+
+```text
+equation name
+our convention
+paper
+equation/section
+sign convention
+basis convention
+unit test validating convention
+```
+
+Do NOT implement an equation from memory when it can be checked in a primary source.
+
+---
+
+# 3. REPOSITORY
+
+Create a clean repository resembling:
+
+```text
+string_sm_sat/
+    README.md
+    pyproject.toml
+    STATUS.md
+    RESULTS.md
+    CITATIONS.md
+
+    docs/
+        literature_notes.md
+        mathematical_scope.md
+        certification_semantics.md
+        performance_notes.md
+        research_assessment.md
+
+    data/
+        raw/
+        processed/
+        manifests/
+
+    src/
+        string_sm_sat/
+            __init__.py
+
+            geometry/
+                cicy.py
+                intersections.py
+                chern.py
+                cones.py
+                symmetries.py
+
+            bundles/
+                line_bundle.py
+                bundle_sum.py
+                canonical.py
+
+            physics/
+                index.py
+                anomaly.py
+                structure_group.py
+                stability.py
+                spectrum.py
+                equivariance.py
+                wilson_line.py
+
+            cohomology/
+                interface.py
+                analytic.py
+                external.py
+                cached.py
+
+            search/
+                brute_force.py
+                split_search.py
+                branch_bound.py
+                checkpoints.py
+                statistics.py
+
+            certificates/
+                candidate_certificate.py
+                search_certificate.py
+                verifier.py
+
+            cli.py
+
+    tests/
+        unit/
+        regression/
+        differential/
+        fixtures/
+
+    benchmarks/
+        x7447/
+        x7862/
+        x5302/
+
+    scripts/
+        fetch_data.py
+        benchmark.py
+        reproduce_known_model.py
+```
+
+Do not make the architecture unnecessarily abstract. Keep the mathematics readable.
+
+---
+
+# 4. DATA PROVENANCE
+
+All externally downloaded scientific data must have:
+
+```text
+source
+retrieval date
+SHA-256
+description
+associated paper
+```
+
+stored in a machine-readable manifest.
+
+Never silently edit raw data.
+
+Convert raw data to internal formats in `data/processed/`.
+
+Keep conversion scripts reproducible.
+
+If multiple published datasets disagree, do not choose silently. Document the discrepancy.
+
+---
+
+# 5. PHASE 0 — ENVIRONMENT AND SMOKE TESTS
+
+This must be extremely cheap.
+
+Inspect:
+
+* macOS architecture;
+* Python version;
+* available RAM;
+* available compilers;
+* presence of Mathematica/Wolfram tools if any;
+* presence of cohomCalg or related software.
+
+Do not require Mathematica.
+
+Prefer a lightweight Python environment.
+
+Suggested core dependencies:
+
+```text
+numpy
+scipy
+sympy
+pydantic or dataclasses
+pytest
+psutil
+```
+
+Z3 may be installed later, but do not force the whole problem into Z3.
+
+Do not install huge frameworks unless necessary.
+
+Create a command:
+
+```bash
+python -m string_sm_sat.cli doctor
+```
+
+which prints the available computational capabilities.
+
+All tests at this phase should complete essentially immediately.
+
+---
+
+# 6. PHASE 1 — IMPLEMENT CICY TOPOLOGY
+
+Start only with favourable CICYs.
+
+Represent a CICY by:
+
+```text
+CICY identifier
+configuration matrix
+ambient projective dimensions
+h11
+h21
+intersection tensor d_ijk
+c2(TX)
+known freely acting symmetry groups
+basis convention
+Kähler cone information
+```
+
+For a favourable CICY embedded in
+
+$$
+\mathcal A=\prod_r\mathbb P^{n_r},
+$$
+
+implement computation of triple intersection numbers using ambient intersection theory.
+
+Cross-check the calculated result against published CICY data.
+
+Also compute \(c_2(TX)\) using
+
+$$
+c(TX)
+=
+\frac{c(T\mathcal A)}
+     {c(N_X)}
+\Bigg|_X
+$$
+
+with all polynomial expansions performed exactly and truncated to the required degree.
+
+Do not proceed until intersection numbers and \(c_2\) agree with known data for multiple test geometries.
+
+---
+
+# 7. PHASE 2 — IMPLEMENT LINE-BUNDLE ALGEBRA
+
+Represent
+
+$$
+L=\mathcal O_X(k_1,\ldots,k_h)
+$$
+
+as an immutable integer tuple.
+
+Implement exact:
+
+```text
+c1(L)
+tensor product
+dual
+index(L)
+```
+
+with Hirzebruch–Riemann–Roch:
+
+$$
+\operatorname{ind}(L)
+=
+\frac16 d_{ijk}k^ik^jk^k
++
+\frac1{12}c_{2i}(TX)k^i,
+$$
+
+subject to verifying the exact convention against the primary papers.
+
+Implement
+
+$$
+V=\bigoplus_{a=1}^{5}L_a.
+$$
+
+For a bundle sum compute:
+
+$$
+\operatorname{ind}(V)
+=
+\sum_a\operatorname{ind}(L_a),
+$$
+
+and
+
+$$
+\wedge^2 V
+=
+\bigoplus_{a<b}
+L_a\otimes L_b,
+$$
+
+hence
+
+$$
+\operatorname{ind}(\wedge^2V)
+=
+\sum_{a<b}
+\operatorname{ind}(L_a\otimes L_b).
+$$
+
+Implement \(c_2(V)\) using the convention derived from the references.
+
+Do not trust a sign until tested against a published example.
+
+---
+
+# 8. FIRST GOLDEN REGRESSION FIXTURE
+
+Use the explicit model from arXiv:1307.4787 on CICY \(X_{7447}\).
+
+The line-bundle matrix has rows corresponding to the five \(H^{1,1}\) basis directions and columns corresponding to the five line bundles:
+
+```text
+K = [
+    [-1, -2,  1,  1,  1],
+    [ 0, -2, -1,  1,  2],
+    [ 0,  2, -1,  1, -2],
+    [ 0,  2,  0,  0, -2],
+    [ 1,  0,  0, -2,  1],
+]
+```
+
+The paper states that this example admits a quotient group of order
+
+$$
+|\Gamma|=4.
+$$
+
+Published bundle cohomology:
+
+$$
+h^\bullet(X,V)
+=
+(0,12,0,0),
+$$
+
+and
+
+$$
+h^\bullet(X,\wedge^2V)
+=
+(0,15,3,0).
+$$
+
+It also satisfies
+
+$$
+c_2(TX)\cdot J_i
+=
+c_2(V)\cdot J_i
+=
+(24,24,24,24,24).
+$$
+
+Therefore the code should reproduce, under the paper's conventions,
+
+$$
+\operatorname{ind}(V)=-12
+$$
+
+and
+
+$$
+\operatorname{ind}(\wedge^2V)=-12.
+$$
+
+Make this a permanent regression fixture.
+
+If these tests fail:
+
+STOP expanding functionality.
+
+Resolve the convention error first.
+
+---
+
+# 9. STRUCTURE GROUP CONDITION
+
+For
+
+$$
+V=\bigoplus_{a=1}^5L_a
+$$
+
+require
+
+$$
+\sum_a k_a=0.
+$$
+
+Also implement the condition needed to avoid reducing the structure group below \(S(U(1)^5)\).
+
+In particular, investigate and implement the primary-reference requirement that no proper subset of the line bundles has vanishing total first Chern class when that criterion applies.
+
+Label precisely whether each implementation is necessary/sufficient/equivalent under the assumed setup.
+
+Canonicalize the bundle under permutations of the five line-bundle summands.
+
+Do not count permutations of identical physics as separate models.
+
+Start with lexicographic ordering of column vectors.
+
+Handle repeated line bundles correctly.
+
+---
+
+# 10. ANOMALY CANCELLATION
+
+Implement the heterotic anomaly/effectivity condition.
+
+For the favourable benchmark cases reproduce the inequality used in arXiv:1307.4787:
+
+$$
+2d_{rst}c_2^{st}(TX)
+\ge
+d_{rst}\sum_{a=1}^{5}
+c_1^s(L_a)c_1^t(L_a)
+$$
+
+with conventions checked carefully.
+
+Do not generalize a component-wise inequality outside the basis/cone assumptions under which it is valid.
+
+Create:
+
+```python
+check_anomaly(bundle, geometry)
+```
+
+returning an object containing:
+
+```text
+PASS / FAIL / UNKNOWN
+exact residual
+assumptions
+reference
+```
+
+---
+
+# 11. SLOPE/POLYSTABILITY
+
+For each line bundle,
+
+$$
+\mu(L_a)
+=
+d_{ijk}k_a^i t^j t^k.
+$$
+
+Polystability at the split locus requires a common point in the interior of the relevant Kähler cone satisfying
+
+$$
+\mu(L_a)=0
+\qquad
+a=1,\ldots,5.
+$$
+
+Implement stability in layers.
+
+## Layer A: mathematically safe necessary tests
+
+Use inexpensive conditions that can reject candidates only when common slope zero is impossible.
+
+For the benchmark positive-orthant Kähler cones, investigate the published linearized/signed-matrix tests.
+
+Reproduce published necessary tests exactly before inventing alternatives.
+
+## Layer B: numerical witness
+
+Use robust nonlinear optimization/root finding to search for
+
+$$
+t^i>0
+$$
+
+up to the overall homogeneous scaling.
+
+Fix a normalization such as
+
+$$
+\sum_i t^i=1.
+$$
+
+A numerical root should return:
+
+```text
+NUMERIC_WITNESS
+```
+
+with
+
+```text
+t
+maximum slope residual
+distance from cone boundary
+solver diagnostics
+```
+
+It is NOT yet a mathematical proof.
+
+## Layer C: certified witness
+
+Later investigate interval arithmetic, Krawczyk-type certification, polynomial-system methods, or another rigorous method capable of certifying existence of a common root inside the Kähler cone.
+
+Until that exists, exact `SAT` claims must distinguish all-exact certificates from candidates having numerical stability witnesses.
+
+Do not pretend numerical stability is exact.
+
+---
+
+# 12. SPECTRUM CONDITIONS
+
+For a freely acting symmetry of order \(|\Gamma|\), implement the upstairs chiral targets used in the literature.
+
+The desired three-family condition is
+
+$$
+\operatorname{ind}(V)
+=
+-3|\Gamma|.
+$$
+
+Also require
+
+$$
+\operatorname{ind}(\wedge^2V)
+=
+-3|\Gamma|
+$$
+
+under the conventions of the benchmark construction.
+
+Full spectrum testing should ultimately inspect
+
+$$
+H^q(X,V)
+$$
+
+and
+
+$$
+H^q(X,\wedge^2V).
+$$
+
+The benchmark full-spectrum conditions from arXiv:2306.03147 include:
+
+$$
+h^1(X,V)=3|\Gamma|,
+$$
+
+$$
+h^2(X,V)=0,
+$$
+
+and
+
+$$
+h^1(X,\wedge^2V)
+=
+3|\Gamma|+n_h,
+$$
+
+$$
+h^2(X,\wedge^2V)
+=
+n_h,
+\qquad
+n_h>0.
+$$
+
+Verify conventions against the original papers.
+
+Do not derive physical spectrum labels only from index data when vector-like pairs matter.
+
+---
+
+# 13. COHOMOLOGY ENGINE
+
+Create one interface:
+
+```python
+cohomology(geometry, line_bundle) -> (h0,h1,h2,h3,status)
+```
+
+Support multiple backends.
+
+Possible statuses:
+
+```text
+EXACT_ANALYTIC
+EXACT_EXTERNAL
+CERTIFIED_FINITE_BOX
+UNKNOWN
+```
+
+Start with analytic formulas on geometries where published formulas already exist.
+
+In particular, investigate the formulas for:
+
+* \(X_{7862}\);
+* \(X_{7447}\);
+
+given in the literature associated with arXiv:2306.03147.
+
+Implement them with extensive tests.
+
+Cache every computed cohomology.
+
+Use Serre duality and index consistency as automatic invariants:
+
+$$
+\chi(L)
+=
+h^0-h^1+h^2-h^3.
+$$
+
+Every returned cohomology must satisfy the exact index.
+
+If not:
+
+raise an error.
+
+Do not silently continue.
+
+Optionally support cohomCalg or another established package as an independent backend.
+
+Do not make an external package mandatory for the basic test suite.
+
+---
+
+# 14. PHASE 3 — SLOW REFERENCE ENUMERATOR
+
+Before optimizing anything, implement a deliberately simple exhaustive enumerator for very tiny finite domains.
+
+Because
+
+$$
+\sum_{a=1}^5k_a=0,
+$$
+
+enumerate four line bundles and derive the fifth:
+
+$$
+k_5
+=
+-(k_1+k_2+k_3+k_4).
+$$
+
+Require every component of every line bundle to lie in
+
+$$
+[-K,K].
+$$
+
+Canonicalize under permutation of the five line bundles.
+
+Start with extremely small \(h\) and \(K\).
+
+The purpose is not physics discovery.
+
+Its purpose is to establish a ground-truth implementation against which all optimized searches can be compared.
+
+Record:
+
+```text
+raw states
+states with valid k5
+canonical states
+C1 survivors
+index survivors
+anomaly survivors
+stability survivors
+final survivors
+runtime
+peak RSS
+```
+
+---
+
+# 15. PHASE 4 — REIMPLEMENT THE PUBLISHED SPLIT SEARCH
+
+This is the crucial production algorithm.
+
+Study Section 5 of arXiv:1307.4787 carefully.
+
+Reproduce its central strategy rather than naively enumerating \(5\)-tuples.
+
+Build candidates hierarchically:
+
+$$
+L
+\rightarrow
+(L_1,L_2)
+\rightarrow
+(L_1,L_2,L_3)
+\rightarrow
+(L_1,\ldots,L_5).
+$$
+
+First create a list of individual line bundles satisfying safe necessary conditions, including the published index range
+
+$$
+-3|\Gamma|
+\le
+\operatorname{ind}(L)
+\le0
+$$
+
+where applicable.
+
+Then filter pairs using constraints such as
+
+$$
+-3|\Gamma|
+\le
+\operatorname{ind}(L_1\otimes L_2)
+\le0,
+$$
+
+and partial index conditions.
+
+Then triples.
+
+Only then construct the fourth line bundle and derive
+
+$$
+L_5
+=
+-(L_1+L_2+L_3+L_4).
+$$
+
+Follow the published algorithm carefully.
+
+Implement every pruning rule as a named function.
+
+For each rule document WHY it cannot remove a valid target model.
+
+Do not copy a historical optimization without understanding its assumptions.
+
+---
+
+# 16. DIFFERENTIAL CORRECTNESS TESTS
+
+This is mandatory.
+
+For small \(K\), run:
+
+```text
+reference brute-force search
+optimized split search
+```
+
+and compare their canonical solution sets.
+
+Require:
+
+```python
+set(brute_results) == set(split_results)
+```
+
+Test multiple geometries and multiple \(|\Gamma|\).
+
+Whenever a new optimization or pruning rule is introduced, re-run differential tests.
+
+If an optimized search loses a valid model, treat that as a critical bug.
+
+---
+
+# 17. PHASE 5 — FIRST REAL BENCHMARK: X7862
+
+Use
+
+$$
+X_{7862}^{(4,68)},
+$$
+
+the tetra-quadric with
+
+$$
+h^{1,1}=4.
+$$
+
+This is the first serious target because:
+
+* small \(h^{1,1}\);
+* known freely acting symmetries;
+* published systematic scan results;
+* analytic line-bundle cohomology formulas;
+* published GA benchmark.
+
+Start with:
+
+$$
+K=1.
+$$
+
+Then:
+
+$$
+K=2.
+$$
+
+Then:
+
+$$
+K=3.
+$$
+
+Then:
+
+$$
+K=4.
+$$
+
+Do not immediately jump to \(K=8\).
+
+At every value report cumulative counts after every filter.
+
+Compare against the correct stage of the published scan.
+
+IMPORTANT:
+
+Different papers quote different model counts because different spectrum/stability filters are being applied.
+
+Never compare:
+
+```text
+GUT_CHIRAL count
+```
+
+against
+
+```text
+GUT_FULL count
+```
+
+without noticing the distinction.
+
+For \(X_{7862}\), reproduce both where possible.
+
+Use the 2014 comprehensive scan as a benchmark for the appropriate GUT-stage counts.
+
+Use the 2023 GA paper as a benchmark for the stronger full-spectrum search.
+
+Diagnose every disagreement.
+
+Do not dismiss an off-by-one or count mismatch as "probably conventions."
+
+Find the reason.
+
+---
+
+# 18. PHASE 6 — X7447
+
+Only after \(X_{7862}\) works.
+
+Move to
+
+$$
+X_{7447}^{(5,45)}.
+$$
+
+First validate the explicit golden model already described.
+
+Then progressively run:
+
+$$
+K=1,2,3,\ldots
+$$
+
+using checkpointing.
+
+Compare stage-by-stage counts with the comprehensive scan.
+
+Use the published analytic cohomology formulas to implement `GUT_FULL`.
+
+This stage begins stressing combinatorics significantly more than \(h=4\).
+
+Measure which filters provide the largest reductions.
+
+Create plots/tables of:
+
+$$
+N_0
+\rightarrow
+N_{C1}
+\rightarrow
+N_{\rm index}
+\rightarrow
+N_{\rm pair}
+\rightarrow
+N_{\rm stability}
+\rightarrow
+N_{\rm anomaly}
+\rightarrow
+N_{\rm cohomology}.
+$$
+
+---
+
+# 19. PHASE 7 — X5302
+
+Only after \(h=5\) works correctly.
+
+Move to
+
+$$
+X_{5302}
+$$
+
+with
+
+$$
+h^{1,1}=6.
+$$
+
+The historical nominal search space for ranges comparable to \([-7,8]\) is enormous, so do not brute force.
+
+Run only the split/pruned engine.
+
+Start with small \(K\).
+
+Use `GUT_CHIRAL` first.
+
+Do not claim `GUT_FULL` unless the required cohomology backend is actually available and validated.
+
+Investigate whether newer 2026 cohomology methods provide rigorous formulas suitable for this geometry.
+
+If not, label the full-spectrum status `UNKNOWN` rather than approximating.
+
+---
+
+# 20. PERFORMANCE ENGINEERING
+
+Only optimize after correctness has been established.
+
+First profile.
+
+Possible optimization order:
+
+1. reduce Python object creation;
+2. represent collections as compact integer arrays;
+3. precompute single-line-bundle invariants;
+4. precompute pair invariants;
+5. cache tensor-product indices;
+6. canonicalize early;
+7. use sorted arrays/hash tables for matching partial states;
+8. stream states instead of keeping unnecessary candidates;
+9. parallelize independent geometry/symmetry jobs;
+10. only then consider moving hotspots into Rust/C++.
+
+Do not rewrite the whole project in Rust prematurely.
+
+The Python implementation remains the reference version.
+
+If a compiled search core is introduced, the Python and compiled implementations must be differentially tested.
+
+---
+
+# 21. MEMORY LIMIT
+
+The machine has 16 GB unified memory.
+
+Design for:
+
+$$
+\text{peak RSS} < 12\ {\rm GB}
+$$
+
+with a preferred normal target below 8 GB.
+
+Do not store huge Python object graphs.
+
+Do not generate a trillion candidates and hope virtual memory will save the run.
+
+Use:
+
+* streaming;
+* chunking;
+* packed arrays;
+* compact integer types only when overflow is impossible;
+* checkpointed intermediate lists;
+* on-disk sorted tables if required.
+
+Before any large run, estimate memory from a smaller sample.
+
+Abort cleanly rather than causing memory pressure and swap thrashing.
+
+---
+
+# 22. INTEGER OVERFLOW
+
+Never assume `int64` is automatically safe.
+
+For every optimized integer expression involving
+
+$$
+d_{ijk}k^ik^jk^k,
+$$
+
+derive a worst-case bound.
+
+If the bound approaches machine integer limits, use arbitrary-precision integers or explicit checked arithmetic.
+
+Tests should include intentionally large integers to detect overflow.
+
+---
+
+# 23. CHECKPOINTING
+
+Any run expected to take more than a few minutes must support:
+
+```text
+checkpoint
+resume
+deterministic restart
+```
+
+A checkpoint must include:
+
+```text
+geometry identifier
+Gamma
+K
+target
+search algorithm version
+git commit hash if available
+input dataset hashes
+constraint configuration
+current search position
+survivor counts
+random seed if any
+```
+
+Exhaustive search itself must be deterministic.
+
+---
+
+# 24. CERTIFICATE FORMAT
+
+Every surviving candidate should be exportable as JSON.
+
+Example conceptual structure:
+
+```json
+{
+  "geometry": "...",
+  "gamma_order": 4,
+  "bundle": [...],
+  "domain": {"K": 4},
+  "checks": {
+    "c1_zero": {...},
+    "structure_group": {...},
+    "index_V": {...},
+    "index_wedge2V": {...},
+    "anomaly": {...},
+    "stability": {...},
+    "cohomology_V": {...},
+    "cohomology_wedge2V": {...}
+  },
+  "overall_status": "..."
+}
+```
+
+Do not merely write `"pass": true`.
+
+Include the witness/residual/exact arithmetic needed to independently verify each condition.
+
+Create a separate:
+
+```bash
+python -m string_sm_sat.cli verify-candidate certificate.json
+```
+
+which does not trust stored booleans and recomputes the conditions.
+
+---
+
+# 25. BOUNDED SEARCH CERTIFICATES
+
+For a finite domain
+
+$$
+\mathcal D(X,\Gamma,K),
+$$
+
+produce a search summary containing:
+
+```text
+definition of D
+number of raw configurations implied by D
+symmetry/canonicalization convention
+number rejected by each exact necessary filter
+number passed to subsequent stages
+number surviving
+hashes of survivor lists
+software version
+input hashes
+```
+
+For small domains where brute force is possible, the independent verifier should replay the complete domain.
+
+For larger domains, develop replayable branch/pruning records.
+
+Call the outcome:
+
+```text
+SAT_BOUNDED
+```
+
+if at least one fully certified model exists.
+
+Call it:
+
+```text
+UNSAT_BOUNDED
+```
+
+only if every state in the domain has been accounted for by mathematically valid exhaustive enumeration/pruning and no required condition remains `UNKNOWN`.
+
+Otherwise use:
+
+```text
+UNKNOWN_BOUNDED
+```
+
+This distinction is mandatory.
+
+---
+
+# 26. SEARCH FOR SAFE NEW PRUNING RULES
+
+Once the published algorithm is reproduced, begin the research part.
+
+For every expensive stage ask:
+
+> Can a necessary condition be derived that eliminates entire partial branches before constructing complete bundles?
+
+Explore, for example:
+
+* interval bounds on remaining possible indices;
+* bounds from anomaly cancellation;
+* partial \(c_2\) bounds;
+* congruence conditions;
+* parity constraints;
+* lattice constraints;
+* convex-cone obstructions;
+* rank conditions;
+* symmetry/equivariance divisibility conditions;
+* bounds derived from pairwise tensor-product indices.
+
+Any new pruning rule must satisfy one of:
+
+1. analytically proved necessary condition; or
+2. conjectured condition clearly marked as heuristic and NEVER used for exhaustive pruning.
+
+For every new exact rule create:
+
+```text
+statement
+derivation/proof
+unit tests
+counterexample search
+differential search test
+speedup measurement
+```
+
+This is where genuine research novelty may emerge.
+
+---
+
+# 27. MEET-IN-THE-MIDDLE — ONLY AFTER BASELINE
+
+After reproducing the historical split algorithm, investigate whether a more efficient meet-in-the-middle formulation helps.
+
+For example, precompute pairs
+
+$$
+P_{ab}=(L_a,L_b)
+$$
+
+with summaries including:
+
+```text
+k_a+k_b
+index(L_a)+index(L_b)
+index(L_a tensor L_b)
+partial c2 contribution
+other exact invariants
+```
+
+Then match pair states while deriving \(L_5\).
+
+Do not assume this will be faster.
+
+Benchmark it against the historical split algorithm.
+
+The relevant metric is:
+
+```text
+wall-clock time
+peak memory
+candidate evaluations
+exact set of final solutions
+```
+
+If meet-in-the-middle increases memory excessively on the 16 GB machine, reject it.
+
+---
+
+# 28. DO NOT TRAIN ML YET
+
+No neural network, reinforcement learner, genetic algorithm, or language-model scoring system should be part of the initial implementation.
+
+We first want to know how far exact mathematical pruning takes us.
+
+Only consider heuristic search after:
+
+* exact validator is correct;
+* known models are reproduced;
+* optimized exhaustive search is validated;
+* bottlenecks are measured.
+
+If ML is eventually introduced, it may rank branches:
+
+$$
+{\rm score}(s)
+$$
+
+but it MUST NOT eliminate branches from an exhaustive run.
+
+---
+
+# 29. PHASE 8 — EXPAND OVER THE 68 FAVOURABLE CICY BENCHMARKS
+
+Do this only after \(X_{7862}\), \(X_{7447}\), and at least one \(h=6\) example work.
+
+The historical comprehensive scan considered 68 favourable CICYs with freely acting symmetries and \(h^{1,1}\le6\).
+
+Create an automated benchmark suite over them.
+
+Start with low \(K\).
+
+Do not immediately reproduce the seven-month historical exhaustive computation.
+
+The objective is instead:
+
+1. determine how modern hardware and improved algorithms scale;
+2. determine where the bottleneck occurs;
+3. identify which exact pruning rules dominate;
+4. determine whether an improved algorithm changes the scaling materially.
+
+Record per geometry:
+
+```text
+h11
+Gamma
+K
+raw nominal search size
+individual bundles retained
+pairs retained
+triples retained
+complete bundles checked
+GUT_CHIRAL count
+GUT_FULL count
+UNKNOWN count
+runtime
+peak RSS
+```
+
+---
+
+# 30. PHASE 9 — DOWNSTAIRS MSSM
+
+Do not begin until the upstream search is stable.
+
+Study arXiv:1106.4804 and 1202.1757 in detail.
+
+Implement:
+
+* freely acting symmetry data;
+* equivariant structure requirements;
+* quotient geometry;
+* action of \(\Gamma\) on relevant bundle cohomologies;
+* Wilson-line embeddings in \(SU(5)\);
+* decomposition to
+
+$$
+SU(3)\times SU(2)\times U(1)_Y;
+$$
+
+* invariant subspaces after quotient and Wilson line;
+* doublet-triplet splitting;
+* resulting charged spectrum.
+
+FIRST OBJECTIVE:
+
+Reproduce one published downstairs heterotic standard model exactly.
+
+SECOND OBJECTIVE:
+
+Reproduce a small published catalog.
+
+Only after that should general downstairs scanning begin.
+
+Do not merely divide cohomology dimensions by \(|\Gamma|\) when representation theory is required.
+
+---
+
+# 31. STANDARD-MODEL ACCEPTANCE REPORT
+
+For each `DOWNSTAIRS_MSSM` candidate print a human-readable particle-spectrum table.
+
+At minimum identify multiplicities of the SM/MSSM representations corresponding to:
+
+$$
+Q,\quad u^c,\quad d^c,\quad L,\quad e^c,
+$$
+
+and Higgs doublets.
+
+Explicitly report:
+
+```text
+3 chiral families? yes/no
+charged chiral exotics? yes/no
+Higgs doublet pair? yes/no
+colour triplet Higgs? yes/no
+additional massless U(1)? yes/no/unknown
+singlets: count/unknown
+```
+
+Do not hide additional charged states behind an aggregate score.
+
+---
+
+# 32. STRICT SCIENTIFIC CLAIM LANGUAGE
+
+Use these words precisely.
+
+Allowed:
+
+```text
+found
+verified
+reproduced
+exhausted finite domain
+certified bounded absence
+numerical witness
+necessary-condition survivor
+empirical saturation
+unknown
+```
+
+Forbidden unless actually proved:
+
+```text
+proved no Standard Model exists in string theory
+complete string landscape
+all Calabi-Yau compactifications
+global swampland obstruction
+exact Standard Model
+```
+
+A no-go statement must explicitly specify its domain.
+
+Example:
+
+> No \(S(U(1)^5)\) line-bundle sum satisfying conditions C1–C4 exists on CICY \(X\) with \(|k_a^i|\le K\), under the stated cone and symmetry assumptions.
+
+That is acceptable if certified.
+
+---
+
+# 33. RESOURCE ESCALATION ORDER
+
+Use this computational ladder.
+
+### LEVEL 0
+
+Unit tests and known candidate validation.
+
+Very cheap.
+
+### LEVEL 1
+
+Tiny brute-force finite domains.
+
+Cheap.
+
+### LEVEL 2
+
+Optimized split search on low-\(h^{1,1}\) geometry with \(K=1,2\).
+
+Cheap.
+
+### LEVEL 3
+
+\(X_{7862}\), increasing \(K\) and reproducing published counts.
+
+Moderate.
+
+### LEVEL 4
+
+\(X_{7447}\).
+
+Moderate/harder.
+
+### LEVEL 5
+
+\(X_{5302}\).
+
+Harder.
+
+### LEVEL 6
+
+Multiple favourable CICYs.
+
+Potentially expensive.
+
+### LEVEL 7
+
+Downstairs equivariant/Wilson-line spectrum.
+
+Mathematically harder.
+
+### LEVEL 8
+
+New certified pruning/no-go machinery.
+
+Research frontier.
+
+### LEVEL 9
+
+Only after all of the above:
+other CICYs, toric hypersurfaces, other bundle classes.
+
+Flux compactifications remain a separate future project.
+
+Do not skip directly to higher levels.
+
+---
+
+# 34. LONG RUN POLICY
+
+Before a genuinely expensive computation:
+
+1. benchmark on a smaller \(K\);
+2. estimate states/sec;
+3. measure peak RSS;
+4. verify checkpointing;
+5. extrapolate approximate runtime;
+6. save the estimate in `STATUS.md`.
+
+Never launch an enormous uncheckpointed job.
+
+If a projected job is unreasonable on this Mac, do not brute-force it.
+
+Instead identify the bottleneck and attempt mathematical/algorithmic improvement.
+
+---
+
+# 35. STATUS.md
+
+Maintain this continuously.
+
+Use:
+
+```text
+Current stage
+Completed
+Current verified scientific capabilities
+Tests
+Known discrepancies
+Current benchmark
+Candidate counts
+Runtime
+Peak memory
+Next task
+Scientific blockers
+```
+
+Do not write vague statements such as "search seems to work."
+
+Use quantitative results.
+
+---
+
+# 36. RESULTS.md
+
+This file is the scientific laboratory notebook.
+
+For every serious experiment record:
+
+```text
+date
+git commit
+geometry
+Gamma
+K
+target definition
+algorithm
+exact/heuristic flags
+counts after every filter
+runtime
+peak memory
+known published comparison
+agreement/disagreement
+interpretation
+```
+
+Do not overwrite old experiments.
+
+Append.
+
+---
+
+# 37. AUTOMATIC VALIDATION TESTS
+
+At minimum include tests for:
+
+### Algebra
+
+$$
+L\otimes M
+$$
+
+$$
+L^*
+$$
+
+$$
+\wedge^2V
+$$
+
+$$
+c_1(V)
+$$
+
+$$
+c_2(V)
+$$
+
+$$
+\operatorname{ind}(L)
+$$
+
+### Mathematical identities
+
+$$
+\chi(L)
+=
+h^0-h^1+h^2-h^3
+$$
+
+Serre duality where applicable.
+
+### Physics
+
+known anomaly-free model;
+
+known correct index model;
+
+known invalid mutated model;
+
+known stability witness where published;
+
+known cohomology fixture.
+
+### Search
+
+brute-force versus optimized exact-set equality;
+
+checkpoint/resume equality;
+
+single-thread versus multi-thread equality;
+
+canonicalization invariance under line-bundle permutation.
+
+---
+
+# 38. MUTATION TESTS FOR THE GOLDEN MODEL
+
+Take the known \(X_{7447}\) valid bundle and deliberately mutate entries.
+
+Construct examples that separately fail:
+
+```text
+c1(V)=0
+index condition
+anomaly condition
+structure-group condition
+```
+
+where possible.
+
+Confirm each validator catches the intended failure.
+
+This prevents a test suite consisting only of positive examples.
+
+---
+
+# 39. INDEPENDENT CROSS-CHECKS
+
+Where feasible compute the same quantity in two conceptually independent ways.
+
+Examples:
+
+* topology from configuration matrix versus published data;
+* index from HRR versus cohomology dimensions;
+* analytic cohomology formula versus external package;
+* Python reference search versus optimized search;
+* direct candidate validation versus search-produced certificate.
+
+Agreement between two copies of the same buggy formula is not an independent check.
+
+---
+
+# 40. FIRST RESEARCH QUESTION
+
+After reproducing published searches, address:
+
+> How much of the nominal landscape can be removed by mathematically necessary conditions before any expensive cohomology calculation is performed?
+
+For each benchmark compute reduction factors:
+
+$$
+R_i=\frac{N_{\rm before}}{N_{\rm after}}.
+$$
+
+Identify the strongest filters.
+
+Determine scaling with:
+
+$$
+h^{1,1},
+\qquad
+K,
+\qquad
+|\Gamma|.
+$$
+
+This gives us the empirical structure of the combinatorial problem.
+
+---
+
+# 41. SECOND RESEARCH QUESTION
+
+Ask:
+
+> Can the historical split algorithm be replaced or augmented by a formally complete branch-and-bound algorithm that generates replayable certificates for bounded domains?
+
+Implement branch nodes representing partially specified line-bundle sums.
+
+For each node determine conservative ranges for quantities attainable by any completion.
+
+Examples:
+
+$$
+\min \operatorname{ind}_{\rm completion},
+\qquad
+\max \operatorname{ind}_{\rm completion}.
+$$
+
+If the target value lies outside the exact attainable interval, prune the entire branch.
+
+Develop similar rigorous bounds for anomaly quantities where possible.
+
+A branch certificate should contain enough data for an independent verifier to recompute why every completion is impossible.
+
+---
+
+# 42. THIRD RESEARCH QUESTION
+
+Ask:
+
+> Can the physics constraints imply an explicit geometry-dependent bound on the line-bundle integers \(k_a^i\)?
+
+Investigate systematically.
+
+Potential ingredients include:
+
+* anomaly cancellation;
+* Bogomolov-type bounds;
+* common slope-zero requirement;
+* index requirement;
+* properties of the Kähler cone;
+* intersection form;
+* finite-generation properties of relevant cones.
+
+Do not claim such a theorem merely from observed saturation.
+
+Search the mathematical literature.
+
+If a proof can only be established for a restricted class of geometries, state the theorem for that class.
+
+A rigorous finite bound
+
+$$
+|k_a^i|\le B(X)
+$$
+
+would be extremely significant because it would turn an apparently unbounded model-building problem into a finite decision problem for that class.
+
+---
+
+# 43. FOURTH RESEARCH QUESTION
+
+Analyze failed branches for recurring arithmetic obstructions.
+
+Search for exact patterns such as:
+
+```text
+parity
+divisibility
+congruences mod n
+rank deficiencies
+cone incompatibilities
+index residue classes
+symmetry constraints
+```
+
+If a pattern appears, formulate it as a conjecture.
+
+Then attempt to derive it symbolically from:
+
+$$
+d_{ijk},
+\qquad
+c_2(TX),
+\qquad
+k_a^i,
+\qquad
+|\Gamma|.
+$$
+
+A machine-discovered no-go theorem is more scientifically interesting than another heuristic landscape scan.
+
+---
+
+# 44. OPTIONAL ML — ONLY MUCH LATER
+
+If millions of exact candidate evaluations have been accumulated, an optional predictor may be studied.
+
+Its only purpose is:
+
+$$
+P(\text{survive expensive tests}\mid\text{cheap invariants})
+$$
+
+for branch ordering.
+
+Start with something simple such as gradient-boosted trees.
+
+Do not use a large neural network.
+
+Do not use an LLM as a classifier.
+
+A prediction may change execution order.
+
+It may NEVER convert a branch into a certified rejection.
+
+The complete search result must remain independent of the predictor.
+
+---
+
+# 45. WHAT NOT TO DO
+
+Do NOT:
+
+* generate random line bundles and call it exhaustive;
+* train a neural network before building the exact solver;
+* use GA failure as evidence of absence;
+* use numerical optimizer failure as proof of instability;
+* treat an index as the complete particle spectrum;
+* divide cohomology dimensions by \(|\Gamma|\) without representation theory;
+* assume every favourable CICY has the same Kähler cone;
+* silently ignore equivariance;
+* silently ignore structure-group reduction;
+* silently ignore additional massless \(U(1)\)'s;
+* silently use floating point for integer topology;
+* extrapolate three unchanged \(K\) values into a mathematical theorem;
+* call the 7,890 CICY list "all Calabi–Yau manifolds";
+* claim a result about all heterotic compactifications;
+* claim a result about all string theory;
+* start flux stabilization;
+* waste time on a GUI.
+
+---
+
+# 46. FIRST CONCRETE EXECUTION SEQUENCE
+
+Execute these steps now, in exactly this broad order.
+
+### Task A
+
+Create repository and documentation structure.
+
+### Task B
+
+Acquire primary papers/data and create provenance manifest.
+
+### Task C
+
+Implement CICY topology.
+
+### Task D
+
+Implement line-bundle algebra and HRR index.
+
+### Task E
+
+Reproduce the explicit \(X_{7447}\) model's:
+
+$$
+c_1(V)=0,
+$$
+
+$$
+\operatorname{ind}(V)=-12,
+$$
+
+$$
+\operatorname{ind}(\wedge^2V)=-12,
+$$
+
+and published \(c_2\).
+
+### Task F
+
+Implement basic anomaly, structure-group and spectrum-index validators.
+
+### Task G
+
+Implement stability necessary condition plus numerical witness finder.
+
+### Task H
+
+Implement analytic cohomology on \(X_{7862}\) and \(X_{7447}\), with index consistency tests.
+
+### Task I
+
+Implement tiny brute-force enumerator.
+
+### Task J
+
+Implement the published split search.
+
+### Task K
+
+Differentially test them.
+
+### Task L
+
+Run \(X_{7862}\), small \(K\).
+
+### Task M
+
+Increase \(K\) only after counts and tests are sound.
+
+### Task N
+
+Compare against published counts.
+
+### Task O
+
+Optimize only the measured bottleneck.
+
+### Task P
+
+Move to \(X_{7447}\).
+
+### Task Q
+
+Only then consider \(X_{5302}\).
+
+---
+
+# 47. INITIAL SUCCESS CRITERIA
+
+The first milestone is complete only when ALL of these are true:
+
+1. CICY geometry conventions reproduce published topology.
+
+2. The \(X_{7447}\) golden model passes all currently implemented applicable tests.
+
+3. Its index and \(c_2\) values agree exactly with the literature.
+
+4. Tiny brute-force and optimized search return exactly the same canonical solution sets.
+
+5. Checkpoint/resume returns exactly the same solution set as uninterrupted execution.
+
+6. \(X_{7862}\) search counts can be compared meaningfully with the correct stage of published results.
+
+7. Every search output distinguishes exact, necessary, numerical and unknown tests.
+
+8. No ML has been trained.
+
+9. No unbounded no-go statement has been made.
+
+10. `STATUS.md` and `RESULTS.md` contain enough information for another researcher to reproduce the work.
+
+---
+
+# 48. SECOND MILESTONE
+
+After the first milestone:
+
+Reproduce a meaningful published search result on \(X_{7862}\) and \(X_{7447}\), including the number of models after each constraint stage.
+
+Then calculate:
+
+$$
+\text{nominal search size},
+$$
+
+$$
+\text{actually materialized candidates},
+$$
+
+$$
+\text{pruning ratio},
+$$
+
+$$
+\text{wall time},
+$$
+
+and
+
+$$
+\text{peak memory}.
+$$
+
+Determine whether the local M4 implementation can reproduce historical low-\(h^{1,1}\) scans at useful speed.
+
+---
+
+# 49. THIRD MILESTONE — THE NEW RESULT
+
+Do not call reproduction a new research contribution.
+
+A genuinely new contribution should look like one or more of:
+
+### A
+
+A provably safe pruning method yielding substantial additional speedup.
+
+### B
+
+A branch-and-bound formulation producing replayable bounded-UNSAT certificates.
+
+### C
+
+A new analytic obstruction excluding an entire family of line-bundle sums.
+
+### D
+
+A constructive bound on line-bundle integers for a specified geometry/class.
+
+### E
+
+A new exact/certified line-bundle cohomology acceleration useful for landscape scans.
+
+### F
+
+An exhaustive bounded search substantially larger than previously feasible, with independently verifiable completeness.
+
+Measure novelty relative to the published literature.
+
+---
+
+# 50. FINAL OUTPUTS FROM THIS CODEX SESSION
+
+Do not merely tell me what should be implemented.
+
+Implement as much of the sequence as the current session permits.
+
+Leave the repository in a runnable state.
+
+At minimum produce:
+
+```text
+README.md
+STATUS.md
+RESULTS.md
+docs/literature_notes.md
+docs/mathematical_scope.md
+working source code
+tests
+known-model fixtures
+CLI
+initial benchmark output
+```
+
+At the end, give a concise report containing:
+
+1. what was actually implemented;
+2. exact tests that pass;
+3. known-model quantities reproduced;
+4. current runtime and memory benchmark;
+5. current highest completed phase;
+6. discrepancies with the literature, if any;
+7. what remains mathematically `UNKNOWN`;
+8. the single most important bottleneck;
+9. the exact command that should be run next.
+
+Do not hide failures.
+
+Do not fabricate successful validation.
+
+Do not fabricate literature agreement.
+
+If something cannot be verified, mark it clearly as unknown and continue with work that can be verified.
+
+Most importantly:
+
+> Build this as a scientific decision engine, not as a model-finding toy.
+
+The long-term objective is that a precisely defined finite landscape sector can be submitted to the system and receive one of:
+
+```text
+SAT_BOUNDED
+UNSAT_BOUNDED
+UNKNOWN_BOUNDED
+```
+
+with an auditable mathematical reason.
+
+Begin now with Phase 0 and proceed autonomously through the cheapest validated stages before attempting expensive computation.

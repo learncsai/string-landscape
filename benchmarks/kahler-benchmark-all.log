@@ -1,0 +1,8 @@
+--- reading: monomials with |S|^2 factors
+GMTerm          tables  2012  exact    94  cells   2012  agree     94
+NeutrinoKahler  tables  2012  exact   585  cells   6036  agree   3320
+Kin5            tables  2012  exact     0  cells  18108  agree   7054
+--- reading: monomials without |S|^2 factors
+GMTerm          tables  2012  exact  2012  cells   2012  agree   2012
+NeutrinoKahler  tables  2012  exact  2012  cells   6036  agree   6036
+Kin5            tables  2012  exact  2012  cells  18108  agree  18108

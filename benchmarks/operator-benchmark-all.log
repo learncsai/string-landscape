@@ -1,0 +1,22 @@
+fitted index order for Dim4Proton: (0, 1, 2) (cells agreeing per ordering: {(0, 1, 2): 594, (0, 2, 1): 594, (1, 0, 2): 470, (1, 2, 0): 470, (2, 0, 1): 470, (2, 1, 0): 470})
+fitted index order for Dim5Proton: (3, 0, 1, 2) (cells agreeing per ordering: {(0, 1, 2, 3): 1689, (0, 1, 3, 2): 1689, (0, 2, 1, 3): 1689, (0, 2, 3, 1): 1689, (0, 3, 1, 2): 1677, (0, 3, 2, 1): 1677, (1, 0, 2, 3): 1689, (1, 0, 3, 2): 1689, (1, 2, 0, 3): 1689, (1, 2, 3, 0): 1689, (1, 3, 0, 2): 1677, (1, 3, 2, 0): 1677, (2, 0, 1, 3): 1689, (2, 0, 3, 1): 1689, (2, 1, 0, 3): 1689, (2, 1, 3, 0): 1689, (2, 3, 0, 1): 1677, (2, 3, 1, 0): 1677, (3, 0, 1, 2): 1741, (3, 0, 2, 1): 1741, (3, 1, 0, 2): 1741, (3, 1, 2, 0): 1741, (3, 2, 0, 1): 1741, (3, 2, 1, 0): 1741})
+fitted index order for HiggsMass: (0, 1) (cells agreeing per ordering: {(0, 1): 198, (1, 0): 182})
+Dim4Proton      tables  2012  exact  1996  | cells   54324  agree   54160  || convention-adjusted: tables  2012  classes  36216  agree  36216  | shape mismatch    0  skipped    0
+Dim5Proton      tables  2012  exact  1004  | cells  162972  agree  148266  || convention-adjusted: tables  2012  classes  60360  agree  60360  | shape mismatch    0  skipped    0
+RParVio         tables  2012  exact  1916  | cells    6036  agree    5876  || convention-adjusted: tables  2012  classes   6036  agree   6036  | shape mismatch    0  skipped    0
+HiggsMass       tables  2012  exact  2012  | cells   18108  agree   18108  || convention-adjusted: tables  2012  classes  18108  agree  18108  | shape mismatch    0  skipped    0
+SuperPotential  tables  2012  exact  2012  | shape mismatch    0  skipped    0
+DTerms          tables  2012  exact  2012  | shape mismatch    0  skipped    0
+FITerms         tables  2012  exact  2012  | shape mismatch    0  skipped    0
+
+failures by (kind, geometry): {('Dim5Proton', 7862): 9, ('Dim5Proton', 5256): 86, ('Dim5Proton', 5452): 808, ('Dim5Proton', 6947): 24, ('Dim5Proton', 6732): 12, ('RParVio', 6732): 16, ('RParVio', 6770): 32, ('Dim4Proton', 6770): 16, ('Dim5Proton', 6770): 4, ('Dim5Proton', 6777): 24, ('RParVio', 6777): 32, ('Dim5Proton', 6890): 12, ('RParVio', 6890): 16, ('Dim5Proton', 7447): 1, ('Dim5Proton', 7487): 28}
+   {'cicy': 7862, 'model': 9, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 77}
+   {'cicy': 7862, 'model': 10, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 77}
+   {'cicy': 7862, 'model': 11, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 77}
+   {'cicy': 7862, 'model': 12, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 77}
+   {'cicy': 7862, 'model': 13, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 72}
+   {'cicy': 7862, 'model': 19, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 77}
+   {'cicy': 7862, 'model': 20, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 77}
+   {'cicy': 7862, 'model': 21, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 77}
+   {'cicy': 7862, 'model': 22, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 77}
+   {'cicy': 5256, 'model': 1, 'kind': 'Dim5Proton', 'cells': 81, 'agree': 73}

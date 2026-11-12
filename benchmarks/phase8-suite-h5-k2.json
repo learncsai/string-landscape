@@ -1,0 +1,2047 @@
+{
+ "runs": [
+  {
+   "geometry": 5256,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 600,
+   "pairs_retained": 41823,
+   "triples_retained": 389374,
+   "complete_bundles_checked": 80758,
+   "survivors": 1148,
+   "orbits": 575,
+   "published_in_box": 563,
+   "published_total": 763,
+   "published_only": 0,
+   "ours_only": 12,
+   "exact_set_equality": false,
+   "automorphisms": 2,
+   "runtime_seconds": 48.59,
+   "peak_rss_mib": 251.5,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -2,
+      -1,
+      -1,
+      1,
+      1
+     ],
+     [
+      -1,
+      1,
+      1,
+      -2,
+      0
+     ],
+     [
+      0,
+      1,
+      2,
+      0,
+      -1
+     ],
+     [
+      1,
+      -1,
+      0,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      -2,
+      1,
+      0
+     ]
+    ],
+    [
+     [
+      -2,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      -1,
+      0
+     ],
+     [
+      0,
+      1,
+      1,
+      1,
+      -1
+     ],
+     [
+      1,
+      -2,
+      0,
+      -1,
+      1
+     ],
+     [
+      1,
+      1,
+      -2,
+      0,
+      0
+     ]
+    ],
+    [
+     [
+      -2,
+      0,
+      1,
+      1,
+      0
+     ],
+     [
+      0,
+      -1,
+      -2,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      0,
+      -2,
+      0
+     ],
+     [
+      1,
+      -1,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1,
+      0,
+      -1
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 5256,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 770,
+   "pairs_retained": 84959,
+   "triples_retained": 1139871,
+   "complete_bundles_checked": 224896,
+   "survivors": 1344,
+   "orbits": 672,
+   "published_in_box": 656,
+   "published_total": 2128,
+   "published_only": 0,
+   "ours_only": 16,
+   "exact_set_equality": false,
+   "automorphisms": 2,
+   "runtime_seconds": 153.05,
+   "peak_rss_mib": 433.6,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -2,
+      -1,
+      -1,
+      0,
+      1
+     ],
+     [
+      -1,
+      2,
+      0,
+      2,
+      -1
+     ],
+     [
+      1,
+      -1,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      -1,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1,
+      -2,
+      0
+     ]
+    ],
+    [
+     [
+      -2,
+      -1,
+      0,
+      0,
+      1
+     ],
+     [
+      0,
+      -2,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      1,
+      -2,
+      0
+     ],
+     [
+      1,
+      -1,
+      -1,
+      0,
+      0
+     ],
+     [
+      1,
+      2,
+      0,
+      1,
+      -1
+     ]
+    ],
+    [
+     [
+      -2,
+      0,
+      -1,
+      0,
+      1
+     ],
+     [
+      0,
+      2,
+      -2,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      2,
+      0,
+      -1
+     ],
+     [
+      1,
+      -2,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      -2,
+      1,
+      -1,
+      0
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 5301,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 600,
+   "pairs_retained": 41823,
+   "triples_retained": 389374,
+   "complete_bundles_checked": 80758,
+   "survivors": 1148,
+   "orbits": 144,
+   "published_in_box": 141,
+   "published_total": 191,
+   "published_only": 0,
+   "ours_only": 3,
+   "exact_set_equality": false,
+   "automorphisms": 8,
+   "runtime_seconds": 50.5,
+   "peak_rss_mib": 442.4,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -2,
+      -1,
+      -1,
+      1,
+      1
+     ],
+     [
+      -1,
+      1,
+      1,
+      -2,
+      0
+     ],
+     [
+      0,
+      1,
+      2,
+      0,
+      -1
+     ],
+     [
+      1,
+      -1,
+      0,
+      0,
+      0
+     ],
+     [
+      2,
+      0,
+      -2,
+      1,
+      0
+     ]
+    ],
+    [
+     [
+      -2,
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      -1,
+      0
+     ],
+     [
+      0,
+      1,
+      1,
+      1,
+      -1
+     ],
+     [
+      1,
+      -2,
+      0,
+      -1,
+      1
+     ],
+     [
+      1,
+      1,
+      -2,
+      0,
+      0
+     ]
+    ],
+    [
+     [
+      -2,
+      1,
+      -1,
+      1,
+      0
+     ],
+     [
+      -1,
+      0,
+      1,
+      -1,
+      0
+     ],
+     [
+      0,
+      2,
+      0,
+      1,
+      -1
+     ],
+     [
+      1,
+      -1,
+      -1,
+      -1,
+      1
+     ],
+     [
+      2,
+      -2,
+      1,
+      0,
+      0
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 5301,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 770,
+   "pairs_retained": 84959,
+   "triples_retained": 1139871,
+   "complete_bundles_checked": 224896,
+   "survivors": 1344,
+   "orbits": 169,
+   "published_in_box": 165,
+   "published_total": 534,
+   "published_only": 0,
+   "ours_only": 4,
+   "exact_set_equality": false,
+   "automorphisms": 8,
+   "runtime_seconds": 156.58,
+   "peak_rss_mib": 442.4,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -2,
+      -1,
+      -1,
+      0,
+      1
+     ],
+     [
+      -1,
+      2,
+      0,
+      2,
+      -1
+     ],
+     [
+      1,
+      -1,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      -1,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1,
+      -2,
+      0
+     ]
+    ],
+    [
+     [
+      -2,
+      -1,
+      0,
+      0,
+      1
+     ],
+     [
+      0,
+      -2,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      1,
+      -2,
+      0
+     ],
+     [
+      1,
+      -1,
+      -1,
+      0,
+      0
+     ],
+     [
+      1,
+      2,
+      0,
+      1,
+      -1
+     ]
+    ],
+    [
+     [
+      -2,
+      0,
+      -1,
+      0,
+      1
+     ],
+     [
+      0,
+      2,
+      -2,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      2,
+      0,
+      -1
+     ],
+     [
+      1,
+      -2,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      -2,
+      1,
+      -1,
+      0
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 5452,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 600,
+   "pairs_retained": 41823,
+   "triples_retained": 389374,
+   "complete_bundles_checked": 80442,
+   "survivors": 1148,
+   "orbits": 574,
+   "published_in_box": 562,
+   "published_total": 762,
+   "published_only": 0,
+   "ours_only": 12,
+   "exact_set_equality": false,
+   "automorphisms": 2,
+   "runtime_seconds": 51.23,
+   "peak_rss_mib": 490.2,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -2,
+      -1,
+      -1,
+      1,
+      1
+     ],
+     [
+      -1,
+      1,
+      1,
+      -2,
+      0
+     ],
+     [
+      0,
+      2,
+      1,
+      0,
+      -1
+     ],
+     [
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     [
+      2,
+      -2,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     [
+      -2,
+      -1,
+      1,
+      0,
+      1
+     ],
+     [
+      0,
+      -1,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      -2,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1,
+      -2,
+      0
+     ],
+     [
+      1,
+      1,
+      0,
+      1,
+      -1
+     ]
+    ],
+    [
+     [
+      -2,
+      -1,
+      1,
+      1,
+      0
+     ],
+     [
+      -1,
+      1,
+      0,
+      -1,
+      0
+     ],
+     [
+      0,
+      0,
+      2,
+      1,
+      -1
+     ],
+     [
+      1,
+      -1,
+      -1,
+      -1,
+      1
+     ],
+     [
+      2,
+      1,
+      -2,
+      0,
+      0
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 5452,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 770,
+   "pairs_retained": 84959,
+   "triples_retained": 1139871,
+   "complete_bundles_checked": 225024,
+   "survivors": 1344,
+   "orbits": 672,
+   "published_in_box": 656,
+   "published_total": 2122,
+   "published_only": 0,
+   "ours_only": 16,
+   "exact_set_equality": false,
+   "automorphisms": 2,
+   "runtime_seconds": 157.23,
+   "peak_rss_mib": 498.2,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -2,
+      -1,
+      -1,
+      0,
+      1
+     ],
+     [
+      -1,
+      0,
+      2,
+      2,
+      -1
+     ],
+     [
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1,
+      -2,
+      0
+     ]
+    ],
+    [
+     [
+      -2,
+      -1,
+      0,
+      0,
+      1
+     ],
+     [
+      0,
+      -2,
+      2,
+      1,
+      0
+     ],
+     [
+      0,
+      2,
+      2,
+      0,
+      -1
+     ],
+     [
+      1,
+      0,
+      -2,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      -2,
+      -1,
+      0
+     ]
+    ],
+    [
+     [
+      -2,
+      -1,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      -1,
+      -2,
+      1
+     ],
+     [
+      0,
+      1,
+      2,
+      0,
+      -1
+     ],
+     [
+      1,
+      -2,
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      1,
+      -2,
+      0,
+      0
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6024,
+   "h11": 5,
+   "gamma": 3,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 598,
+   "pairs_retained": 51738,
+   "triples_retained": 684339,
+   "complete_bundles_checked": 286667,
+   "survivors": 3450,
+   "orbits": 303,
+   "published_in_box": 299,
+   "published_total": 509,
+   "published_only": 0,
+   "ours_only": 4,
+   "exact_set_equality": false,
+   "automorphisms": 12,
+   "runtime_seconds": 107.99,
+   "peak_rss_mib": 498.2,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -2,
+      0,
+      0,
+      1,
+      2
+     ],
+     [
+      0,
+      -1,
+      -1,
+      1,
+      1
+     ],
+     [
+      0,
+      -1,
+      1,
+      -1,
+      0
+     ],
+     [
+      1,
+      1,
+      0,
+      -1,
+      -1
+     ],
+     [
+      1,
+      1,
+      0,
+      0,
+      -2
+     ]
+    ],
+    [
+     [
+      -2,
+      0,
+      0,
+      1,
+      2
+     ],
+     [
+      0,
+      -1,
+      0,
+      0,
+      1
+     ],
+     [
+      0,
+      -1,
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      1,
+      -1,
+      1,
+      -2
+     ],
+     [
+      1,
+      1,
+      1,
+      -2,
+      -2
+     ]
+    ],
+    [
+     [
+      -2,
+      0,
+      0,
+      1,
+      2
+     ],
+     [
+      0,
+      -1,
+      1,
+      0,
+      -1
+     ],
+     [
+      0,
+      0,
+      0,
+      -1,
+      1
+     ],
+     [
+      1,
+      0,
+      -1,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      0,
+      0,
+      -2
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6204,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 536,
+   "pairs_retained": 29931,
+   "triples_retained": 187297,
+   "complete_bundles_checked": 29941,
+   "survivors": 228,
+   "orbits": 57,
+   "published_in_box": 57,
+   "published_total": 119,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 4,
+   "runtime_seconds": 25.54,
+   "peak_rss_mib": 515.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6225,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 650,
+   "pairs_retained": 47980,
+   "triples_retained": 401675,
+   "complete_bundles_checked": 64549,
+   "survivors": 580,
+   "orbits": 147,
+   "published_in_box": 146,
+   "published_total": 229,
+   "published_only": 0,
+   "ours_only": 1,
+   "exact_set_equality": false,
+   "automorphisms": 4,
+   "runtime_seconds": 49.71,
+   "peak_rss_mib": 515.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -1,
+      -1,
+      0,
+      0,
+      1
+     ],
+     [
+      -1,
+      0,
+      1,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      -2,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      0,
+      -1,
+      1
+     ],
+     [
+      1,
+      0,
+      1,
+      1,
+      -2
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6715,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 497,
+   "pairs_retained": 29321,
+   "triples_retained": 247929,
+   "complete_bundles_checked": 41512,
+   "survivors": 576,
+   "orbits": 96,
+   "published_in_box": 96,
+   "published_total": 184,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 6,
+   "runtime_seconds": 30.65,
+   "peak_rss_mib": 522.5,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6715,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 591,
+   "pairs_retained": 52809,
+   "triples_retained": 665613,
+   "complete_bundles_checked": 124518,
+   "survivors": 948,
+   "orbits": 165,
+   "published_in_box": 165,
+   "published_total": 847,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 6,
+   "runtime_seconds": 81.72,
+   "peak_rss_mib": 557.0,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6724,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 494,
+   "pairs_retained": 25843,
+   "triples_retained": 152052,
+   "complete_bundles_checked": 27292,
+   "survivors": 228,
+   "orbits": 19,
+   "published_in_box": 19,
+   "published_total": 39,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 12,
+   "runtime_seconds": 21.05,
+   "peak_rss_mib": 565.3,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6732,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 551,
+   "pairs_retained": 36157,
+   "triples_retained": 300661,
+   "complete_bundles_checked": 54909,
+   "survivors": 860,
+   "orbits": 434,
+   "published_in_box": 434,
+   "published_total": 880,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 2,
+   "runtime_seconds": 39.09,
+   "peak_rss_mib": 565.3,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6770,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 778,
+   "pairs_retained": 69534,
+   "triples_retained": 787703,
+   "complete_bundles_checked": 139077,
+   "survivors": 2544,
+   "orbits": 216,
+   "published_in_box": 215,
+   "published_total": 330,
+   "published_only": 0,
+   "ours_only": 1,
+   "exact_set_equality": false,
+   "automorphisms": 12,
+   "runtime_seconds": 95.7,
+   "peak_rss_mib": 565.3,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -2,
+      0,
+      0,
+      1,
+      1
+     ],
+     [
+      -1,
+      0,
+      0,
+      -1,
+      1
+     ],
+     [
+      1,
+      -1,
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      0,
+      1,
+      -1,
+      -2
+     ],
+     [
+      1,
+      1,
+      -1,
+      0,
+      0
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6777,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 551,
+   "pairs_retained": 36157,
+   "triples_retained": 300661,
+   "complete_bundles_checked": 53731,
+   "survivors": 860,
+   "orbits": 434,
+   "published_in_box": 434,
+   "published_total": 880,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 2,
+   "runtime_seconds": 39.41,
+   "peak_rss_mib": 598.4,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6788,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 497,
+   "pairs_retained": 29321,
+   "triples_retained": 247929,
+   "complete_bundles_checked": 41512,
+   "survivors": 576,
+   "orbits": 96,
+   "published_in_box": 96,
+   "published_total": 184,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 6,
+   "runtime_seconds": 30.8,
+   "peak_rss_mib": 601.8,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6788,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 591,
+   "pairs_retained": 52809,
+   "triples_retained": 665613,
+   "complete_bundles_checked": 124518,
+   "survivors": 948,
+   "orbits": 165,
+   "published_in_box": 165,
+   "published_total": 848,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 6,
+   "runtime_seconds": 82.49,
+   "peak_rss_mib": 628.6,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6802,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 551,
+   "pairs_retained": 36157,
+   "triples_retained": 300661,
+   "complete_bundles_checked": 54909,
+   "survivors": 860,
+   "orbits": 432,
+   "published_in_box": 432,
+   "published_total": 877,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 2,
+   "runtime_seconds": 39.21,
+   "peak_rss_mib": 674.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6804,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 630,
+   "pairs_retained": 39824,
+   "triples_retained": 271891,
+   "complete_bundles_checked": 35833,
+   "survivors": 234,
+   "orbits": 59,
+   "published_in_box": 49,
+   "published_total": 141,
+   "published_only": 0,
+   "ours_only": 10,
+   "exact_set_equality": false,
+   "automorphisms": 4,
+   "runtime_seconds": 34.81,
+   "peak_rss_mib": 674.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [
+    [
+     [
+      -2,
+      -1,
+      0,
+      0,
+      1
+     ],
+     [
+      -2,
+      -1,
+      1,
+      1,
+      0
+     ],
+     [
+      1,
+      -1,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      -2,
+      0,
+      0
+     ],
+     [
+      2,
+      2,
+      1,
+      -1,
+      -1
+     ]
+    ],
+    [
+     [
+      -2,
+      -1,
+      1,
+      0,
+      1
+     ],
+     [
+      -1,
+      -1,
+      -1,
+      1,
+      0
+     ],
+     [
+      0,
+      1,
+      -1,
+      0,
+      0
+     ],
+     [
+      1,
+      0,
+      1,
+      -1,
+      1
+     ],
+     [
+      2,
+      1,
+      0,
+      0,
+      -2
+     ]
+    ],
+    [
+     [
+      -2,
+      0,
+      0,
+      0,
+      1
+     ],
+     [
+      -1,
+      -2,
+      0,
+      1,
+      0
+     ],
+     [
+      1,
+      0,
+      1,
+      0,
+      -1
+     ],
+     [
+      1,
+      1,
+      -2,
+      0,
+      0
+     ],
+     [
+      1,
+      1,
+      1,
+      -1,
+      0
+     ]
+    ]
+   ],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6834,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 551,
+   "pairs_retained": 36157,
+   "triples_retained": 300661,
+   "complete_bundles_checked": 54909,
+   "survivors": 860,
+   "orbits": 218,
+   "published_in_box": 218,
+   "published_total": 441,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 4,
+   "runtime_seconds": 39.47,
+   "peak_rss_mib": 674.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6836,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 497,
+   "pairs_retained": 29321,
+   "triples_retained": 247929,
+   "complete_bundles_checked": 41512,
+   "survivors": 576,
+   "orbits": 24,
+   "published_in_box": 24,
+   "published_total": 46,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 31.06,
+   "peak_rss_mib": 674.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6836,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 591,
+   "pairs_retained": 52809,
+   "triples_retained": 665613,
+   "complete_bundles_checked": 124518,
+   "survivors": 948,
+   "orbits": 43,
+   "published_in_box": 43,
+   "published_total": 214,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 83.62,
+   "peak_rss_mib": 674.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6836,
+   "h11": 5,
+   "gamma": 8,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 649,
+   "pairs_retained": 80033,
+   "triples_retained": 1486941,
+   "complete_bundles_checked": 258894,
+   "survivors": 132,
+   "orbits": 6,
+   "published_in_box": 6,
+   "published_total": 136,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 224.39,
+   "peak_rss_mib": 674.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6836,
+   "h11": 5,
+   "gamma": 16,
+   "K": 2,
+   "outcome": "UNSAT_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 649,
+   "pairs_retained": 100580,
+   "triples_retained": 2762833,
+   "complete_bundles_checked": 343017,
+   "survivors": 0,
+   "orbits": 0,
+   "published_in_box": 0,
+   "published_total": 3,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 460.6,
+   "peak_rss_mib": 676.2,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6890,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 551,
+   "pairs_retained": 36157,
+   "triples_retained": 300661,
+   "complete_bundles_checked": 54813,
+   "survivors": 860,
+   "orbits": 860,
+   "published_in_box": 860,
+   "published_total": 1750,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 1,
+   "runtime_seconds": 39.69,
+   "peak_rss_mib": 677.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6896,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 551,
+   "pairs_retained": 36157,
+   "triples_retained": 300661,
+   "complete_bundles_checked": 54909,
+   "survivors": 860,
+   "orbits": 218,
+   "published_in_box": 218,
+   "published_total": 441,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 4,
+   "runtime_seconds": 38.43,
+   "peak_rss_mib": 680.4,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6927,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 497,
+   "pairs_retained": 29321,
+   "triples_retained": 247929,
+   "complete_bundles_checked": 41512,
+   "survivors": 576,
+   "orbits": 144,
+   "published_in_box": 144,
+   "published_total": 276,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 4,
+   "runtime_seconds": 31.02,
+   "peak_rss_mib": 680.4,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6927,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 591,
+   "pairs_retained": 52809,
+   "triples_retained": 665613,
+   "complete_bundles_checked": 124518,
+   "survivors": 948,
+   "orbits": 244,
+   "published_in_box": 244,
+   "published_total": 1264,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 4,
+   "runtime_seconds": 81.19,
+   "peak_rss_mib": 680.9,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6927,
+   "h11": 5,
+   "gamma": 8,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 649,
+   "pairs_retained": 80033,
+   "triples_retained": 1486941,
+   "complete_bundles_checked": 258894,
+   "survivors": 132,
+   "orbits": 34,
+   "published_in_box": 34,
+   "published_total": 798,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 4,
+   "runtime_seconds": 218.58,
+   "peak_rss_mib": 683.4,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6947,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 497,
+   "pairs_retained": 29321,
+   "triples_retained": 247929,
+   "complete_bundles_checked": 41512,
+   "survivors": 576,
+   "orbits": 24,
+   "published_in_box": 24,
+   "published_total": 46,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 31.9,
+   "peak_rss_mib": 683.4,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6947,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 591,
+   "pairs_retained": 52809,
+   "triples_retained": 665613,
+   "complete_bundles_checked": 124518,
+   "survivors": 948,
+   "orbits": 43,
+   "published_in_box": 43,
+   "published_total": 214,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 82.58,
+   "peak_rss_mib": 683.4,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6947,
+   "h11": 5,
+   "gamma": 8,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 649,
+   "pairs_retained": 80033,
+   "triples_retained": 1486941,
+   "complete_bundles_checked": 258894,
+   "survivors": 132,
+   "orbits": 6,
+   "published_in_box": 6,
+   "published_total": 136,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 220.5,
+   "peak_rss_mib": 685.3,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 6947,
+   "h11": 5,
+   "gamma": 16,
+   "K": 2,
+   "outcome": "UNSAT_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 649,
+   "pairs_retained": 100580,
+   "triples_retained": 2762833,
+   "complete_bundles_checked": 343017,
+   "survivors": 0,
+   "orbits": 0,
+   "published_in_box": 0,
+   "published_total": 3,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 464.7,
+   "peak_rss_mib": 686.0,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 7279,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 572,
+   "pairs_retained": 36510,
+   "triples_retained": 268687,
+   "complete_bundles_checked": 45230,
+   "survivors": 510,
+   "orbits": 128,
+   "published_in_box": 128,
+   "published_total": 218,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 4,
+   "runtime_seconds": 38.9,
+   "peak_rss_mib": 686.0,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 7447,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 861,
+   "pairs_retained": 99451,
+   "triples_retained": 1629961,
+   "complete_bundles_checked": 371214,
+   "survivors": 6540,
+   "orbits": 56,
+   "published_in_box": 56,
+   "published_total": 93,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 120,
+   "runtime_seconds": 228.68,
+   "peak_rss_mib": 688.5,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 7447,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 1061,
+   "pairs_retained": 192851,
+   "triples_retained": 4818841,
+   "complete_bundles_checked": 1285579,
+   "survivors": 24960,
+   "orbits": 214,
+   "published_in_box": 214,
+   "published_total": 430,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 120,
+   "runtime_seconds": 866.22,
+   "peak_rss_mib": 762.2,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 7447,
+   "h11": 5,
+   "gamma": 5,
+   "K": 2,
+   "outcome": "UNSAT_UNBOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": null,
+   "individual_retained": null,
+   "pairs_retained": null,
+   "triples_retained": null,
+   "complete_bundles_checked": null,
+   "survivors": 0,
+   "orbits": 0,
+   "published_in_box": 0,
+   "published_total": 0,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 120,
+   "runtime_seconds": 0.02,
+   "peak_rss_mib": 947.0,
+   "unbounded_obstruction": {
+    "rule": "index_divisibility",
+    "d_X": 2,
+    "target": -15,
+    "reference": "docs/exact_obstructions.md P2"
+   },
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 7447,
+   "h11": 5,
+   "gamma": 10,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 1241,
+   "pairs_retained": 354321,
+   "triples_retained": 16249111,
+   "complete_bundles_checked": 3687180,
+   "survivors": 660,
+   "orbits": 6,
+   "published_in_box": 6,
+   "published_total": 81,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 120,
+   "runtime_seconds": 3817.19,
+   "peak_rss_mib": 947.0,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 7447,
+   "h11": 5,
+   "gamma": 20,
+   "K": 2,
+   "outcome": "UNSAT_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 1241,
+   "pairs_retained": 462236,
+   "triples_retained": 33973246,
+   "complete_bundles_checked": 4817135,
+   "survivors": 0,
+   "orbits": 0,
+   "published_in_box": 0,
+   "published_total": 0,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 120,
+   "runtime_seconds": 8793.93,
+   "peak_rss_mib": 947.0,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 7487,
+   "h11": 5,
+   "gamma": 2,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 861,
+   "pairs_retained": 99451,
+   "triples_retained": 1629961,
+   "complete_bundles_checked": 371214,
+   "survivors": 6540,
+   "orbits": 277,
+   "published_in_box": 277,
+   "published_total": 459,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 217.66,
+   "peak_rss_mib": 947.0,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  },
+  {
+   "geometry": 7487,
+   "h11": 5,
+   "gamma": 4,
+   "K": 2,
+   "outcome": "UNKNOWN_BOUNDED",
+   "nominal_four_column_states": 95367431640625,
+   "individual_considered": 3125,
+   "individual_retained": 1061,
+   "pairs_retained": 192851,
+   "triples_retained": 4818841,
+   "complete_bundles_checked": 1285579,
+   "survivors": 24960,
+   "orbits": 1052,
+   "published_in_box": 1052,
+   "published_total": 2115,
+   "published_only": 0,
+   "ours_only": 0,
+   "exact_set_equality": true,
+   "automorphisms": 24,
+   "runtime_seconds": 824.58,
+   "peak_rss_mib": 947.0,
+   "unbounded_obstruction": null,
+   "ours_only_examples": [],
+   "published_only_examples": []
+  }
+ ]
+}

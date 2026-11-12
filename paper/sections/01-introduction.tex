@@ -1,0 +1,149 @@
+\section{Introduction}
+\label{sec:intro}
+
+Heterotic compactifications on smooth Calabi--Yau threefolds with gauge bundles
+built from sums of line bundles are among the most successful constructions of
+string vacua with the charged spectrum of the minimal supersymmetric Standard
+Model (MSSM)~\cite{AGLP2011,AGLP2012,ACGLP2013}. The construction is
+combinatorial at its core. On a favourable complete-intersection Calabi--Yau
+(CICY) threefold $X$ with $h\coloneqq h^{1,1}(X)$, a rank-five bundle
+$V=\bigoplus_{a=1}^{5}\Oc_X(k_a)$ is determined by an integer $h\times 5$ charge
+matrix $K=(k_1,\dots,k_5)$, and the conditions for a consistent, supersymmetric
+$SU(5)$ grand unified theory with three chiral families---vanishing first Chern
+class, the correct chiral index, the Green--Schwarz anomaly condition and
+poly-stability---are conditions on $K$ and on the topological data of $X$.
+Descending to a Standard-Model-like theory then requires a freely acting
+symmetry $\Gam$, an equivariant structure on $V$ and a Wilson line.
+
+Earlier work turned this into a systematic scan: \cite{ACGLP2013} enumerated all
+bundles on the 68 favourable CICYs with $h\le 6$ whose charges lie in a finite
+box, producing a catalog of 63,325 GUT models, and \cite{AGLP2011,AGLP2012}
+produced a database of downstairs standard models together with their
+superpotential selection rules. Machine-learning and heuristic optimisers have
+since been applied to the same space~\cite{ACHLN2023}. These are powerful, but
+they leave three questions open that this paper addresses.
+
+\paragraph{What does a negative search result prove?} A scan over a charge box
+$|k_a^i|\le K$ that finds nothing establishes, at best, a statement about that
+box, and only if every filter used to discard candidates is a genuine
+\emph{necessary} condition. Several filters in the literature are finite
+truncations of conditions that quantify over infinite sets (the slope
+obstruction quantifies over all integer combinations of the charge vectors), and
+whether their truncations are sound, complete or neither has not, to our
+knowledge, been settled. Nor is it obvious which parts of the landscape can be
+excluded \emph{without} a charge cutoff.
+
+\paragraph{Can the downstairs spectrum be computed, not looked up?} The
+$\Gam$-representation content of bundle cohomology decides which states survive
+the quotient. In existing databases it is supplied as data. A search that
+discovers new downstairs models needs to compute it from the group action.
+
+\paragraph{What does the superpotential actually do?} Charge conservation under
+the $U(1)^4$ remnant of the structure group is a necessary condition for a
+coupling. It is not sufficient: a coupling allowed by the charges can vanish
+for cohomological reasons. Distinguishing the two needs the actual cup product.
+
+\subsection{Summary of results}
+
+We build a search engine whose outputs carry their precise logical status and
+whose every pruning decision is a proof, and use it to answer these questions
+on the two benchmark geometries of~\cite{ACGLP2013}, the tetraquadric
+$\Xa$ ($h=4$) and $\Xb$ ($h=5$). The main results are:
+
+\begin{enumerate}[leftmargin=*,label=\textbf{\arabic*.}]
+\item \textbf{A complete slope obstruction} (\cref{sec:search}). The finite
+  coefficient test of \cite{ACGLP2013} is sound but incomplete. Its complete
+  form is equivalent to the real span of the charge vectors meeting a fixed
+  rational cone (\cref{prop:cone}); it is monotone in the columns, so it prunes
+  every branch of the search tree (\cref{prop:monotone}); and it is decided
+  exactly by a Gordan-type dual test whose cost \emph{falls} with depth
+  (\cref{prop:dual}). On $\Xa$ it removes a spurious orbit that the finite test
+  retains at $K=3$ and $K=4$, and it is what brings our survivor sets into exact
+  agreement with the published catalog.
+\item \textbf{Searches with no charge cutoff} (\cref{sec:slices}). Every
+  slope-feasible model lies in a slice $p^\perp$ for a primitive positive
+  integer vector $p$ (\cref{prop:S1}), and on slices satisfying
+  $(\sum_i p_i)^2>(h-1)|p|^2$ the anomaly condition bounds every charge
+  (\cref{prop:S2}). Such slices can therefore be searched exhaustively over
+  \emph{all} integer charges; on $\Xa$, 425 of 469 are proven empty. We isolate
+  exactly where the remaining difficulty lies.
+\item \textbf{An unbounded arithmetic obstruction} (\cref{prop:divisibility}):
+  $d_X\coloneqq\gcd\{\ind\Oc_X(k)\}$ must divide $3|\Gam|$. Its two
+  zero-model predictions across the 68 favourable CICYs are both confirmed.
+\item \textbf{Certified cohomology} (\cref{sec:cohomology}). A single nonzero
+  $r\times r$ minor modulo any prime certifies the generic rank of a Koszul
+  map in characteristic zero, with no good-reduction hypothesis
+  (\cref{prop:rank}).
+\item \textbf{Exact reproduction and independent replay}
+  (\cref{sec:validation}). The engine reproduces the published GUT catalogs of
+  $\Xa$ ($\Gam=\Z_2$: all 10 models; $\Gam=\Z_2\times\Z_2$: all 58) and $\Xb$
+  (all 93) model for model; the $\Xb$ counts were predicted before the runs. The
+  complete $K=1$ domains---$4.3\times 10^{7}$ and $3.5\times10^{9}$ ordered
+  states---are replayed by an independent implementation with exact
+  survivor-set equality.
+\item \textbf{All 68 favourable CICYs} (\cref{sec:survey}). Run unchanged on
+  every key of the published catalog (271 runs, $h^{1,1}\le6$, $K\le3$), the
+  engine never misses a published model inside its boxes. An exact
+  decision of stability (\cref{prop:decision}) certifies 53 of the 80 extra
+  survivors unstable and finds one poly-stable, anomaly-free, correct-index GUT
+  model on CICY 5256 that the catalog does not contain, with an exact
+  real-algebraic witness.
+\item \textbf{Equivariant cohomology from first principles}
+  (\cref{sec:equivariant}). Characters from the Koszul resolution, Bott's
+  theorem and Serre duality, with individual degrees separated by equivariant
+  map ranks; all 27,821 published character tables are reproduced exactly. The group lift on $\Xa$ has a nontrivial central
+  commutator, giving an equivariance obstruction $\sum_i k^i\equiv 0\pmod 2$.
+\item \textbf{A downstairs search} (\cref{sec:downstairs}). From our own
+  exhaustive upstairs survivors, 21 orbits on $\Xa/(\Z_2\times\Z_2)$ admit three
+  chiral families, no charged chiral exotics and a Higgs doublet pair. All 10
+  published orbits are recovered; 11 are absent from the published
+  standard-model database.
+\item \textbf{Why they were absent.} Every one of the eleven lies outside the
+  published scan's own stated domain: its charge range, or its bound
+  $h^1(L_a^*\otimes L_b^*)<|\Gam|$ on vector-like pairs, which every published
+  model satisfies.
+\item \textbf{The holomorphic superpotential} (\cref{sec:yukawa}). The $U(1)^4$
+  selection rule with singlet insertions is exactly a network-flow membership
+  problem (\cref{prop:flow}), decidable with no bound on the insertion order. It
+  reproduces every one of the thirteen operator tables of the published database
+  for all 2,012 models, once nine unstated conventions are identified from the
+  data, and it shows that 954 of 2,007 published down-type tables are internally
+  inconsistent as charge tables. Leading-order couplings are computed as genuine
+  triple products, independent of complex structure; $\Gam$-covariance of the
+  trilinear form is verified exactly, and a vanishing invisible to the charges
+  (\cref{lem:level0}) accounts for the only up-type rank differences with the
+  published data.
+\item \textbf{The physics verdict} (\cref{tab:ranking}). Classifying every
+  configuration of the 11 new and the 10 published orbits by explicit logical
+  criteria, none is a strong candidate. Nine new orbits are ruled
+  problematic---as are seven published ones---and two remain undecided. None of
+  the new orbits has a leading-order top Yukawa; nine forbid dimension-five
+  proton decay to all orders; in one, a charge-allowed $R$-parity-violating
+  coupling vanishes cohomologically.
+\end{enumerate}
+
+\subsection{What is not claimed}
+
+The distinction between what is proved, what is necessary, and what is only
+observed runs through the whole paper, and we state the principal limits at the
+outset. No model is claimed to be a Standard Model: the downstairs spectra are
+$\mathcal N=1$ supersymmetric and MSSM-like, the cohomology is that of a
+Zariski-generic member of the relevant family, and supersymmetry breaking,
+moduli stabilisation and physical (canonically normalised) Yukawa couplings are
+not addressed. Stability of the survivor sets across $K=4,\dots,7$ is recorded as
+empirical saturation, not a finiteness theorem. Rules that are elementary or
+already present in the primary sources are attributed as such; our aim is a
+search whose conclusions can be checked, and several of its components are
+standard.
+
+\subsection{Organisation}
+
+\Cref{sec:setup} fixes the geometry and the physical conditions;
+\cref{sec:framework} defines the logical framework. \Cref{sec:search} is the
+search tree and every pruning rule with its proof. \Cref{sec:slices} gives the
+charge-unbounded slice results, \cref{sec:cohomology} the cohomology
+certificates, \cref{sec:validation} the validation. \Cref{sec:equivariant,sec:downstairs}
+treat the equivariant descent and the downstairs search, \cref{sec:yukawa} the
+Yukawa sector, \cref{sec:performance} performance. \Cref{sec:limitations} lists
+limitations and open problems. The appendices give reproduction commands and
+the ledger of conventions and source discrepancies.

@@ -1,0 +1,62 @@
+\section{Limitations and open problems}
+\label{sec:limitations}
+
+\paragraph{What is proved, and in what domain.} All \st{UNSAT\_BOUNDED} results
+are statements about a declared finite domain, under the declared Kähler chamber
+$T_+$ and the declared target. The slice results remove the charge bound only on
+slices satisfying \eqref{eq:star}. The only statement with no domain qualifier
+is the divisibility obstruction. Empirical saturation is not a theorem.
+
+\paragraph{Generic members.} All cohomology is that of a Zariski-generic member
+of the relevant family---the full family for upstairs statements, the
+$\Gam$-invariant family for downstairs ones. Cohomology can jump on special
+members, which can add vector-like pairs or singlets. The leading-order Yukawa
+matrices are an exception: every coupling evaluated uses Koszul identifications
+valid for every smooth member.
+
+\paragraph{The Yukawa engine.} Triple products are computed for hypersurfaces in
+products of $\PP^1$ and for bundles whose $H^1$ sits at a single Koszul level.
+Couplings with Koszul level sum two or more, which need a lift through the
+defining polynomial, and classes spread over both Koszul levels are returned as
+\st{UNKNOWN}. Neither occurs among the Yukawa couplings of any model studied;
+both occur for some one-singlet couplings $SLH_u$ of published models, which
+are therefore reported as undecided. Couplings with singlet insertions are higher products, not triple
+products, and are decided only by the selection rule. The normalisation of the
+trace map and the matter Kähler metrics (for which a localisation approach
+exists~\cite{BBCLP2018}) are not computed, so no physical Yukawa coupling or
+fermion mass is claimed.
+
+\paragraph{Scope of the group theory.} Only abelian $\Gam$ acting without
+permuting projective factors is handled; non-abelian groups are refused. The
+free action and invariant family are input from the published symmetry data.
+
+\paragraph{Published-data discrepancies left open.} 954 of 2,007 published down-type Yukawa
+tables are internally inconsistent as charge tables (\cref{sec:yukawa}); we
+report this without reconciling it. (A second apparent discrepancy, in 694
+character tables, turned out to be an error in our own comparison convention and
+is resolved in \cref{sec:equivariant}.)
+
+\paragraph{Not addressed.} Supersymmetry breaking, moduli stabilisation, the
+full $F$- and $D$-flatness of singlet vacua away from vanishing FI terms, and
+anything non-perturbative. Rules R2 and R3 restrict the domain to that of
+\cite{ACGLP2013}; searches for models with anti-families or positive pair indices
+would need them relaxed, which the replays show is supported but costly.
+
+\paragraph{Open problems.}
+\begin{enumerate}[leftmargin=*]
+\item \emph{Finiteness on the tetraquadric.} Prove a charge bound on the slices
+  where $F$ is indefinite, by bounding the semialgebraic set
+  $\{F\le0,\ \ind\in[-3|\Gam|,0]\}$ using the cubic growth of the index along
+  $F\le0$ rays; equivalently, settle \cref{conj:C1}.
+\item \emph{Higher Koszul levels.} Extend the triple-product evaluation to
+  level sum two, and to complete intersections of higher codimension, following
+  the lifting construction of~\cite{BBCL2016,BBL2017}.
+\item \emph{Singlet vacua.} Decide which singlet vacuum values are $F$- and
+  $D$-flat away from the Abelian locus, and hence which of the
+  \st{FULL\_RANK\_ON\_LOCUS} verdicts can be realised.
+\item \emph{Rank below $h-1$.} Decide exactly the 18 extra survivors whose charge
+  matrix has rank below $h-1$, where the slope-zero locus is positive-dimensional
+  and \cref{prop:decision} does not apply; and push the survey of
+  \cref{sec:survey} to larger $K$, where more models missing from the catalog may
+  appear.
+\end{enumerate}

@@ -6,6 +6,7 @@ from ..search.domain import Domain
 from ..search.brute_force import brute_force
 from ..search.checkpoints import digest
 from ..search.validation import classify
+from ..physics.index import index_divisibility,divisibility_obstruction
 from .candidate_certificate import candidate_certificate
 
 def geometry_from_dict(data):
@@ -28,9 +29,14 @@ def verify_candidate(data):
 
 def verify_search(data,max_states=1000000):
     if data.get('kind')!='bounded_search' or data.get('schema')!=1: raise ValueError('unsupported certificate')
-    raw=data['domain'];g=geometry_from_dict(raw['geometry']);d=Domain(g,raw['K'],raw['gamma'],raw['target'],raw['pair_nonpositive'],raw['slope_coefficients'],None if raw.get('allowed_columns') is None else tuple(map(tuple,raw['allowed_columns'])))
+    raw=data['domain'];g=geometry_from_dict(raw['geometry']);d=Domain(g,raw['K'],raw['gamma'],raw['target'],raw['pair_nonpositive'],raw['slope_coefficients'],raw.get('slope_rule','box'),None if raw.get('allowed_columns') is None else tuple(map(tuple,raw['allowed_columns'])))
     if digest(d.as_dict())!=data['domain_sha256']: raise ValueError('domain hash mismatch')
     if not data['enumeration']['complete']: return {'verified':False,'outcome':'UNKNOWN_BOUNDED','reason':'partial search'}
+    if data.get('unbounded_obstruction'):
+        # Recompute the divisibility obstruction independently of the stored claim.
+        if not divisibility_obstruction(g,d.gamma): raise ValueError('claimed unbounded obstruction does not hold')
+        if data['outcome']!='UNSAT_UNBOUNDED' or data['survivors']: raise ValueError('inconsistent unbounded certificate')
+        return {'verified':True,'outcome':'UNSAT_UNBOUNDED','d_X':index_divisibility(g),'target':-3*d.gamma,'claim':'no five-line-bundle sum on this geometry has ind(V)=-3|Gamma| for any K','domain':d.as_dict()}
     reference,counts=brute_force(d,max_states=max_states)
     if reference!={tuple(map(tuple,k)) for k in data['enumeration']['survivors']}: raise ValueError('independent survivor replay mismatch')
     surviving=[]

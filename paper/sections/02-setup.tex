@@ -1,0 +1,109 @@
+\section{Heterotic line-bundle models}
+\label{sec:setup}
+
+\subsection{Geometry}
+
+Let $A=\PP^{n_1}\times\cdots\times\PP^{n_m}$ and let $X\subset A$ be a smooth
+complete intersection Calabi--Yau threefold~\cite{CDLS1988,GHL1989,Hubsch1992}. We
+assume $X$ is \emph{favourable}: the restrictions $J_1,\dots,J_h$ of the
+hyperplane classes of the factors form an integral basis of $H^{1,1}(X)$, so
+$h=m$ and every line bundle is $\Oc_X(k)\coloneqq\Oc_A(k)|_X$ for a unique
+$k\in\Z^h$. The topological data are the triple intersection numbers and the
+second Chern class,
+\begin{equation}
+d_{ijl}=\int_X J_iJ_jJ_l\in\Z,\qquad c_{2,i}=\int_X c_2(TX)\,J_i ,
+\end{equation}
+both computed exactly from the ambient Chow ring and the tangent--normal
+sequence. We write
+\begin{equation}\label{eq:notation}
+D(x,y,z)=d_{ijl}x^iy^jz^l,\qquad
+q_r(k)=d_{rij}k^ik^j,\qquad
+M(k)_{jl}=d_{ijl}k^i,
+\end{equation}
+so that $M:\Z^h\to\Sym_h(\Z)$ is a group homomorphism. By
+Hirzebruch--Riemann--Roch the index of a line bundle is
+\begin{equation}\label{eq:hrr}
+\ind\Oc_X(k)=\sum_q(-1)^q h^q(X,\Oc_X(k))=\tfrac16D(k,k,k)+\tfrac1{12}c_{2,i}k^i .
+\end{equation}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+ & $\Xa$ (tetraquadric) & $\Xb$ \\
+\midrule
+ambient space & $(\PP^1)^4$ & $(\PP^1)^5$ \\
+defining equations & one of multidegree $(2,2,2,2)$ & two of multidegree $(1,1,1,1,1)$ \\
+$(h^{1,1},h^{2,1})$ & $(4,68)$ & $(5,45)$ \\
+$d_{ijl}$ & $2$ for $i,j,l$ distinct, else $0$ & $2$ for $i,j,l$ distinct, else $0$ \\
+$c_{2,i}$ & $24$ for all $i$ & $24$ for all $i$ \\
+index & $\ind\Oc_X(k)=2\bigl(e_3(k)+e_1(k)\bigr)$ & $\ind\Oc_X(k)=2\bigl(e_3(k)+e_1(k)\bigr)$ \\
+$d_X=\gcd\ind$ & 2 & 2 \\
+anomaly constant $C_X$ (\cref{eq:CX}) & 48 & 40 \\
+free actions used & $\Z_2$, $\Z_2\times\Z_2$ & $\Z_2$ \\
+\bottomrule
+\end{tabular}
+\caption{The two benchmark geometries. $e_j$ denotes the $j$-th elementary
+symmetric polynomial in the components of $k$. Topology was recomputed from the
+configuration matrices and agrees with the published values for all 68
+favourable CICYs ($c_2$: 68/68, Euler number: 68/68).}
+\label{tab:geometries}
+\end{table}
+
+\subsection{Line-bundle sums and the upstairs conditions}
+
+Let $V=\bigoplus_{a=1}^5 L_a$, $L_a=\Oc_X(k_a)$. With $V$ embedded in one $E_8$
+factor, its structure group $S(U(1)^5)\subset SU(5)$ leaves an $SU(5)$ GUT times
+$U(1)^4$ in four dimensions. The upstairs conditions
+of~\cite{ACGLP2013} on the charge matrix $K=(k_1,\dots,k_5)$ are:
+
+\begin{enumerate}[label=(C\arabic*),leftmargin=*]
+\item\label{c:c1} $c_1(V)=\sum_a k_a=0$.
+\item\label{c:structure} No nonempty proper subset $S\subsetneq\{1,\dots,5\}$ has
+  $\sum_{a\in S}k_a=0$, so the structure group is not smaller than $S(U(1)^5)$.
+\item\label{c:index} $\ind V=\ind\wedge^2V=-3|\Gam|$, giving three chiral
+  families after the quotient by a freely acting $\Gam$.
+\item\label{c:anomaly} $c_2(TX)-c_2(V)$ is effective (trivial hidden bundle).
+  Since the $J_r$ are nef, a necessary condition is
+  $c_{2,r}-c_2(V)_r\ge0$ for all $r$. With \ref{c:c1},
+  $c_2(V)_r=-\tfrac12\sum_a q_r(k_a)$.
+\item\label{c:slope} $V$ is poly-stable: there is a Kähler class $J=t^iJ_i$ at
+  which all five slopes $\mu_{k_a}(t)=t^\top M(k_a)t$ vanish simultaneously.
+\item\label{c:bogomolov} Bogomolov: $c_2(V)\cdot J\ge 0$ at that class.
+\item\label{c:spectrum} For the target \st{GUT\_FULL}: $h^\bullet(X,V)=(0,3|\Gam|,0,0)$
+  and $h^\bullet(X,\wedge^2V)=(0,3|\Gam|+n_h,n_h,0)$ with $n_h>0$ (no
+  anti-families; at least one Higgs pair).
+\end{enumerate}
+
+Throughout, the Kähler parameter is restricted to the positive ambient chamber
+$T_+=\{t\in\R^h:t^i>0\}$; for both benchmarks this is the declared Kähler cone,
+an input assumption carried in every certificate.
+
+\subsection{Descent and the downstairs spectrum}
+
+Let $\Gam$ be a freely acting abelian group, $\hat X=X/\Gam$. An equivariant
+structure on each $L_a$ lets $V$ descend; a Wilson line, i.e.\ a homomorphism
+$\Gam\to U(1)_Y\subset SU(5)$, breaks $SU(5)\to SU(3)\times SU(2)\times U(1)_Y$.
+Upstairs, $H^1(X,V)$ carries the $\ten$s, $H^1(X,\wedge^2V)$ the $\bfive$s,
+$H^2(X,\wedge^2V)\cong H^1(X,\wedge^2V^*)^*$ the $\five$s, and
+$H^1(X,L_a\otimes L_b^*)$ the singlets $S_{ab}$. Downstairs fields are the
+$\Gam$-invariant parts of these cohomologies tensored with the Wilson-line
+representation. The target \st{DOWNSTAIRS\_MSSM} requires three chiral families
+of $Q,u^c,e^c,d^c,L$, no charged chiral exotics, and at least one Higgs doublet
+pair; the distinct stricter target of an exact non-supersymmetric Standard Model
+is not addressed.
+
+\subsection{The search problem}
+
+For a bound $K\in\Z_{>0}$ let
+\begin{equation}
+\mathcal D_K=\bigl\{K\in\Z^{h\times5}\;:\;|k_a^i|\le K,\ \textstyle\sum_ak_a=0\bigr\}/S_5 ,
+\end{equation}
+the charge matrices with entries in the box, up to permutation of the summands.
+The \emph{bounded search problem} is to determine the subset of $\mathcal D_K$
+satisfying \ref{c:c1}--\ref{c:spectrum}. Its nominal size is enormous: already at
+$K=7$ on $\Xa$ there are $15^{16}\approx6.6\times10^{18}$ ordered choices of the
+first four columns. The \emph{unbounded problem}---to decide the full solution
+set in $\Z^{h\times5}$---is the real question, and \cref{sec:slices} is our
+partial answer to it.

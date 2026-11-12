@@ -1,0 +1,2264 @@
+{
+  "c2_agreements": 68,
+  "catalog_sha256": "b285894c7a784b75ee65550ee37e9fc556181de0beb93160a5341f3c28632753",
+  "disagreements": [],
+  "euler_agreements": 68,
+  "geometries": [
+    {
+      "ambient": [
+        4,
+        4
+      ],
+      "built": true,
+      "c2": [
+        50,
+        50
+      ],
+      "c2_agrees": true,
+      "euler": -100,
+      "euler_agrees": true,
+      "h11": 2,
+      "index_always_even": false,
+      "number": 7761,
+      "published_c2": [
+        50,
+        50
+      ],
+      "published_euler": -100,
+      "symmetry_orders": [
+        2,
+        5,
+        10
+      ]
+    },
+    {
+      "ambient": [
+        2,
+        5
+      ],
+      "built": true,
+      "c2": [
+        36,
+        54
+      ],
+      "c2_agrees": true,
+      "euler": -108,
+      "euler_agrees": true,
+      "h11": 2,
+      "index_always_even": false,
+      "number": 7808,
+      "published_c2": [
+        36,
+        54
+      ],
+      "published_euler": -108,
+      "symmetry_orders": [
+        3,
+        9
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        7
+      ],
+      "built": true,
+      "c2": [
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -112,
+      "euler_agrees": true,
+      "h11": 2,
+      "index_always_even": true,
+      "number": 7819,
+      "published_c2": [
+        24,
+        64
+      ],
+      "published_euler": -112,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -112,
+      "euler_agrees": true,
+      "h11": 2,
+      "index_always_even": true,
+      "number": 7822,
+      "published_c2": [
+        24,
+        56
+      ],
+      "published_euler": -112,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        6
+      ],
+      "built": true,
+      "c2": [
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -112,
+      "euler_agrees": true,
+      "h11": 2,
+      "index_always_even": true,
+      "number": 7823,
+      "published_c2": [
+        24,
+        64
+      ],
+      "published_euler": -112,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -162,
+      "euler_agrees": true,
+      "h11": 2,
+      "index_always_even": false,
+      "number": 7884,
+      "published_c2": [
+        36,
+        36
+      ],
+      "published_euler": -162,
+      "symmetry_orders": [
+        3,
+        9
+      ]
+    },
+    {
+      "ambient": [
+        2,
+        2,
+        5
+      ],
+      "built": true,
+      "c2": [
+        36,
+        36,
+        54
+      ],
+      "c2_agrees": true,
+      "euler": -72,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": false,
+      "number": 7240,
+      "published_c2": [
+        36,
+        36,
+        54
+      ],
+      "published_euler": -72,
+      "symmetry_orders": [
+        3,
+        9
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": true,
+      "number": 7450,
+      "published_c2": [
+        24,
+        24,
+        56
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": true,
+      "number": 7481,
+      "published_c2": [
+        24,
+        24,
+        56
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        40
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": true,
+      "number": 7484,
+      "published_c2": [
+        24,
+        24,
+        40
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        4,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        50,
+        50
+      ],
+      "c2_agrees": true,
+      "euler": -88,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": false,
+      "number": 7636,
+      "published_c2": [
+        24,
+        50,
+        50
+      ],
+      "published_euler": -88,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        3,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        44,
+        44
+      ],
+      "c2_agrees": true,
+      "euler": -88,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": true,
+      "number": 7647,
+      "published_c2": [
+        24,
+        44,
+        44
+      ],
+      "published_euler": -88,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        2,
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        36,
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -90,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": false,
+      "number": 7669,
+      "published_c2": [
+        36,
+        36,
+        36
+      ],
+      "published_euler": -90,
+      "symmetry_orders": [
+        3,
+        9
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        6
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -96,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": true,
+      "number": 7714,
+      "published_c2": [
+        24,
+        24,
+        64
+      ],
+      "published_euler": -96,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -96,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": true,
+      "number": 7735,
+      "published_c2": [
+        24,
+        24,
+        64
+      ],
+      "published_euler": -96,
+      "symmetry_orders": [
+        2,
+        4,
+        8
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        7
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -96,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": true,
+      "number": 7745,
+      "published_c2": [
+        24,
+        24,
+        64
+      ],
+      "published_euler": -96,
+      "symmetry_orders": [
+        2,
+        4,
+        8
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -104,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": true,
+      "number": 7788,
+      "published_c2": [
+        24,
+        24,
+        56
+      ],
+      "published_euler": -104,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -104,
+      "euler_agrees": true,
+      "h11": 3,
+      "index_always_even": true,
+      "number": 7792,
+      "published_c2": [
+        24,
+        24,
+        56
+      ],
+      "published_euler": -104,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        40
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 6784,
+      "published_c2": [
+        24,
+        24,
+        24,
+        40
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        40
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 6828,
+      "published_c2": [
+        24,
+        24,
+        24,
+        40
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        44,
+        44
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": false,
+      "number": 6831,
+      "published_c2": [
+        24,
+        24,
+        44,
+        44
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -72,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7204,
+      "published_c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -72,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -72,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7218,
+      "published_c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -72,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -72,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7241,
+      "published_c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -72,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -72,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": false,
+      "number": 7245,
+      "published_c2": [
+        24,
+        24,
+        36,
+        36
+      ],
+      "published_euler": -72,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -72,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": false,
+      "number": 7247,
+      "published_c2": [
+        36,
+        36,
+        36,
+        36
+      ],
+      "published_euler": -72,
+      "symmetry_orders": [
+        3
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -72,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7270,
+      "published_c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -72,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        4,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        50,
+        50
+      ],
+      "c2_agrees": true,
+      "euler": -76,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": false,
+      "number": 7403,
+      "published_c2": [
+        24,
+        24,
+        50,
+        50
+      ],
+      "published_euler": -76,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        7
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7435,
+      "published_c2": [
+        24,
+        24,
+        24,
+        64
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7462,
+      "published_c2": [
+        24,
+        24,
+        24,
+        64
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        3,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        44,
+        44
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": false,
+      "number": 7468,
+      "published_c2": [
+        24,
+        24,
+        44,
+        44
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7491,
+      "published_c2": [
+        24,
+        24,
+        24,
+        64
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        6
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7522,
+      "published_c2": [
+        24,
+        24,
+        24,
+        64
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -96,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7719,
+      "published_c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -96,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -96,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7736,
+      "published_c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -96,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -96,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7742,
+      "published_c2": [
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -96,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "c2_agrees": true,
+      "euler": -128,
+      "euler_agrees": true,
+      "h11": 4,
+      "index_always_even": true,
+      "number": 7862,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "published_euler": -128,
+      "symmetry_orders": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        40
+      ],
+      "c2_agrees": true,
+      "euler": -48,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 5256,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        40
+      ],
+      "published_euler": -48,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        40
+      ],
+      "c2_agrees": true,
+      "euler": -48,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 5301,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        40
+      ],
+      "published_euler": -48,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        40
+      ],
+      "c2_agrees": true,
+      "euler": -48,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 5452,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        40
+      ],
+      "published_euler": -48,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        36,
+        36,
+        36,
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -54,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": false,
+      "number": 6024,
+      "published_c2": [
+        36,
+        36,
+        36,
+        36,
+        36
+      ],
+      "published_euler": -54,
+      "symmetry_orders": [
+        3
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        3,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        44,
+        44
+      ],
+      "c2_agrees": true,
+      "euler": -56,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": false,
+      "number": 6204,
+      "published_c2": [
+        24,
+        24,
+        24,
+        44,
+        44
+      ],
+      "published_euler": -56,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -56,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": false,
+      "number": 6225,
+      "published_c2": [
+        24,
+        24,
+        24,
+        36,
+        36
+      ],
+      "published_euler": -56,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        6
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6715,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        4,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        50,
+        50
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": false,
+      "number": 6724,
+      "published_c2": [
+        24,
+        24,
+        24,
+        50,
+        50
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6732,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6770,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6777,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6788,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6802,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": false,
+      "number": 6804,
+      "published_c2": [
+        24,
+        24,
+        24,
+        36,
+        36
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6834,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6836,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6890,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6896,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        56
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6927,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2,
+        4,
+        8
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        7
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 6947,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        64
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        3,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        44,
+        44
+      ],
+      "c2_agrees": true,
+      "euler": -72,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": false,
+      "number": 7279,
+      "published_c2": [
+        24,
+        24,
+        24,
+        44,
+        44
+      ],
+      "published_euler": -72,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 7447,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2,
+        4,
+        5,
+        10,
+        20
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "c2_agrees": true,
+      "euler": -80,
+      "euler_agrees": true,
+      "h11": 5,
+      "index_always_even": true,
+      "number": 7487,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "published_euler": -80,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        36,
+        36,
+        36,
+        36,
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -36,
+      "euler_agrees": true,
+      "h11": 6,
+      "index_always_even": false,
+      "number": 3413,
+      "published_c2": [
+        36,
+        36,
+        36,
+        36,
+        36,
+        36
+      ],
+      "published_euler": -36,
+      "symmetry_orders": [
+        3
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -40,
+      "euler_agrees": true,
+      "h11": 6,
+      "index_always_even": false,
+      "number": 4190,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        36,
+        36
+      ],
+      "published_euler": -40,
+      "symmetry_orders": []
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        36,
+        36
+      ],
+      "c2_agrees": true,
+      "euler": -48,
+      "euler_agrees": true,
+      "h11": 6,
+      "index_always_even": false,
+      "number": 5273,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        36,
+        36
+      ],
+      "published_euler": -48,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "c2_agrees": true,
+      "euler": -48,
+      "euler_agrees": true,
+      "h11": 6,
+      "index_always_even": true,
+      "number": 5302,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "published_euler": -48,
+      "symmetry_orders": [
+        2,
+        4
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        3,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        44,
+        44
+      ],
+      "c2_agrees": true,
+      "euler": -48,
+      "euler_agrees": true,
+      "h11": 6,
+      "index_always_even": false,
+      "number": 5425,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        44,
+        44
+      ],
+      "published_euler": -48,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        4,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        50,
+        50
+      ],
+      "c2_agrees": true,
+      "euler": -52,
+      "euler_agrees": true,
+      "h11": 6,
+      "index_always_even": false,
+      "number": 5958,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        50,
+        50
+      ],
+      "published_euler": -52,
+      "symmetry_orders": [
+        2
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        50
+      ],
+      "c2_agrees": true,
+      "euler": -60,
+      "euler_agrees": true,
+      "h11": 6,
+      "index_always_even": false,
+      "number": 6655,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        50
+      ],
+      "published_euler": -60,
+      "symmetry_orders": [
+        5
+      ]
+    },
+    {
+      "ambient": [
+        1,
+        1,
+        1,
+        1,
+        3,
+        3
+      ],
+      "built": true,
+      "c2": [
+        24,
+        24,
+        24,
+        24,
+        44,
+        44
+      ],
+      "c2_agrees": true,
+      "euler": -64,
+      "euler_agrees": true,
+      "h11": 6,
+      "index_always_even": false,
+      "number": 6738,
+      "published_c2": [
+        24,
+        24,
+        24,
+        24,
+        44,
+        44
+      ],
+      "published_euler": -64,
+      "symmetry_orders": [
+        2
+      ]
+    }
+  ],
+  "geometries_built": 68,
+  "geometries_in_catalog": 68,
+  "index_always_even_count": 44,
+  "index_always_even_geometries": [
+    7819,
+    7822,
+    7823,
+    7450,
+    7481,
+    7484,
+    7647,
+    7714,
+    7735,
+    7745,
+    7788,
+    7792,
+    6784,
+    6828,
+    7204,
+    7218,
+    7241,
+    7270,
+    7435,
+    7462,
+    7491,
+    7522,
+    7719,
+    7736,
+    7742,
+    7862,
+    5256,
+    5301,
+    5452,
+    6715,
+    6732,
+    6770,
+    6777,
+    6788,
+    6802,
+    6834,
+    6836,
+    6890,
+    6896,
+    6927,
+    6947,
+    7447,
+    7487,
+    5302
+  ],
+  "kind": "catalog_topology_audit",
+  "odd_gamma_prediction_agreements": 1,
+  "odd_gamma_predictions": [
+    {
+      "agrees": true,
+      "gamma": 5,
+      "geometry": 7447,
+      "key_present_in_catalog": true,
+      "predicted_models": 0,
+      "published_models": 0
+    }
+  ],
+  "parity_argument": "ind(L) even for all L implies ind(V) even, so ind(V) = -3|Gamma| forces |Gamma| even; unbounded in K",
+  "schema": 1
+}

@@ -10,6 +10,15 @@ polystability witness. A floating-point root is NUMERIC_WITNESS. A failed root
 search is UNKNOWN_STABILITY. A signed matrix obstruction is necessary only
 inside the declared positive chamber. The zero matrix is never an obstruction.
 
+UNSAT_UNBOUNDED is emitted only by an exact obstruction whose conclusion holds
+for every K, currently only the index-divisibility rule of
+docs/exact_obstructions.md P2: if d_X = gcd{ind(L)} does not divide 3|Gamma|,
+no five-line-bundle sum on that geometry can have the required chiral asymmetry,
+whatever the charge box. The verifier recomputes d_X rather than trusting the
+claim. This is the one outcome in the vocabulary that is not domain-bounded, and
+it is still restricted to the declared bundle class (five line bundles, split
+S(U(1)^5), that geometry, that |Gamma|).
+
 UNSAT_BOUNDED requires complete enumeration and exact necessary rejection of
 all candidates, including any late spectrum rejections. UNKNOWN candidates
 prevent this result. Incomplete scans always report UNKNOWN_BOUNDED even when

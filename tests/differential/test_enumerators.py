@@ -8,9 +8,9 @@ def test_nonempty_canonical_domains(h,K):
     a=brute_domain(h,K); b=split_domain(h,K)
     assert a and a==b
     assert tuple([(0,)*h]*5) in a
-@pytest.mark.parametrize('geometry,K,gamma,target,pairs',[(g,k,n,t,p) for g,k in [('quintic',1),('quintic',2),('bicubic',1)] for n in [1,2] for t in ['GUT_FULL','GUT_CHIRAL'] for p in [False,True]])
-def test_physics_sets(geometry,K,gamma,target,pairs):
-    d=Domain(benchmark(geometry),K,gamma,target,pairs)
+@pytest.mark.parametrize('geometry,K,gamma,target,pairs,rule',[(g,k,n,t,p,r) for g,k in [('quintic',1),('quintic',2),('bicubic',1)] for n in [1,2] for t in ['GUT_FULL','GUT_CHIRAL'] for p in [False,True] for r in ['box','span','both']])
+def test_physics_sets(geometry,K,gamma,target,pairs,rule):
+    d=Domain(benchmark(geometry),K,gamma,target,pairs,1,rule)
     reference,_=brute_force(d)
     result=split_search(d)
     assert result['complete']
@@ -28,12 +28,12 @@ def test_checkpoint_and_threads(tmp_path):
     assert full['counts']==resumed['counts']==threaded['counts']
     with pytest.raises(ValueError): split_search(Domain(benchmark('7862'),1,4),checkpoint=path)
 
-@pytest.mark.parametrize('target',['GUT_FULL','GUT_CHIRAL'])
-def test_nonempty_physics_subset_and_resume(tmp_path,target):
+@pytest.mark.parametrize('target,rule',[(t,r) for t in ['GUT_FULL','GUT_CHIRAL'] for r in ['box','span','both']])
+def test_nonempty_physics_subset_and_resume(tmp_path,target,rule):
     # A known K=2 tetraquadric orbit plus extra columns makes the reference
     # affordable while exercising real nonempty physics survivors.
     columns=((-2,0,0,1),(0,-1,1,0),(1,1,-2,0),(1,1,0,-1),(0,0,0,0),(1,0,0,0))
-    d=Domain(benchmark('7862'),2,2,target,True,1,columns)
+    d=Domain(benchmark('7862'),2,2,target,True,1,rule,columns)
     reference,_=brute_force(d)
     assert reference
     full=split_search(d)

@@ -41,3 +41,21 @@ def test_cohomology_rank_certificate_replay():
         assert verify_cohomology(cert)['verified']
         cert['rank_witness']['rank']-=1
         with pytest.raises(ValueError):verify_cohomology(cert)
+
+
+def test_unbounded_divisibility_certificate_round_trip():
+    """UNSAT_UNBOUNDED is emitted, and the verifier recomputes the obstruction."""
+    from string_sm_sat.search.domain import Domain
+    from string_sm_sat.search.split_search import split_search
+    from string_sm_sat.certificates.search_certificate import search_certificate
+    from string_sm_sat.certificates.verifier import verify_search
+    d=Domain(benchmark('7447'),3,5,'GUT_FULL',True,1,'span')
+    certificate=search_certificate(d,split_search(d))
+    assert certificate['outcome']=='UNSAT_UNBOUNDED'
+    assert certificate['unbounded_obstruction']['d_X']==2
+    assert not certificate['survivors']
+    checked=verify_search(json.loads(json.dumps(certificate,default=str)))
+    assert checked['verified'] and checked['outcome']=='UNSAT_UNBOUNDED'
+    # a domain without the obstruction must not claim it
+    ok=Domain(benchmark('7447'),1,2,'GUT_FULL',True,1,'span')
+    assert search_certificate(ok,split_search(ok))['unbounded_obstruction'] is None

@@ -1,0 +1,138 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------------------------
+% Packages
+% ---------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,multirow,array}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[shortlabels]{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc,decorations.pathreplacing}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!35!black,urlcolor=blue!50!black,hypertexnames=false]{hyperref}
+\usepackage[capitalise,nameinlink]{cleveref}
+
+% ---------------------------------------------------------------------------
+% Theorem environments
+% ---------------------------------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---------------------------------------------------------------------------
+% Notation
+% ---------------------------------------------------------------------------
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\Oc}{\mathcal{O}}
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\rk}{\operatorname{rk}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Gam}{\Gamma}
+\newcommand{\st}[1]{\textsf{\small #1}}          % logical status / verdict labels
+\newcommand{\bfive}{\overline{\mathbf{5}}}
+\newcommand{\ten}{\mathbf{10}}
+\newcommand{\five}{\mathbf{5}}
+\newcommand{\Xa}{X_{7862}}
+\newcommand{\Xb}{X_{7447}}
+
+\title{\textbf{Certified branch-and-bound for heterotic line-bundle standard models}\\[4pt]
+\large Complete slope obstructions, charge-unbounded slices, first-principles
+equivariant descent, and the holomorphic Yukawa sector}
+
+\author{[Author names and affiliations]}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We treat the construction of $E_8\times E_8$ heterotic compactifications on
+favourable complete-intersection Calabi--Yau threefolds, with gauge bundle a sum
+of five line bundles, as an exact search over integer charge matrices in which
+every pruning decision is a proof and every outcome carries its logical status.
+The central tool is a complete, coefficient-unbounded form of the slope
+(poly-stability) obstruction: it holds exactly when the span of the charge
+vectors meets a fixed polyhedral cone, it is monotone and so prunes every branch
+of the search tree, and it is decided by a Gordan-type dual test whose cost falls
+with depth; it removes a spurious candidate retained by the finite test of
+earlier scans. A slice decomposition with a per-slice anomaly bound turns an
+explicit family of slices into searches \emph{with no charge cutoff}---425 of
+469 slices of the tetraquadric are proven empty for arbitrarily large
+charges---and an index-divisibility obstruction gives the only fully unbounded
+exclusions, both confirmed by the published catalog. The engine reproduces the
+published GUT catalogs of the tetraquadric (10 and 58 models) and of CICY 7447
+(93 models) exactly, independent replays exhaust domains of up to
+$3.5\times10^9$ states, and run over all 68 favourable CICYs it
+recovers every published model inside its search boxes. An exact Gröbner and
+interval-arithmetic decision of stability, itself checked never to reject a
+published model, classifies the extra survivors and certifies one poly-stable
+GUT model that the published catalog misses. Computing the $\Gam$-representation on cohomology from
+the group action (reproducing all 27,821 published character tables exactly), we
+search rather than verify: 21 orbits on the
+tetraquadric quotient admit three chiral families, no charged exotics and a Higgs
+pair, 11 of them absent from the published standard-model database---each
+because it lies outside that scan's own stated domain. Treating the $U(1)^4$
+selection rules exactly, as network-flow membership, we reproduce every operator
+table of that database for all 2,012 models and find 954 of 2,007 down-type
+Yukawa tables internally inconsistent. Evaluating leading-order couplings as
+cohomological triple products, independent of complex structure, and running new
+and published models through one pipeline, we find that no model on the quotient
+combines a leading-order top Yukawa, rank-three Yukawa matrices and the absence
+of dangerous operators; the new models fail for the same reasons, at a similar
+rate, as the published ones.
+\end{abstract}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+\bigskip
+
+\input{sections/01-introduction}
+\input{sections/02-setup}
+\input{sections/03-framework}
+\input{sections/04-search}
+\input{sections/05-slices}
+\input{sections/06-cohomology}
+\input{sections/07-validation}
+\input{sections/08-equivariant}
+\input{sections/09-downstairs}
+\input{sections/10-yukawa}
+\input{sections/11-performance}
+\input{sections/12-limitations}
+\input{sections/13-conclusions}
+
+\appendix
+\input{sections/a1-reproducibility}
+\input{sections/a2-conventions}
+
+\section*{Acknowledgements}
+[To be completed.] The computations use only exact integer and rational
+arithmetic and open-source Python; no computer-algebra system or external
+cohomology package is required.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

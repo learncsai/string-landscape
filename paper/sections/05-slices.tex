@@ -1,0 +1,133 @@
+\section{Searches with no charge cutoff}
+\label{sec:slices}
+
+A box search says nothing about charges outside the box. This section shows
+that for an explicit and large part of the landscape the box can be removed
+altogether.
+
+\subsection{The slice decomposition}
+
+Write $q_i(t)=d_{ijl}t^jt^l$, so that $\mu_{k}(t)=\langle k,q(t)\rangle$.
+
+\begin{proposition}[Slices]\label{prop:S1}
+Suppose $q_i(t)>0$ on $T_+$ for every $i$ (on both benchmarks
+$q_i(t)=4e_2(t_{\neq i})$). If $V=\bigoplus_aL_a$ satisfies \eqref{eq:SZ}, there is
+a primitive $p\in\Z^h$ with every $p_i>0$ such that $\langle k_a,p\rangle=0$ for
+all $a$.
+\end{proposition}
+\begin{proof}
+At a witness $t$, $u=q(t)\in\R^h_{>0}$ and $\langle k_a,u\rangle=\mu_{k_a}(t)=0$,
+so $u\in S^\perp$ with $S=\spn_\R\{k_a\}$. $S$ is spanned by integer vectors, so
+$S^\perp$ is a rational subspace; it meets the open positive orthant (at $u$),
+and rational points are dense in it, so it contains a positive rational vector.
+Clear denominators and divide by the gcd.
+\end{proof}
+
+\begin{corollary}
+$\rk K\le h-1$ for every slope-feasible charge matrix. (Confirmed on data: all
+240 $\Xa$ survivors at $K\le7$ have rank 3 or 2, never 4.)
+\end{corollary}
+
+The decomposition is exhaustive: every slope-feasible model lies in the slice
+$p^\perp$ of at least one positive primitive $p$. One search over
+$\Z^{h\times5}$ becomes a family of searches over rank-$(h-1)$ lattices.
+
+\subsection{A charge bound on good slices}
+
+Summing \eqref{eq:anomaly-separable} over $r$ gives, with $s(k)=\sum_ik^i$,
+\begin{equation}\label{eq:CX}
+\sum_{a=1}^5F(k_a)\le C_X,\qquad F(k)=|k|^2-s(k)^2,\qquad
+C_X=\frac{\sum_rc_{2,r}}{h-2},
+\end{equation}
+because on both benchmarks $\sum_rq_r(k)=2(h-2)\bigl(s(k)^2-|k|^2\bigr)$; hence
+$C_X=48$ for $\Xa$ and $40$ for $\Xb$.
+
+\begin{proposition}[Per-slice bound]\label{prop:S2}
+Let $p$ be a slice direction with
+\begin{equation}\label{eq:star}
+\Bigl(\sum_ip_i\Bigr)^2>(h-1)\,|p|^2 .
+\end{equation}
+Then $F$ is positive definite on $p^\perp$, and every column of every model in
+the slice satisfies
+\[
+|k_a|^2\ \le\ R^2(p)\coloneqq\frac{C_X\,|p|^2}{(\sum_ip_i)^2-(h-1)|p|^2}.
+\]
+\end{proposition}
+\begin{proof}
+For $k\in p^\perp$ let $w$ be the orthogonal projection of $\mathbf 1=(1,\dots,1)$
+onto $p^\perp$. Then $s(k)=\langle k,w\rangle$, so $s(k)^2\le|k|^2|w|^2$ and
+$F(k)\ge|k|^2(1-|w|^2)$. Since $|w|^2=h-(\sum p)^2/|p|^2$, condition \eqref{eq:star}
+is exactly $|w|<1$. Every summand in \eqref{eq:CX} is then nonnegative, hence
+bounded by $C_X$, and $|k_a|^2(1-|w|^2)\le C_X$.
+\end{proof}
+
+\begin{corollary}[A search with no charge cutoff]
+For $p$ satisfying \eqref{eq:star} the admissible column pool
+$P(p)=\{k\in\Z^h:\langle k,p\rangle=0,\ F(k)\le C_X\}$ is finite and exactly
+computable, by walking the ball $|k|^2\le R^2(p)$ and solving the linear
+condition for the last coordinate. Searching $P(p)$ with the rules of
+\cref{sec:search} exhausts the entire slice over all integer charges. The outcome
+\st{UNSAT\_SLICE\_UNBOUNDED} carries no charge bound.
+\end{corollary}
+
+\subsection{Results on the tetraquadric}
+
+On $\Xa$ with $\Gam=\Z_2$ and target \st{GUT\_FULL}, of the primitive positive
+$p$ with entries $\le10$ (up to permutations of the ambient factors), 469 satisfy
+\eqref{eq:star}. All were exhausted in 36.7\,s in total:
+
+\begin{center}
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+slices satisfying \eqref{eq:star}, entries $\le10$ & 469 \\
+\quad proven empty for all charges (\st{UNSAT\_SLICE\_UNBOUNDED}) & \textbf{425} \\
+\quad containing models & 44 \\
+\qquad ambient-row orbits found, maximum charge & 6 orbits, $\max|k|=3$ \\
+largest radius $R^2(p)$ & 2,484 \\
+column pool sizes & 85--700 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Pools stay small although radii grow, because the lattice $p^\perp$ thins as $|p|$
+grows.
+
+\subsection{Where the difficulty is}
+
+The slices that fail \eqref{eq:star} are not an artefact of the method: real
+models live there. For $p=(1,1,3,4)$, $(\sum p)^2=3|p|^2$ exactly, and
+$p=(1,1,4,4)$ has $100<102=3|p|^2$. There $F$ is degenerate or indefinite on
+$p^\perp$, the pool is genuinely infinite, and the anomaly bounds nothing. What
+stops the charges on these slices is the \emph{index}, which grows cubically
+along the directions with $F\le0$: on the null ray of $p=(1,1,3,4)$, $\ind$ takes
+the values $2,52,198$ at $k=(-2,-2,0,1),(-4,-4,0,2),(-6,-6,0,3)$, leaving the
+window $[-3|\Gam|,0]$ at once. More generally $F(k)\le0$ forces $s(k)\ne0$ (if
+$s(k)=0$ then $F(k)=|k|^2>0$), so on $\Xa$
+$\ind(nk)=2\bigl(n^3e_3(k)+n\,s(k)\bigr)$ is unbounded along every such ray.
+Converting this ray-wise statement into a bound on the semialgebraic set
+$\{F\le0,\ \ind\in[-3|\Gam|,0]\}$ is the open step; we state it as a problem in
+\cref{sec:limitations}.
+
+Probing the 22 uncovered slices with entries $\le6$ at an in-slice box $K=16$,
+far beyond the full-box reach, over pools with thousands of large-charge
+columns, produces maximum charge 4 and nothing new. The 84 proven slices with
+entries $\le6$ together with these 22 probed ones reproduce \emph{exactly} the
+10 orbits of the full $K=7$ search and of the published catalog.
+
+\subsection{A conditional bound}
+
+\begin{conjecture}[Charge bound from anomaly and slope]\label{conj:C1}
+Writing $u=q(t)$ for a slope witness and
+$\delta(u)^2=h-(\sum_iu_i)^2/|u|^2$, the argument of \cref{prop:S2} gives
+$\sum_a|k_a|^2\bigl(1-\delta(u)^2\bigr)\le C_X$, a bound whenever $\delta(u)<1$.
+On $\Xa$ the infimum of $(\sum u)^2/|u|^2$ over the attainable $u$ is exactly 3,
+approached as one $t_i\to0$, so $\delta\to1$ and the bound degenerates near the
+boundary of the Kähler cone. We conjecture that the index condition keeps slope
+witnesses of index-admissible models uniformly away from that boundary, which
+would make the set of models on $\Xa$ finite by this route.
+\end{conjecture}
+
+We make no finiteness claim. Finiteness of the \emph{topology} of
+$V$ is argued in~\cite{ACGLP2013}; the conjecture concerns the charges
+themselves.

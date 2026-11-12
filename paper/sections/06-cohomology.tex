@@ -1,0 +1,70 @@
+\section{Certified line-bundle cohomology}
+\label{sec:cohomology}
+
+The spectrum condition \ref{c:spectrum} needs $h^q(X,L)$ for the line bundles
+$L_a$ and $L_a\otimes L_b$. We compute these from the Koszul resolution of
+$\Oc_X$ in $A$~\cite{Hubsch1992,AGHL2010},
+\[
+E_1^{-p,q}=H^q\bigl(A,\ L\otimes\wedge^pN^*\bigr)\ \Longrightarrow\ H^{q-p}(X,L),
+\]
+where each $E_1$ term is the cohomology of a line bundle on a product of
+projective spaces, given by Bott's formula~\cite{Bott1957} and Künneth. (Closed
+formulae are known for several CICYs~\cite{CL2018}, and the map ranks of these
+Koszul complexes have been studied through Hilbert functions~\cite{Wang2026}; we
+use neither as input, only the exact spectral sequence.)
+
+\paragraph{Collapse.} The differential $d_r$ has bidegree $(r,1-r)$. If no
+differential can join two occupied $E_1$ nodes, the sequence degenerates at
+$E_1$ and each $h^q(X,L)$ is read off. This bidegree-support test is exact.
+
+\paragraph{One differential.} When exactly two nodes are occupied and joined by
+one differential $\Phi$, the cohomology is $\ker\Phi$ and $\operatorname{coker}\Phi$.
+$\Phi$ is induced by the defining equations, so in the fixed monomial bases of
+the ambient cohomology it is a matrix $\Phi(c)$ whose entries are $\Z$-linear in
+the coefficient vector $c$ of the equations.
+
+\begin{proposition}[Generic rank from one finite-field minor]\label{prop:rank}
+Let $\Phi(c)\in\mathrm{Mat}_{m\times n}(\Z[c])$ with entries polynomial in $c$,
+let $c_0\in\Z^N$, $p$ a prime, and suppose $\rk_{\F_p}\bigl(\Phi(c_0)\bmod p\bigr)\ge r$.
+Then (i) some $r\times r$ minor $\delta\in\Z[c]$ has $\delta(c_0)\ne0$, so
+$\delta\ne0$; (ii) $\rk\Phi(c)\ge r$ on the nonempty Zariski-open set
+$\{\delta\ne0\}$, over $\Q$ and $\C$; (iii) if $r=\min(m,n)$ the generic rank is
+maximal.
+\end{proposition}
+\begin{proof}
+A matrix over a field has rank $\ge r$ iff some $r\times r$ minor is nonzero,
+and taking minors commutes with reduction $\Z\to\F_p$, so the nonzero minor mod
+$p$ is the reduction of an integer $\delta(c_0)\ne0$. A polynomial with a nonzero
+value is nonzero, and the coefficient space is irreducible, so
+$\{\delta\ne0\}$ is dense open; (iii) adds the bound $\rk\le\min(m,n)$.
+\end{proof}
+
+No good-reduction hypothesis is needed: the certificate uses only
+``nonzero mod $p$ $\Rightarrow$ nonzero in $\Z$'', never the converse, since
+reduction can only lower rank. The prime is unconstrained and $c_0$ need not
+even lie in the smooth locus. Failure mod $p$ is inconclusive and is reported as
+\st{UNKNOWN}, never as a rank deficiency. Finitely many such certificates hold
+simultaneously on a dense open set of smooth members, because the coefficient
+space is irreducible. Every certificate records $c_0$, $p$, the matrix
+dimensions and a hash of the matrix, and is replayed by the test suite; the
+resulting $h^q$ must also satisfy the exact index~\eqref{eq:hrr} and Serre
+duality, which are independent postconditions.
+
+\begin{remark}[Scope]
+The certified dimensions hold for the \emph{generic} member of the smooth
+family with the given configuration. They do not establish the cohomology of a
+particular member---in particular of a member admitting a chosen free action,
+whose equations lie in a proper closed subfamily---on which dimensions can jump.
+For the downstairs analysis we therefore redo the rank computations on a
+generic member \emph{of the invariant family} (\cref{sec:equivariant}).
+\end{remark}
+
+\paragraph{Reproduction.} For the published $\Xb$ model of~\cite{ACGLP2013}
+the engine reproduces $c_1=0$, $\ind V=\ind\wedge^2V=-12$, $c_2(TX)=c_2(V)$, an
+exact rational slope witness $t=(5,29,15,11,5)$, and the generic cohomology
+$h^\bullet(V)=(0,12,0,0)$, $h^\bullet(\wedge^2V)=(0,15,3,0)$, with every nontrivial
+rank certified by \cref{prop:rank}. Poly-stability witnesses in general are
+certified exactly: rational $t$ found by lattice search, or real-algebraic $t$
+certified by isolating a root and bounding the remaining slopes with rational
+interval arithmetic; numerical witnesses are recorded as
+\st{NUMERIC\_WITNESS} and never accepted.

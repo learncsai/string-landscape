@@ -1,0 +1,7901 @@
+{
+ "tally": {
+  "Dim4Proton/classes": 36216,
+  "Dim4Proton/classes_agree": 36216,
+  "Dim4Proton/tables_classes_exact": 2012,
+  "Dim4Proton/tables": 2012,
+  "Dim4Proton/cells": 54324,
+  "Dim4Proton/cells_agree": 54160,
+  "Dim4Proton/exact": 1996,
+  "Dim5Proton/classes": 60360,
+  "Dim5Proton/classes_agree": 60360,
+  "Dim5Proton/tables_classes_exact": 2012,
+  "Dim5Proton/tables": 2012,
+  "Dim5Proton/cells": 162972,
+  "Dim5Proton/cells_agree": 148266,
+  "Dim5Proton/exact": 1004,
+  "RParVio/classes": 6036,
+  "RParVio/classes_agree": 6036,
+  "RParVio/tables_classes_exact": 2012,
+  "RParVio/tables": 2012,
+  "RParVio/cells": 6036,
+  "RParVio/cells_agree": 5876,
+  "RParVio/exact": 1916,
+  "HiggsMass/classes": 18108,
+  "HiggsMass/classes_agree": 18108,
+  "HiggsMass/tables_classes_exact": 2012,
+  "HiggsMass/tables": 2012,
+  "HiggsMass/cells": 18108,
+  "HiggsMass/cells_agree": 18108,
+  "HiggsMass/exact": 2012,
+  "SuperPotential/tables": 2012,
+  "SuperPotential/exact": 2012,
+  "DTerms/tables": 2012,
+  "DTerms/exact": 2012,
+  "FITerms/tables": 2012,
+  "FITerms/exact": 2012,
+  "no_edownspec": 101
+ },
+ "index_orders": {
+  "Dim4Proton": [
+   0,
+   1,
+   2
+  ],
+  "Dim5Proton": [
+   3,
+   0,
+   1,
+   2
+  ],
+  "RParVio": [
+   0
+  ],
+  "HiggsMass": [
+   0,
+   1
+  ]
+ },
+ "failures": [
+  {
+   "cicy": 7862,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 7862,
+   "model": 10,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 7862,
+   "model": 11,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 7862,
+   "model": 12,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 7862,
+   "model": 13,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7862,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 7862,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 7862,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 7862,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 5256,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 5256,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 5256,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 5256,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 77
+  },
+  {
+   "cicy": 5256,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 11,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 12,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 13,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 14,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5256,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5256,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 11,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 12,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 13,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 14,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5256,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5256,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 11,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 12,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 13,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 14,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5256,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5256,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5256,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 11,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 12,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 13,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 14,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5256,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5256,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5256,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 25,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 27,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 28,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 29,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 30,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 31,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 32,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 33,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 34,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 36,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 37,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 38,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 47,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 48,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 49,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 50,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 51,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 52,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 53,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 54,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 55,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 56,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 57,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 62,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 5452,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 64,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 65,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 66,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 67,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 68,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 69,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 7,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 8,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 10,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5452,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 7,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 8,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 10,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5452,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 7,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 8,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 10,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 5452,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 51
+  },
+  {
+   "cicy": 5452,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 7,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 8,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 5452,
+   "model": 10,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 6947,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 7,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 8,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 10,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 11,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 12,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 13,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 14,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 15,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 17,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 18,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 6947,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 22,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6947,
+   "model": 24,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 6732,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 6732,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 6732,
+   "model": 7,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 6732,
+   "model": 8,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 6732,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6732,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 13,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6732,
+   "model": 21,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 22,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 23,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 24,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 5,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 6732,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 6732,
+   "model": 7,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 6732,
+   "model": 8,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 71
+  },
+  {
+   "cicy": 6732,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6732,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 13,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 20,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6732,
+   "model": 21,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 22,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 23,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6732,
+   "model": 24,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6770,
+   "model": 1,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 2,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 3,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 4,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 5,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 6,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 7,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 12
+  },
+  {
+   "cicy": 6770,
+   "model": 7,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 8,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 12
+  },
+  {
+   "cicy": 6770,
+   "model": 8,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 9,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 20
+  },
+  {
+   "cicy": 6770,
+   "model": 9,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 10,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 20
+  },
+  {
+   "cicy": 6770,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 11,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 15
+  },
+  {
+   "cicy": 6770,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 12,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 15
+  },
+  {
+   "cicy": 6770,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 13,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 20
+  },
+  {
+   "cicy": 6770,
+   "model": 13,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 79
+  },
+  {
+   "cicy": 6770,
+   "model": 13,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 14,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 20
+  },
+  {
+   "cicy": 6770,
+   "model": 14,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 79
+  },
+  {
+   "cicy": 6770,
+   "model": 14,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 15,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 16,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 1,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 2,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 3,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 4,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 5,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 6,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 7,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 12
+  },
+  {
+   "cicy": 6770,
+   "model": 7,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 8,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 12
+  },
+  {
+   "cicy": 6770,
+   "model": 8,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 9,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 20
+  },
+  {
+   "cicy": 6770,
+   "model": 9,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 10,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 20
+  },
+  {
+   "cicy": 6770,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 11,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 15
+  },
+  {
+   "cicy": 6770,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 12,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 15
+  },
+  {
+   "cicy": 6770,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 13,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 20
+  },
+  {
+   "cicy": 6770,
+   "model": 13,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 79
+  },
+  {
+   "cicy": 6770,
+   "model": 13,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 14,
+   "kind": "Dim4Proton",
+   "cells": 27,
+   "agree": 20
+  },
+  {
+   "cicy": 6770,
+   "model": 14,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 79
+  },
+  {
+   "cicy": 6770,
+   "model": 14,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 15,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6770,
+   "model": 16,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 2
+  },
+  {
+   "cicy": 6777,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 5,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 6,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 7,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 8,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 9,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6777,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6777,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 5,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 6,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 7,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 8,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 9,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6777,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6777,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 5,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 6,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 7,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 8,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 9,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6777,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6777,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 2,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 3,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6777,
+   "model": 5,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 6,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 7,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 8,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 9,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6777,
+   "model": 16,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6777,
+   "model": 19,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6890,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6890,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6890,
+   "model": 7,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6890,
+   "model": 8,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6890,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6890,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 13,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6890,
+   "model": 24,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 25,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 26,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 27,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 4,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6890,
+   "model": 6,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6890,
+   "model": 7,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6890,
+   "model": 8,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6890,
+   "model": 9,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 68
+  },
+  {
+   "cicy": 6890,
+   "model": 10,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 11,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 12,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 13,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 65
+  },
+  {
+   "cicy": 6890,
+   "model": 24,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 25,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 26,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 6890,
+   "model": 27,
+   "kind": "RParVio",
+   "cells": 3,
+   "agree": 1
+  },
+  {
+   "cicy": 7447,
+   "model": 1,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7487,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7487,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 75
+  },
+  {
+   "cicy": 7487,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7487,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 71,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 7487,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7487,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 75
+  },
+  {
+   "cicy": 7487,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7487,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 71,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 7487,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7487,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 75
+  },
+  {
+   "cicy": 7487,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7487,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 71,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  },
+  {
+   "cicy": 7487,
+   "model": 21,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7487,
+   "model": 23,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 75
+  },
+  {
+   "cicy": 7487,
+   "model": 26,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 35,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 63,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 72
+  },
+  {
+   "cicy": 7487,
+   "model": 70,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 73
+  },
+  {
+   "cicy": 7487,
+   "model": 71,
+   "kind": "Dim5Proton",
+   "cells": 81,
+   "agree": 57
+  }
+ ]
+}

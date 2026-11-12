@@ -1,0 +1,124 @@
+\section{A downstairs search on the tetraquadric quotient}
+\label{sec:downstairs}
+
+\subsection{Wilson lines and equivariant structures}
+
+For abelian $\Gam$ the Wilson line is a pair of characters: $\chi_T$ on the colour
+triplet and $\chi_D$ on the weak doublet of the fundamental $\five$. Everything
+else follows from $\ten=\wedge^2\five$:
+
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+multiplet & pieces & Wilson-line character & $6Y$ \\
+\midrule
+$\ten$ & $Q$, $u^c$, $e^c$ & $\chi_T\chi_D$, $\chi_T^2$, $\chi_D^2$ & $1,-4,6$ \\
+$\bfive$ & $d^c$, $L$ & $\chi_T^{-1}$, $\chi_D^{-1}$ & $2,-3$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{lemma}\label{lem:wilson}
+The Wilson line lies in $SU(5)$, so $\chi_T^3\chi_D^2=1$. For a group of exponent
+two this forces $\chi_T=1$ and leaves $\chi_D$ free.
+\end{lemma}
+
+A piece with Wilson-line character $\chi$ on a bundle with equivariant structure
+$e$ survives with the multiplicity of the upstairs character $\chi-e$ (in
+additive notation). Equivariant structures are enumerated subject to
+$\sum_ae_a=0$, so that $\det V$ descends. The Wilson line is thus derived, not
+chosen; for $\Xa/(\Z_2\times\Z_2)$ it reproduces the convention of the published
+database.
+
+\subsection{Results}
+
+Starting from the 58 ambient-row orbits of our exhaustive $\Gam=\Z_2\times\Z_2$,
+$K=5$ scan of $\Xa$, with no published input beyond the symmetry data:
+
+\begin{center}\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+upstairs orbits examined & 58 \\
+\quad some $L_a$ not equivariant ($\sum_ik^i$ odd, \cref{prop:equivariance}) & 26 \\
+\quad equivariant, all needed cohomology determined & 32 \\
+\qquad no Wilson line and equivariant structure gives an acceptable spectrum & 11 \\
+\qquad \textbf{three chiral families, no charged chiral exotics, a Higgs pair} & \textbf{21} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All 10 orbits of the published standard-model database on this quotient are
+recovered. The other 11 are absent from it. We call them \emph{candidates} and
+label them A01--A11.
+
+\subsection{Audit of the eleven candidates}
+
+Each candidate was frozen into an immutable manifest and audited against every
+condition of the original construction:
+
+\begin{center}\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+condition & result \\
+\midrule
+$c_1(V)=0$, structure group, anomaly, Bogomolov & 11/11 \\
+poly-stability with an \emph{exact} witness & 11/11 (8 rational, 3 real-algebraic) \\
+$\ind V=\ind\wedge^2V=-12$ & 11/11 \\
+$h^\bullet(V)=(0,12,0,0)$, $h^\bullet(\wedge^2V)=(0,12+n_h,n_h,0)$, $n_h>0$ & 11/11 \\
+every bundle equivariant; all character tables determined & 11/11 \\
+three $Q,u^c,d^c,L,e^c$; no charged chiral exotics; a Higgs pair & 11/11 \\
+no colour-triplet Higgs & 11/11 \\
+absent from every published downstairs model & 11/11 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For charge matrices of rank two the slope-zero locus is a curve, so rationalising
+a numerical point cannot produce an exact witness; a rational point \emph{on}
+the curve is found instead (for A02, $t=(15,15,3,1)$). Two of the real-algebraic
+witnesses have $t_1=4+\sqrt{21}$.
+
+\subsection{Why the candidates are absent from the published database}
+
+The published standard-model database was built from a GUT scan over
+$-3\le k_a^i\le3$ on $h^{1,1}=4$ \cite[Sec.~5.3]{AGLP2012}, which additionally
+demanded $h^1(X,L_a^*\otimes L_b^*)<|\Gam|$ for every pair ``to increase the
+chance that the Higgs triplets can be removed''~\cite{AGLP2011}. We checked both
+conditions against the data: every published model satisfies them (2,111 of
+2,111 with readable cohomology for the second). Every candidate violates at
+least one:
+
+\begin{center}\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcccccl@{}}
+\toprule
+ & $\max|k|$ & extra $U(1)$s & $n_h$ & $\max h^1(L_a^*L_b^*)$ & configurations & outside the scan by \\
+\midrule
+A01 & 5 & 1 & 3 & 3 & 192 & charge range \\
+A02 & 5 & 2 & 17 & 8 & 336 & charge range, $h^1$ bound \\
+A03 & 5 & 1 & 3 & 3 & 192 & charge range \\
+A04 & 4 & 2 & 17 & 8 & 336 & charge range, $h^1$ bound \\
+A05 & 4 & 1 & 3 & 3 & 192 & charge range \\
+A06 & 4 & 2 & 17 & 8 & 336 & charge range, $h^1$ bound \\
+A07 & 3 & 2 & 17 & 8 & 336 & $h^1$ bound \\
+A08 & 3 & 1 & 11 & 8 & 192 & $h^1$ bound \\
+A09 & 3 & 1 & 11 & 8 & 192 & $h^1$ bound \\
+A10 & 3 & 2 & 17 & 8 & 336 & $h^1$ bound \\
+A11 & 3 & 2 & 17 & 8 & 336 & $h^1$ bound \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+So the candidates lie outside the published scan's \emph{declared} domain; they
+were not missed by it. Two remarks. The $h^1$ bound is a device to make
+doublet--triplet splitting likely, not a physical requirement: our
+computation shows that all eleven nevertheless admit 192--336 equivariant
+structures and Wilson lines each that keep a Higgs doublet pair and project out
+every colour triplet. And the six rank-two candidates carry two
+additional massless $U(1)$s where every published model on this quotient carries
+one, so they are phenomenologically distinct rather than mere additions to the
+catalog. A01, A03 and A05 are profile-identical to published models---rank
+three, one extra $U(1)$, $n_h=3$---and differ only in charge range.
+
+We stress what the audit does not establish: that these are viable. That is what
+the Yukawa analysis of the next section addresses.

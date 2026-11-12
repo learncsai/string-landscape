@@ -146,5 +146,25 @@
     "sha256": "586bf6f658e6f6ebb9b72185a0a52592799c59721e0dfcd008710ed3e98a046c",
     "bytes": 1418,
     "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/GUTall.m.gz",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/linebundlemodels/GUTall.m.gz",
+    "associated_paper": "1307.4787",
+    "description": "Oxford published catalog: all heterotic line bundle SU(5) GUT models on the 68 favourable CICYs (63,325 models); gzip of GUTall.m dated 2013-07-11",
+    "retrieval_date": "2026-09-10T17:36:14.519546+00:00",
+    "sha256": "b285894c7a784b75ee65550ee37e9fc556181de0beb93160a5341f3c28632753",
+    "bytes": 708175,
+    "status": "ACQUIRED"
+  },
+  {
+    "path": "data/raw/sms202.m.gz",
+    "source": "https://www-thphys.physics.ox.ac.uk/projects/CalabiYau/linebundlemodels/sms202.m.gz",
+    "associated_paper": "1106.4804; 1202.1757",
+    "description": "Oxford published catalog: heterotic line bundle STANDARD MODELS (downstairs). Contains explicit freely acting symmetries, equivariant structures, Wilson lines, Gamma-equivariant cohomology decompositions and downstairs spectra.",
+    "retrieval_date": "2026-09-10T22:54:03.524721+00:00",
+    "sha256": "48f541fac9937a9387147516f5f12d484e63399881bc872c9ae7539226b4b928",
+    "bytes": 2140460,
+    "status": "ACQUIRED"
   }
 ]

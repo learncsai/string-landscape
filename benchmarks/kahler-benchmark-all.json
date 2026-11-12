@@ -1,0 +1,30 @@
+{
+ "with |S|^2 factors": {
+  "GMTerm/tables": 2012,
+  "GMTerm/cells": 2012,
+  "GMTerm/agree": 94,
+  "GMTerm/exact": 94,
+  "NeutrinoKahler/tables": 2012,
+  "NeutrinoKahler/cells": 6036,
+  "NeutrinoKahler/agree": 3320,
+  "NeutrinoKahler/exact": 585,
+  "Kin5/tables": 2012,
+  "Kin5/cells": 18108,
+  "Kin5/agree": 7054,
+  "Kin5/exact": 0
+ },
+ "without |S|^2 factors": {
+  "GMTerm/tables": 2012,
+  "GMTerm/cells": 2012,
+  "GMTerm/agree": 2012,
+  "GMTerm/exact": 2012,
+  "NeutrinoKahler/tables": 2012,
+  "NeutrinoKahler/cells": 6036,
+  "NeutrinoKahler/agree": 6036,
+  "NeutrinoKahler/exact": 2012,
+  "Kin5/tables": 2012,
+  "Kin5/cells": 18108,
+  "Kin5/agree": 18108,
+  "Kin5/exact": 2012
+ }
+}

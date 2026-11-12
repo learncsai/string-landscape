@@ -1,0 +1,55 @@
+{
+ "geometry": 5256,
+ "gamma": 4,
+ "columns": [
+  [
+   -2,
+   0,
+   -1,
+   1,
+   0
+  ],
+  [
+   0,
+   -1,
+   1,
+   -2,
+   1
+  ],
+  [
+   0,
+   2,
+   1,
+   0,
+   -1
+  ],
+  [
+   1,
+   -2,
+   1,
+   0,
+   0
+  ],
+  [
+   1,
+   1,
+   -2,
+   1,
+   0
+  ]
+ ],
+ "symmetries": {
+  "3": {
+   "status": "NOT_EQUIVARIANT"
+  },
+  "4": {
+   "status": "NOT_EQUIVARIANT"
+  },
+  "5": {
+   "status": "NOT_EQUIVARIANT"
+  },
+  "6": {
+   "status": "NOT_EQUIVARIANT"
+  }
+ }
+}

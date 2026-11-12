@@ -1,0 +1,43 @@
+{
+ "tally": {
+  "YukawaUp/compared": 2012,
+  "YukawaUp/agree": 2011,
+  "YukawaUp/sets_equal": 2012,
+  "YukawaDown/compared": 2012,
+  "YukawaDown/agree": 2012,
+  "YukawaDown/sets_equal": 2012,
+  "MuTerm/compared": 2012,
+  "MuTerm/agree": 2012,
+  "MuTerm/sets_equal": 2012,
+  "YukawaUp/skipped": 101,
+  "YukawaDown/skipped": 101,
+  "MuTerm/skipped": 101,
+  "YukawaUp/differ": 1
+ },
+ "orders": {
+  "0": 468,
+  "2": 351,
+  "5": 2275,
+  "4": 798,
+  "1": 19,
+  "3": 51
+ },
+ "disagreements": [
+  {
+   "cicy": 7862,
+   "model": 14,
+   "kind": "YukawaUp",
+   "published_allowed": false,
+   "predicted_allowed": true,
+   "agree": false,
+   "our_minimal_order": null,
+   "published_minimal_order": null,
+   "published_max_order": null,
+   "orders_agree": true,
+   "sets_equal": true,
+   "published_subset": true,
+   "extra": 0,
+   "missing": 0
+  }
+ ]
+}

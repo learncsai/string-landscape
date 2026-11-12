@@ -1,0 +1,14 @@
+{
+ "single/not_discriminating": 8533,
+ "single/total": 8533,
+ "single/unshifted_matches": 8533,
+ "single/shifted_matches": 8533,
+ "pair/not_discriminating": 16566,
+ "pair/total": 17224,
+ "pair/unshifted_matches": 17224,
+ "pair/shifted_matches": 16566,
+ "pair/discriminating": 658,
+ "pair/discriminating/shifted_matches": 0,
+ "pair/discriminating/unshifted_matches": 658,
+ "unmatched_result": 2
+}

@@ -1,0 +1,274 @@
+\section{The holomorphic superpotential}
+\label{sec:yukawa}
+
+\subsection{Selection rules as a network-flow problem}
+
+Under the unbroken $U(1)^4=S(U(1)^5)$ the low-energy fields carry charges in
+$\Z^5/\Z(1,1,1,1,1)$:
+\[
+\ten_a:\ e_a,\qquad \bfive_{ab}:\ e_a+e_b,\qquad \five_{ab}:\ -(e_a+e_b),\qquad
+S_{ab}:\ e_a-e_b,
+\]
+from $H^1(L_a)$, $H^1(L_a\otimes L_b)$, $H^1(L_a^*\otimes L_b^*)$ and
+$H^1(L_a\otimes L_b^*)$ respectively. An operator is neutral when its total
+charge $c\in\Z^5$ equals $m(1,\dots,1)$; since singlet charges have entry sum
+zero, $m=\tfrac15\sum_ic_i$ is forced, and the operator is forbidden outright if
+that is not an integer. Otherwise the singlets must supply the \emph{residual}
+$r=m\mathbf1-c$.
+
+\begin{proposition}[Singlet insertions]\label{prop:flow}
+Let $E$ be the set of pairs $(a,b)$ for which $S_{ab}$ is present, and $D_E$ the
+directed graph on $\{1,\dots,5\}$ with an edge $a\to b$ for each $(a,b)\in E$. A
+residual $r$ with $\sum_ir_i=0$ is the charge of a monomial in the available
+singlets if and only if $D_E$ carries a nonnegative flow with net outflow $r_a$
+at every node $a$. Integer and real feasibility coincide, and the minimal number
+of insertions is the value of a transportation problem with costs equal to
+shortest-path lengths in $D_E$.
+\end{proposition}
+\begin{proof}
+A monomial $\prod S_{ab}^{n_{ab}}$ has charge $\sum n_{ab}(e_a-e_b)$, the divergence
+of the flow $n$. The node--arc incidence matrix is totally
+unimodular~\cite{Schrijver1986}, so a feasible real flow implies an integer one.
+With unit edge costs and infinite capacities, a min-cost flow decomposes into
+paths from sources to sinks, each routed along a shortest path~\cite{AMO1993}.
+\end{proof}
+
+Membership is thus decided exactly and with \emph{no bound on the insertion
+order}. \st{FORBIDDEN\_BY\_SELECTION\_RULE} is an exact vanishing statement to
+all orders in the singlets; an allowed operator is only charge-allowed, and its
+value needs the cohomology. For comparison with truncated tables we also
+enumerate every monomial up to a given degree, pruning with the min-cost-flow
+value as an admissible lower bound, so the enumeration is complete. Two
+consequences we use later: a rank bound valid to all orders is the
+\emph{structural rank} of the allowed pattern of a Yukawa matrix; and the
+singlets that can take a $D$-flat vacuum value at vanishing Fayet--Iliopoulos
+terms are exactly those on directed cycles of $D_E$, since $D$-flatness,
+$\sum_SQ_a(S)|s|^2=0$, asks for a nonnegative circulation.
+
+\subsection{Reproducing every published operator table}
+
+The standard-model database~\cite{AGLP2012,OxfordCICY} records, for every model,
+thirteen operator tables as lists of singlet monomials. We rebuilt all of them
+from the charges, for all 2,012 models with complete records (\cref{tab:operators}).
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{@{}llr@{}}
+\toprule
+table & operator & agreement \\
+\midrule
+\texttt{YukawaUp}, \texttt{YukawaDown}, \texttt{MuTerm} & $\ten\ten\five_H$, $\ten\bfive\bfive_H$, $\five_H\bfive_H$ & 6,036 / 6,036 tables \\
+\texttt{HiggsMass} & full Higgs mass matrix & 18,108 / 18,108 cells \\
+\texttt{RParVio} & $\bfive^p\five_H$ & 6,036 / 6,036 cells \\
+\texttt{Dim4Proton} & $\ten\bfive\bfive$ & 36,216 / 36,216 classes \\
+\texttt{Dim5Proton} & $\ten\ten\ten\bfive$ & 60,360 / 60,360 classes \\
+\texttt{SuperPotential} & pure-singlet superpotential & 2,012 / 2,012 tables \\
+\texttt{DTerms}, \texttt{FITerms} & $D$-terms; FI terms $=\mu_{k_a}(t)$ & 2,012 / 2,012 each \\
+\texttt{GMTerm} & $H_uH_d\,f(S,S^\dagger)$ & 2,012 / 2,012 tables \\
+\texttt{NeutrinoKahler} & $L^pH_d^\dagger f(S,S^\dagger)$ & 6,036 / 6,036 cells \\
+\texttt{Kin5} & $\bfive^{p\dagger}\bfive^q f(S,S^\dagger)$ & 18,108 / 18,108 cells \\
+\bottomrule
+\end{tabular}
+\caption{Every operator table of the published standard-model database,
+reproduced from the $U(1)^4$ charges alone for all 2,012 complete models. The
+FI-term agreement also checks our intersection numbers on all 13 geometries.
+The one flag-level difference in the Yukawa tables is a coupling first allowed
+at insertion order six, above the published truncation, where both lists are
+empty.}
+\label{tab:operators}
+\end{table}
+
+Several conventions are not stated in the sources. Each was found from a failing
+comparison, diagnosed, then held fixed for the whole database, and the raw
+(convention-free) agreement is recorded alongside:
+superpotential lists stop at total operator degree eight capped at singlet
+order five, Kähler lists at singlet degree three; the Yukawa matrices use the
+physical Higgs pair \texttt{PhysHiggs}; families are ordered by bundle index,
+which we confirmed by decoding the per-model \texttt{EDownSpec} field; the bare
+bilinear is omitted from \texttt{RParVio}; \texttt{Kin5} is indexed
+$\bfive^{p\dagger}\bfive^q$; Kähler monomials never contain a trivial
+$|S_{ab}|^2$ factor (with such factors only 94 of 2,012 GM tables agree);
+\texttt{NeutrinoKahler} lists only monomials containing a holomorphic singlet,
+the paper's right-handed neutrino. Two further conventions are more
+interesting because they show the tables are not always functions of the charges
+alone. \texttt{Dim5Proton} lists an inconsistent subset of the permutations of
+its three $\ten$ indices---for one index shape sometimes one ordering of three,
+sometimes two---so only permutation classes are meaningful; per class, every
+listed cell equals ours. And \texttt{Dim4Proton} omits every entry that involves a
+matter $\bfive$ from the pair bundle of the physical down Higgs (charge-identical
+to a Yukawa coupling): all 19,450 allowed cells without such a $\bfive$ are
+listed and all 164 with one are not.
+
+\paragraph{An internal inconsistency.} Because these are charge tables, two
+families from the same line bundle must give identical rows. Using only the
+published data---family order from each model's own \texttt{EDownSpec}---all
+2,012 published up-type tables pass this test, but \textbf{954 of 2,007
+down-type tables fail it}: they contain a zero row where an identical row is
+nonzero. Transposing or exchanging labels does not repair it (1,028 failures
+either way). Entry by entry on $\Xa$ we reproduce 198/198 up-type and 184/198
+down-type cells; the 14 remaining cells lie in exactly five of these
+inconsistent tables. \Cref{sec:triple} shows that where the cohomology can
+decide, it contradicts the published presentation.
+
+\subsection{Leading-order couplings as triple products}
+\label{sec:triple}
+
+At the Abelian locus a Yukawa coupling is the cup product
+$H^1(X,L_1)\times H^1(X,L_2)\times H^1(X,L_3)\to H^3(X,\Oc_X)\cong\C$ with
+$L_1L_2L_3=\Oc_X$~\cite{AGGHL2010,BBCL2016}. For a hypersurface $X=\{f=0\}$ of
+multidegree $q$ in $A=(\PP^1)^4$, the Koszul sequence
+$0\to\Oc_A(k-q)\xrightarrow{f}\Oc_A(k)\to\Oc_X(k)\to0$ splits $H^1(X,\Oc(k))$ into
+\emph{level 0} (the image of $H^1(A,\Oc(k))$) and \emph{level 1} (mapping onto
+$\ker\bigl(H^2(A,\Oc(k-q))\xrightarrow{f}H^2(A,\Oc(k))\bigr)$).
+
+\begin{lemma}[Level-zero vanishing]\label{lem:level0}
+If all three classes are at level 0 the coupling vanishes.
+\end{lemma}
+\begin{proof}
+Restriction commutes with cup product, so the product is the restriction of a
+class in $H^3(A,\Oc_A)$, which is zero by Künneth since $H^{>0}(\PP^1,\Oc)=0$.
+\end{proof}
+
+\begin{proposition}[Level one]\label{prop:level1}
+If exactly one class is at level 1, with image $\beta\in H^2(A,\Oc(k_3-q))$, and
+the others are restrictions of $\alpha_i\in H^1(A,\Oc(k_i))$, the coupling equals
+the ambient product $\alpha_1\alpha_2\beta\in H^4(A,\Oc(-q))\cong\C$.
+\end{proposition}
+\begin{proof}
+Since $H^3(A,\Oc_A)=H^4(A,\Oc_A)=0$ the connecting map
+$\delta:H^3(X,\Oc_X)\to H^4(A,\Oc(-q))$ is an isomorphism, and $\delta$ is linear
+over restrictions of ambient classes:
+$\delta(\alpha|_X\cdot\gamma)=\alpha\cdot\delta\gamma$.
+\end{proof}
+
+When two or more classes are at level 1 the connecting map is not
+multiplicative, the naive product vanishes only for degree reasons, and the
+true coupling needs a lift through $f$~\cite{BBL2017}; such couplings are
+returned as \st{UNKNOWN}. (An early version of our code treated them as zero; an
+audit showed no recorded coupling was of this type, and a regression test now
+pins a genuine level-sum-two triple to \st{UNKNOWN}.) The ambient product is
+evaluated on \v{C}ech monomials: on each $\PP^1$ the three exponents must sum to
+$(-1,-1)$, the generator of $H^1(\PP^1,\Oc(-2))$.
+
+\paragraph{Complex-structure independence.} If the relevant Koszul map is zero
+because its other end is a zero ambient group, the identification of $H^1(X,L)$
+with the ambient group holds for \emph{every} smooth member. This was the case
+for every one of the 774 bundle slots ever evaluated, so every leading-order
+matrix reported is constant over the invariant family: there are no rank-drop
+loci at leading order. Couplings where a Koszul map is nonzero are refused.
+
+\paragraph{Downstairs restriction and a convention check.} Each slot is
+restricted to the isotypic component of its piece's Wilson-line character minus
+the equivariant structure of its bundle, the convention that reproduces 1,948 of
+1,948 published spectra. A blocking check requires every slot's isotypic
+dimension to equal the number of families the spectrum assigns to that bundle.
+The trilinear form must be $\Gam$-covariant with the character of
+$H^4(A,\Oc(-q))$, $\prod_i\det(B_i)^{-1}$, which is trivial exactly when the action
+descends to the Calabi--Yau quotient. We verified this element by element and
+index triple by index triple: \textbf{zero violations}. That single test
+validates the Serre-duality bases, the exponent conventions, the Kronecker
+ordering and the group lift.
+
+\paragraph{Against the published models.} The published tables record only
+which entries are allowed, so we compare our exact leading-order ranks with the
+published \emph{structural} rank. For both $Y_u$ and $Y_d$ the ranks agree on
+20 of 22 $\Xa$ models. The two $Y_u$ differences are \cref{lem:level0} at work:
+charge-allowed couplings whose three classes all sit at level 0, identically zero
+though no charge argument can see it. The two $Y_d$ differences are internally
+inconsistent published tables; in one, the cohomology gives a $2\times3$ block of
+rank two where the published table shows a zero row, and a rank-two $2\times3$
+matrix has a zero row in no basis. Finally, \cite[Sec.~6.2]{AGLP2012} proves that
+without equivariant blocks $Y_u$ cannot have rank one; our computed $Y_u$ ranks
+over the 22 models are 0 or 2 and never 1, recovering that theorem from the
+cohomology rather than from the group theory.
+
+\subsection{The Yukawa sector of the downstairs models}
+
+We now apply the engine to all 21 orbits of \cref{sec:downstairs}---the 11
+additional ones and, as a baseline, the 10 published ones---through the
+identical pipeline, over every accepted configuration (192--336 per orbit) and
+every choice of physical Higgs pair. Singlet spectra are derived from first
+principles; validated on the published $\Xa$ models they agree exactly for 21
+of 22, and the 22nd differs only on two singlets whose published multiplicity is
+an unevaluated rank expression that our equivariant rank computation evaluates
+(to zero).
+
+Besides the Yukawa matrices we evaluate every dangerous operator that is a
+genuine triple product: dimension-four $R$-parity violation at singlet order
+zero (its $QLd^c$, $LLe^c$ and $u^cd^cd^c$ pieces), and the one-singlet terms
+$SH_uH_d$ and $SLH_u$. Higher-order terms are decided by the selection rule only.
+We then classify with logical categories, applied identically to both groups:
+\st{STRONG\_CANDIDATE} requires a nonzero top Yukawa at the Abelian locus,
+rank three reachable for $Y_u$ and $Y_d$ at some singlet order, and
+dimension-five proton decay, dimension-four and bilinear $R$-parity violation
+forbidden to all orders; \st{PHENOMENOLOGICALLY\_PROBLEMATIC} requires an
+unconditional exact obstruction---no up- or no down-type Yukawa at any
+perturbative order, or dimension-four $R$-parity violation present at the
+Abelian locus; everything else is \st{UNKNOWN}. An orbit is strong if some
+choice is, problematic if every choice is.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llrcccccl@{}}
+\toprule
+orbit & published & choices & top at LO & cap $Y_u$ & cap $Y_d$ & QQQL forbidden & RPV$_4$ at LO & verdict \\
+\midrule
+A01 & -- & 192 & -- & 0 & 3 & all & -- & problematic \\
+A02 & -- & 720 & -- & 0 & 1, 3 & all & 288 & problematic \\
+A03 & -- & 192 & -- & 0 & 1 & all & -- & problematic \\
+A04 & -- & 720 & -- & 3 & 3 & none & 288 & \textbf{unknown} \\
+A05 & -- & 192 & -- & 0 & 0 & all & -- & problematic \\
+A06 & -- & 720 & -- & 3 & 3 & none & -- & \textbf{unknown} \\
+A07 & -- & 720 & -- & 0 & 1 & all & 288 & problematic \\
+A08 & -- & 192 & -- & 0 & 0 & all & -- & problematic \\
+A09 & -- & 192 & -- & 0 & 0 & all & -- & problematic \\
+A10 & -- & 720 & -- & 0 & 0 & all & -- & problematic \\
+A11 & -- & 720 & -- & 0 & 0 & all & -- & problematic \\
+\midrule
+P01 & 1 & 192 & -- & 0 & 0 & all & -- & problematic \\
+P02 & 2 & 192 & all & 2 & 0 & all & -- & problematic \\
+P03 & 3--6 & 384 & -- & 0 & 0, 1 & all & -- & problematic \\
+P04 & 7 & 192 & -- & 0 & 0 & all & -- & problematic \\
+P05 & 8 & 192 & -- & 0 & 0 & all & -- & problematic \\
+P06 & 9--12 & 384 & -- & 0, 2 & 2, 3 & none & 192 & problematic \\
+P07 & 13 & 192 & -- & 0 & 1 & none & -- & problematic \\
+P08 & 14 & 192 & -- & 3 & 3 & none & -- & unknown \\
+P09 & 15--18 & 384 & -- & 0, 3 & 0, 1, 3 & 288 & 96 & unknown \\
+P10 & 19--22 & 384 & 192 & 1, 2 & 1, 2 & none & 96 & unknown \\
+\bottomrule
+\end{tabular}
+\caption{The downstairs models on $\Xa/(\Z_2\times\Z_2)$. ``Choices'' counts
+configurations times physical-Higgs choices; ``cap'' is the largest rank the
+selection rule allows at any singlet order (sets list the values over choices);
+counts are numbers of choices. ``Published'' gives the published model numbers
+in each orbit.}
+\label{tab:ranking}
+\end{table}
+
+\Cref{tab:ranking} gives the result, and it answers the question posed for the
+new models. \textbf{No orbit on this quotient, published or new, is a strong
+candidate.} Nine of the eleven new orbits are problematic and two unknown; seven
+of the ten published orbits are problematic and three unknown. The new orbits
+fail for the same reasons as the published ones, at a comparable rate. In
+detail, for the eleven new orbits:
+\begin{itemize}[leftmargin=*]
+\item none has a nonzero top Yukawa at the Abelian locus (two published orbits
+  do); in nine the up-type Yukawa is forbidden to \emph{all} perturbative orders;
+\item A04 and A06 are the only new orbits whose up-type Yukawa can reach rank
+  three, and for both the rank-three pattern survives restricting to singlets
+  that can take $D$-flat values;
+\item dimension-five proton decay is forbidden to all orders in nine of eleven,
+  in every configuration;
+\item dimension-four $R$-parity violation is computed nonzero at the Abelian
+  locus in 288 of 720 Higgs choices of A02, A04 and A07, and the one-singlet
+  bilinear coupling $SLH_u$ is nonzero in every choice of A04 and A07;
+\item in A08, $SLH_u$ is charge-allowed but \emph{vanishes cohomologically} in
+  every configuration: an allowed-but-vanishing dangerous operator.
+\end{itemize}
+
+The \st{PROBLEMATIC} verdicts are exact but perturbative: masses forbidden to all
+orders by the $U(1)^4$ symmetries can still be generated non-perturbatively where
+those symmetries are anomalous. The \st{UNKNOWN} verdicts rest on the
+coefficients of higher-order couplings, on the singlet vacuum, and on the
+normalisation of the physical couplings, none of which is computed here.

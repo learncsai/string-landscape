@@ -1,0 +1,43 @@
+\section{Conventions and source discrepancies}
+\label{app:conventions}
+
+\paragraph{Topology.} Indices mean $\chi=\sum_q(-1)^qh^q$; $J_i$ are the ordered
+restricted hyperplane classes; $d_{ijl}$ integrates $J_iJ_jJ_l$ and $c_{2,i}$
+pairs $c_2(TX)$ with $J_i$. For $c_1(V)=0$, $c_2(V)=-\tfrac12\sum_ak_a^2$ (Whitney);
+the positive quadratic expression called $c_2(V)$ in \cite[Sec.~5]{ACGLP2013}
+is $\mathrm{ch}_2(V)$, and we follow the sign of \cite[(2.3)]{BCL2013}, confirmed by
+the published example.
+
+\paragraph{Published data.} Published charge matrices are stored with rows
+indexed by ambient factors; we transpose to columns. The character tables
+\texttt{GCoh} are indexed by characters in lexicographic label order, with
+$\Gam$ inferred database-wide, and are raw characters of the lift, before the
+equivariant shift. The equivariant structure enters as a character
+shift, $\chi_a$ for $L_a$ and $\chi_a+\chi_b$ for $L_aL_b$ (fixed by the data:
+1,948/1,948 spectra with the shift, 1,503 without).
+\texttt{EDownSpec[[1]]} is
+$[H_u\text{ pair},\ \text{three }\ten\text{ bundles},\ H_d\text{ pair},\ \text{three
+}\bfive\text{ pairs},\ \text{singlet codes}]$ with pair index the position among
+the ten lexicographic pairs and singlet code $2\cdot(\text{pair index})+\text{direction}$;
+\texttt{EDownSpec[[2]]} lists the Higgs slots. In the text of \cite{AGLP2012}
+$\bar H$ denotes the up-type Higgs, while the database field
+\texttt{Subscript["H",a,b]} is the $\five$ (up-type); both readings are needed to
+map the Kähler operators correctly.
+
+\paragraph{Discrepancies in the sources, recorded and not silently corrected.}
+\begin{itemize}[leftmargin=*]
+\item \cite{ACHLN2023} prints a positive chiral Euler characteristic in one
+  condition while its objective uses the negative target; we follow HRR and the
+  published cohomology.
+\item \cite[Sec.~7]{ACGLP2013} describes the ranks of $V$ and $TX$ as equal
+  (they are five and three); we reproduce $c_2$ equality only.
+\item The GUT catalog lists symmetry orders $\{2,4,5,10,20\}$ for CICY 7447
+  while the symmetry pages list $\{2,4,10\}$; no result depends on it, and order
+  5 is excluded independently by \cref{prop:divisibility}.
+\item 954 of 2,007 published down-type Yukawa tables are not functions of the
+  charges (\cref{sec:yukawa}), and the published \texttt{Dim5Proton} tables list
+  an inconsistent subset of index permutations.
+\item The singlet multiplicities of 2,450 entries across 1,197 published records
+  are unevaluated rank expressions; where we evaluate one (CICY 7862, model 2) we
+  find zero at a generic invariant member.
+\end{itemize}

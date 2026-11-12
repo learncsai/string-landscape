@@ -1,0 +1,385 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{amsmath}
+\usepackage{booktabs,tabularx,array}
+\usepackage[margin=1.75cm,top=1.6cm,bottom=1.8cm]{geometry}
+\usepackage{microtype}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!35!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{xcolor}
+
+\titleformat{\section}{\normalsize\bfseries}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.0ex plus 0.3ex}{0.5ex}
+\titleformat{\paragraph}[runin]{\normalsize\bfseries}{}{0pt}{}[.]
+\titlespacing*{\paragraph}{0pt}{0.6ex plus 0.2ex}{0.6em}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1.2em}
+\setlist{leftmargin=1.4em,itemsep=1pt,topsep=2pt,parsep=0pt}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Oc}{\mathcal{O}}
+\newcommand{\ind}{\operatorname{ind}}
+\newcommand{\Xa}{X_{7862}}
+\newcommand{\Xb}{X_{7447}}
+
+\begin{document}
+
+\begin{center}
+{\large\bfseries Search for heterotic line-bundle Standard Models}\\[3pt]
+{\normalsize Summary of results, the algorithm, and directions beyond the heterotic string}\\[4pt]
+{}
+\end{center}
+
+\vspace{-2pt}
+{\small\noindent\textbf{Abstract.}
+Much of what is known about string compactifications with the particle content
+of the supersymmetric Standard Model comes from computer scans. What a scan
+establishes depends on the status of each filter it applies. A filter that is
+not a genuine necessary condition can throw away real models, and one that is
+weaker than it could be lets spurious ones through. We revisit one of the most
+thoroughly scanned cases, the $E_8\times E_8$ heterotic string on favourable
+complete-intersection Calabi--Yau threefolds with a gauge bundle built from five
+line bundles, and rebuild the search so that a candidate is discarded only when
+a proof requires it. The main step is to replace the finite slope-stability test
+of earlier scans by its complete form, which asks whether a linear space meets
+a fixed cone. That question can be settled exactly on a partial model, so whole
+branches of the search are cut at once. The engine reproduces the published
+catalogs of the two benchmark manifolds model for model, and across all 68
+manifolds it never misses a published model inside its search range. It also
+finds a stable GUT model that the catalog lacks, and eleven new three-family
+models on a quotient of the tetraquadric, each lying outside limits that the
+earlier standard-model scan set for itself. We then ask whether any of these
+models has a realistic superpotential, computing the leading couplings directly
+instead of inferring them from charges. For this quotient the answer is no: no
+model, published or new, combines a leading-order top-quark Yukawa coupling,
+Yukawa matrices that can reach full rank, and the absence of dangerous baryon-
+and lepton-number-violating operators. We end by describing how the same
+approach could be used for Type IIB orientifolds, flux vacua, F-theory and
+intersecting branes.\par}
+
+\section{The problem}
+
+A bundle $V=\bigoplus_{a=1}^5\Oc_X(k_a)$ on a favourable CICY $X$ with
+$h=h^{1,1}(X)$ is an integer $h\times5$ matrix $K=(k_1,\dots,k_5)$. For $V$ to
+give a supersymmetric $SU(5)$ GUT with three chiral families that descends to
+an MSSM-like theory on $X/\Gamma$, with $\Gamma$ acting freely, one needs
+$c_1(V)=0$, $\ind V=-3|\Gamma|$, the Green--Schwarz condition
+$c_2(TX)-c_2(V)\ge0$, and poly-stability. For line bundles poly-stability means
+that the five slopes $\mu_{k_a}(t)=d_{ijl}\,k_a^i t^j t^l$ vanish at a common
+point of the Kähler cone. The descent then requires an equivariant structure, a
+Wilson line and the $\Gamma$-representation on bundle cohomology. Earlier work
+turned this into scans over boxes $|k_a^i|\le K$
+\cite{AGLP11,AGLP12,ACGLP13}, producing a catalog of 63,325 GUT models on the
+68 favourable CICYs and a database of standard models with their
+superpotential selection rules.
+
+Those scans leave three questions open: what a negative result proves, when
+several filters are finite truncations of conditions on infinitely many charge
+combinations; whether the downstairs spectrum can be computed from the group
+action rather than looked up; and what the superpotential does beyond charge
+conservation, which is necessary for a coupling but not sufficient.
+
+\section{The algorithm and what is new in it}
+
+The search is a depth-first traversal of sorted column prefixes
+$k_1\preceq\dots\preceq k_m$, $m\le4$. The fifth column is fixed by
+$\sum_ak_a=0$, so every class of bundles is visited exactly once. Twelve rules
+prune the tree; each is a proven necessary condition, except one that is a
+declared restriction of the domain, and none is a heuristic.
+
+\paragraph{A complete slope obstruction} Earlier scans reject $K$ when some
+combination $\sum_ac_ak_a$ with $c\in\{-1,0,1\}^5$ has a one-signed matrix
+$M(k)_{jl}=d_{ijl}k^i$, since a one-signed quadratic form cannot vanish inside
+the Kähler cone. We show that the same test over all real $c$ is a geometric
+statement: the span $S$ of the charge vectors meets a fixed rational polyhedral
+cone $P=\{k:M(k)\ge0\}$ away from $M=0$. Three properties make this useful in a
+search. It is \emph{monotone}, so a failure on a prefix prunes every
+completion. It is \emph{decided exactly} by Gordan's alternative applied to the
+extreme rays of $P$ projected onto $S^\perp$, whose dimension shrinks as the
+prefix grows; at the deepest and most numerous nodes it reduces to a sign check
+or an angular-gap check. And it is \emph{strictly stronger} than the finite
+test: on the tetraquadric $\Xa$ it removes one orbit that the finite test keeps
+at $K=3$ and $K=4$, and removing it is what brings the search into exact
+agreement with the published catalog.
+
+\paragraph{Searches without a charge cutoff} A common slope zero forces a
+primitive integer vector $p$ with all $p_i>0$ and $\langle k_a,p\rangle=0$ for
+every $a$, so each model lies in a slice $p^\perp$. When
+$(\sum_ip_i)^2>(h-1)|p|^2$, the anomaly condition bounds every charge in the
+slice, and the slice can be searched over all integers. On $\Xa$, 425 of 469
+such slices are proven empty for arbitrarily large charges. Separately, the
+greatest common divisor $d_X$ of all line-bundle indices on $X$ must divide
+$3|\Gamma|$; this excludes some pairs $(X,\Gamma)$ for any charges, and both
+pairs it excludes among the 68 CICYs are indeed empty in the catalog.
+
+\paragraph{An exact decision of stability} A bundle can pass every sign test
+while its five slopes have no simultaneous zero. When the charge matrix has
+rank $h-1$ we decide the question exactly: a lexicographic Gröbner basis,
+isolation of the real roots of each irreducible factor of the eliminant in
+rational intervals, interval arithmetic for positivity, and a check that every
+slope vanishes modulo the minimal polynomial. It returns either a
+real-algebraic Kähler class where $V$ is poly-stable or a proof that none
+exists.
+
+\paragraph{Selection rules as network flows} Whether the $U(1)^4$ charges allow
+a superpotential monomial after any number of singlet insertions is a monoid
+membership question. We show that it is a nonnegative-flow problem on a small
+directed graph. Total unimodularity makes the real relaxation exact, so the
+question is decided to all orders in the singlets, and a min-cost flow gives
+the lowest order at which a coupling can appear.
+
+\paragraph{Cohomology and couplings from first principles} A nonzero
+$r\times r$ minor modulo a single prime certifies that a Koszul map has rank at
+least $r$ for generic complex structure, with no good-reduction hypothesis. The
+$\Gamma$-representation on cohomology is computed from the group action through
+the Koszul resolution, Bott's theorem and equivariant map ranks. Leading-order
+Yukawa couplings are computed as cup products
+$H^1\times H^1\times H^1\to H^3(X,\Oc_X)$ \cite{BBCL16} after splitting each
+class by Koszul level, which detects couplings that the charges allow but that
+vanish for every complex structure.
+
+\smallskip
+The pruning keeps the search small. On $\Xa$, from $K=1$ to $K=7$ the nominal
+domain grows by a factor $1.5\times10^{11}$ while the number of complete
+bundles the search builds grows by a factor of about 700.
+
+\section{Results}
+
+\paragraph{Exact agreement with the published catalogs} The survivor sets
+coincide with the catalog model for model: all 10 and all 58 models on $\Xa$
+($\Gamma=\Z_2$ and $\Z_2\times\Z_2$) and all 93 on $\Xb$, whose counts we
+predicted before each run. Separate code sharing nothing with the search
+replays the complete $K=1$ domains ($4.3\times10^7$ and $3.5\times10^9$ states)
+with identical survivors.
+
+\paragraph{All 68 favourable CICYs, and a model the catalog misses} In 271
+runs covering every (geometry, $|\Gamma|$) key of the catalog
+($h^{1,1}\le6$, $K\le3$) the engine never misses a published model inside its
+box (9,016 such models in the $K=2$ runs alone). It also keeps 80 orbits the catalog
+does not list. The exact decision proves 53 of them unstable. Eighteen have
+charge matrices of rank below $h-1$, where the decision does not apply, and are
+unstable on numerical evidence only. The remaining nine are a single model,
+seen on three CICY descriptions (5256, 5301, 5452) of one manifold. With
+$|\Gamma|=4$ and charge vectors
+$(-2,0,-1,1,0)$, $(0,-1,1,-2,1)$, $(0,2,1,0,-1)$, $(1,-2,1,0,0)$, $(1,1,-2,1,0)$,
+it satisfies $c_1(V)=0$, $\ind V=-12$ and the anomaly and Bogomolov conditions,
+and it is poly-stable with an exact witness: setting $t_5=1$, the coordinate
+$t_4$ is the root of an irreducible degree-12 integer polynomial isolated in
+$[642595/64736,\,769226/77493]$. The catalog has 2,128 models on this key, 656
+of them in the same charge box, and none with this model's intersection
+invariants. Its witness has $t_{\max}/t_{\min}\approx231$, so a stability check
+confined to moderate Kähler ratios would not find it. It does not descend with
+individually equivariant line bundles under any of the four free
+$\Z_2\times\Z_2$ actions, so it is a new GUT model, not a new standard model.
+Before trusting the verdict ``unstable'' we ran the decision on 548 published
+models, all poly-stable. The first version rejected 91 of them; this exposed
+two bugs, both fixed, and the check is now a regression test.
+
+\paragraph{Downstairs spectra} Equivariant cohomology computed from the group
+action reproduces all 27,821 published character tables. From our own survivor
+set, 21 orbits on $\Xa/(\Z_2\times\Z_2)$ have three chiral families, no charged
+chiral exotics and a Higgs doublet pair. All 10 published orbits are among them
+and 11 are new. Each of the 11 lies outside the published scan's own stated
+domain (its charge range, or its bound on vector-like pairs), which explains
+why it is missing.
+
+\paragraph{Superpotential} The flow formulation reproduces all thirteen operator
+tables of the published standard-model database for its 2,012 complete models,
+once nine unstated conventions are read off from the data. It also shows that
+954 of the 2,007 published down-type Yukawa tables are internally inconsistent:
+two families from the same line bundle receive different rows.
+
+\paragraph{The physics verdict} We classified every configuration of the 21
+orbits by explicit criteria: a nonzero top Yukawa at leading order, up- and
+down-type Yukawa matrices that can reach rank three, and dimension-five proton
+decay and dimension-four and bilinear $R$-parity violation forbidden to all
+orders. No
+orbit, published or new, meets them. Nine of the 11 new orbits fail on an exact
+obstruction, as do seven of the 10 published ones; two new orbits (A04, A06)
+remain undecided because the answer depends on higher-order coefficients and on
+the singlet vacuum. None of the new orbits has a leading-order top Yukawa, nine
+forbid dimension-five proton decay to all orders, and in one (A08) the
+charge-allowed coupling $SLH_u$ vanishes cohomologically.
+
+\paragraph{What is not claimed} No model is claimed to be the Standard Model.
+Cohomology is that of a generic member of each family. Supersymmetry breaking,
+moduli stabilisation and physical, canonically normalised Yukawa couplings are
+not computed. That survivor sets stop changing beyond $K=4$ is recorded as an
+observation, not as a finiteness theorem. Table~\ref{tab:results} lists the
+main results with their status.
+
+\begin{table}[h]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\textwidth}{@{}X>{\raggedright}p{3.6cm}>{\raggedright\arraybackslash}p{4.1cm}@{}}
+\toprule
+result & status & domain \\
+\midrule
+GUT catalogs of $\Xa$ (10 and 58 models) and $\Xb$ (93) reproduced & exact set equality & each full catalog \\
+complete $K=1$ domains replayed by independent code & exact & $4.3\times10^7$, $3.5\times10^9$ states \\
+425 of 469 slices of $\Xa$ contain no model & theorem & all integer charges \\
+$d_X\nmid3|\Gamma|$ excludes (7761, $|\Gamma|=2$) and (7447, $|\Gamma|=5$) & theorem & all integer charges \\
+no published model inside a search box is missed & exact & 68 CICYs, 271 runs, $K\le3$ \\
+poly-stable GUT model on CICY 5256 absent from the catalog & exact (algebraic witness) & $|\Gamma|=4$, $|k|\le2$ \\
+53 of 80 extra survivors unstable; 18 more & exact; numerical only & charge-matrix rank $h-1$; below \\
+27,821 published character tables reproduced & exact & whole database \\
+21 downstairs orbits on $\Xa/(\Z_2\times\Z_2)$, 11 new, each absence explained & exact, generic member & upstairs $K=5$ survivors \\
+13 operator tables reproduced; 954 of 2,007 $Y_d$ tables inconsistent & exact & 2,012 published models \\
+no strong candidate; two orbits undecided & exact, perturbative & 21 orbits \\
+survivor set of $\Xa$ unchanged for $K=4,\dots,7$ & observation, not a theorem & $\Gamma=\Z_2$ \\
+\bottomrule
+\end{tabularx}
+\caption{Main results and the logical status of each.}
+\label{tab:results}
+\end{table}
+
+\vspace{-6pt}
+\paragraph{Open problems in the heterotic setting} Whether $\Xa$ carries
+finitely many models is open: the anomaly bound on the charges degenerates as
+the slope witness approaches the boundary of the Kähler cone, and we conjecture
+that the index condition keeps it away. Couplings with Koszul level sum two or
+more, which need a lift through the defining polynomial \cite{BBL17}, are
+returned as unknown, and the 18 survivors of rank below $h-1$ need an exact
+decision on positive-dimensional slope-zero loci. The survey should go to
+larger $K$, where further models missing from the catalog would appear, and to
+generalised CICYs \cite{AAGGL15} and hypersurfaces from the Kreuzer--Skarke
+list \cite{KS00,AGHJN14}, where the Kähler cone is no longer the positive
+orthant and the cone test must use the true one. An estimate of $10^{723}$
+standard models on toric hypersurfaces \cite{CHL18} rules out box-by-box
+exhaustion there, so the charge-unbounded statements become the useful ones.
+Stability is decided at tree level; the one-loop correction \cite{BHW05} adds
+the string coupling as one more variable for the same exact methods.
+
+\newpage
+\section{Outlook: the same methods in other compactifications}
+
+What the engine exploits is a structure, not heterotic physics as such:
+integer data; a supersymmetry condition that asks whether a cone meets a linear
+space; a positive budget (anomaly or tadpole) that is spent along a branch of
+the search; and abelian selection rules. The same structure appears in most
+constructions that have produced the MSSM spectrum (Table~\ref{tab:outlook}).
+
+\begin{table}[h]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright}p{3.2cm}>{\raggedright}p{2.3cm}>{\raggedright}p{3.0cm}>{\raggedright}X>{\raggedright\arraybackslash}p{2.9cm}@{}}
+\toprule
+construction & integer data & budget & supersymmetry condition & selection rules \\
+\midrule
+heterotic line bundles (here) & charge matrix & $c_2(TX)-c_2(V)\ge0$ & slopes, quadratic in $t$; one loop \cite{BHW05} & $U(1)^4$ (flows) \\
+IIB, magnetised D7-branes & divisors, fluxes & D7 and D3 tadpoles & FI terms, linear in $t$ & anomalous $U(1)$s, E3 \\
+IIB closed-string fluxes & $F_3$, $H_3$ & $N_{\rm flux}\le Q_{\rm D3}$ & $DW=0$, polynomial near LCS & --- \\
+F-theory & $G_4$ flux & $\chi(Y)/24-\tfrac12G_4^2\ge0$ & primitivity, linear in $J$ & $U(1)$s, discrete \\
+IIA, D6 on $T^6/\Z_2\times\Z_2'$ & wrapping numbers & RR tadpoles, K-theory & linear in complex-structure functions & anomalous $U(1)$s \\
+\bottomrule
+\end{tabularx}
+\caption{Where the ingredients of the search reappear (LCS: large complex structure).}
+\label{tab:outlook}
+\end{table}
+
+\vspace{-4pt}
+\paragraph{Type IIB with magnetised D7-branes} A $U(1)$ stack on a divisor
+$D_a$ with worldvolume flux $F_a$ has, at leading order, Fayet--Iliopoulos term
+$\int_XJ\wedge D_a\wedge F_a$, \emph{linear} in the Kähler class. Whether all
+of them vanish at one point of the Kähler cone is then the question of
+Section~2, whether a rational subspace meets an open cone, but now necessary
+\emph{and} sufficient, and settled by linear programming with an exact Farkas
+certificate either way. Chiral indices are integer intersection numbers, the D7
+tadpole is a linear equality, Freed--Witten quantisation is a parity condition,
+and the D3 tadpole is a budget that worldvolume and closed-string fluxes share.
+The $SU(5)$ models of \cite{BBGW08} show how restrictive these conditions are.
+A first experiment: exhaust the three-family $SU(5)$ D7 configurations on
+orientifolds of small-$h^{1,1}$ CICYs, and apply the flow rule to the anomalous
+$U(1)$s with E3-instanton charges added as generators, to decide which
+perturbatively forbidden couplings, the $\mathbf{10}\,\mathbf{10}\,\mathbf5$
+top coupling among them, an instanton could supply.
+
+\paragraph{Flux compactification and the shared tadpole} Fluxes fix the complex
+structure and the dilaton \cite{GKP02}, and the Kähler moduli need
+non-perturbative effects \cite{KKLT03} or $\alpha'$ corrections
+\cite{BBCQ05}. The tadpole conjecture \cite{BBGL20} states that
+fixing all complex-structure moduli costs more D3 charge than is available when
+there are many moduli. Two computations follow directly. The perturbatively flat
+vacua of \cite{DKMM20} are pairs of integer flux vectors such that a derived
+vector lies in the Kähler cone of the mirror and is orthogonal to one of the
+flux vectors, subject to integrality conditions and the tadpole bound: a cone
+meeting a subspace, and a monotone budget, which is what our search is built
+for. A complete, certified list of
+such vacua on small-$h^{2,1}$ examples would replace sampling with a theorem.
+The second asks how much of the D3 tadpole the cheapest certified three-family
+brane sector uses on a given orientifold, and whether the rest can fix the
+complex structure; this tests the conjecture example by example as a finite
+computation. Visible sectors on D3-branes at del Pezzo singularities
+\cite{CKMQV12}, which meet the global data mainly through the tadpole, are a
+natural first target.
+
+\paragraph{F-theory} In the $\mathcal O(10^{15})$ compactifications with the
+exact chiral spectrum of the Standard Model \cite{CHLLT19}, global consistency
+reduces to a criterion on the base; the vector-like spectrum and the Yukawa
+couplings must still be settled model by model. Proving vector-like exotics
+absent needs upper bounds on cohomology, that is lower bounds on ranks, which a
+minor modulo a prime certifies, and the flow rule applies unchanged to
+Mordell--Weil $U(1)$s. In $G_4$ searches the chiral indices are linear in the
+flux, and since the intersection form is positive definite on primitive
+$(2,2)$-classes the D3 tadpole confines the flux to an ellipsoid, which can be
+enumerated exactly, branch by branch.
+
+\paragraph{Type IIA intersecting D6-branes} On $T^6/(\Z_2\times\Z_2')$ the
+supersymmetry equality of each stack is linear in four positive functions of
+the complex-structure moduli \cite{CSU01,BCLS05}. A common supersymmetric point
+therefore needs a positive vector orthogonal to the span of the stacks' wrapping
+data: the slice problem of Section~2, decided by the same Gordan test and
+monotone as stacks are added. All vacua of this orientifold have been counted
+exactly \cite{LS22}, and MSSM-like ones estimated at one in a billion
+\cite{GBHLW06}; restricting the exact count to the MSSM chiral spectrum and
+running the flow analysis on the anomalous $U(1)$s would give a certified list
+of three-family models together with the couplings each allows perturbatively.
+
+\smallskip
+In each case the work has the same shape: find the integer data, state every
+condition as exact, necessary or a declared restriction, and apply the monotone
+ones as early in the tree as possible. A search built this way settles what
+sampling cannot: that a model is absent, that a catalog is complete in a box,
+or that an allowed coupling vanishes.
+
+\vspace{-2pt}
+\noindent\rule{\textwidth}{0.4pt}
+\vspace{-14pt}
+{\scriptsize
+\renewcommand{\section}[2]{}
+\begin{multicols}{2}
+\begin{thebibliography}{99}
+\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
+\bibitem{AGLP11} L.~B.~Anderson et al., Phys.\ Rev.\ D\,84 (2011) 106005 [1106.4804].
+\bibitem{AGLP12} L.~B.~Anderson et al., JHEP\,06 (2012) 113 [1202.1757].
+\bibitem{ACGLP13} L.~B.~Anderson et al., JHEP\,01 (2014) 047 [1307.4787].
+\bibitem{BBCL16} S.~Blesneag et al., JHEP\,01 (2016) 152 [1512.05322].
+\bibitem{BBL17} S.~Blesneag et al., JHEP\,01 (2017) 119 [1607.03461].
+\bibitem{AAGGL15} L.~B.~Anderson et al., arXiv:1507.03235.
+\bibitem{KS00} M.~Kreuzer, H.~Skarke, Adv.\ Theor.\ Math.\ Phys.\,4 (2002) 1209 [hep-th/0002240].
+\bibitem{AGHJN14} R.~Altman et al., arXiv:1411.1418.
+\bibitem{CHL18} A.~Constantin et al., arXiv:1810.00444.
+\bibitem{BHW05} R.~Blumenhagen et al., JHEP\,06 (2005) 020 [hep-th/0504232].
+\bibitem{BBGW08} R.~Blumenhagen et al., Nucl.\ Phys.\ B\,815 (2009) 1 [0811.2936].
+\bibitem{GKP02} S.~B.~Giddings et al., Phys.\ Rev.\ D\,66 (2002) 106006 [hep-th/0105097].
+\bibitem{KKLT03} S.~Kachru et al., Phys.\ Rev.\ D\,68 (2003) 046005 [hep-th/0301240].
+\bibitem{BBCQ05} V.~Balasubramanian et al., JHEP\,03 (2005) 007 [hep-th/0502058].
+\bibitem{BBGL20} I.~Bena et al., arXiv:2010.10519.
+\bibitem{DKMM20} M.~Demirtas et al., arXiv:1912.10047.
+\bibitem{CKMQV12} M.~Cicoli et al., arXiv:1206.5237.
+\bibitem{CHLLT19} M.~Cveti\v{c} et al., Phys.\ Rev.\ Lett.\,123 (2019) 101601 [1903.00009].
+\bibitem{CSU01} M.~Cveti\v{c} et al., Phys.\ Rev.\ Lett.\,87 (2001) 201801 [hep-th/0107143].
+\bibitem{BCLS05} R.~Blumenhagen et al., Ann.\ Rev.\ Nucl.\ Part.\ Sci.\,55 (2005) 71 [hep-th/0502005].
+\bibitem{LS22} G.~J.~Loges, G.~Shiu, arXiv:2206.03506.
+\bibitem{GBHLW06} F.~Gmeiner et al., JHEP\,01 (2006) 004 [hep-th/0510170].
+\end{thebibliography}
+\end{multicols}}
+
+\end{document}

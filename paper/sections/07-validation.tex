@@ -1,0 +1,180 @@
+\section{Validation: independent replay and exact catalog agreement}
+\label{sec:validation}
+
+Two kinds of evidence support the searches: an independent implementation that
+exhausts complete domains without sharing any search logic, and model-for-model
+agreement with the published catalogs.
+
+\subsection{Independent exhaustive replay}
+
+A standalone enumerator hard-codes the published topology, re-implements HRR,
+the subset criterion, the anomaly pairing and the slope obstruction---the latter
+by Fourier--Motzkin elimination rather than extreme rays---and visits every
+ordered four-column assignment of the domain, deriving the fifth column,
+canonicalising, and applying the declared conditions to each distinct class.
+
+\begin{table}[h]
+\centering\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}llrrrrl@{}}
+\toprule
+geometry & domain & ordered states & valid 5th col. & canonical & surv. & set equality \\
+\midrule
+$\Xa$, $K=1$ & \st{GUT\_FULL}, pairs $\le0$ & 43,046,721 & 6,765,201 & 58,781 & 0 & exact \\
+$\Xa$, $K=1$ & \st{GUT\_FULL}, pairs free & 43,046,721 & 6,765,201 & 58,781 & 0 & exact \\
+$\Xa$, $K=1$ & \st{GUT\_CHIRAL}, pairs free & 43,046,721 & 6,765,201 & 58,781 & 0 & exact \\
+$\Xb$, $K=1$ & \st{GUT\_FULL}, pairs $\le0$ & 3,486,784,401 & 345,025,251 & 2,906,223 & 0 & exact \\
+\bottomrule
+\end{tabular}
+\caption{Independent replays. The valid-fifth-column counts equal $51^4$ and
+$51^5$, matching a closed form (51 of the 81 four-tuples per component have sum
+in $[-1,1]$), an arithmetic check on the enumeration itself. The $\Xb$ replay
+took 2,434\,s at 783\,MiB.}
+\label{tab:replay}
+\end{table}
+
+The replay census also shows which condition is load-bearing. On $\Xa$, of the
+58,781 canonical states 38,784 pass the subset criterion and 1,932 have the
+right index; with unrestricted pair indices all 1,932 pass the anomaly pairing
+and \emph{all} are eliminated by the slope obstruction and by nothing else. On
+$\Xb$ the funnel is $2{,}906{,}223\to2{,}477{,}960\to132{,}870\to44{,}580\to2{,}040$,
+and again all 2,040 anomaly survivors fall to the slope obstruction. This is why
+the slope rule's soundness and completeness (\cref{sec:slope}) matter. The
+census also confirms $\ind V=\ind\wedge^2V$ on all 58,781 $\Xa$ states, with both
+always even ($d_X=2$).
+
+\subsection{Exact agreement with the published catalogs}
+
+We compare row orbits: survivor sets are canonicalised under summand
+permutations and permutations of identical ambient factors, and nothing else
+(dualisation is not an equivalence, as it flips $\ind V$). The published catalog
+is restricted to the same box. The published database does not state a box per
+geometry, so ``inside the box'' is our restriction.
+
+\begin{table}[h]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llrrrl@{}}
+\toprule
+geometry, $|\Gam|$ & $K$ & published & ours, finite test & ours, complete test & set equality \\
+\midrule
+$\Xa$, 2 & 2 & 5 & 5 & 5 & exact \\
+$\Xa$, 2 & 3 & 7 & 8 & 7 & exact (complete) \\
+$\Xa$, 2 & 4--7 & 10 & 11 (at $K=4$) & 10 & exact, full catalog \\
+$\Xa$, 4 & 5 & 58 & -- & 58 & exact, full catalog \\
+$\Xb$, 2 & 1 & 0 & -- & 0 & exact \\
+$\Xb$, 2 & 2 & 56 & -- & 56 & exact, predicted \\
+$\Xb$, 2 & 3 & 87 & -- & 87 & exact, predicted \\
+$\Xb$, 2 & 4 & 93 & -- & 93 & exact, full catalog, predicted \\
+\bottomrule
+\end{tabular}
+\caption{Row-orbit comparison with the published GUT catalog~\cite{ACGLP2013,OxfordCICY}.
+``Exact'' means 0 published-only and 0 ours-only orbits. The $\Xb$ counts were
+predicted from the published $\max|k|$ distribution before each run.}
+\label{tab:catalog}
+\end{table}
+
+Three points deserve emphasis. First, agreement is \emph{set} equality, not
+count agreement: an earlier count agreement with Table~4 of \cite{ACGLP2013} at
+$K=2$ was upgraded to catalog identity only after retrieving and parsing the
+database itself (63,325 models on 68 geometries, reproducing the counts stated
+by its authors). Second, our survivor sets are necessary-condition survivors
+while the catalog is the poly-stable, anomaly-free, correct-index stage, so
+agreement means the two condition sets coincide \emph{on these domains}; it is
+not a proof that our conditions are sufficient in general. Third, the finite
+slope test fails to reach agreement at $K=3$ and $K=4$ because of the single
+spurious orbit of \cref{ex:spurious}.
+
+Every one of the 10 published $\{\Xa,2\}$ models, the 58 $\{\Xa,4\}$ models and
+the 93 $\{\Xb,2\}$ models passes every exact necessary check we implement,
+including the complete slope obstruction, as soundness requires.
+
+\subsection{All 68 favourable CICYs}
+\label{sec:survey}
+
+To test the engine beyond the two benchmarks we ran it, unchanged, on every
+(geometry, $|\Gam|$) key of the published GUT catalog: $K=1$ on all 110 keys
+(all 68 geometries, $h^{1,1}\le6$), $K=2$ on the 101 keys with $h^{1,1}\le5$ and
+$K=3$ on the 60 keys with $h^{1,1}\le4$, 271 runs in total, each recording the
+statistics of \cref{tab:ablation}. Orbits
+are taken under summand permutations and under ambient-factor permutations that
+preserve the configuration matrix up to a relabelling of its columns.
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{@{}rlrrrrrr@{}}
+\toprule
+$K$ & $h^{1,1}$ & keys & geometries & exact & published in box & recovered & extra orbits \\
+\midrule
+1 & 2--6 & 110 & 68 & 109 & 40 & \textbf{40} & 1 \\
+2 & 2--5 & 101 & 60 & 91 & 9,016 & \textbf{9,016} & 79 \\
+3 & 2--4 & 60 & 37 & 60 & 342 & \textbf{342} & 0 \\
+\bottomrule
+\end{tabular}
+\caption{The engine on the whole published catalog. The longest run ($\Xb$ with
+$|\Gam|=20$, $K=2$) took 8,794\,s and 947\,MiB; every $h^{1,1}=6$ run at $K=1$
+finished within 484\,s.}
+\label{tab:survey}
+\end{table}
+
+\textbf{No published model inside a box is ever missed}, on any geometry, and the
+divisibility obstruction fires on exactly the keys where the catalog is empty.
+Our survivor set is a necessary-condition set, and on eleven runs (none of them at
+$K=3$) it contains extra orbits---80 in total, ten of the eleven runs on geometries with
+$d_{ijj}\neq0$, where the sign test is not exact (\cref{prop:percoef}). Each extra
+was classified with the tools of \cref{sec:polya}:
+
+\begin{center}\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+certified unstable (exact decision, \cref{prop:decision}) & 53 \\
+certified \emph{stable} (exact real-algebraic witness) & 9 \\
+numerically unstable (charge-matrix rank $<h-1$; not a proof) & 18 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The 53 are false survivors of the necessary conditions, now excluded exactly;
+the 18 are very probably the same, but only numerically. Before trusting
+``certified unstable'' we ran the decision on 548 published models, which are
+poly-stable and must never be rejected: a first implementation rejected 91 of
+them, which exposed two bugs (a positive root whose isolating interval began at
+zero was discarded; a polynomial remainder was taken in the wrong order); after
+fixing both, it rejects none and certifies 214 of them stable with exact
+witnesses. The check is part of the test suite.
+
+\paragraph{A GUT model missing from the catalog.} The nine certified-stable
+extras are a single model: they share one full triple-intersection fingerprint
+$\{D(k_a,k_b,k_c),\,c_2\cdot k_a\}$ up to summand permutation, invariant under any
+automorphism of the Picard lattice preserving $d_{ijk}$, across CICYs 5256, 5301
+and 5452, which the catalog records as descriptions of one manifold. On CICY 5256
+with $|\Gam|=4$ its charge vectors are
+\[
+(-2,0,-1,1,0),\ (0,-1,1,-2,1),\ (0,2,1,0,-1),\ (1,-2,1,0,0),\ (1,1,-2,1,0).
+\]
+It satisfies $c_1(V)=0$, the structure-group criterion, $\ind V=\ind\wedge^2V=-12$,
+the anomaly and Bogomolov conditions, and it is poly-stable: with $t_5=1$, $t_4$ is
+the unique root in
+\[
+t_4\in\left[\tfrac{642595}{64736},\ \tfrac{769226}{77493}\right]
+\]
+of an irreducible degree-12 integer polynomial, the remaining coordinates are
+polynomials in $t_4$ proved positive by interval arithmetic, and all five slopes
+vanish identically modulo that polynomial. The Kähler class has $t_{\max}/t_{\min}\approx231$. The published
+catalog lists 2,128 models on this key with charges up to $|k|=6$, 656 of them in
+the box $|k|\le2$ that contains this model, and none with its fingerprint. The
+model therefore satisfies every condition the catalog states and is absent from
+it. We do not know why; a stability search confined to moderate Kähler ratios
+would miss it. It does not descend with individually equivariant line bundles
+under any of the four free $\Z_2\times\Z_2$ actions on this manifold, so it is a
+new GUT model rather than a new standard model.
+
+\paragraph{Empirical saturation.} On $\Xa$ with $\Gam=\Z_2$ the survivor set is
+literally identical at $K=4,5,6,7$, and no survivor uses a charge above 4. We
+record this as \st{EMPIRICAL\_SATURATION} at $K=4$. It is not a theorem and no
+unbounded inference is drawn from it; the slice results of \cref{sec:slices}
+are the unbounded statements we can actually prove.
+
+\paragraph{Topology.} Recomputing $c_2(TX)$ and the Euler number from the
+configuration matrices of all 68 favourable CICYs in the catalog reproduces the
+published values in 68/68 cases each.

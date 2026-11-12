@@ -1,0 +1,125 @@
+{
+ "published_models_checked": 2111,
+ "published_violating_R2": 0,
+ "published_x7862_violating_R1": 0,
+ "candidates_explained": 11,
+ "candidates": [
+  {
+   "candidate_id": "X7862-G4-A01",
+   "max_abs_charge": 5,
+   "max_pair_h1_dual": 3,
+   "violates": [
+    "R1_charge_range"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "identified"
+  },
+  {
+   "candidate_id": "X7862-G4-A02",
+   "max_abs_charge": 5,
+   "max_pair_h1_dual": 8,
+   "violates": [
+    "R1_charge_range",
+    "R2_vector_like_pairs"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "identified"
+  },
+  {
+   "candidate_id": "X7862-G4-A03",
+   "max_abs_charge": 5,
+   "max_pair_h1_dual": 3,
+   "violates": [
+    "R1_charge_range"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "identified"
+  },
+  {
+   "candidate_id": "X7862-G4-A04",
+   "max_abs_charge": 4,
+   "max_pair_h1_dual": 8,
+   "violates": [
+    "R1_charge_range",
+    "R2_vector_like_pairs"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "identified"
+  },
+  {
+   "candidate_id": "X7862-G4-A05",
+   "max_abs_charge": 4,
+   "max_pair_h1_dual": 3,
+   "violates": [
+    "R1_charge_range"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "identified"
+  },
+  {
+   "candidate_id": "X7862-G4-A06",
+   "max_abs_charge": 4,
+   "max_pair_h1_dual": 8,
+   "violates": [
+    "R1_charge_range",
+    "R2_vector_like_pairs"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "identified"
+  },
+  {
+   "candidate_id": "X7862-G4-A07",
+   "max_abs_charge": 3,
+   "max_pair_h1_dual": 8,
+   "violates": [
+    "R2_vector_like_pairs"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "identified"
+  },
+  {
+   "candidate_id": "X7862-G4-A08",
+   "max_abs_charge": 3,
+   "max_pair_h1_dual": 8,
+   "violates": [
+    "R2_vector_like_pairs"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "unknown"
+  },
+  {
+   "candidate_id": "X7862-G4-A09",
+   "max_abs_charge": 3,
+   "max_pair_h1_dual": 8,
+   "violates": [
+    "R2_vector_like_pairs"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "unknown"
+  },
+  {
+   "candidate_id": "X7862-G4-A10",
+   "max_abs_charge": 3,
+   "max_pair_h1_dual": 8,
+   "violates": [
+    "R2_vector_like_pairs"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "identified"
+  },
+  {
+   "candidate_id": "X7862-G4-A11",
+   "max_abs_charge": 3,
+   "max_pair_h1_dual": 8,
+   "violates": [
+    "R2_vector_like_pairs"
+   ],
+   "colour_triplet_higgs": false,
+   "previous_classification": "identified"
+  }
+ ],
+ "sources": {
+  "R1": "arXiv:1202.1757 Section 5.3",
+  "R2": "arXiv:1106.4804"
+ }
+}

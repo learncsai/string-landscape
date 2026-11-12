@@ -1,0 +1,3211 @@
+[
+ {
+  "cicy": 7862,
+  "model": 1,
+  "tens": [
+   1,
+   1,
+   1
+  ],
+  "fivebars": [
+   [
+    1,
+    2
+   ],
+   [
+    1,
+    3
+   ],
+   [
+    1,
+    5
+   ]
+  ],
+  "higgs_up": [
+   2,
+   3
+  ],
+  "higgs_down": [
+   2,
+   3
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 2,
+  "tens": [
+   2,
+   4,
+   4
+  ],
+  "fivebars": [
+   [
+    1,
+    2
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    1,
+    4
+   ]
+  ],
+  "higgs_up": [
+   2,
+   4
+  ],
+  "higgs_down": [
+   2,
+   4
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 2,
+   "our_support": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "1/2"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "-1/2",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 2,
+   "support_matches": false
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 3,
+  "tens": [
+   3,
+   3,
+   3
+  ],
+  "fivebars": [
+   [
+    1,
+    3
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "higgs_up": [
+   1,
+   4
+  ],
+  "higgs_down": [
+   1,
+   4
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 4,
+  "tens": [
+   3,
+   3,
+   3
+  ],
+  "fivebars": [
+   [
+    1,
+    3
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "higgs_up": [
+   1,
+   4
+  ],
+  "higgs_down": [
+   2,
+   4
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 5,
+  "tens": [
+   3,
+   3,
+   3
+  ],
+  "fivebars": [
+   [
+    1,
+    3
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "higgs_up": [
+   2,
+   4
+  ],
+  "higgs_down": [
+   1,
+   4
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 6,
+  "tens": [
+   3,
+   3,
+   3
+  ],
+  "fivebars": [
+   [
+    1,
+    3
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "higgs_up": [
+   2,
+   4
+  ],
+  "higgs_down": [
+   2,
+   4
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 7,
+  "tens": [
+   2,
+   2,
+   2
+  ],
+  "fivebars": [
+   [
+    2,
+    3
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    2,
+    3
+   ]
+  ],
+  "higgs_up": [
+   4,
+   5
+  ],
+  "higgs_down": [
+   4,
+   5
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 8,
+  "tens": [
+   2,
+   2,
+   2
+  ],
+  "fivebars": [
+   [
+    1,
+    5
+   ],
+   [
+    2,
+    3
+   ],
+   [
+    2,
+    3
+   ]
+  ],
+  "higgs_up": [
+   1,
+   2
+  ],
+  "higgs_down": [
+   1,
+   2
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 9,
+  "tens": [
+   1,
+   2,
+   3
+  ],
+  "fivebars": [
+   [
+    3,
+    4
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "higgs_up": [
+   1,
+   5
+  ],
+  "higgs_down": [
+   1,
+   5
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 1,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1/2",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 1,
+   "support_matches": false
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 10,
+  "tens": [
+   1,
+   2,
+   3
+  ],
+  "fivebars": [
+   [
+    3,
+    4
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "higgs_up": [
+   1,
+   5
+  ],
+  "higgs_down": [
+   2,
+   5
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 1,
+   "our_support": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "1/2",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 1,
+   "support_matches": false
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 11,
+  "tens": [
+   1,
+   2,
+   3
+  ],
+  "fivebars": [
+   [
+    3,
+    4
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "higgs_up": [
+   2,
+   5
+  ],
+  "higgs_down": [
+   1,
+   5
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 1,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1/2",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 1,
+   "support_matches": false
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 12,
+  "tens": [
+   1,
+   2,
+   3
+  ],
+  "fivebars": [
+   [
+    3,
+    4
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "higgs_up": [
+   2,
+   5
+  ],
+  "higgs_down": [
+   2,
+   5
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 1,
+   "our_support": [
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "1/2",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     1,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 1,
+   "support_matches": false
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 13,
+  "tens": [
+   1,
+   2,
+   3
+  ],
+  "fivebars": [
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    5
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "higgs_up": [
+   1,
+   5
+  ],
+  "higgs_down": [
+   1,
+   5
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0,
+   "support_matches": true
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 14,
+  "tens": [
+   2,
+   2,
+   2
+  ],
+  "fivebars": [
+   [
+    1,
+    2
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    1,
+    2
+   ]
+  ],
+  "higgs_up": [
+   3,
+   4
+  ],
+  "higgs_down": [
+   3,
+   4
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0,
+   "support_matches": true
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 15,
+  "tens": [
+   1,
+   2,
+   2
+  ],
+  "fivebars": [
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    5
+   ]
+  ],
+  "higgs_up": [
+   1,
+   2
+  ],
+  "higgs_down": [
+   1,
+   2
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 2,
+   "support_matches": false
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 16,
+  "tens": [
+   1,
+   2,
+   2
+  ],
+  "fivebars": [
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    5
+   ]
+  ],
+  "higgs_up": [
+   1,
+   2
+  ],
+  "higgs_down": [
+   3,
+   4
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 2,
+   "support_matches": false
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 2,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1/2",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1/2"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "published_structural_rank": 1,
+   "support_matches": false
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 17,
+  "tens": [
+   1,
+   2,
+   2
+  ],
+  "fivebars": [
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    5
+   ]
+  ],
+  "higgs_up": [
+   3,
+   4
+  ],
+  "higgs_down": [
+   1,
+   2
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 18,
+  "tens": [
+   1,
+   2,
+   2
+  ],
+  "fivebars": [
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    1,
+    5
+   ]
+  ],
+  "higgs_up": [
+   3,
+   4
+  ],
+  "higgs_down": [
+   3,
+   4
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 2,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     1
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1/2",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1/2"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "published_structural_rank": 1,
+   "support_matches": false
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 19,
+  "tens": [
+   3,
+   5,
+   5
+  ],
+  "fivebars": [
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    2,
+    5
+   ]
+  ],
+  "higgs_up": [
+   1,
+   3
+  ],
+  "higgs_down": [
+   1,
+   3
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0,
+   "support_matches": true
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 1,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "-1/2",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "published_structural_rank": 1,
+   "support_matches": true
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 20,
+  "tens": [
+   3,
+   5,
+   5
+  ],
+  "fivebars": [
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    2,
+    5
+   ]
+  ],
+  "higgs_up": [
+   1,
+   3
+  ],
+  "higgs_down": [
+   3,
+   5
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0,
+   "support_matches": true
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0,
+   "support_matches": true
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 21,
+  "tens": [
+   3,
+   5,
+   5
+  ],
+  "fivebars": [
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    2,
+    5
+   ]
+  ],
+  "higgs_up": [
+   3,
+   5
+  ],
+  "higgs_down": [
+   1,
+   3
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 2,
+   "our_support": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "1/2"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "-1/2",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 2,
+   "support_matches": false
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 1,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "-1/2",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0
+    ]
+   ],
+   "published_structural_rank": 1,
+   "support_matches": true
+  }
+ },
+ {
+  "cicy": 7862,
+  "model": 22,
+  "tens": [
+   3,
+   5,
+   5
+  ],
+  "fivebars": [
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    2,
+    5
+   ]
+  ],
+  "higgs_up": [
+   3,
+   5
+  ],
+  "higgs_down": [
+   3,
+   5
+  ],
+  "YukawaUp": {
+   "status": "COMPUTED",
+   "our_rank": 2,
+   "our_support": [
+    [
+     0,
+     0,
+     1
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "1/2"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "-1/2",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 2,
+   "support_matches": false
+  },
+  "YukawaDown": {
+   "status": "COMPUTED",
+   "our_rank": 0,
+   "our_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "notes": [],
+   "entries": [
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "0"
+    ]
+   ],
+   "published_leading_support": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0
+    ]
+   ],
+   "published_structural_rank": 0,
+   "support_matches": true
+  }
+ }
+]

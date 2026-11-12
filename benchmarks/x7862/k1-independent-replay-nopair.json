@@ -1,0 +1,53 @@
+{
+  "kind": "independent_replay",
+  "schema": 1,
+  "implementation": "scripts/independent_replay.py (no shared search logic)",
+  "geometry": "7862",
+  "topology_source": "arXiv:1311.1941 tetraquadric data; d_ijk=2 for distinct i,j,k",
+  "topology_crosscheck": {
+    "available": true,
+    "h11_agrees": true,
+    "d_agrees": true,
+    "c2_agrees": true
+  },
+  "K": 1,
+  "gamma": 2,
+  "target": "GUT_FULL",
+  "pair_nonpositive": false,
+  "coefficient_bound": 1,
+  "slope_rule": "box",
+  "slope_algorithm": "finite coefficient box",
+  "allowed_columns": null,
+  "nominal_ordered_four_column_states": 43046721,
+  "require_index_target": true,
+  "counts": {
+    "distinct_canonical_states": 58781,
+    "final_survivors": 0,
+    "pass_anomaly_nef_pairings": 528,
+    "pass_c1_zero": 58781,
+    "pass_chiral_indices": 1932,
+    "pass_no_proper_zero_subset": 38784,
+    "pass_single_index_range": 528,
+    "raw_ordered_states": 43046721,
+    "reject_chiral_indices": 36852,
+    "reject_no_proper_zero_subset": 19997,
+    "reject_signed_slope_matrices": 528,
+    "reject_single_index_range": 1404,
+    "valid_fifth_column": 6765201
+  },
+  "index_census": null,
+  "survivors": [],
+  "survivor_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "elapsed_seconds": 31.415850792080164,
+  "peak_rss_bytes": 38895616,
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "comparison": {
+    "certificate": "benchmarks/x7862/k1-gamma2-nopair.json",
+    "optimized_survivor_count": 0,
+    "reference_survivor_count": 0,
+    "exact_set_equality": true,
+    "optimized_only": [],
+    "reference_only": [],
+    "outcome_recorded": "UNSAT_BOUNDED"
+  }
+}

@@ -1,0 +1,70 @@
+\section{Logical framework: what a search result means}
+\label{sec:framework}
+
+Every condition and every output of the engine carries one of six logical
+statuses, and they are never mixed.
+
+\begin{definition}[Statuses of conditions]
+A condition used by the search is
+\begin{itemize}[leftmargin=*]
+\item \st{EXACT} if it is equivalent to the property it tests;
+\item \st{NECESSARY} if every valid model satisfies it (so failing it proves
+  invalidity, but passing it proves nothing);
+\item \st{SUFFICIENT} if satisfying it proves the property (e.g.\ an exact
+  rational or real-algebraic slope witness);
+\item \st{NUMERIC\_WITNESS} if it is supported only by floating-point evidence;
+\item \st{HEURISTIC} if it has no proof in either direction;
+\item \st{UNKNOWN} if it could not be decided.
+\end{itemize}
+Only \st{EXACT} and \st{NECESSARY} conditions may prune. Only \st{EXACT} and
+\st{SUFFICIENT} conditions may certify acceptance. \st{HEURISTIC} and
+\st{NUMERIC\_WITNESS} conditions may do neither.
+\end{definition}
+
+\begin{definition}[Search outcomes]
+For a declared domain $\mathcal D$ (geometry, $|\Gam|$, target, Kähler chamber,
+and either a box $K$ or a slice $p^\perp$):
+\begin{itemize}[leftmargin=*]
+\item \st{UNSAT\_BOUNDED}: every state of the finite domain was accounted for and
+  none satisfies the declared necessary conditions;
+\item \st{UNKNOWN\_BOUNDED}: the domain is exhausted and necessary-condition
+  survivors remain, none certified;
+\item \st{SAT\_BOUNDED}: a survivor is certified by sufficient conditions
+  (never emitted: no model reaches that standard here);
+\item \st{UNSAT\_SLICE\_UNBOUNDED}: an entire slice $p^\perp$ has been exhausted
+  over \emph{all} integer charges, with no survivor (\cref{sec:slices});
+\item \st{UNSAT\_UNBOUNDED}: no model exists for any charges (only the
+  divisibility obstruction, \cref{prop:divisibility}, emits this).
+\end{itemize}
+Stability of a survivor set as $K$ grows is recorded as
+\st{EMPIRICAL\_SATURATION} and never converted into an unbounded statement.
+\end{definition}
+
+The following observation is elementary but it is what makes the whole design
+safe, and it answers precisely when an incomplete test may be used.
+
+\begin{lemma}[Soundness of pruning by necessary conditions]\label{lem:soundness}
+Let $\mathcal D$ be finite and let $R_1,\dots,R_n$ be conditions each of which is
+necessary for the declared target under stated assumptions. If the search
+enumerates $\mathcal D$ and discards a state only when some $R_i$ fails---on the
+state or on a prefix from which the failure provably propagates to every
+completion---then every valid model in $\mathcal D$ survives. In particular
+\st{UNSAT\_BOUNDED} is correct. Replacing any $R_i$ by a weaker necessary
+condition can only enlarge the survivor set.
+\end{lemma}
+
+\begin{proof}
+A valid model satisfies every $R_i$, so it is never discarded at the leaf. A
+prefix is discarded only if every completion fails some $R_i$, which a valid
+model does not. Weakening a necessary condition removes rejections and adds
+none.
+\end{proof}
+
+The last sentence is the answer to a question that matters in practice: an
+\emph{incomplete} test (one that misses some obstructions) is harmless for
+\st{UNSAT\_BOUNDED}; only an \emph{unsound} test (one that rejects a state that
+could be valid) is dangerous. The finite coefficient box of the slope test
+(\cref{sec:slope}) is incomplete but sound, and may therefore contribute to
+\st{UNSAT\_BOUNDED}; its completion is nevertheless worth having, because an
+incomplete test leaves false survivors, and \cref{sec:validation} shows that it
+does.

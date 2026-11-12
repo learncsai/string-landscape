@@ -1,0 +1,41 @@
+ 5256 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   600  bundles    80758  orbits  575  published-in-box  563  DIFFER      48.6s   251.5 MiB
+ 5256 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles   770  bundles   224896  orbits  672  published-in-box  656  DIFFER     153.1s   433.6 MiB
+ 5301 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   600  bundles    80758  orbits  144  published-in-box  141  DIFFER      50.5s   442.4 MiB
+ 5301 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles   770  bundles   224896  orbits  169  published-in-box  165  DIFFER     156.6s   442.4 MiB
+ 5452 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   600  bundles    80442  orbits  574  published-in-box  562  DIFFER      51.2s   490.2 MiB
+ 5452 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles   770  bundles   225024  orbits  672  published-in-box  656  DIFFER     157.2s   498.2 MiB
+ 6024 h11=5 |G|= 3 K=2  UNKNOWN_BOUNDED  singles   598  bundles   286667  orbits  303  published-in-box  299  DIFFER     108.0s   498.2 MiB
+ 6204 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   536  bundles    29941  orbits   57  published-in-box   57  EXACT      25.5s   515.9 MiB
+ 6225 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   650  bundles    64549  orbits  147  published-in-box  146  DIFFER      49.7s   515.9 MiB
+ 6715 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   497  bundles    41512  orbits   96  published-in-box   96  EXACT      30.6s   522.5 MiB
+ 6715 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles   591  bundles   124518  orbits  165  published-in-box  165  EXACT      81.7s   557.0 MiB
+ 6724 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   494  bundles    27292  orbits   19  published-in-box   19  EXACT      21.1s   565.3 MiB
+ 6732 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   551  bundles    54909  orbits  434  published-in-box  434  EXACT      39.1s   565.3 MiB
+ 6770 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   778  bundles   139077  orbits  216  published-in-box  215  DIFFER      95.7s   565.3 MiB
+ 6777 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   551  bundles    53731  orbits  434  published-in-box  434  EXACT      39.4s   598.4 MiB
+ 6788 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   497  bundles    41512  orbits   96  published-in-box   96  EXACT      30.8s   601.8 MiB
+ 6788 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles   591  bundles   124518  orbits  165  published-in-box  165  EXACT      82.5s   628.6 MiB
+ 6802 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   551  bundles    54909  orbits  432  published-in-box  432  EXACT      39.2s   674.9 MiB
+ 6804 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   630  bundles    35833  orbits   59  published-in-box   49  DIFFER      34.8s   674.9 MiB
+ 6834 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   551  bundles    54909  orbits  218  published-in-box  218  EXACT      39.5s   674.9 MiB
+ 6836 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   497  bundles    41512  orbits   24  published-in-box   24  EXACT      31.1s   674.9 MiB
+ 6836 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles   591  bundles   124518  orbits   43  published-in-box   43  EXACT      83.6s   674.9 MiB
+ 6836 h11=5 |G|= 8 K=2  UNKNOWN_BOUNDED  singles   649  bundles   258894  orbits    6  published-in-box    6  EXACT     224.4s   674.9 MiB
+ 6836 h11=5 |G|=16 K=2  UNSAT_BOUNDED    singles   649  bundles   343017  orbits    0  published-in-box    0  EXACT     460.6s   676.2 MiB
+ 6890 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   551  bundles    54813  orbits  860  published-in-box  860  EXACT      39.7s   677.9 MiB
+ 6896 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   551  bundles    54909  orbits  218  published-in-box  218  EXACT      38.4s   680.4 MiB
+ 6927 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   497  bundles    41512  orbits  144  published-in-box  144  EXACT      31.0s   680.4 MiB
+ 6927 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles   591  bundles   124518  orbits  244  published-in-box  244  EXACT      81.2s   680.9 MiB
+ 6927 h11=5 |G|= 8 K=2  UNKNOWN_BOUNDED  singles   649  bundles   258894  orbits   34  published-in-box   34  EXACT     218.6s   683.4 MiB
+ 6947 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   497  bundles    41512  orbits   24  published-in-box   24  EXACT      31.9s   683.4 MiB
+ 6947 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles   591  bundles   124518  orbits   43  published-in-box   43  EXACT      82.6s   683.4 MiB
+ 6947 h11=5 |G|= 8 K=2  UNKNOWN_BOUNDED  singles   649  bundles   258894  orbits    6  published-in-box    6  EXACT     220.5s   685.3 MiB
+ 6947 h11=5 |G|=16 K=2  UNSAT_BOUNDED    singles   649  bundles   343017  orbits    0  published-in-box    0  EXACT     464.7s   686.0 MiB
+ 7279 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   572  bundles    45230  orbits  128  published-in-box  128  EXACT      38.9s   686.0 MiB
+ 7447 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   861  bundles   371214  orbits   56  published-in-box   56  EXACT     228.7s   688.5 MiB
+ 7447 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles  1061  bundles  1285579  orbits  214  published-in-box  214  EXACT     866.2s   762.2 MiB
+ 7447 h11=5 |G|= 5 K=2  UNSAT_UNBOUNDED  singles     0  bundles        0  orbits    0  published-in-box    0  EXACT       0.0s   947.0 MiB
+ 7447 h11=5 |G|=10 K=2  UNKNOWN_BOUNDED  singles  1241  bundles  3687180  orbits    6  published-in-box    6  EXACT    3817.2s   947.0 MiB
+ 7447 h11=5 |G|=20 K=2  UNSAT_BOUNDED    singles  1241  bundles  4817135  orbits    0  published-in-box    0  EXACT    8793.9s   947.0 MiB
+ 7487 h11=5 |G|= 2 K=2  UNKNOWN_BOUNDED  singles   861  bundles   371214  orbits  277  published-in-box  277  EXACT     217.7s   947.0 MiB
+ 7487 h11=5 |G|= 4 K=2  UNKNOWN_BOUNDED  singles  1061  bundles  1285579  orbits 1052  published-in-box 1052  EXACT     824.6s   947.0 MiB

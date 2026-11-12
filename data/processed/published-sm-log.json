@@ -1,0 +1,8 @@
+{
+ "input": "data/raw/sms202.m.gz",
+ "input_sha256": "48f541fac9937a9387147516f5f12d484e63399881bc872c9ae7539226b4b928",
+ "output": "data/processed/published_standard_models.json",
+ "output_sha256": "da461534d741fd1be4a8de8786483f961c6e3b0df7034e7886c7cc8740bd8033",
+ "models": 2113,
+ "geometries": 13
+}

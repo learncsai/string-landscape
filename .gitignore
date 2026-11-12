@@ -3,3 +3,7 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 *.sqlite*
+.DS_Store
+application/working_style/build.log
+application/working_style/preview-*.png
+application/working_style/pdf-extracted.txt

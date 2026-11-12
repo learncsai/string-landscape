@@ -1,0 +1,26 @@
+  audited X7862-G4-A01  max|k|=5  accepted choices=192  published=False
+  audited X7862-G4-A02  max|k|=5  accepted choices=336  published=False
+  audited X7862-G4-A03  max|k|=5  accepted choices=192  published=False
+  audited X7862-G4-A04  max|k|=4  accepted choices=336  published=False
+  audited X7862-G4-A05  max|k|=4  accepted choices=192  published=False
+  audited X7862-G4-A06  max|k|=4  accepted choices=336  published=False
+  audited X7862-G4-A07  max|k|=3  accepted choices=336  published=False
+  audited X7862-G4-A08  max|k|=3  accepted choices=192  published=False
+  audited X7862-G4-A09  max|k|=3  accepted choices=192  published=False
+  audited X7862-G4-A10  max|k|=3  accepted choices=336  published=False
+  audited X7862-G4-A11  max|k|=3  accepted choices=336  published=False
+  audited X7862-G4-P01 (control)  accepted choices=192
+  audited X7862-G4-P02 (control)  accepted choices=192
+  audited X7862-G4-P03 (control)  accepted choices=240
+  audited X7862-G4-P04 (control)  accepted choices=192
+  audited X7862-G4-P05 (control)  accepted choices=192
+  audited X7862-G4-P06 (control)  accepted choices=240
+  audited X7862-G4-P07 (control)  accepted choices=192
+  audited X7862-G4-P08 (control)  accepted choices=192
+  audited X7862-G4-P09 (control)  accepted choices=240
+  audited X7862-G4-P10 (control)  accepted choices=240
+{
+  "candidates": 21,
+  "additional": 11,
+  "output": "benchmarks/x7862/configurations-all.json"
+}
